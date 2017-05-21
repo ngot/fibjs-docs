@@ -13,7 +13,7 @@ rm -rf public
 mkdir public
 
 echo "Updating gh-pages branch"
-git clone .git --branch gh-pages public
+git clone https://github.com/ngot/fibjs-docs.git --branch gh-pages public
 ngot
 
 echo "Generating site"
