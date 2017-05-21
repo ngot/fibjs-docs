@@ -20,8 +20,8 @@ echo "Generating site"
 hugo
 
 cd public
+echo "fibjs.ngot.me" >> CNAME
 git add .
 ngot
-echo "fibjs.ngot.me" >> CNAME
 git commit -m "Publishing to gh-pages"
 git push origin gh-pages
