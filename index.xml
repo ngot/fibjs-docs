@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on fibjs</title>
+    <link>http://example.org/</link>
+    <description>Recent content in Home on fibjs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Apr 2017 18:36:24 +0200</lastBuildDate>
+    
+	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Modules</title>
+      <link>http://example.org/modules/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>http://example.org/modules/</guid>
+      <description>A bunch of Modules are available with this theme :
+ assert  Assertion test module, if testing result is false, you will get an error. The way of handling error can be set as continue or throw exception.
+ base32  module with encode and decode operations.
+ base64  module with encode and decode operations.
+ base64vlq  module with encode and decode operations.
+ bson  bson module with encode and decode operations.</description>
+    </item>
+    
+    <item>
+      <title>Objects</title>
+      <link>http://example.org/objects/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>http://example.org/objects/</guid>
+      <description> Objects :  AsyncWait  AsyncWait Object
+ Buffer  Buffer ObjectBuffer ObjectBuffer ObjectBuffer ObjectBuffer ObjectBuffer ObjectBuffer Object
+ </description>
+    </item>
+    
+    <item>
+      <title>header</title>
+      <link>http://example.org/_header/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>http://example.org/_header/</guid>
+      <description>Fibjs Documentation</description>
+    </item>
+    
+    <item>
+      <title>AsyncWait</title>
+      <link>http://example.org/object/asyncwait/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/object/asyncwait/</guid>
+      <description>class AsyncWait class AsyncWait : public Handler  MessageHandler object for asynchronous waiting.
+Summary    Members Descriptions     publicend() Finish waiting, moving on to handle the message.   publicHandlerinvoke(objectv) handle a message or an object   publicdispose() Force dispose object immediately.   public StringtoString() Return string representation of object, normally is &amp;ldquo;[Native Object]&amp;rdquo; and can be implemented by object itself.   public ValuetoJSON(String key) Return JSON representation of object, normally is readable attributes collection.</description>
+    </item>
+    
+    <item>
+      <title>Buffer</title>
+      <link>http://example.org/object/buffer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/object/buffer/</guid>
+      <description>class Buffer class Buffer : public object  Binary buffer used in dealing with I/O reading and writing.
+Buffer object is a global basic class which can be created by &amp;ldquo;new Buffer(&amp;hellip;)&amp;rdquo; at anytime:
+var buf = new Buffer();  Summary    Members Descriptions     public Integeroperator[] The binary data in the buffer can be accessed by using subscript.   public readonly Integerlength The buffer size.</description>
+    </item>
+    
+    <item>
+      <title>assert</title>
+      <link>http://example.org/module/assert/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/assert/</guid>
+      <description>Assertion test module, if testing result is false, you will get an error. The way of handling error can be set as continue or throw exception.
+how to use:
+var assert = require(&#39;assert&#39;);  or using testing unit:
+var test = require(&#39;test&#39;); var assert = test.assert;  or you can use test.setup to set up test:
+require(&amp;quot;test&amp;quot;).setup();  Summary    Members Descriptions     public static staticok(Value actual,String msg) Return true when the testing result is ture, assertion failed when return false.</description>
+    </item>
+    
+    <item>
+      <title>base32</title>
+      <link>http://example.org/module/base32/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/base32/</guid>
+      <description>base32 module with encode and decode operations. to use:
+var encoding = require(&#39;encoding&#39;); var base32 = encoding.base32;  or:
+var base32 = require(&#39;base32&#39;);  Summary    Members Descriptions     public static Stringencode(Bufferdata) Encode buffer data to string with base32 format.   public staticBufferdecode(String data) Decode string to binary data with base32 format.    Members public static Stringencode(Bufferdata) Encode buffer data to string with base32 format.</description>
+    </item>
+    
+    <item>
+      <title>base64</title>
+      <link>http://example.org/module/base64/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/base64/</guid>
+      <description>base64 module with encode and decode operations. to use:
+var encoding = require(&#39;encoding&#39;); var base64 = encoding.base64;  or:
+var base64 = require(&#39;base64&#39;);  Summary    Members Descriptions     public static Stringencode(Bufferdata) Encode buffer data to string with base64 format.   public staticBufferdecode(String data) Decode string to binary data with base64 format.    Members public static Stringencode(Bufferdata) Encode buffer data to string with base64 format.</description>
+    </item>
+    
+    <item>
+      <title>base64vlq</title>
+      <link>http://example.org/module/base64vlq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/base64vlq/</guid>
+      <description>base64vlq module with encode and decode operations. to use:
+var encoding = require(&#39;encoding&#39;); var base64vlq = encoding.base64vlq;  or:
+var base64vlq = require(&#39;base64vlq&#39;);  Summary    Members Descriptions     public static Stringencode(Integer data) Encode int data to string with base64vlq format.   public static Stringencode(Array data) Encode array data to string with base64vlq format.   public static Arraydecode(String data) Decode string to binary data with base64vlq format.</description>
+    </item>
+    
+    <item>
+      <title>bson</title>
+      <link>http://example.org/module/bson/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/bson/</guid>
+      <description>bson module with encode and decode operations. to use:
+var encoding = require(&#39;encoding&#39;); var bson = encoding.bson;  or:
+var bson = require(&#39;bson&#39;);  Summary    Members Descriptions     public staticBufferencode(Object data) Encode object to binary data with bson format.   public static Objectdecode(Bufferdata) Decode binary data to object with bson format.    Members public staticBufferencode(Object data) Encode object to binary data with bson format.</description>
+    </item>
+    
+    <item>
+      <title>console</title>
+      <link>http://example.org/module/console/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/console/</guid>
+      <description>console module
+Global reference. Console can be used to log info, warnings and errors. Log can be trace on different device when initialized from config files for tracking. Console logs support formatted output, e.g.
+console.log(&amp;quot;%d + %d = %d&amp;quot;, 100, 200, 100 + 200);   s - string
+ d - number, including initeger and numbers
+ j - output in JSON
+ %% - output &amp;ldquo; character</description>
+    </item>
+    
+    <item>
+      <title>coroutine</title>
+      <link>http://example.org/module/coroutine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/coroutine/</guid>
+      <description>Concurrency control module.
+The way to use: var coroutine = require(&amp;lsquo;coroutine&amp;rsquo;);
+Summary    Members Descriptions     public staticFiberstart(Function func,...) Start a fibers and return the fiber Object.   public static Arrayparallel(Array funcs,Integer fibers) Execute a set of functions parallel, and wait for the return.   public static Arrayparallel(Array datas,Function func,Integer fibers) Execute a function deal with a set of data parallel, and wait for the return.</description>
+    </item>
+    
+    <item>
+      <title>crypto</title>
+      <link>http://example.org/module/crypto/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/crypto/</guid>
+      <description>Encryption algorithm module.
+The way to use:
+var crypto = require(&#39;crypto&#39;);  Summary    Members Descriptions     public staticPKeyloadPKey(String filename,String password) Load a PEM/DER format key file.   public staticX509CertloadCert(String filename) Load a CRT/PEM/DER/TXT format certificate can be called multiple times.   public staticX509CrlloadCrl(String filename) Load a PEM/DER format revoked certificate can be called multiple times.   public staticX509ReqloadReq(String filename) Load a PEM/DER format requested certificate can be called multiple times.</description>
+    </item>
+    
+    <item>
+      <title>db</title>
+      <link>http://example.org/module/db/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/db/</guid>
+      <description>Database access module.
+Basic module for create database and database operation, The way to use::
+var db = require(&#39;db&#39;);  Summary    Members Descriptions     public staticobjectopen(String connString) This method offer a general entrance to open a database, call different engines according to the providing connString.   public staticMySQLopenMySQL(String connString) Open a mysql database.   public staticSQLiteopenSQLite(String connString) Open a sqlite database.   public staticMongoDBopenMongoDB(String connString) Open a mongodb database.</description>
+    </item>
+    
+    <item>
+      <title>encoding</title>
+      <link>http://example.org/module/encoding/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/encoding/</guid>
+      <description>module with encode and decode operations between hex and other format data. to use:
+var encoding = require(&#39;encoding&#39;);  Summary    Members Descriptions     public static Stringjsstr(String str,Boolean json) Encode the string to Javascript escaped string that can be contained in the javascript code.   public static StringencodeURI(String url) Url encoding.   public static StringencodeURIComponent(String url) Url component encoding.   public static StringdecodeURI(String url) Url decoding.</description>
+    </item>
+    
+    <item>
+      <title>fs</title>
+      <link>http://example.org/module/fs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/fs/</guid>
+      <description>file system module
+how to use
+var fs = require(&#39;fs&#39;);  Summary    Members Descriptions     public static Booleanexists(String path) search if the file or directory exists   public static BooleanexistsSync(String path) search if the file or directory exists. Sync version of fs.exists().   public static staticunlink(String path) the file you want to delete   public static staticunlinkSync(String path) the file you want to delete.</description>
+    </item>
+    
+    <item>
+      <title>gd</title>
+      <link>http://example.org/module/gd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/gd/</guid>
+      <description>Image processing module.
+Base module. It can be used to create and manipulate image files. The way to use：
+var gd = require(&#39;gd&#39;);  Summary    Members Descriptions     public staticImagecreate(Integer width,Integer height,Integer color) Create a new image.   public staticImageload(Bufferdata) Decoded image from the format data.   public staticImageload(SeekableStreamstm) Decoded image from the stream object.   public staticImageload(String fname) Decoded image from the specified file.</description>
+    </item>
+    
+    <item>
+      <title>global</title>
+      <link>http://example.org/module/global/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/global/</guid>
+      <description>Global object, which can be accessed by all scripts.
+Summary    Members Descriptions     public static staticrun(String fname,Array argv) Run a script.   public static Valuerequire(String id) Load a module and return module object, reference Module Management.   public static staticGC() Mandatory for garbage collection.   public static staticrepl(Array cmds) Enter the interactive mode, you can interactively execute the internal commands and code which can only be referenced when js start.</description>
+    </item>
+    
+    <item>
+      <title>hash</title>
+      <link>http://example.org/module/hash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/hash/</guid>
+      <description>Message digest calculation module, can be used to calculate the message digest and summary Signature.
+Summary    Members Descriptions     public staticDigestdigest(Integer algo,Bufferdata) Create a message digest object with the specified algorithm.   public staticDigestdigest(Integer algo) Create a message digest object with the specified algorithm.   public staticDigestmd2(Bufferdata) Create a MD2 message digest object.   public staticDigestmd4(Bufferdata) Create a MD4 message digest object.</description>
+    </item>
+    
+    <item>
+      <title>hex</title>
+      <link>http://example.org/module/hex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/hex/</guid>
+      <description>module with encode and decode operations between hex and string. to use:
+var encoding = require(&#39;encoding&#39;); var hex = encoding.hex;  or:
+var hex = require(&#39;hex&#39;);  Summary    Members Descriptions     public static Stringencode(Bufferdata) Encode data whith hex format.   public staticBufferdecode(String data) Decode string to binary data with hex format.    Members public static Stringencode(Bufferdata) Encode data whith hex format.</description>
+    </item>
+    
+    <item>
+      <title>http</title>
+      <link>http://example.org/module/http/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/http/</guid>
+      <description>HTTP transfer protocol module, handels http protocol.
+Summary    Members Descriptions     public staticHttpRequestnewRequest() create a http request object，reference HttpRequest   public staticHttpResponsenewResponse() create a http response object，reference HttpResponse   public staticHttpCookienewCookie() create a http cookie object，reference HttpCookie   public staticHttpServernewServer() create a http server，reference HttpServer   public staticHttpsServernewHttpsServer() create a https server, reference HttpsServer   public staticHttpHandlernewHandler() create a http protocol handler，reference HttpHandler   public staticHandlerfileHandler(String root,Object mimes) create a http static file processor, in case of using static file to respond http request   public staticHttpResponserequest(Streamconn,HttpRequestreq) send http request to connection object，return response   public staticHttpResponserequest(String method,String url,Object headers) assign requested url, and return   public staticHttpResponserequest(String method,String url,SeekableStreambody,Object headers) Request the specified url, and get the response.</description>
+    </item>
+    
+    <item>
+      <title>iconv</title>
+      <link>http://example.org/module/iconv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/iconv/</guid>
+      <description>iconv Module with encode and decode operations between text and binary. to use:
+var encoding = require(&#39;encoding&#39;); var iconv = encoding.iconv;  or:
+var iconv = require(&#39;iconv&#39;);  Summary    Members Descriptions     public staticBufferencode(String charset,String data) Convert text to binary with iconv.   public static Stringdecode(String charset,Bufferdata) Convert binary to text with iconv.    Members public staticBufferencode(String charset,String data) Convert text to binary with iconv.</description>
+    </item>
+    
+    <item>
+      <title>io</title>
+      <link>http://example.org/module/io/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/io/</guid>
+      <description>IO module.
+To use it:
+var io = require(&#39;io&#39;);  Summary    Members Descriptions     public staticMemoryStreamnewMemoryStream() Create a memory stream, see MemoryStream.   public staticBufferedStreamnewBufferedStream() Create a buffered read stream, see BufferedStream.    Members public staticMemoryStreamnewMemoryStream() Create a memory stream, see MemoryStream.
+public staticBufferedStreamnewBufferedStream() Create a buffered read stream, see BufferedStream.</description>
+    </item>
+    
+    <item>
+      <title>json</title>
+      <link>http://example.org/module/json/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/json/</guid>
+      <description>json module with encode and decode operations. to use:
+var encoding = require(&#39;encoding&#39;); var json = encoding.json;  or:
+var json = require(&#39;json&#39;);  Summary    Members Descriptions     public static Stringencode(Value data) Encode a json variable to string with json format.   public static Valuedecode(String data) Decode a string variable to json with json format.    Members public static Stringencode(Value data) Encode a json variable to string with json format.</description>
+    </item>
+    
+    <item>
+      <title>mq</title>
+      <link>http://example.org/module/mq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/mq/</guid>
+      <description>Message queue module.
+Summary    Members Descriptions     public staticHandlerjsHandler(Value hdlr) Create a javascript message handler, return immediately when pass by value.   public staticAsyncWaitawait() Create async handler.   public staticHandlernullHandler() Create a empty handler.   public static staticinvoke(Handlerhdlr,objectv) Invoke a message or object to given handler.    Members public staticHandlerjsHandler(Value hdlr) Create a javascript message handler, return immediately when pass by value.</description>
+    </item>
+    
+    <item>
+      <title>net</title>
+      <link>http://example.org/module/net/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/net/</guid>
+      <description>Network module.
+Used for create and operate netwrok resource, to use it:
+var net = require(&#39;net&#39;);  Summary    Members Descriptions     public static Stringresolve(String name,Integer family) Resolve address of given host.   public static Stringip(String name) Quick query host address, same as resolve(name)   public static Stringipv6(String name) Quick query host ipv6 address, same as resolve(name, net.AF_INET6)   public staticStreamconnect(String host,Integer port,Integer family) Create a Socket object and make connection, see Socket.</description>
+    </item>
+    
+    <item>
+      <title>os</title>
+      <link>http://example.org/module/os/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/os/</guid>
+      <description>Operating system and file system module.
+To use it:
+var os = require(&#39;os&#39;);  Summary    Members Descriptions     public static Numberuptime() Get operating system time in seconds.   public static Arrayloadavg() Get system load average, 1, 5 and 15 minutes.   public static Longtotalmem() Get system total memory in bytes.   public static Longfreemem() Get system free memory in bytes.   public static ArrayCPUInfo() Get system CPU number and information.</description>
+    </item>
+    
+    <item>
+      <title>path</title>
+      <link>http://example.org/module/path/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/path/</guid>
+      <description>File path module.
+To use it:
+var path = require(&#39;path&#39;);  Summary    Members Descriptions     public static Stringnormalize(String path) Normalize path.   public static Stringbasename(String path,String ext) Get file name in path, ignore extension with file has it.   public static Stringextname(String path) Get file extension.   public static Stringdirname(String path) Get directory in path.   public static Stringfullpath(String path) Get full path.</description>
+    </item>
+    
+    <item>
+      <title>process</title>
+      <link>http://example.org/module/process/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/process/</guid>
+      <description>Process handle module, to manage current process resources.
+To use it:
+var process = require(&#39;process&#39;);  Summary    Members Descriptions     public static Integerumask(Integer mask) change the current umask，Windows does&amp;rsquo;t support this.   public static Integerumask(String mask) change the current umask，Windows does&amp;rsquo;t support this.   public static Integerumask() return the current umask，Windows does&amp;rsquo;t support this.   public static staticexit(Integer code) Exit current process, and return result.</description>
+    </item>
+    
+    <item>
+      <title>profiler</title>
+      <link>http://example.org/module/profiler/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/profiler/</guid>
+      <description>Memory profiler module.
+The way to use:
+var profiler = require(&#39;profiler&#39;);  Summary    Members Descriptions     public static staticsaveSnapshot(String fname) Save a HeapSnapshot with the specified name.   public staticHeapSnapshotloadSnapshot(String fname) Load a HeapSnapshot with the specified name.   public staticHeapSnapshottakeSnapshot() Get the current HeapSnapshot, HeapSnapshots record the state of the JS heap at some moment.   public static staticDeleteAllHeapSnapshots() Delete all HeapSnapshots.</description>
+    </item>
+    
+    <item>
+      <title>re</title>
+      <link>http://example.org/module/re/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/re/</guid>
+      <description>Regexp module.
+Summary    Members Descriptions     public staticRegexcompile(String pattern,String opt) Compile and return a template of regexp.    Members public staticRegexcompile(String pattern,String opt) Compile and return a template of regexp.
+Parameters  pattern Regexp pattern
+ opt Match type, can be &amp;ldquo;g&amp;rdquo;, &amp;ldquo;i&amp;rdquo; or &amp;ldquo;gi&amp;rdquo;
+  Returns Return regexp object</description>
+    </item>
+    
+    <item>
+      <title>ssl</title>
+      <link>http://example.org/module/ssl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/ssl/</guid>
+      <description>ssl/tls module
+Summary    Members Descriptions     public staticSslSocketnewSocket() Create a SslSocket object, see SslSocket.   public staticSslHandlernewHandler() Create a SslHandler object, see SslHandler.   public staticSslServernewServer() Create a SslServer object, see SslServer.   public staticStreamconnect(String url) Create a SslSocket and make connection.   public static staticsetClientCert(X509Certcrt,PKeykey) Set the default client certificate.   public static staticloadClientCertFile(String crtFile,String keyFile,String password) Load the default client certificate from a file.</description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>http://example.org/module/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/test/</guid>
+      <description>Test Suite module that defines the test suite management.
+To use it:
+var test = require(&#39;test&#39;);  Summary    Members Descriptions     public static staticdescribe(String name,Function block) The definition of a test module and can be nested definition.   public static staticxdescribe(String name,Function block) The definition of a test module to be stopped.   public static staticit(String name,Function block) Define a test project.</description>
+    </item>
+    
+    <item>
+      <title>util</title>
+      <link>http://example.org/module/util/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/util/</guid>
+      <description>Common tools module.
+Summary    Members Descriptions     public static Stringformat(String fmt,...) Format string with variables.   public static Stringformat(...) Format variables.   public static BooleanisEmpty(Value v) Check if variable is empty(no enumerable property)   public static BooleanisArray(Value v) Check if variable is an array.   public static BooleanisBoolean(Value v) Check if variable is Boolean.   public static BooleanisNull(Value v) Check if variable is Null.</description>
+    </item>
+    
+    <item>
+      <title>uuid</title>
+      <link>http://example.org/module/uuid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/uuid/</guid>
+      <description>uuid unique id module
+Fundamental module, used for create uuid
+var uuid = require(&#39;uuid&#39;);  Summary    Members Descriptions     public staticuuidValueuuid(String s) Generate uuid by given string.   public staticuuidValueuuid(Bufferdata) Generate uuid by given binary data.   public staticuuidValuenode() Generate uuid by time and host name.   public staticuuidValuemd5(Integer ns,String name) Generate uuid by given md5.   public staticuuidValuerandom() Generate uuid randomly.</description>
+    </item>
+    
+    <item>
+      <title>vm</title>
+      <link>http://example.org/module/vm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/vm/</guid>
+      <description>Safe SandBox module, to isolate runtime based on safety level.
+By establishing a safe SandBox, you can limit the accessible resources when the script runs, and isolate different script execution environment, also can be customized for different environments base module to ensure the safety of the overall operating environment.
+Following example demonstrates a sandbox which is only allowed for accessing assert module, and add a and b as customized modules.</description>
+    </item>
+    
+    <item>
+      <title>websocket</title>
+      <link>http://example.org/module/websocket/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/websocket/</guid>
+      <description>websocket support module
+To use it:
+var websocket = require(&#39;websocket&#39;);  Summary    Members Descriptions     public staticWebSocketMessagenewMessage() Create one websocket message object, refer WebSocketMessage.   public staticWebSocketHandlernewHandler() Create one websocket packet protocol conversion processor, refer WebSocketHandler.   public staticStreamconnect(String url) Create one websocket connection, and return a completed connection Stream object.    Members public staticWebSocketMessagenewMessage() Create one websocket message object, refer WebSocketMessage.</description>
+    </item>
+    
+    <item>
+      <title>xml</title>
+      <link>http://example.org/module/xml/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/xml/</guid>
+      <description>xml module
+Summary    Members Descriptions     public staticXmlDocumentnewDocument() xml document object, see XmlDocument object   public staticXmlDocumentparse(String source,String type) Parse xml/html text and create XmlDocument object, does not support multiple languages.   public staticXmlDocumentparse(Buffersource,String type) Parse xml/html and create XmlDocument object, convert by given language.   public static Stringserialize(XmlNodenode) Serialize XmlNode to string.    Members public staticXmlDocumentnewDocument() xml document object, see XmlDocument object</description>
+    </item>
+    
+    <item>
+      <title>zip</title>
+      <link>http://example.org/module/zip/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/zip/</guid>
+      <description>Zip file processing module.
+It can be used to compress and decompress file into or from zip file. The way to use：
+var zip = require(&#39;zip&#39;);  Summary    Members Descriptions     public static BooleanisZipFile(String filename) Judge if the file is zip file.   public staticZipFileopen(String path,String mod,Integer compress_type) Open a zip file.   public staticZipFileopen(Bufferdata,String mod,Integer compress_type) Open buffer of zip file data.</description>
+    </item>
+    
+    <item>
+      <title>zlib</title>
+      <link>http://example.org/module/zlib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/zlib/</guid>
+      <description>zlib compression and decompression module
+To use it:
+var zlib = require(&#39;zlib&#39;);  Summary    Members Descriptions     public staticBufferdeflate(Bufferdata,Integer level) Use deflate to compress data (zlib format)   public static staticdeflateTo(Bufferdata,Streamstm,Integer level) Use deflate to compress data to stream (zlib format)   public static staticdeflateTo(Streamsrc,Streamstm,Integer level) Use deflate to compress a stream data to another (zlib format)   public staticBufferinflate(Bufferdata) Use deflate to decompress data (zlib format)   public static staticinflateTo(Bufferdata,Streamstm) Use deflate to decompress data to stream (zlib format)   public static staticinflateTo(Streamsrc,Streamstm) Use deflate to decompress a stream data to another (zlib format)   public staticBuffergzip(Bufferdata) Use gzip to compress data.</description>
+    </item>
+    
+  </channel>
+</rss>

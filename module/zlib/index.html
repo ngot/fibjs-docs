@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.20.7" />
+    <meta name="description" content="zlib compression and decompression module">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>zlib :: fibjs</title>
+    <link href="/css/nucleus.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/hybrid.css" rel="stylesheet">
+    <link href="/css/featherlight.min.css" rel="stylesheet">
+    <link href="/css/horsey.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+
+    
+
+    
+
+  </head>
+  <body class="" data-url="/module/zlib/">
+    
+<nav id="sidebar" class="">
+  <div id="header-wrapper">
+    <div id="header">
+       
+	<p>Fibjs Documentation</p>
+ 
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/horsey.js"></script>
+<script type="text/javascript">
+    var baseurl = "http:\/\/example.org\/";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+
+    
+  </div>
+
+  <div class="highlightable">
+    <ul class="topics">
+        
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+        
+
+        
+        
+        
+        
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/modules/" class="dd-item 
+         
+        parent
+        "
+        >
+            <a href="/modules/">
+                <span>Modules</span>
+                
+                    
+                        <i class="fa fa-angle-down fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+                
+                
+                
+                    
+                
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/assert/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/assert/">
+                <span>assert</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base32/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base32/">
+                <span>base32</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64/">
+                <span>base64</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64vlq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64vlq/">
+                <span>base64vlq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/bson/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/bson/">
+                <span>bson</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/console/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/console/">
+                <span>console</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/coroutine/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/coroutine/">
+                <span>coroutine</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/crypto/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/crypto/">
+                <span>crypto</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/db/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/db/">
+                <span>db</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/encoding/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/encoding/">
+                <span>encoding</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/fs/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/fs/">
+                <span>fs</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/gd/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/gd/">
+                <span>gd</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/global/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/global/">
+                <span>global</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hash/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hash/">
+                <span>hash</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hex/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hex/">
+                <span>hex</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/http/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/http/">
+                <span>http</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/iconv/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/iconv/">
+                <span>iconv</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/io/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/io/">
+                <span>io</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/json/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/json/">
+                <span>json</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/mq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/mq/">
+                <span>mq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/net/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/net/">
+                <span>net</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/os/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/os/">
+                <span>os</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/path/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/path/">
+                <span>path</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/process/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/process/">
+                <span>process</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/profiler/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/profiler/">
+                <span>profiler</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/re/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/re/">
+                <span>re</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/ssl/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/ssl/">
+                <span>ssl</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/test/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/test/">
+                <span>test</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/util/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/util/">
+                <span>util</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/uuid/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/uuid/">
+                <span>uuid</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/vm/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/vm/">
+                <span>vm</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/websocket/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/websocket/">
+                <span>websocket</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/xml/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/xml/">
+                <span>xml</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zip/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zip/">
+                <span>zip</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zlib/" class="dd-item 
+        active 
+        
+        "
+        >
+            <a href="/module/zlib/">
+                <span>zlib</span>
+                
+                
+            </a>
+            
+                
+                
+                
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/objects/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/objects/">
+                <span>Objects</span>
+                
+                    
+                        <i class="fa fa-angle-right fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/asyncwait/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/asyncwait/">
+                <span>AsyncWait</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/buffer/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/buffer/">
+                <span>Buffer</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+
+        
+
+        
+        
+        
+    </ul>
+    
+     
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+        
+          <div id="top-bar">
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                <span id="toc-menu"><a href=""><i class="fa fa-list-alt"></i></a></span>
+                <a href="http://example.org/">
+                  <span class="fa fa-arrow-circle-right" style="font-size:larger" aria-hidden="true"></span>
+                  fibjs
+                </a>
+                
+                   / <a href='/modules/'>Modules</a> / <a href='/module/zlib/'>zlib</a>
+                
+                
+            </div>
+            <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#members">Members</a>
+<ul>
+<li>
+<ul>
+<li><a href="#public-static-buffer-d0-d11-classbuffer-deflate-d9-d3e-namespacezlib-1a4bbb2133b9a39ea72db80e845a6ad0aa-buffer-d0-d11-classbuffer-data-integer-level"><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1a4bbb2133b9a39ea72db80e845a6ad0aa"><code>deflate</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,Integer level)</code></a></li>
+<li><a href="#parameters">Parameters</a></li>
+<li><a href="#returns">Returns</a></li>
+<li><a href="#public-static-static-deflateto-d9-d3e-namespacezlib-1aa6b8b6d518e950dbaca2b18ab4330fbe-buffer-d0-d11-classbuffer-data-stream-d4-dc7-interfacestream-stm-integer-level"><code>public static static</code><a href="#d9/d3e/namespacezlib_1aa6b8b6d518e950dbaca2b18ab4330fbe"><code>deflateTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm,Integer level)</code></a></li>
+<li><a href="#parameters-1">Parameters</a></li>
+<li><a href="#public-static-static-deflateto-d9-d3e-namespacezlib-1a26b0d322158d30cfb60c774ee212f8d1-stream-d4-dc7-interfacestream-src-stream-d4-dc7-interfacestream-stm-integer-level"><code>public static static</code><a href="#d9/d3e/namespacezlib_1a26b0d322158d30cfb60c774ee212f8d1"><code>deflateTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm,Integer level)</code></a></li>
+<li><a href="#parameters-2">Parameters</a></li>
+<li><a href="#public-static-buffer-d0-d11-classbuffer-inflate-d9-d3e-namespacezlib-1aafe7acf37cd4edfe4355ddca34cdd123-buffer-d0-d11-classbuffer-data"><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1aafe7acf37cd4edfe4355ddca34cdd123"><code>inflate</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></a></li>
+<li><a href="#parameters-3">Parameters</a></li>
+<li><a href="#returns-1">Returns</a></li>
+<li><a href="#public-static-static-inflateto-d9-d3e-namespacezlib-1a1a585f4bb4ce9146953c29af284ba62f-buffer-d0-d11-classbuffer-data-stream-d4-dc7-interfacestream-stm"><code>public static static</code><a href="#d9/d3e/namespacezlib_1a1a585f4bb4ce9146953c29af284ba62f"><code>inflateTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></a></li>
+<li><a href="#parameters-4">Parameters</a></li>
+<li><a href="#public-static-static-inflateto-d9-d3e-namespacezlib-1a2f4fbd12a75605838e9aafdcc2813c10-stream-d4-dc7-interfacestream-src-stream-d4-dc7-interfacestream-stm"><code>public static static</code><a href="#d9/d3e/namespacezlib_1a2f4fbd12a75605838e9aafdcc2813c10"><code>inflateTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></a></li>
+<li><a href="#parameters-5">Parameters</a></li>
+<li><a href="#public-static-buffer-d0-d11-classbuffer-gzip-d9-d3e-namespacezlib-1a3a522ddbc8cde00ea8d9021c330c0ad5-buffer-d0-d11-classbuffer-data"><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1a3a522ddbc8cde00ea8d9021c330c0ad5"><code>gzip</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></a></li>
+<li><a href="#parameters-6">Parameters</a></li>
+<li><a href="#returns-2">Returns</a></li>
+<li><a href="#public-static-static-gzipto-d9-d3e-namespacezlib-1aaa9064c2afae1452123bbf6759e0d01a-buffer-d0-d11-classbuffer-data-stream-d4-dc7-interfacestream-stm"><code>public static static</code><a href="#d9/d3e/namespacezlib_1aaa9064c2afae1452123bbf6759e0d01a"><code>gzipTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></a></li>
+<li><a href="#parameters-7">Parameters</a></li>
+<li><a href="#public-static-static-gzipto-d9-d3e-namespacezlib-1ac5f35bb15047380a3f30da60474557c0-stream-d4-dc7-interfacestream-src-stream-d4-dc7-interfacestream-stm"><code>public static static</code><a href="#d9/d3e/namespacezlib_1ac5f35bb15047380a3f30da60474557c0"><code>gzipTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></a></li>
+<li><a href="#parameters-8">Parameters</a></li>
+<li><a href="#public-static-buffer-d0-d11-classbuffer-gunzip-d9-d3e-namespacezlib-1a165562467d193e958c2349445dc3f90c-buffer-d0-d11-classbuffer-data"><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1a165562467d193e958c2349445dc3f90c"><code>gunzip</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></a></li>
+<li><a href="#parameters-9">Parameters</a></li>
+<li><a href="#returns-3">Returns</a></li>
+<li><a href="#public-static-static-gunzipto-d9-d3e-namespacezlib-1ad2fdcb8ce8aac7124267a9e621766638-buffer-d0-d11-classbuffer-data-stream-d4-dc7-interfacestream-stm"><code>public static static</code><a href="#d9/d3e/namespacezlib_1ad2fdcb8ce8aac7124267a9e621766638"><code>gunzipTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></a></li>
+<li><a href="#parameters-10">Parameters</a></li>
+<li><a href="#public-static-static-gunzipto-d9-d3e-namespacezlib-1ad754fb667c7bffa4aa237ddad1109dab-stream-d4-dc7-interfacestream-src-stream-d4-dc7-interfacestream-stm"><code>public static static</code><a href="#d9/d3e/namespacezlib_1ad754fb667c7bffa4aa237ddad1109dab"><code>gunzipTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></a></li>
+<li><a href="#parameters-11">Parameters</a></li>
+<li><a href="#public-static-buffer-d0-d11-classbuffer-deflateraw-d9-d3e-namespacezlib-1a7a09dd4d3921bf70f09f2dc29672ccaa-buffer-d0-d11-classbuffer-data-integer-level"><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1a7a09dd4d3921bf70f09f2dc29672ccaa"><code>deflateRaw</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,Integer level)</code></a></li>
+<li><a href="#parameters-12">Parameters</a></li>
+<li><a href="#returns-4">Returns</a></li>
+<li><a href="#public-static-static-deflaterawto-d9-d3e-namespacezlib-1a8b171e4ac0cedfdcfe0b042bd8f2f07d-buffer-d0-d11-classbuffer-data-stream-d4-dc7-interfacestream-stm-integer-level"><code>public static static</code><a href="#d9/d3e/namespacezlib_1a8b171e4ac0cedfdcfe0b042bd8f2f07d"><code>deflateRawTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm,Integer level)</code></a></li>
+<li><a href="#parameters-13">Parameters</a></li>
+<li><a href="#public-static-static-deflaterawto-d9-d3e-namespacezlib-1a82dedb02bcde6653fc8f94c3d95b2f28-stream-d4-dc7-interfacestream-src-stream-d4-dc7-interfacestream-stm-integer-level"><code>public static static</code><a href="#d9/d3e/namespacezlib_1a82dedb02bcde6653fc8f94c3d95b2f28"><code>deflateRawTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm,Integer level)</code></a></li>
+<li><a href="#parameters-14">Parameters</a></li>
+<li><a href="#public-static-buffer-d0-d11-classbuffer-inflateraw-d9-d3e-namespacezlib-1ae1d8e31d0220c80eda00e50a1b466932-buffer-d0-d11-classbuffer-data"><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1ae1d8e31d0220c80eda00e50a1b466932"><code>inflateRaw</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></a></li>
+<li><a href="#parameters-15">Parameters</a></li>
+<li><a href="#returns-5">Returns</a></li>
+<li><a href="#public-static-static-inflaterawto-d9-d3e-namespacezlib-1af15999662fec5f069ee6f25e3821bf43-buffer-d0-d11-classbuffer-data-stream-d4-dc7-interfacestream-stm"><code>public static static</code><a href="#d9/d3e/namespacezlib_1af15999662fec5f069ee6f25e3821bf43"><code>inflateRawTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></a></li>
+<li><a href="#parameters-16">Parameters</a></li>
+<li><a href="#public-static-static-inflaterawto-d9-d3e-namespacezlib-1aa3e4997d8d6449b0a43fba7660c20298-stream-d4-dc7-interfacestream-src-stream-d4-dc7-interfacestream-stm"><code>public static static</code><a href="#d9/d3e/namespacezlib_1aa3e4997d8d6449b0a43fba7660c20298"><code>inflateRawTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></a></li>
+<li><a href="#parameters-17">Parameters</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+          </div>
+        
+        
+        <div id="body-inner">
+          
+            <h1>zlib</h1>
+          
+
+
+
+
+<p>zlib compression and decompression module</p>
+
+<p>To use it:</p>
+
+<pre><code class="language-cpp">var zlib = require('zlib');
+</code></pre>
+
+<h2 id="summary">Summary</h2>
+
+<table>
+<thead>
+<tr>
+<th>Members</th>
+<th>Descriptions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1a4bbb2133b9a39ea72db80e845a6ad0aa"><code>deflate</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,Integer level)</code></td>
+<td>Use deflate to compress data (zlib format)</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d9/d3e/namespacezlib_1aa6b8b6d518e950dbaca2b18ab4330fbe"><code>deflateTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm,Integer level)</code></td>
+<td>Use deflate to compress data to stream (zlib format)</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d9/d3e/namespacezlib_1a26b0d322158d30cfb60c774ee212f8d1"><code>deflateTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm,Integer level)</code></td>
+<td>Use deflate to compress a stream data to another (zlib format)</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1aafe7acf37cd4edfe4355ddca34cdd123"><code>inflate</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></td>
+<td>Use deflate to decompress data (zlib format)</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d9/d3e/namespacezlib_1a1a585f4bb4ce9146953c29af284ba62f"><code>inflateTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></td>
+<td>Use deflate to decompress data to stream (zlib format)</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d9/d3e/namespacezlib_1a2f4fbd12a75605838e9aafdcc2813c10"><code>inflateTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></td>
+<td>Use deflate to decompress a stream data to another (zlib format)</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1a3a522ddbc8cde00ea8d9021c330c0ad5"><code>gzip</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></td>
+<td>Use gzip to compress data.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d9/d3e/namespacezlib_1aaa9064c2afae1452123bbf6759e0d01a"><code>gzipTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></td>
+<td>Use gzip to compress data to stream.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d9/d3e/namespacezlib_1ac5f35bb15047380a3f30da60474557c0"><code>gzipTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></td>
+<td>Use gzip to compress a stream data to another.</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1a165562467d193e958c2349445dc3f90c"><code>gunzip</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></td>
+<td>Use gzip to decompress data.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d9/d3e/namespacezlib_1ad2fdcb8ce8aac7124267a9e621766638"><code>gunzipTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></td>
+<td>Use gzip to decompress data to stream.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d9/d3e/namespacezlib_1ad754fb667c7bffa4aa237ddad1109dab"><code>gunzipTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></td>
+<td>Use gzip to decompress a stream data to another.</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1a7a09dd4d3921bf70f09f2dc29672ccaa"><code>deflateRaw</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,Integer level)</code></td>
+<td>Use deflate to compress data (deflateRaw)</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d9/d3e/namespacezlib_1a8b171e4ac0cedfdcfe0b042bd8f2f07d"><code>deflateRawTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm,Integer level)</code></td>
+<td>Use deflate to compress data to stream (deflateRaw)</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d9/d3e/namespacezlib_1a82dedb02bcde6653fc8f94c3d95b2f28"><code>deflateRawTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm,Integer level)</code></td>
+<td>Use deflate to compress a stream data to another (deflateRaw)</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1ae1d8e31d0220c80eda00e50a1b466932"><code>inflateRaw</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></td>
+<td>Use deflate to decompress data (deflateRaw)</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d9/d3e/namespacezlib_1af15999662fec5f069ee6f25e3821bf43"><code>inflateRawTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></td>
+<td>Use deflate to decompress data to stream (deflateRaw)</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d9/d3e/namespacezlib_1aa3e4997d8d6449b0a43fba7660c20298"><code>inflateRawTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></td>
+<td>Use deflate to decompress a stream data to another (deflateRaw)</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="members">Members</h2>
+
+<h4 id="public-static-buffer-d0-d11-classbuffer-deflate-d9-d3e-namespacezlib-1a4bbb2133b9a39ea72db80e845a6ad0aa-buffer-d0-d11-classbuffer-data-integer-level"><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1a4bbb2133b9a39ea72db80e845a6ad0aa"><code>deflate</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,Integer level)</code></h4>
+
+<p>Use deflate to compress data (zlib format)</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><p><code>data</code> Raw data</p></li>
+
+<li><p><code>level</code> Indicate compression level, default is DEFAULT_COMPRESSION</p></li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<p>Return compressed binary</p>
+
+<h4 id="public-static-static-deflateto-d9-d3e-namespacezlib-1aa6b8b6d518e950dbaca2b18ab4330fbe-buffer-d0-d11-classbuffer-data-stream-d4-dc7-interfacestream-stm-integer-level"><code>public static static</code><a href="#d9/d3e/namespacezlib_1aa6b8b6d518e950dbaca2b18ab4330fbe"><code>deflateTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm,Integer level)</code></h4>
+
+<p>Use deflate to compress data to stream (zlib format)</p>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<ul>
+<li><p><code>data</code> Raw data</p></li>
+
+<li><p><code>stm</code> <a href="#d4/dc7/interfaceStream">Stream</a> to write compressed data</p></li>
+
+<li><p><code>level</code> Indicate compression level, default is DEFAULT_COMPRESSION</p></li>
+</ul>
+
+<h4 id="public-static-static-deflateto-d9-d3e-namespacezlib-1a26b0d322158d30cfb60c774ee212f8d1-stream-d4-dc7-interfacestream-src-stream-d4-dc7-interfacestream-stm-integer-level"><code>public static static</code><a href="#d9/d3e/namespacezlib_1a26b0d322158d30cfb60c774ee212f8d1"><code>deflateTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm,Integer level)</code></h4>
+
+<p>Use deflate to compress a stream data to another (zlib format)</p>
+
+<h4 id="parameters-2">Parameters</h4>
+
+<ul>
+<li><p><code>src</code> Original stream</p></li>
+
+<li><p><code>stm</code> Target stream to write compressed data</p></li>
+
+<li><p><code>level</code> Indicate compression level, default is DEFAULT_COMPRESSION</p></li>
+</ul>
+
+<h4 id="public-static-buffer-d0-d11-classbuffer-inflate-d9-d3e-namespacezlib-1aafe7acf37cd4edfe4355ddca34cdd123-buffer-d0-d11-classbuffer-data"><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1aafe7acf37cd4edfe4355ddca34cdd123"><code>inflate</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></h4>
+
+<p>Use deflate to decompress data (zlib format)</p>
+
+<h4 id="parameters-3">Parameters</h4>
+
+<ul>
+<li><code>data</code> Compressed data</li>
+</ul>
+
+<h4 id="returns-1">Returns</h4>
+
+<p>Return decompressed binary</p>
+
+<h4 id="public-static-static-inflateto-d9-d3e-namespacezlib-1a1a585f4bb4ce9146953c29af284ba62f-buffer-d0-d11-classbuffer-data-stream-d4-dc7-interfacestream-stm"><code>public static static</code><a href="#d9/d3e/namespacezlib_1a1a585f4bb4ce9146953c29af284ba62f"><code>inflateTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></h4>
+
+<p>Use deflate to decompress data to stream (zlib format)</p>
+
+<h4 id="parameters-4">Parameters</h4>
+
+<ul>
+<li><p><code>data</code> Compressed data</p></li>
+
+<li><p><code>stm</code> <a href="#d4/dc7/interfaceStream">Stream</a> to write decompressed data</p></li>
+</ul>
+
+<h4 id="public-static-static-inflateto-d9-d3e-namespacezlib-1a2f4fbd12a75605838e9aafdcc2813c10-stream-d4-dc7-interfacestream-src-stream-d4-dc7-interfacestream-stm"><code>public static static</code><a href="#d9/d3e/namespacezlib_1a2f4fbd12a75605838e9aafdcc2813c10"><code>inflateTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></h4>
+
+<p>Use deflate to decompress a stream data to another (zlib format)</p>
+
+<h4 id="parameters-5">Parameters</h4>
+
+<ul>
+<li><p><code>src</code> Original stream</p></li>
+
+<li><p><code>stm</code> Target stream to write decompressed data</p></li>
+</ul>
+
+<h4 id="public-static-buffer-d0-d11-classbuffer-gzip-d9-d3e-namespacezlib-1a3a522ddbc8cde00ea8d9021c330c0ad5-buffer-d0-d11-classbuffer-data"><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1a3a522ddbc8cde00ea8d9021c330c0ad5"><code>gzip</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></h4>
+
+<p>Use gzip to compress data.</p>
+
+<h4 id="parameters-6">Parameters</h4>
+
+<ul>
+<li><code>data</code> Raw data</li>
+</ul>
+
+<h4 id="returns-2">Returns</h4>
+
+<p>Return compressed binary</p>
+
+<h4 id="public-static-static-gzipto-d9-d3e-namespacezlib-1aaa9064c2afae1452123bbf6759e0d01a-buffer-d0-d11-classbuffer-data-stream-d4-dc7-interfacestream-stm"><code>public static static</code><a href="#d9/d3e/namespacezlib_1aaa9064c2afae1452123bbf6759e0d01a"><code>gzipTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></h4>
+
+<p>Use gzip to compress data to stream.</p>
+
+<h4 id="parameters-7">Parameters</h4>
+
+<ul>
+<li><p><code>data</code> Raw data</p></li>
+
+<li><p><code>stm</code> <a href="#d4/dc7/interfaceStream">Stream</a> to write compressed data</p></li>
+</ul>
+
+<h4 id="public-static-static-gzipto-d9-d3e-namespacezlib-1ac5f35bb15047380a3f30da60474557c0-stream-d4-dc7-interfacestream-src-stream-d4-dc7-interfacestream-stm"><code>public static static</code><a href="#d9/d3e/namespacezlib_1ac5f35bb15047380a3f30da60474557c0"><code>gzipTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></h4>
+
+<p>Use gzip to compress a stream data to another.</p>
+
+<h4 id="parameters-8">Parameters</h4>
+
+<ul>
+<li><p><code>src</code> Original stream</p></li>
+
+<li><p><code>stm</code> Target stream to write compressed data</p></li>
+</ul>
+
+<h4 id="public-static-buffer-d0-d11-classbuffer-gunzip-d9-d3e-namespacezlib-1a165562467d193e958c2349445dc3f90c-buffer-d0-d11-classbuffer-data"><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1a165562467d193e958c2349445dc3f90c"><code>gunzip</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></h4>
+
+<p>Use gzip to decompress data.</p>
+
+<h4 id="parameters-9">Parameters</h4>
+
+<ul>
+<li><code>data</code> Compressed data</li>
+</ul>
+
+<h4 id="returns-3">Returns</h4>
+
+<p>Return decompressed binary</p>
+
+<h4 id="public-static-static-gunzipto-d9-d3e-namespacezlib-1ad2fdcb8ce8aac7124267a9e621766638-buffer-d0-d11-classbuffer-data-stream-d4-dc7-interfacestream-stm"><code>public static static</code><a href="#d9/d3e/namespacezlib_1ad2fdcb8ce8aac7124267a9e621766638"><code>gunzipTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></h4>
+
+<p>Use gzip to decompress data to stream.</p>
+
+<h4 id="parameters-10">Parameters</h4>
+
+<ul>
+<li><p><code>data</code> Compressed data</p></li>
+
+<li><p><code>stm</code> <a href="#d4/dc7/interfaceStream">Stream</a> to write decompressed data</p></li>
+</ul>
+
+<h4 id="public-static-static-gunzipto-d9-d3e-namespacezlib-1ad754fb667c7bffa4aa237ddad1109dab-stream-d4-dc7-interfacestream-src-stream-d4-dc7-interfacestream-stm"><code>public static static</code><a href="#d9/d3e/namespacezlib_1ad754fb667c7bffa4aa237ddad1109dab"><code>gunzipTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></h4>
+
+<p>Use gzip to decompress a stream data to another.</p>
+
+<h4 id="parameters-11">Parameters</h4>
+
+<ul>
+<li><p><code>src</code> Original stream</p></li>
+
+<li><p><code>stm</code> Target stream to write decompressed data</p></li>
+</ul>
+
+<h4 id="public-static-buffer-d0-d11-classbuffer-deflateraw-d9-d3e-namespacezlib-1a7a09dd4d3921bf70f09f2dc29672ccaa-buffer-d0-d11-classbuffer-data-integer-level"><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1a7a09dd4d3921bf70f09f2dc29672ccaa"><code>deflateRaw</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,Integer level)</code></h4>
+
+<p>Use deflate to compress data (deflateRaw)</p>
+
+<h4 id="parameters-12">Parameters</h4>
+
+<ul>
+<li><p><code>data</code> Raw data</p></li>
+
+<li><p><code>level</code> Indicate compression level, default is DEFAULT_COMPRESSION</p></li>
+</ul>
+
+<h4 id="returns-4">Returns</h4>
+
+<p>Return compressed binary</p>
+
+<h4 id="public-static-static-deflaterawto-d9-d3e-namespacezlib-1a8b171e4ac0cedfdcfe0b042bd8f2f07d-buffer-d0-d11-classbuffer-data-stream-d4-dc7-interfacestream-stm-integer-level"><code>public static static</code><a href="#d9/d3e/namespacezlib_1a8b171e4ac0cedfdcfe0b042bd8f2f07d"><code>deflateRawTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm,Integer level)</code></h4>
+
+<p>Use deflate to compress data to stream (deflateRaw)</p>
+
+<h4 id="parameters-13">Parameters</h4>
+
+<ul>
+<li><p><code>data</code> Raw data</p></li>
+
+<li><p><code>stm</code> <a href="#d4/dc7/interfaceStream">Stream</a> to write compressed data</p></li>
+
+<li><p><code>level</code> Indicate compression level, default is DEFAULT_COMPRESSION</p></li>
+</ul>
+
+<h4 id="public-static-static-deflaterawto-d9-d3e-namespacezlib-1a82dedb02bcde6653fc8f94c3d95b2f28-stream-d4-dc7-interfacestream-src-stream-d4-dc7-interfacestream-stm-integer-level"><code>public static static</code><a href="#d9/d3e/namespacezlib_1a82dedb02bcde6653fc8f94c3d95b2f28"><code>deflateRawTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm,Integer level)</code></h4>
+
+<p>Use deflate to compress a stream data to another (deflateRaw)</p>
+
+<h4 id="parameters-14">Parameters</h4>
+
+<ul>
+<li><p><code>src</code> Original stream</p></li>
+
+<li><p><code>stm</code> Target stream to write compressed data</p></li>
+
+<li><p><code>level</code> Indicate compression level, default is DEFAULT_COMPRESSION</p></li>
+</ul>
+
+<h4 id="public-static-buffer-d0-d11-classbuffer-inflateraw-d9-d3e-namespacezlib-1ae1d8e31d0220c80eda00e50a1b466932-buffer-d0-d11-classbuffer-data"><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d9/d3e/namespacezlib_1ae1d8e31d0220c80eda00e50a1b466932"><code>inflateRaw</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></h4>
+
+<p>Use deflate to decompress data (deflateRaw)</p>
+
+<h4 id="parameters-15">Parameters</h4>
+
+<ul>
+<li><code>data</code> Compressed data</li>
+</ul>
+
+<h4 id="returns-5">Returns</h4>
+
+<p>Return decompressed binary</p>
+
+<h4 id="public-static-static-inflaterawto-d9-d3e-namespacezlib-1af15999662fec5f069ee6f25e3821bf43-buffer-d0-d11-classbuffer-data-stream-d4-dc7-interfacestream-stm"><code>public static static</code><a href="#d9/d3e/namespacezlib_1af15999662fec5f069ee6f25e3821bf43"><code>inflateRawTo</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></h4>
+
+<p>Use deflate to decompress data to stream (deflateRaw)</p>
+
+<h4 id="parameters-16">Parameters</h4>
+
+<ul>
+<li><p><code>data</code> Compressed data</p></li>
+
+<li><p><code>stm</code> <a href="#d4/dc7/interfaceStream">Stream</a> to write decompressed data</p></li>
+</ul>
+
+<h4 id="public-static-static-inflaterawto-d9-d3e-namespacezlib-1aa3e4997d8d6449b0a43fba7660c20298-stream-d4-dc7-interfacestream-src-stream-d4-dc7-interfacestream-stm"><code>public static static</code><a href="#d9/d3e/namespacezlib_1aa3e4997d8d6449b0a43fba7660c20298"><code>inflateRawTo</code></a><code>(</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>src,</code><a href="#d4/dc7/interfaceStream"><code>Stream</code></a><code>stm)</code></h4>
+
+<p>Use deflate to decompress a stream data to another (deflateRaw)</p>
+
+<h4 id="parameters-17">Parameters</h4>
+
+<ul>
+<li><p><code>src</code> Original stream</p></li>
+
+<li><p><code>stm</code> Target stream to write decompressed data</p></li>
+</ul>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+
+      </div>
+    </div>
+
+    
+ 
+    
+
+    <div id="navigation">
+        
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+        
+            
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+          
+
+        
+
+
+        
+            <a class="nav nav-prev" href="/module/zip/" title="zip"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/objects/" title="Objects" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js"></script>
+    <script src="/js/jquery.sticky-kit.min.js"></script>
+    <script src="/js/featherlight.min.js"></script>
+    <script src="/js/html5shiv-printshiv.min.js"></script>
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js"></script>
+    <script src="/js/learn.js"></script>
+    <script src="/js/hugo-learn.js"></script>
+
+    
+    <link href="/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script src="/mermaid/mermaid.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+
+    
+
+  </body>
+</html>
+

@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.20.7" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>Modules :: fibjs</title>
+    <link href="/css/nucleus.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/hybrid.css" rel="stylesheet">
+    <link href="/css/featherlight.min.css" rel="stylesheet">
+    <link href="/css/horsey.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+
+    
+
+    
+
+  </head>
+  <body class="" data-url="/module/">
+    
+<nav id="sidebar" class="">
+  <div id="header-wrapper">
+    <div id="header">
+       
+	<p>Fibjs Documentation</p>
+ 
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/horsey.js"></script>
+<script type="text/javascript">
+    var baseurl = "http:\/\/example.org\/";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+
+    
+  </div>
+
+  <div class="highlightable">
+    <ul class="topics">
+        
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+        
+
+        
+        
+        
+        
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/modules/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/modules/">
+                <span>Modules</span>
+                
+                    
+                        <i class="fa fa-angle-right fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/assert/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/assert/">
+                <span>assert</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base32/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base32/">
+                <span>base32</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64/">
+                <span>base64</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64vlq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64vlq/">
+                <span>base64vlq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/bson/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/bson/">
+                <span>bson</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/console/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/console/">
+                <span>console</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/coroutine/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/coroutine/">
+                <span>coroutine</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/crypto/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/crypto/">
+                <span>crypto</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/db/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/db/">
+                <span>db</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/encoding/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/encoding/">
+                <span>encoding</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/fs/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/fs/">
+                <span>fs</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/gd/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/gd/">
+                <span>gd</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/global/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/global/">
+                <span>global</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hash/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hash/">
+                <span>hash</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hex/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hex/">
+                <span>hex</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/http/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/http/">
+                <span>http</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/iconv/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/iconv/">
+                <span>iconv</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/io/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/io/">
+                <span>io</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/json/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/json/">
+                <span>json</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/mq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/mq/">
+                <span>mq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/net/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/net/">
+                <span>net</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/os/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/os/">
+                <span>os</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/path/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/path/">
+                <span>path</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/process/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/process/">
+                <span>process</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/profiler/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/profiler/">
+                <span>profiler</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/re/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/re/">
+                <span>re</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/ssl/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/ssl/">
+                <span>ssl</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/test/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/test/">
+                <span>test</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/util/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/util/">
+                <span>util</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/uuid/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/uuid/">
+                <span>uuid</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/vm/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/vm/">
+                <span>vm</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/websocket/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/websocket/">
+                <span>websocket</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/xml/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/xml/">
+                <span>xml</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zip/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zip/">
+                <span>zip</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zlib/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zlib/">
+                <span>zlib</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/objects/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/objects/">
+                <span>Objects</span>
+                
+                    
+                        <i class="fa fa-angle-right fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/asyncwait/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/asyncwait/">
+                <span>AsyncWait</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/buffer/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/buffer/">
+                <span>Buffer</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+
+        
+
+        
+        
+        
+    </ul>
+    
+     
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+        
+          <div id="top-bar">
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                <span id="toc-menu"><a href=""><i class="fa fa-list-alt"></i></a></span>
+                <a href="http://example.org/">
+                  <span class="fa fa-arrow-circle-right" style="font-size:larger" aria-hidden="true"></span>
+                  fibjs
+                </a>
+                
+                 > Modules
+            </div>
+            <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+          </div>
+        
+        
+        <div id="body-inner">
+          
+            <h1>Modules</h1>
+          
+
+
+
+
+
+<div class="extra-pagination inner">
+<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 on 4</span>
+	
+	    <a class="older-posts" href="/module/page/2/">Previous Pages &rarr;</a>
+	
+</nav>
+
+</div>
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/assert/">assert</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Assertion test module, if testing result is false, you will get an error. The way of handling error can be set as continue or throw exception.
+how to use:
+var assert = require('assert');  or using testing unit:
+var test = require('test'); var assert = test.assert;  or you can use test.setup to set up test:
+require(&quot;test&quot;).setup();  Summary    Members Descriptions     public static staticok(Value actual,String msg) Return true when the testing result is ture, assertion failed when return false. <a class="read-more" href="/module/assert/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/base32/">base32</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>base32 module with encode and decode operations. to use:
+var encoding = require('encoding'); var base32 = encoding.base32;  or:
+var base32 = require('base32');  Summary    Members Descriptions     public static Stringencode(Bufferdata) Encode buffer data to string with base32 format.   public staticBufferdecode(String data) Decode string to binary data with base32 format.    Members public static Stringencode(Bufferdata) Encode buffer data to string with base32 format. <a class="read-more" href="/module/base32/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/base64/">base64</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>base64 module with encode and decode operations. to use:
+var encoding = require('encoding'); var base64 = encoding.base64;  or:
+var base64 = require('base64');  Summary    Members Descriptions     public static Stringencode(Bufferdata) Encode buffer data to string with base64 format.   public staticBufferdecode(String data) Decode string to binary data with base64 format.    Members public static Stringencode(Bufferdata) Encode buffer data to string with base64 format. <a class="read-more" href="/module/base64/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/base64vlq/">base64vlq</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>base64vlq module with encode and decode operations. to use:
+var encoding = require('encoding'); var base64vlq = encoding.base64vlq;  or:
+var base64vlq = require('base64vlq');  Summary    Members Descriptions     public static Stringencode(Integer data) Encode int data to string with base64vlq format.   public static Stringencode(Array data) Encode array data to string with base64vlq format.   public static Arraydecode(String data) Decode string to binary data with base64vlq format. <a class="read-more" href="/module/base64vlq/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/bson/">bson</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>bson module with encode and decode operations. to use:
+var encoding = require('encoding'); var bson = encoding.bson;  or:
+var bson = require('bson');  Summary    Members Descriptions     public staticBufferencode(Object data) Encode object to binary data with bson format.   public static Objectdecode(Bufferdata) Decode binary data to object with bson format.    Members public staticBufferencode(Object data) Encode object to binary data with bson format. <a class="read-more" href="/module/bson/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/console/">console</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>console module
+Global reference. Console can be used to log info, warnings and errors. Log can be trace on different device when initialized from config files for tracking. Console logs support formatted output, e.g.
+console.log(&quot;%d + %d = %d&quot;, 100, 200, 100 + 200);   s - string
+ d - number, including initeger and numbers
+ j - output in JSON
+ %% - output &ldquo; character <a class="read-more" href="/module/console/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/coroutine/">coroutine</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Concurrency control module.
+The way to use: var coroutine = require(&lsquo;coroutine&rsquo;);
+Summary    Members Descriptions     public staticFiberstart(Function func,...) Start a fibers and return the fiber Object.   public static Arrayparallel(Array funcs,Integer fibers) Execute a set of functions parallel, and wait for the return.   public static Arrayparallel(Array datas,Function func,Integer fibers) Execute a function deal with a set of data parallel, and wait for the return. <a class="read-more" href="/module/coroutine/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/crypto/">crypto</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Encryption algorithm module.
+The way to use:
+var crypto = require('crypto');  Summary    Members Descriptions     public staticPKeyloadPKey(String filename,String password) Load a PEM/DER format key file.   public staticX509CertloadCert(String filename) Load a CRT/PEM/DER/TXT format certificate can be called multiple times.   public staticX509CrlloadCrl(String filename) Load a PEM/DER format revoked certificate can be called multiple times.   public staticX509ReqloadReq(String filename) Load a PEM/DER format requested certificate can be called multiple times. <a class="read-more" href="/module/crypto/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/db/">db</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Database access module.
+Basic module for create database and database operation, The way to use::
+var db = require('db');  Summary    Members Descriptions     public staticobjectopen(String connString) This method offer a general entrance to open a database, call different engines according to the providing connString.   public staticMySQLopenMySQL(String connString) Open a mysql database.   public staticSQLiteopenSQLite(String connString) Open a sqlite database.   public staticMongoDBopenMongoDB(String connString) Open a mongodb database. <a class="read-more" href="/module/db/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/encoding/">encoding</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>module with encode and decode operations between hex and other format data. to use:
+var encoding = require('encoding');  Summary    Members Descriptions     public static Stringjsstr(String str,Boolean json) Encode the string to Javascript escaped string that can be contained in the javascript code.   public static StringencodeURI(String url) Url encoding.   public static StringencodeURIComponent(String url) Url component encoding.   public static StringdecodeURI(String url) Url decoding. <a class="read-more" href="/module/encoding/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+
+<div style="margin-bottom:2rem"></div>
+
+<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 on 4</span>
+	
+	    <a class="older-posts" href="/module/page/2/">Previous Pages &rarr;</a>
+	
+</nav>
+
+
+
+
+
+
+      </div>
+    </div>
+
+    
+ 
+    
+
+    <div id="navigation">
+        
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+          
+
+        
+
+
+        
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js"></script>
+    <script src="/js/jquery.sticky-kit.min.js"></script>
+    <script src="/js/featherlight.min.js"></script>
+    <script src="/js/html5shiv-printshiv.min.js"></script>
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js"></script>
+    <script src="/js/learn.js"></script>
+    <script src="/js/hugo-learn.js"></script>
+
+    
+    <link href="/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script src="/mermaid/mermaid.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+
+    
+
+  </body>
+</html>
+

@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.20.7" />
+    <meta name="description" content="Image processing module.">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>gd :: fibjs</title>
+    <link href="/css/nucleus.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/hybrid.css" rel="stylesheet">
+    <link href="/css/featherlight.min.css" rel="stylesheet">
+    <link href="/css/horsey.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+
+    
+
+    
+
+  </head>
+  <body class="" data-url="/module/gd/">
+    
+<nav id="sidebar" class="">
+  <div id="header-wrapper">
+    <div id="header">
+       
+	<p>Fibjs Documentation</p>
+ 
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/horsey.js"></script>
+<script type="text/javascript">
+    var baseurl = "http:\/\/example.org\/";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+
+    
+  </div>
+
+  <div class="highlightable">
+    <ul class="topics">
+        
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+        
+
+        
+        
+        
+        
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/modules/" class="dd-item 
+         
+        parent
+        "
+        >
+            <a href="/modules/">
+                <span>Modules</span>
+                
+                    
+                        <i class="fa fa-angle-down fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+                
+                
+                
+                    
+                
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/assert/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/assert/">
+                <span>assert</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base32/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base32/">
+                <span>base32</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64/">
+                <span>base64</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64vlq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64vlq/">
+                <span>base64vlq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/bson/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/bson/">
+                <span>bson</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/console/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/console/">
+                <span>console</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/coroutine/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/coroutine/">
+                <span>coroutine</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/crypto/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/crypto/">
+                <span>crypto</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/db/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/db/">
+                <span>db</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/encoding/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/encoding/">
+                <span>encoding</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/fs/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/fs/">
+                <span>fs</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/gd/" class="dd-item 
+        active 
+        
+        "
+        >
+            <a href="/module/gd/">
+                <span>gd</span>
+                
+                
+            </a>
+            
+                
+                
+                
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/global/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/global/">
+                <span>global</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hash/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hash/">
+                <span>hash</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hex/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hex/">
+                <span>hex</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/http/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/http/">
+                <span>http</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/iconv/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/iconv/">
+                <span>iconv</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/io/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/io/">
+                <span>io</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/json/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/json/">
+                <span>json</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/mq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/mq/">
+                <span>mq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/net/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/net/">
+                <span>net</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/os/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/os/">
+                <span>os</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/path/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/path/">
+                <span>path</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/process/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/process/">
+                <span>process</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/profiler/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/profiler/">
+                <span>profiler</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/re/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/re/">
+                <span>re</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/ssl/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/ssl/">
+                <span>ssl</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/test/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/test/">
+                <span>test</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/util/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/util/">
+                <span>util</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/uuid/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/uuid/">
+                <span>uuid</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/vm/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/vm/">
+                <span>vm</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/websocket/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/websocket/">
+                <span>websocket</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/xml/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/xml/">
+                <span>xml</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zip/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zip/">
+                <span>zip</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zlib/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zlib/">
+                <span>zlib</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/objects/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/objects/">
+                <span>Objects</span>
+                
+                    
+                        <i class="fa fa-angle-right fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/asyncwait/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/asyncwait/">
+                <span>AsyncWait</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/buffer/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/buffer/">
+                <span>Buffer</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+
+        
+
+        
+        
+        
+    </ul>
+    
+     
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+        
+          <div id="top-bar">
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                <span id="toc-menu"><a href=""><i class="fa fa-list-alt"></i></a></span>
+                <a href="http://example.org/">
+                  <span class="fa fa-arrow-circle-right" style="font-size:larger" aria-hidden="true"></span>
+                  fibjs
+                </a>
+                
+                   / <a href='/modules/'>Modules</a> / <a href='/module/gd/'>gd</a>
+                
+                
+            </div>
+            <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#members">Members</a>
+<ul>
+<li>
+<ul>
+<li><a href="#public-static-image-d2-d41-interfaceimage-create-dd-d5d-namespacegd-1a3349d9352130d7050247113235a3e1a9-integer-width-integer-height-integer-color"><code>public static</code><a href="#d2/d41/interfaceImage"><code>Image</code></a><a href="#dd/d5d/namespacegd_1a3349d9352130d7050247113235a3e1a9"><code>create</code></a><code>(Integer width,Integer height,Integer color)</code></a></li>
+<li><a href="#parameters">Parameters</a></li>
+<li><a href="#returns">Returns</a></li>
+<li><a href="#public-static-image-d2-d41-interfaceimage-load-dd-d5d-namespacegd-1ac601317eb0159524d6d59dda9caff9f3-buffer-d0-d11-classbuffer-data"><code>public static</code><a href="#d2/d41/interfaceImage"><code>Image</code></a><a href="#dd/d5d/namespacegd_1ac601317eb0159524d6d59dda9caff9f3"><code>load</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></a></li>
+<li><a href="#parameters-1">Parameters</a></li>
+<li><a href="#returns-1">Returns</a></li>
+<li><a href="#public-static-image-d2-d41-interfaceimage-load-dd-d5d-namespacegd-1a4fb9233ae412463c0b316f88e3dcea70-seekablestream-d6-d9c-interfaceseekablestream-stm"><code>public static</code><a href="#d2/d41/interfaceImage"><code>Image</code></a><a href="#dd/d5d/namespacegd_1a4fb9233ae412463c0b316f88e3dcea70"><code>load</code></a><code>(</code><a href="#d6/d9c/interfaceSeekableStream"><code>SeekableStream</code></a><code>stm)</code></a></li>
+<li><a href="#parameters-2">Parameters</a></li>
+<li><a href="#returns-2">Returns</a></li>
+<li><a href="#public-static-image-d2-d41-interfaceimage-load-dd-d5d-namespacegd-1a0bf17e71d89ac583e7fd9cf323e822be-string-fname"><code>public static</code><a href="#d2/d41/interfaceImage"><code>Image</code></a><a href="#dd/d5d/namespacegd_1a0bf17e71d89ac583e7fd9cf323e822be"><code>load</code></a><code>(String fname)</code></a></li>
+<li><a href="#parameters-3">Parameters</a></li>
+<li><a href="#returns-3">Returns</a></li>
+<li><a href="#public-static-integer-rgb-dd-d5d-namespacegd-1a0706099b78bbf292b7d7898acc0b7aa2-integer-red-integer-green-integer-blue"><code>public static Integer</code><a href="#dd/d5d/namespacegd_1a0706099b78bbf292b7d7898acc0b7aa2"><code>rgb</code></a><code>(Integer red,Integer green,Integer blue)</code></a></li>
+<li><a href="#parameters-4">Parameters</a></li>
+<li><a href="#returns-4">Returns</a></li>
+<li><a href="#public-static-integer-rgba-dd-d5d-namespacegd-1ad330769672a80a55bbca412dd909358a-integer-red-integer-green-integer-blue-number-alpha"><code>public static Integer</code><a href="#dd/d5d/namespacegd_1ad330769672a80a55bbca412dd909358a"><code>rgba</code></a><code>(Integer red,Integer green,Integer blue,Number alpha)</code></a></li>
+<li><a href="#parameters-5">Parameters</a></li>
+<li><a href="#returns-5">Returns</a></li>
+<li><a href="#public-static-integer-hsl-dd-d5d-namespacegd-1a019d7f7f15237b710462208f3ab9b74e-number-hue-number-saturation-number-lightness"><code>public static Integer</code><a href="#dd/d5d/namespacegd_1a019d7f7f15237b710462208f3ab9b74e"><code>hsl</code></a><code>(Number hue,Number saturation,Number lightness)</code></a></li>
+<li><a href="#parameters-6">Parameters</a></li>
+<li><a href="#returns-6">Returns</a></li>
+<li><a href="#public-static-integer-hsla-dd-d5d-namespacegd-1a14fb8efd2fd9e7c1bbb0d7169a5eecca-number-hue-number-saturation-number-lightness-number-alpha"><code>public static Integer</code><a href="#dd/d5d/namespacegd_1a14fb8efd2fd9e7c1bbb0d7169a5eecca"><code>hsla</code></a><code>(Number hue,Number saturation,Number lightness,Number alpha)</code></a></li>
+<li><a href="#parameters-7">Parameters</a></li>
+<li><a href="#returns-7">Returns</a></li>
+<li><a href="#public-static-integer-hsb-dd-d5d-namespacegd-1a49abf5b15cc916fbdef973206c9f6b6f-number-hue-number-saturation-number-brightness"><code>public static Integer</code><a href="#dd/d5d/namespacegd_1a49abf5b15cc916fbdef973206c9f6b6f"><code>hsb</code></a><code>(Number hue,Number saturation,Number brightness)</code></a></li>
+<li><a href="#parameters-8">Parameters</a></li>
+<li><a href="#returns-8">Returns</a></li>
+<li><a href="#public-static-integer-hsba-dd-d5d-namespacegd-1aa617175f56169bac97ea0a4fbc37ab70-number-hue-number-saturation-number-brightness-number-alpha"><code>public static Integer</code><a href="#dd/d5d/namespacegd_1aa617175f56169bac97ea0a4fbc37ab70"><code>hsba</code></a><code>(Number hue,Number saturation,Number brightness,Number alpha)</code></a></li>
+<li><a href="#parameters-9">Parameters</a></li>
+<li><a href="#returns-9">Returns</a></li>
+<li><a href="#public-static-integer-color-dd-d5d-namespacegd-1aa810ccf3c53765e07860a6e4bc4e86a0-string-color"><code>public static Integer</code><a href="#dd/d5d/namespacegd_1aa810ccf3c53765e07860a6e4bc4e86a0"><code>color</code></a><code>(String color)</code></a></li>
+<li><a href="#parameters-10">Parameters</a></li>
+<li><a href="#returns-10">Returns</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+          </div>
+        
+        
+        <div id="body-inner">
+          
+            <h1>gd</h1>
+          
+
+
+
+
+<p><a href="#d2/d41/interfaceImage">Image</a> processing module.</p>
+
+<p>Base module. It can be used to create and manipulate image files. The way to use：</p>
+
+<pre><code class="language-cpp">var gd = require('gd');
+</code></pre>
+
+<h2 id="summary">Summary</h2>
+
+<table>
+<thead>
+<tr>
+<th>Members</th>
+<th>Descriptions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>public static</code><a href="#d2/d41/interfaceImage"><code>Image</code></a><a href="#dd/d5d/namespacegd_1a3349d9352130d7050247113235a3e1a9"><code>create</code></a><code>(Integer width,Integer height,Integer color)</code></td>
+<td>Create a new image.</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d2/d41/interfaceImage"><code>Image</code></a><a href="#dd/d5d/namespacegd_1ac601317eb0159524d6d59dda9caff9f3"><code>load</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></td>
+<td>Decoded image from the format data.</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d2/d41/interfaceImage"><code>Image</code></a><a href="#dd/d5d/namespacegd_1a4fb9233ae412463c0b316f88e3dcea70"><code>load</code></a><code>(</code><a href="#d6/d9c/interfaceSeekableStream"><code>SeekableStream</code></a><code>stm)</code></td>
+<td>Decoded image from the stream object.</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d2/d41/interfaceImage"><code>Image</code></a><a href="#dd/d5d/namespacegd_1a0bf17e71d89ac583e7fd9cf323e822be"><code>load</code></a><code>(String fname)</code></td>
+<td>Decoded image from the specified file.</td>
+</tr>
+
+<tr>
+<td><code>public static Integer</code><a href="#dd/d5d/namespacegd_1a0706099b78bbf292b7d7898acc0b7aa2"><code>rgb</code></a><code>(Integer red,Integer green,Integer blue)</code></td>
+<td>Generating a combined color through rgb color components.</td>
+</tr>
+
+<tr>
+<td><code>public static Integer</code><a href="#dd/d5d/namespacegd_1ad330769672a80a55bbca412dd909358a"><code>rgba</code></a><code>(Integer red,Integer green,Integer blue,Number alpha)</code></td>
+<td>Generating a combined color through rgba color components.</td>
+</tr>
+
+<tr>
+<td><code>public static Integer</code><a href="#dd/d5d/namespacegd_1a019d7f7f15237b710462208f3ab9b74e"><code>hsl</code></a><code>(Number hue,Number saturation,Number lightness)</code></td>
+<td>Generating a combined color through hsl color components.</td>
+</tr>
+
+<tr>
+<td><code>public static Integer</code><a href="#dd/d5d/namespacegd_1a14fb8efd2fd9e7c1bbb0d7169a5eecca"><code>hsla</code></a><code>(Number hue,Number saturation,Number lightness,Number alpha)</code></td>
+<td>Generating a combined color through hsla color components.</td>
+</tr>
+
+<tr>
+<td><code>public static Integer</code><a href="#dd/d5d/namespacegd_1a49abf5b15cc916fbdef973206c9f6b6f"><code>hsb</code></a><code>(Number hue,Number saturation,Number brightness)</code></td>
+<td>Generating a combined color through hsb color components.</td>
+</tr>
+
+<tr>
+<td><code>public static Integer</code><a href="#dd/d5d/namespacegd_1aa617175f56169bac97ea0a4fbc37ab70"><code>hsba</code></a><code>(Number hue,Number saturation,Number brightness,Number alpha)</code></td>
+<td>Generating a combined color through hsba color components.</td>
+</tr>
+
+<tr>
+<td><code>public static Integer</code><a href="#dd/d5d/namespacegd_1aa810ccf3c53765e07860a6e4bc4e86a0"><code>color</code></a><code>(String color)</code></td>
+<td>Generating a combined color by string.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="members">Members</h2>
+
+<h4 id="public-static-image-d2-d41-interfaceimage-create-dd-d5d-namespacegd-1a3349d9352130d7050247113235a3e1a9-integer-width-integer-height-integer-color"><code>public static</code><a href="#d2/d41/interfaceImage"><code>Image</code></a><a href="#dd/d5d/namespacegd_1a3349d9352130d7050247113235a3e1a9"><code>create</code></a><code>(Integer width,Integer height,Integer color)</code></h4>
+
+<p>Create a new image.</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><p><code>width</code> Specifies the width of the image.</p></li>
+
+<li><p><code>height</code> Specifies the height of the image.</p></li>
+
+<li><p><code>color</code> Specify the image type, the allowable value is <a href="#dd/d5d/namespacegd_1abb19e274d6ddf2f7ff7703956498af30">gd.TRUECOLOR</a> or <a href="#dd/d5d/namespacegd_1aa2a13a4b909b87aeae041a916e71c7c2">gd.PALETTE</a></p></li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<p>Returns the created image object of success.</p>
+
+<h4 id="public-static-image-d2-d41-interfaceimage-load-dd-d5d-namespacegd-1ac601317eb0159524d6d59dda9caff9f3-buffer-d0-d11-classbuffer-data"><code>public static</code><a href="#d2/d41/interfaceImage"><code>Image</code></a><a href="#dd/d5d/namespacegd_1ac601317eb0159524d6d59dda9caff9f3"><code>load</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></h4>
+
+<p>Decoded image from the format data.</p>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<ul>
+<li><code>data</code> The image data need decoded.</li>
+</ul>
+
+<h4 id="returns-1">Returns</h4>
+
+<p>Return successfully decoded image object.</p>
+
+<h4 id="public-static-image-d2-d41-interfaceimage-load-dd-d5d-namespacegd-1a4fb9233ae412463c0b316f88e3dcea70-seekablestream-d6-d9c-interfaceseekablestream-stm"><code>public static</code><a href="#d2/d41/interfaceImage"><code>Image</code></a><a href="#dd/d5d/namespacegd_1a4fb9233ae412463c0b316f88e3dcea70"><code>load</code></a><code>(</code><a href="#d6/d9c/interfaceSeekableStream"><code>SeekableStream</code></a><code>stm)</code></h4>
+
+<p>Decoded image from the stream object.</p>
+
+<h4 id="parameters-2">Parameters</h4>
+
+<ul>
+<li><code>stm</code> The stream object of the specified image data.</li>
+</ul>
+
+<h4 id="returns-2">Returns</h4>
+
+<p>Return successfully decoded image object.</p>
+
+<h4 id="public-static-image-d2-d41-interfaceimage-load-dd-d5d-namespacegd-1a0bf17e71d89ac583e7fd9cf323e822be-string-fname"><code>public static</code><a href="#d2/d41/interfaceImage"><code>Image</code></a><a href="#dd/d5d/namespacegd_1a0bf17e71d89ac583e7fd9cf323e822be"><code>load</code></a><code>(String fname)</code></h4>
+
+<p>Decoded image from the specified file.</p>
+
+<h4 id="parameters-3">Parameters</h4>
+
+<ul>
+<li><code>fname</code> Specify the file name.</li>
+</ul>
+
+<h4 id="returns-3">Returns</h4>
+
+<p>Return successfully decoded image object.</p>
+
+<h4 id="public-static-integer-rgb-dd-d5d-namespacegd-1a0706099b78bbf292b7d7898acc0b7aa2-integer-red-integer-green-integer-blue"><code>public static Integer</code><a href="#dd/d5d/namespacegd_1a0706099b78bbf292b7d7898acc0b7aa2"><code>rgb</code></a><code>(Integer red,Integer green,Integer blue)</code></h4>
+
+<p>Generating a combined color through rgb color components.</p>
+
+<h4 id="parameters-4">Parameters</h4>
+
+<ul>
+<li><p><code>red</code> Red component in the range of 0-255</p></li>
+
+<li><p><code>green</code> Green component in the range of 0-255</p></li>
+
+<li><p><code>blue</code> Blue component in the range of 0-255</p></li>
+</ul>
+
+<h4 id="returns-4">Returns</h4>
+
+<p>Returns the combined color.</p>
+
+<h4 id="public-static-integer-rgba-dd-d5d-namespacegd-1ad330769672a80a55bbca412dd909358a-integer-red-integer-green-integer-blue-number-alpha"><code>public static Integer</code><a href="#dd/d5d/namespacegd_1ad330769672a80a55bbca412dd909358a"><code>rgba</code></a><code>(Integer red,Integer green,Integer blue,Number alpha)</code></h4>
+
+<p>Generating a combined color through rgba color components.</p>
+
+<h4 id="parameters-5">Parameters</h4>
+
+<ul>
+<li><p><code>red</code> Red component in the range of 0-255</p></li>
+
+<li><p><code>green</code> Green component in the range of 0-255</p></li>
+
+<li><p><code>blue</code> Blue component in the range of 0-255</p></li>
+
+<li><p><code>alpha</code> Transparent component in the range of 0.0-1.0</p></li>
+</ul>
+
+<h4 id="returns-5">Returns</h4>
+
+<p>Returns the combined color.</p>
+
+<h4 id="public-static-integer-hsl-dd-d5d-namespacegd-1a019d7f7f15237b710462208f3ab9b74e-number-hue-number-saturation-number-lightness"><code>public static Integer</code><a href="#dd/d5d/namespacegd_1a019d7f7f15237b710462208f3ab9b74e"><code>hsl</code></a><code>(Number hue,Number saturation,Number lightness)</code></h4>
+
+<p>Generating a combined color through hsl color components.</p>
+
+<h4 id="parameters-6">Parameters</h4>
+
+<ul>
+<li><p><code>hue</code> Hue component in the range of 0-360.</p></li>
+
+<li><p><code>saturation</code> Saturation components in the range of 0.0-1.0</p></li>
+
+<li><p><code>lightness</code> Lightness component in the range of 0.0-1.0</p></li>
+</ul>
+
+<h4 id="returns-6">Returns</h4>
+
+<p>Returns the combined color.</p>
+
+<h4 id="public-static-integer-hsla-dd-d5d-namespacegd-1a14fb8efd2fd9e7c1bbb0d7169a5eecca-number-hue-number-saturation-number-lightness-number-alpha"><code>public static Integer</code><a href="#dd/d5d/namespacegd_1a14fb8efd2fd9e7c1bbb0d7169a5eecca"><code>hsla</code></a><code>(Number hue,Number saturation,Number lightness,Number alpha)</code></h4>
+
+<p>Generating a combined color through hsla color components.</p>
+
+<h4 id="parameters-7">Parameters</h4>
+
+<ul>
+<li><p><code>hue</code> Hue component in the range of 0-360.</p></li>
+
+<li><p><code>saturation</code> Saturation components in the range of 0.0-1.0</p></li>
+
+<li><p><code>lightness</code> Lightness component in the range of 0.0-1.0</p></li>
+
+<li><p><code>alpha</code> Transparent component in the range of 0.0-1.0</p></li>
+</ul>
+
+<h4 id="returns-7">Returns</h4>
+
+<p>Returns the combined color.</p>
+
+<h4 id="public-static-integer-hsb-dd-d5d-namespacegd-1a49abf5b15cc916fbdef973206c9f6b6f-number-hue-number-saturation-number-brightness"><code>public static Integer</code><a href="#dd/d5d/namespacegd_1a49abf5b15cc916fbdef973206c9f6b6f"><code>hsb</code></a><code>(Number hue,Number saturation,Number brightness)</code></h4>
+
+<p>Generating a combined color through hsb color components.</p>
+
+<h4 id="parameters-8">Parameters</h4>
+
+<ul>
+<li><p><code>hue</code> Hue component in the range of 0-360.</p></li>
+
+<li><p><code>saturation</code> Saturation components in the range of 0.0-1.0</p></li>
+
+<li><p><code>brightness</code> Brightness component in the range of 0.0-1.0</p></li>
+</ul>
+
+<h4 id="returns-8">Returns</h4>
+
+<p>Returns the combined color.</p>
+
+<h4 id="public-static-integer-hsba-dd-d5d-namespacegd-1aa617175f56169bac97ea0a4fbc37ab70-number-hue-number-saturation-number-brightness-number-alpha"><code>public static Integer</code><a href="#dd/d5d/namespacegd_1aa617175f56169bac97ea0a4fbc37ab70"><code>hsba</code></a><code>(Number hue,Number saturation,Number brightness,Number alpha)</code></h4>
+
+<p>Generating a combined color through hsba color components.</p>
+
+<h4 id="parameters-9">Parameters</h4>
+
+<ul>
+<li><p><code>hue</code> Hue component in the range of 0-360.</p></li>
+
+<li><p><code>saturation</code> Saturation components in the range of 0.0-1.0</p></li>
+
+<li><p><code>brightness</code> Brightness component in the range of 0.0-1.0</p></li>
+
+<li><p><code>alpha</code> Transparent component in the range of 0.0-1.0</p></li>
+</ul>
+
+<h4 id="returns-9">Returns</h4>
+
+<p>Returns the combined color.</p>
+
+<h4 id="public-static-integer-color-dd-d5d-namespacegd-1aa810ccf3c53765e07860a6e4bc4e86a0-string-color"><code>public static Integer</code><a href="#dd/d5d/namespacegd_1aa810ccf3c53765e07860a6e4bc4e86a0"><code>color</code></a><code>(String color)</code></h4>
+
+<p>Generating a combined color by string.</p>
+
+<h4 id="parameters-10">Parameters</h4>
+
+<ul>
+<li><code>color</code> The specified color string, e.g: &ldquo;#ff0000&rdquo;, &ldquo;ff0000&rdquo;, &ldquo;#f00&rdquo;, &ldquo;f00&rdquo;</li>
+</ul>
+
+<h4 id="returns-10">Returns</h4>
+
+<p>Returns the combined color.</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+
+      </div>
+    </div>
+
+    
+ 
+    
+
+    <div id="navigation">
+        
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+          
+
+        
+
+
+        
+            <a class="nav nav-prev" href="/module/fs/" title="fs"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/module/global/" title="global" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js"></script>
+    <script src="/js/jquery.sticky-kit.min.js"></script>
+    <script src="/js/featherlight.min.js"></script>
+    <script src="/js/html5shiv-printshiv.min.js"></script>
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js"></script>
+    <script src="/js/learn.js"></script>
+    <script src="/js/hugo-learn.js"></script>
+
+    
+    <link href="/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script src="/mermaid/mermaid.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+
+    
+
+  </body>
+</html>
+

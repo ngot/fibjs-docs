@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://example.org/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/modules/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/objects/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/_header/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/object/asyncwait/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/object/buffer/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/object/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/assert/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/base32/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/base64/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/base64vlq/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/bson/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/console/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/coroutine/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/crypto/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/db/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/encoding/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/fs/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/gd/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/global/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/hash/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/hex/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/http/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/iconv/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/io/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/json/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/mq/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/net/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/os/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/path/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/process/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/profiler/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/re/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/ssl/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/test/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/util/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/uuid/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/vm/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/websocket/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/xml/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/zip/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/zlib/</loc>
+  </url>
+  
+</urlset>

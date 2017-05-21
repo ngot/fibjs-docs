@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.20.7" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>Modules :: fibjs</title>
+    <link href="/css/nucleus.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/hybrid.css" rel="stylesheet">
+    <link href="/css/featherlight.min.css" rel="stylesheet">
+    <link href="/css/horsey.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+
+    
+
+    
+
+  </head>
+  <body class="" data-url="/module/">
+    
+<nav id="sidebar" class="">
+  <div id="header-wrapper">
+    <div id="header">
+       
+	<p>Fibjs Documentation</p>
+ 
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/horsey.js"></script>
+<script type="text/javascript">
+    var baseurl = "http:\/\/example.org\/";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+
+    
+  </div>
+
+  <div class="highlightable">
+    <ul class="topics">
+        
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+        
+
+        
+        
+        
+        
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/modules/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/modules/">
+                <span>Modules</span>
+                
+                    
+                        <i class="fa fa-angle-right fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/assert/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/assert/">
+                <span>assert</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base32/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base32/">
+                <span>base32</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64/">
+                <span>base64</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64vlq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64vlq/">
+                <span>base64vlq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/bson/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/bson/">
+                <span>bson</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/console/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/console/">
+                <span>console</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/coroutine/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/coroutine/">
+                <span>coroutine</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/crypto/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/crypto/">
+                <span>crypto</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/db/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/db/">
+                <span>db</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/encoding/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/encoding/">
+                <span>encoding</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/fs/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/fs/">
+                <span>fs</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/gd/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/gd/">
+                <span>gd</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/global/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/global/">
+                <span>global</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hash/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hash/">
+                <span>hash</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hex/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hex/">
+                <span>hex</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/http/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/http/">
+                <span>http</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/iconv/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/iconv/">
+                <span>iconv</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/io/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/io/">
+                <span>io</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/json/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/json/">
+                <span>json</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/mq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/mq/">
+                <span>mq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/net/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/net/">
+                <span>net</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/os/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/os/">
+                <span>os</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/path/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/path/">
+                <span>path</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/process/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/process/">
+                <span>process</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/profiler/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/profiler/">
+                <span>profiler</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/re/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/re/">
+                <span>re</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/ssl/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/ssl/">
+                <span>ssl</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/test/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/test/">
+                <span>test</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/util/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/util/">
+                <span>util</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/uuid/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/uuid/">
+                <span>uuid</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/vm/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/vm/">
+                <span>vm</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/websocket/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/websocket/">
+                <span>websocket</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/xml/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/xml/">
+                <span>xml</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zip/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zip/">
+                <span>zip</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zlib/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zlib/">
+                <span>zlib</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/objects/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/objects/">
+                <span>Objects</span>
+                
+                    
+                        <i class="fa fa-angle-right fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/asyncwait/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/asyncwait/">
+                <span>AsyncWait</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/buffer/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/buffer/">
+                <span>Buffer</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+
+        
+
+        
+        
+        
+    </ul>
+    
+     
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+        
+          <div id="top-bar">
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                <span id="toc-menu"><a href=""><i class="fa fa-list-alt"></i></a></span>
+                <a href="http://example.org/">
+                  <span class="fa fa-arrow-circle-right" style="font-size:larger" aria-hidden="true"></span>
+                  fibjs
+                </a>
+                
+                 > Modules
+            </div>
+            <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+          </div>
+        
+        
+        <div id="body-inner">
+          
+            <h1>Modules</h1>
+          
+
+
+
+
+
+<div class="extra-pagination inner">
+<nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/module/">&larr; Next Pages</a>
+	
+	<span class="page-number">Page 2 on 4</span>
+	
+	    <a class="older-posts" href="/module/page/3/">Previous Pages &rarr;</a>
+	
+</nav>
+
+</div>
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/fs/">fs</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>file system module
+how to use
+var fs = require('fs');  Summary    Members Descriptions     public static Booleanexists(String path) search if the file or directory exists   public static BooleanexistsSync(String path) search if the file or directory exists. Sync version of fs.exists().   public static staticunlink(String path) the file you want to delete   public static staticunlinkSync(String path) the file you want to delete. <a class="read-more" href="/module/fs/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/gd/">gd</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Image processing module.
+Base module. It can be used to create and manipulate image files. The way to use：
+var gd = require('gd');  Summary    Members Descriptions     public staticImagecreate(Integer width,Integer height,Integer color) Create a new image.   public staticImageload(Bufferdata) Decoded image from the format data.   public staticImageload(SeekableStreamstm) Decoded image from the stream object.   public staticImageload(String fname) Decoded image from the specified file. <a class="read-more" href="/module/gd/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/global/">global</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Global object, which can be accessed by all scripts.
+Summary    Members Descriptions     public static staticrun(String fname,Array argv) Run a script.   public static Valuerequire(String id) Load a module and return module object, reference Module Management.   public static staticGC() Mandatory for garbage collection.   public static staticrepl(Array cmds) Enter the interactive mode, you can interactively execute the internal commands and code which can only be referenced when js start. <a class="read-more" href="/module/global/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/hash/">hash</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Message digest calculation module, can be used to calculate the message digest and summary Signature.
+Summary    Members Descriptions     public staticDigestdigest(Integer algo,Bufferdata) Create a message digest object with the specified algorithm.   public staticDigestdigest(Integer algo) Create a message digest object with the specified algorithm.   public staticDigestmd2(Bufferdata) Create a MD2 message digest object.   public staticDigestmd4(Bufferdata) Create a MD4 message digest object. <a class="read-more" href="/module/hash/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/hex/">hex</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>module with encode and decode operations between hex and string. to use:
+var encoding = require('encoding'); var hex = encoding.hex;  or:
+var hex = require('hex');  Summary    Members Descriptions     public static Stringencode(Bufferdata) Encode data whith hex format.   public staticBufferdecode(String data) Decode string to binary data with hex format.    Members public static Stringencode(Bufferdata) Encode data whith hex format. <a class="read-more" href="/module/hex/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/http/">http</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>HTTP transfer protocol module, handels http protocol.
+Summary    Members Descriptions     public staticHttpRequestnewRequest() create a http request object，reference HttpRequest   public staticHttpResponsenewResponse() create a http response object，reference HttpResponse   public staticHttpCookienewCookie() create a http cookie object，reference HttpCookie   public staticHttpServernewServer() create a http server，reference HttpServer   public staticHttpsServernewHttpsServer() create a https server, reference HttpsServer   public staticHttpHandlernewHandler() create a http protocol handler，reference HttpHandler   public staticHandlerfileHandler(String root,Object mimes) create a http static file processor, in case of using static file to respond http request   public staticHttpResponserequest(Streamconn,HttpRequestreq) send http request to connection object，return response   public staticHttpResponserequest(String method,String url,Object headers) assign requested url, and return   public staticHttpResponserequest(String method,String url,SeekableStreambody,Object headers) Request the specified url, and get the response. <a class="read-more" href="/module/http/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/iconv/">iconv</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>iconv Module with encode and decode operations between text and binary. to use:
+var encoding = require('encoding'); var iconv = encoding.iconv;  or:
+var iconv = require('iconv');  Summary    Members Descriptions     public staticBufferencode(String charset,String data) Convert text to binary with iconv.   public static Stringdecode(String charset,Bufferdata) Convert binary to text with iconv.    Members public staticBufferencode(String charset,String data) Convert text to binary with iconv. <a class="read-more" href="/module/iconv/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/io/">io</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>IO module.
+To use it:
+var io = require('io');  Summary    Members Descriptions     public staticMemoryStreamnewMemoryStream() Create a memory stream, see MemoryStream.   public staticBufferedStreamnewBufferedStream() Create a buffered read stream, see BufferedStream.    Members public staticMemoryStreamnewMemoryStream() Create a memory stream, see MemoryStream.
+public staticBufferedStreamnewBufferedStream() Create a buffered read stream, see BufferedStream. <a class="read-more" href="/module/io/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/json/">json</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>json module with encode and decode operations. to use:
+var encoding = require('encoding'); var json = encoding.json;  or:
+var json = require('json');  Summary    Members Descriptions     public static Stringencode(Value data) Encode a json variable to string with json format.   public static Valuedecode(String data) Decode a string variable to json with json format.    Members public static Stringencode(Value data) Encode a json variable to string with json format. <a class="read-more" href="/module/json/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/mq/">mq</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Message queue module.
+Summary    Members Descriptions     public staticHandlerjsHandler(Value hdlr) Create a javascript message handler, return immediately when pass by value.   public staticAsyncWaitawait() Create async handler.   public staticHandlernullHandler() Create a empty handler.   public static staticinvoke(Handlerhdlr,objectv) Invoke a message or object to given handler.    Members public staticHandlerjsHandler(Value hdlr) Create a javascript message handler, return immediately when pass by value. <a class="read-more" href="/module/mq/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+
+<div style="margin-bottom:2rem"></div>
+
+<nav class="pagination" role="navigation">
+	
+	    <a class="newer-posts" href="/module/">&larr; Next Pages</a>
+	
+	<span class="page-number">Page 2 on 4</span>
+	
+	    <a class="older-posts" href="/module/page/3/">Previous Pages &rarr;</a>
+	
+</nav>
+
+
+
+
+
+
+      </div>
+    </div>
+
+    
+ 
+    
+
+    <div id="navigation">
+        
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+          
+
+        
+
+
+        
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js"></script>
+    <script src="/js/jquery.sticky-kit.min.js"></script>
+    <script src="/js/featherlight.min.js"></script>
+    <script src="/js/html5shiv-printshiv.min.js"></script>
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js"></script>
+    <script src="/js/learn.js"></script>
+    <script src="/js/hugo-learn.js"></script>
+
+    
+    <link href="/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script src="/mermaid/mermaid.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+
+    
+
+  </body>
+</html>
+

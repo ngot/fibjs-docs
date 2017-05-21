@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.20.7" />
+    <meta name="description" content="file system module.">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>fs :: fibjs</title>
+    <link href="/css/nucleus.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/hybrid.css" rel="stylesheet">
+    <link href="/css/featherlight.min.css" rel="stylesheet">
+    <link href="/css/horsey.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+
+    
+
+    
+
+  </head>
+  <body class="" data-url="/module/fs/">
+    
+<nav id="sidebar" class="">
+  <div id="header-wrapper">
+    <div id="header">
+       
+	<p>Fibjs Documentation</p>
+ 
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/horsey.js"></script>
+<script type="text/javascript">
+    var baseurl = "http:\/\/example.org\/";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+
+    
+  </div>
+
+  <div class="highlightable">
+    <ul class="topics">
+        
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+        
+
+        
+        
+        
+        
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/modules/" class="dd-item 
+         
+        parent
+        "
+        >
+            <a href="/modules/">
+                <span>Modules</span>
+                
+                    
+                        <i class="fa fa-angle-down fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+                
+                
+                
+                    
+                
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/assert/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/assert/">
+                <span>assert</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base32/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base32/">
+                <span>base32</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64/">
+                <span>base64</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64vlq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64vlq/">
+                <span>base64vlq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/bson/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/bson/">
+                <span>bson</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/console/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/console/">
+                <span>console</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/coroutine/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/coroutine/">
+                <span>coroutine</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/crypto/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/crypto/">
+                <span>crypto</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/db/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/db/">
+                <span>db</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/encoding/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/encoding/">
+                <span>encoding</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/fs/" class="dd-item 
+        active 
+        
+        "
+        >
+            <a href="/module/fs/">
+                <span>fs</span>
+                
+                
+            </a>
+            
+                
+                
+                
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/gd/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/gd/">
+                <span>gd</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/global/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/global/">
+                <span>global</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hash/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hash/">
+                <span>hash</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hex/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hex/">
+                <span>hex</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/http/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/http/">
+                <span>http</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/iconv/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/iconv/">
+                <span>iconv</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/io/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/io/">
+                <span>io</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/json/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/json/">
+                <span>json</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/mq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/mq/">
+                <span>mq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/net/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/net/">
+                <span>net</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/os/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/os/">
+                <span>os</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/path/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/path/">
+                <span>path</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/process/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/process/">
+                <span>process</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/profiler/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/profiler/">
+                <span>profiler</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/re/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/re/">
+                <span>re</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/ssl/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/ssl/">
+                <span>ssl</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/test/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/test/">
+                <span>test</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/util/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/util/">
+                <span>util</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/uuid/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/uuid/">
+                <span>uuid</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/vm/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/vm/">
+                <span>vm</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/websocket/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/websocket/">
+                <span>websocket</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/xml/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/xml/">
+                <span>xml</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zip/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zip/">
+                <span>zip</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zlib/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zlib/">
+                <span>zlib</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/objects/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/objects/">
+                <span>Objects</span>
+                
+                    
+                        <i class="fa fa-angle-right fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/asyncwait/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/asyncwait/">
+                <span>AsyncWait</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/buffer/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/buffer/">
+                <span>Buffer</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+
+        
+
+        
+        
+        
+    </ul>
+    
+     
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+        
+          <div id="top-bar">
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                <span id="toc-menu"><a href=""><i class="fa fa-list-alt"></i></a></span>
+                <a href="http://example.org/">
+                  <span class="fa fa-arrow-circle-right" style="font-size:larger" aria-hidden="true"></span>
+                  fibjs
+                </a>
+                
+                   / <a href='/modules/'>Modules</a> / <a href='/module/fs/'>fs</a>
+                
+                
+            </div>
+            <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#members">Members</a>
+<ul>
+<li>
+<ul>
+<li><a href="#public-static-boolean-exists-d5-d8f-namespacefs-1a4abe84709aae93e90cf3028c6c13db96-string-path"><code>public static Boolean</code><a href="#d5/d8f/namespacefs_1a4abe84709aae93e90cf3028c6c13db96"><code>exists</code></a><code>(String path)</code></a></li>
+<li><a href="#parameters">Parameters</a></li>
+<li><a href="#returns">Returns</a></li>
+<li><a href="#public-static-boolean-existssync-d5-d8f-namespacefs-1a828508b6b6a7baa69929e54f11bd0121-string-path"><code>public static Boolean</code><a href="#d5/d8f/namespacefs_1a828508b6b6a7baa69929e54f11bd0121"><code>existsSync</code></a><code>(String path)</code></a></li>
+<li><a href="#parameters-1">Parameters</a></li>
+<li><a href="#returns-1">Returns</a></li>
+<li><a href="#public-static-static-unlink-d5-d8f-namespacefs-1ad9728d670aa8f486d76c4052f6c8acd5-string-path"><code>public static static</code><a href="#d5/d8f/namespacefs_1ad9728d670aa8f486d76c4052f6c8acd5"><code>unlink</code></a><code>(String path)</code></a></li>
+<li><a href="#parameters-2">Parameters</a></li>
+<li><a href="#public-static-static-unlinksync-d5-d8f-namespacefs-1a4b15f3243d3c3c277b71522e49a60e16-string-path"><code>public static static</code><a href="#d5/d8f/namespacefs_1a4b15f3243d3c3c277b71522e49a60e16"><code>unlinkSync</code></a><code>(String path)</code></a></li>
+<li><a href="#parameters-3">Parameters</a></li>
+<li><a href="#public-static-static-mkdir-d5-d8f-namespacefs-1ad11bbef581ff87c5fc33e8b3d4b98dfb-string-path-integer-mode"><code>public static static</code><a href="#d5/d8f/namespacefs_1ad11bbef581ff87c5fc33e8b3d4b98dfb"><code>mkdir</code></a><code>(String path,Integer mode)</code></a></li>
+<li><a href="#parameters-4">Parameters</a></li>
+<li><a href="#public-static-static-mkdirsync-d5-d8f-namespacefs-1a82c90f7692b9fbea8577fc99628320d9-string-path-integer-mode"><code>public static static</code><a href="#d5/d8f/namespacefs_1a82c90f7692b9fbea8577fc99628320d9"><code>mkdirSync</code></a><code>(String path,Integer mode)</code></a></li>
+<li><a href="#parameters-5">Parameters</a></li>
+<li><a href="#public-static-static-rmdir-d5-d8f-namespacefs-1ae63300a92680e28c3b2bd55046120049-string-path"><code>public static static</code><a href="#d5/d8f/namespacefs_1ae63300a92680e28c3b2bd55046120049"><code>rmdir</code></a><code>(String path)</code></a></li>
+<li><a href="#parameters-6">Parameters</a></li>
+<li><a href="#public-static-static-rmdirsync-d5-d8f-namespacefs-1a20b380c23534d145eecead87d9b2cab8-string-path"><code>public static static</code><a href="#d5/d8f/namespacefs_1a20b380c23534d145eecead87d9b2cab8"><code>rmdirSync</code></a><code>(String path)</code></a></li>
+<li><a href="#parameters-7">Parameters</a></li>
+<li><a href="#public-static-static-rename-d5-d8f-namespacefs-1a6cfec17da170f79ad860f37515990603-string-from-string-to"><code>public static static</code><a href="#d5/d8f/namespacefs_1a6cfec17da170f79ad860f37515990603"><code>rename</code></a><code>(String from,String to)</code></a></li>
+<li><a href="#parameters-8">Parameters</a></li>
+<li><a href="#public-static-static-renamesync-d5-d8f-namespacefs-1a439bc947232694de63ae6b927d79e938-string-from-string-to"><code>public static static</code><a href="#d5/d8f/namespacefs_1a439bc947232694de63ae6b927d79e938"><code>renameSync</code></a><code>(String from,String to)</code></a></li>
+<li><a href="#parameters-9">Parameters</a></li>
+<li><a href="#public-static-static-copy-d5-d8f-namespacefs-1aeff5066a3493122a9cecd8977cbd83d9-string-from-string-to"><code>public static static</code><a href="#d5/d8f/namespacefs_1aeff5066a3493122a9cecd8977cbd83d9"><code>copy</code></a><code>(String from,String to)</code></a></li>
+<li><a href="#parameters-10">Parameters</a></li>
+<li><a href="#public-static-static-chmod-d5-d8f-namespacefs-1a5b69648f9d4875d97bd01b007c095f94-string-path-integer-mode"><code>public static static</code><a href="#d5/d8f/namespacefs_1a5b69648f9d4875d97bd01b007c095f94"><code>chmod</code></a><code>(String path,Integer mode)</code></a></li>
+<li><a href="#parameters-11">Parameters</a></li>
+<li><a href="#public-static-static-chmodsync-d5-d8f-namespacefs-1a471a11730f2ab34cbe85287548ec6675-string-path-integer-mode"><code>public static static</code><a href="#d5/d8f/namespacefs_1a471a11730f2ab34cbe85287548ec6675"><code>chmodSync</code></a><code>(String path,Integer mode)</code></a></li>
+<li><a href="#parameters-12">Parameters</a></li>
+<li><a href="#public-static-stat-dc-da9-interfacestat-stat-d5-d8f-namespacefs-1a51eb9e7e0bebba7af47eeff6ddcb6425-string-path"><code>public static</code><a href="#dc/da9/interfaceStat"><code>Stat</code></a><a href="#d5/d8f/namespacefs_1a51eb9e7e0bebba7af47eeff6ddcb6425"><code>stat</code></a><code>(String path)</code></a></li>
+<li><a href="#parameters-13">Parameters</a></li>
+<li><a href="#returns-2">Returns</a></li>
+<li><a href="#public-static-stat-dc-da9-interfacestat-statsync-d5-d8f-namespacefs-1a73fcecc3120d7be9f3e9628e4354107f-string-path"><code>public static</code><a href="#dc/da9/interfaceStat"><code>Stat</code></a><a href="#d5/d8f/namespacefs_1a73fcecc3120d7be9f3e9628e4354107f"><code>statSync</code></a><code>(String path)</code></a></li>
+<li><a href="#parameters-14">Parameters</a></li>
+<li><a href="#returns-3">Returns</a></li>
+<li><a href="#public-static-list-de-dd8-interfacelist-readdir-d5-d8f-namespacefs-1a598ef237aea287f4328743429f81ede1-string-path"><code>public static</code><a href="#de/dd8/interfaceList"><code>List</code></a><a href="#d5/d8f/namespacefs_1a598ef237aea287f4328743429f81ede1"><code>readdir</code></a><code>(String path)</code></a></li>
+<li><a href="#parameters-15">Parameters</a></li>
+<li><a href="#returns-4">Returns</a></li>
+<li><a href="#public-static-list-de-dd8-interfacelist-readdirsync-d5-d8f-namespacefs-1a8b687854a662b716a575b6c8b80963b4-string-path"><code>public static</code><a href="#de/dd8/interfaceList"><code>List</code></a><a href="#d5/d8f/namespacefs_1a8b687854a662b716a575b6c8b80963b4"><code>readdirSync</code></a><code>(String path)</code></a></li>
+<li><a href="#parameters-16">Parameters</a></li>
+<li><a href="#returns-5">Returns</a></li>
+<li><a href="#public-static-seekablestream-d6-d9c-interfaceseekablestream-open-d5-d8f-namespacefs-1a9e774ee83e01eb9115e65c0c2c38e8b4-string-fname-string-flags"><code>public static</code><a href="#d6/d9c/interfaceSeekableStream"><code>SeekableStream</code></a><a href="#d5/d8f/namespacefs_1a9e774ee83e01eb9115e65c0c2c38e8b4"><code>open</code></a><code>(String fname,String flags)</code></a></li>
+<li><a href="#parameters-17">Parameters</a></li>
+<li><a href="#returns-6">Returns</a></li>
+<li><a href="#public-static-seekablestream-d6-d9c-interfaceseekablestream-opensync-d5-d8f-namespacefs-1a405870e84dfb1e371e37dbfc84b91bb9-string-fname-string-flags"><code>public static</code><a href="#d6/d9c/interfaceSeekableStream"><code>SeekableStream</code></a><a href="#d5/d8f/namespacefs_1a405870e84dfb1e371e37dbfc84b91bb9"><code>openSync</code></a><code>(String fname,String flags)</code></a></li>
+<li><a href="#parameters-18">Parameters</a></li>
+<li><a href="#returns-7">Returns</a></li>
+<li><a href="#public-static-bufferedstream-d0-d37-interfacebufferedstream-opentextstream-d5-d8f-namespacefs-1aaf625a15d9268621cb10eacc4154db5e-string-fname-string-flags"><code>public static</code><a href="#d0/d37/interfaceBufferedStream"><code>BufferedStream</code></a><a href="#d5/d8f/namespacefs_1aaf625a15d9268621cb10eacc4154db5e"><code>openTextStream</code></a><code>(String fname,String flags)</code></a></li>
+<li><a href="#parameters-19">Parameters</a></li>
+<li><a href="#returns-8">Returns</a></li>
+<li><a href="#public-static-string-readtextfile-d5-d8f-namespacefs-1a3c55a9cb42fc1d40decfd30bd2e739e1-string-fname"><code>public static String</code><a href="#d5/d8f/namespacefs_1a3c55a9cb42fc1d40decfd30bd2e739e1"><code>readTextFile</code></a><code>(String fname)</code></a></li>
+<li><a href="#parameters-20">Parameters</a></li>
+<li><a href="#returns-9">Returns</a></li>
+<li><a href="#public-static-string-readfile-d5-d8f-namespacefs-1a7e1ad1be495a3c5e986908fa56861acd-string-fname"><code>public static String</code><a href="#d5/d8f/namespacefs_1a7e1ad1be495a3c5e986908fa56861acd"><code>readFile</code></a><code>(String fname)</code></a></li>
+<li><a href="#parameters-21">Parameters</a></li>
+<li><a href="#returns-10">Returns</a></li>
+<li><a href="#public-static-buffer-d0-d11-classbuffer-readfilesync-d5-d8f-namespacefs-1af669e44c86fb17d611438696a9af0f18-string-fname"><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d5/d8f/namespacefs_1af669e44c86fb17d611438696a9af0f18"><code>readFileSync</code></a><code>(String fname)</code></a></li>
+<li><a href="#parameters-22">Parameters</a></li>
+<li><a href="#returns-11">Returns</a></li>
+<li><a href="#public-static-array-readlines-d5-d8f-namespacefs-1acb42968e4acb281d4633997321392ab1-string-fname-integer-maxlines"><code>public static Array</code><a href="#d5/d8f/namespacefs_1acb42968e4acb281d4633997321392ab1"><code>readLines</code></a><code>(String fname,Integer maxlines)</code></a></li>
+<li><a href="#parameters-23">Parameters</a></li>
+<li><a href="#returns-12">Returns</a></li>
+<li><a href="#public-static-static-writetextfile-d5-d8f-namespacefs-1a7f608ea611628c8dc7aadc79f7056085-string-fname-string-txt"><code>public static static</code><a href="#d5/d8f/namespacefs_1a7f608ea611628c8dc7aadc79f7056085"><code>writeTextFile</code></a><code>(String fname,String txt)</code></a></li>
+<li><a href="#parameters-24">Parameters</a></li>
+<li><a href="#public-static-static-writefile-d5-d8f-namespacefs-1a2b9fe79326ffd7bca6e432f1a667f306-string-fname-string-txt"><code>public static static</code><a href="#d5/d8f/namespacefs_1a2b9fe79326ffd7bca6e432f1a667f306"><code>writeFile</code></a><code>(String fname,String txt)</code></a></li>
+<li><a href="#parameters-25">Parameters</a></li>
+<li><a href="#public-static-static-writefilesync-d5-d8f-namespacefs-1a8a885a62f0e269f303cd59b00511eca0-string-fname-buffer-d0-d11-classbuffer-data"><code>public static static</code><a href="#d5/d8f/namespacefs_1a8a885a62f0e269f303cd59b00511eca0"><code>writeFileSync</code></a><code>(String fname,</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></a></li>
+<li><a href="#parameters-26">Parameters</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+          </div>
+        
+        
+        <div id="body-inner">
+          
+            <h1>fs</h1>
+          
+
+
+
+
+<p>file system module</p>
+
+<p>how to use</p>
+
+<pre><code class="language-cpp">var fs = require('fs');
+</code></pre>
+
+<h2 id="summary">Summary</h2>
+
+<table>
+<thead>
+<tr>
+<th>Members</th>
+<th>Descriptions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>public static Boolean</code><a href="#d5/d8f/namespacefs_1a4abe84709aae93e90cf3028c6c13db96"><code>exists</code></a><code>(String path)</code></td>
+<td>search if the file or directory exists</td>
+</tr>
+
+<tr>
+<td><code>public static Boolean</code><a href="#d5/d8f/namespacefs_1a828508b6b6a7baa69929e54f11bd0121"><code>existsSync</code></a><code>(String path)</code></td>
+<td>search if the file or directory exists. Sync version of <a href="#d5/d8f/namespacefs_1a4abe84709aae93e90cf3028c6c13db96">fs.exists()</a>.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d5/d8f/namespacefs_1ad9728d670aa8f486d76c4052f6c8acd5"><code>unlink</code></a><code>(String path)</code></td>
+<td>the file you want to delete</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d5/d8f/namespacefs_1a4b15f3243d3c3c277b71522e49a60e16"><code>unlinkSync</code></a><code>(String path)</code></td>
+<td>the file you want to delete. Sync version of <a href="#d5/d8f/namespacefs_1ad9728d670aa8f486d76c4052f6c8acd5">fs.unlink()</a>.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d5/d8f/namespacefs_1ad11bbef581ff87c5fc33e8b3d4b98dfb"><code>mkdir</code></a><code>(String path,Integer mode)</code></td>
+<td>create a directory</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d5/d8f/namespacefs_1a82c90f7692b9fbea8577fc99628320d9"><code>mkdirSync</code></a><code>(String path,Integer mode)</code></td>
+<td>create a directory. Sync version of <a href="#d5/d8f/namespacefs_1ad11bbef581ff87c5fc33e8b3d4b98dfb">fs.mkdir()</a>.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d5/d8f/namespacefs_1ae63300a92680e28c3b2bd55046120049"><code>rmdir</code></a><code>(String path)</code></td>
+<td>delete a directory</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d5/d8f/namespacefs_1a20b380c23534d145eecead87d9b2cab8"><code>rmdirSync</code></a><code>(String path)</code></td>
+<td>delete a directory. Sync version of <a href="#d5/d8f/namespacefs_1ae63300a92680e28c3b2bd55046120049">fs.rmdir()</a>.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d5/d8f/namespacefs_1a6cfec17da170f79ad860f37515990603"><code>rename</code></a><code>(String from,String to)</code></td>
+<td>rename a file</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d5/d8f/namespacefs_1a439bc947232694de63ae6b927d79e938"><code>renameSync</code></a><code>(String from,String to)</code></td>
+<td>rename a file</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d5/d8f/namespacefs_1aeff5066a3493122a9cecd8977cbd83d9"><code>copy</code></a><code>(String from,String to)</code></td>
+<td>copy file</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d5/d8f/namespacefs_1a5b69648f9d4875d97bd01b007c095f94"><code>chmod</code></a><code>(String path,Integer mode)</code></td>
+<td>check the permission of targeting file, Windows does not support this</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d5/d8f/namespacefs_1a471a11730f2ab34cbe85287548ec6675"><code>chmodSync</code></a><code>(String path,Integer mode)</code></td>
+<td>check the permission of targeting file, Windows does not support this. Sync version of <a href="#d5/d8f/namespacefs_1a5b69648f9d4875d97bd01b007c095f94">fs.chmod()</a>.</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#dc/da9/interfaceStat"><code>Stat</code></a><a href="#d5/d8f/namespacefs_1a51eb9e7e0bebba7af47eeff6ddcb6425"><code>stat</code></a><code>(String path)</code></td>
+<td>check file basic infomation/stat</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#dc/da9/interfaceStat"><code>Stat</code></a><a href="#d5/d8f/namespacefs_1a73fcecc3120d7be9f3e9628e4354107f"><code>statSync</code></a><code>(String path)</code></td>
+<td>check file basic infomation/stat. Sync version of <a href="#d5/d8f/namespacefs_1a51eb9e7e0bebba7af47eeff6ddcb6425">fs.stat()</a>.</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#de/dd8/interfaceList"><code>List</code></a><a href="#d5/d8f/namespacefs_1a598ef237aea287f4328743429f81ede1"><code>readdir</code></a><code>(String path)</code></td>
+<td>read fileinfo inside target directory</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#de/dd8/interfaceList"><code>List</code></a><a href="#d5/d8f/namespacefs_1a8b687854a662b716a575b6c8b80963b4"><code>readdirSync</code></a><code>(String path)</code></td>
+<td>read fileinfo inside target directory. Sync version of <a href="#d5/d8f/namespacefs_1a598ef237aea287f4328743429f81ede1">fs.readdir()</a>.</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d6/d9c/interfaceSeekableStream"><code>SeekableStream</code></a><a href="#d5/d8f/namespacefs_1a9e774ee83e01eb9115e65c0c2c38e8b4"><code>open</code></a><code>(String fname,String flags)</code></td>
+<td>open text file to read, write, or read and write</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d6/d9c/interfaceSeekableStream"><code>SeekableStream</code></a><a href="#d5/d8f/namespacefs_1a405870e84dfb1e371e37dbfc84b91bb9"><code>openSync</code></a><code>(String fname,String flags)</code></td>
+<td>open text file to read, write, or read and write. Sync version of <a href="#d5/d8f/namespacefs_1a9e774ee83e01eb9115e65c0c2c38e8b4">fs.open()</a>.</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d0/d37/interfaceBufferedStream"><code>BufferedStream</code></a><a href="#d5/d8f/namespacefs_1aaf625a15d9268621cb10eacc4154db5e"><code>openTextStream</code></a><code>(String fname,String flags)</code></td>
+<td>open text file to read, write, or read and write</td>
+</tr>
+
+<tr>
+<td><code>public static String</code><a href="#d5/d8f/namespacefs_1a3c55a9cb42fc1d40decfd30bd2e739e1"><code>readTextFile</code></a><code>(String fname)</code></td>
+<td>open file and read the conent.</td>
+</tr>
+
+<tr>
+<td><code>public static String</code><a href="#d5/d8f/namespacefs_1a7e1ad1be495a3c5e986908fa56861acd"><code>readFile</code></a><code>(String fname)</code></td>
+<td>open a file, read the content</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d5/d8f/namespacefs_1af669e44c86fb17d611438696a9af0f18"><code>readFileSync</code></a><code>(String fname)</code></td>
+<td>open a file, read the content. Sync version of <a href="#d5/d8f/namespacefs_1a7e1ad1be495a3c5e986908fa56861acd">fs.readFile()</a>.</td>
+</tr>
+
+<tr>
+<td><code>public static Array</code><a href="#d5/d8f/namespacefs_1acb42968e4acb281d4633997321392ab1"><code>readLines</code></a><code>(String fname,Integer maxlines)</code></td>
+<td>open file, ready each line of text content intot an array, end of line is recognized based on EOL definition, by default, posix system: &ldquo;\n&rdquo;; windows system: &ldquo;\r\n&rdquo;</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d5/d8f/namespacefs_1a7f608ea611628c8dc7aadc79f7056085"><code>writeTextFile</code></a><code>(String fname,String txt)</code></td>
+<td>create text file and write to file 创建文本文件，并写入内容</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d5/d8f/namespacefs_1a2b9fe79326ffd7bca6e432f1a667f306"><code>writeFile</code></a><code>(String fname,String txt)</code></td>
+<td>create file, and write new content</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d5/d8f/namespacefs_1a8a885a62f0e269f303cd59b00511eca0"><code>writeFileSync</code></a><code>(String fname,</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></td>
+<td>create file, and write new content. Sync version of <a href="#d5/d8f/namespacefs_1a2b9fe79326ffd7bca6e432f1a667f306">fs.writeFile()</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="members">Members</h2>
+
+<h4 id="public-static-boolean-exists-d5-d8f-namespacefs-1a4abe84709aae93e90cf3028c6c13db96-string-path"><code>public static Boolean</code><a href="#d5/d8f/namespacefs_1a4abe84709aae93e90cf3028c6c13db96"><code>exists</code></a><code>(String path)</code></h4>
+
+<p>search if the file or directory exists</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><code>path</code> assign the search path</li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<p>return True indicates the file or directory exists</p>
+
+<h4 id="public-static-boolean-existssync-d5-d8f-namespacefs-1a828508b6b6a7baa69929e54f11bd0121-string-path"><code>public static Boolean</code><a href="#d5/d8f/namespacefs_1a828508b6b6a7baa69929e54f11bd0121"><code>existsSync</code></a><code>(String path)</code></h4>
+
+<p>search if the file or directory exists. Sync version of <a href="#d5/d8f/namespacefs_1a4abe84709aae93e90cf3028c6c13db96">fs.exists()</a>.</p>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<ul>
+<li><code>path</code> assign the search path</li>
+</ul>
+
+<h4 id="returns-1">Returns</h4>
+
+<p>return True indicates the file or directory exists</p>
+
+<h4 id="public-static-static-unlink-d5-d8f-namespacefs-1ad9728d670aa8f486d76c4052f6c8acd5-string-path"><code>public static static</code><a href="#d5/d8f/namespacefs_1ad9728d670aa8f486d76c4052f6c8acd5"><code>unlink</code></a><code>(String path)</code></h4>
+
+<p>the file you want to delete</p>
+
+<h4 id="parameters-2">Parameters</h4>
+
+<ul>
+<li><code>path</code> the path you want to delete</li>
+</ul>
+
+<h4 id="public-static-static-unlinksync-d5-d8f-namespacefs-1a4b15f3243d3c3c277b71522e49a60e16-string-path"><code>public static static</code><a href="#d5/d8f/namespacefs_1a4b15f3243d3c3c277b71522e49a60e16"><code>unlinkSync</code></a><code>(String path)</code></h4>
+
+<p>the file you want to delete. Sync version of <a href="#d5/d8f/namespacefs_1ad9728d670aa8f486d76c4052f6c8acd5">fs.unlink()</a>.</p>
+
+<h4 id="parameters-3">Parameters</h4>
+
+<ul>
+<li><code>path</code> the path you want to delete</li>
+</ul>
+
+<h4 id="public-static-static-mkdir-d5-d8f-namespacefs-1ad11bbef581ff87c5fc33e8b3d4b98dfb-string-path-integer-mode"><code>public static static</code><a href="#d5/d8f/namespacefs_1ad11bbef581ff87c5fc33e8b3d4b98dfb"><code>mkdir</code></a><code>(String path,Integer mode)</code></h4>
+
+<p>create a directory</p>
+
+<h4 id="parameters-4">Parameters</h4>
+
+<ul>
+<li><p><code>path</code> assign the name of directory</p></li>
+
+<li><p><code>mode</code> assign file ownership, Windows user ignore this</p></li>
+</ul>
+
+<h4 id="public-static-static-mkdirsync-d5-d8f-namespacefs-1a82c90f7692b9fbea8577fc99628320d9-string-path-integer-mode"><code>public static static</code><a href="#d5/d8f/namespacefs_1a82c90f7692b9fbea8577fc99628320d9"><code>mkdirSync</code></a><code>(String path,Integer mode)</code></h4>
+
+<p>create a directory. Sync version of <a href="#d5/d8f/namespacefs_1ad11bbef581ff87c5fc33e8b3d4b98dfb">fs.mkdir()</a>.</p>
+
+<h4 id="parameters-5">Parameters</h4>
+
+<ul>
+<li><p><code>path</code> assign the name of directory</p></li>
+
+<li><p><code>mode</code> assign file ownership, Windows user ignore this</p></li>
+</ul>
+
+<h4 id="public-static-static-rmdir-d5-d8f-namespacefs-1ae63300a92680e28c3b2bd55046120049-string-path"><code>public static static</code><a href="#d5/d8f/namespacefs_1ae63300a92680e28c3b2bd55046120049"><code>rmdir</code></a><code>(String path)</code></h4>
+
+<p>delete a directory</p>
+
+<h4 id="parameters-6">Parameters</h4>
+
+<ul>
+<li><code>path</code> the name of targeting directory</li>
+</ul>
+
+<h4 id="public-static-static-rmdirsync-d5-d8f-namespacefs-1a20b380c23534d145eecead87d9b2cab8-string-path"><code>public static static</code><a href="#d5/d8f/namespacefs_1a20b380c23534d145eecead87d9b2cab8"><code>rmdirSync</code></a><code>(String path)</code></h4>
+
+<p>delete a directory. Sync version of <a href="#d5/d8f/namespacefs_1ae63300a92680e28c3b2bd55046120049">fs.rmdir()</a>.</p>
+
+<h4 id="parameters-7">Parameters</h4>
+
+<ul>
+<li><code>path</code> the name of targeting directory</li>
+</ul>
+
+<h4 id="public-static-static-rename-d5-d8f-namespacefs-1a6cfec17da170f79ad860f37515990603-string-from-string-to"><code>public static static</code><a href="#d5/d8f/namespacefs_1a6cfec17da170f79ad860f37515990603"><code>rename</code></a><code>(String from,String to)</code></h4>
+
+<p>rename a file</p>
+
+<h4 id="parameters-8">Parameters</h4>
+
+<ul>
+<li><p><code>from</code> the targeting file name</p></li>
+
+<li><p><code>to</code> the name you want to change to</p></li>
+</ul>
+
+<h4 id="public-static-static-renamesync-d5-d8f-namespacefs-1a439bc947232694de63ae6b927d79e938-string-from-string-to"><code>public static static</code><a href="#d5/d8f/namespacefs_1a439bc947232694de63ae6b927d79e938"><code>renameSync</code></a><code>(String from,String to)</code></h4>
+
+<p>rename a file</p>
+
+<h4 id="parameters-9">Parameters</h4>
+
+<ul>
+<li><p><code>from</code> the targeting file name. Sync version of <a href="#d5/d8f/namespacefs_1a6cfec17da170f79ad860f37515990603">fs.rename()</a>.</p></li>
+
+<li><p><code>to</code> the name you want to change to</p></li>
+</ul>
+
+<h4 id="public-static-static-copy-d5-d8f-namespacefs-1aeff5066a3493122a9cecd8977cbd83d9-string-from-string-to"><code>public static static</code><a href="#d5/d8f/namespacefs_1aeff5066a3493122a9cecd8977cbd83d9"><code>copy</code></a><code>(String from,String to)</code></h4>
+
+<p>copy file</p>
+
+<h4 id="parameters-10">Parameters</h4>
+
+<ul>
+<li><p><code>from</code> file path</p></li>
+
+<li><p><code>to</code> new file path</p></li>
+</ul>
+
+<h4 id="public-static-static-chmod-d5-d8f-namespacefs-1a5b69648f9d4875d97bd01b007c095f94-string-path-integer-mode"><code>public static static</code><a href="#d5/d8f/namespacefs_1a5b69648f9d4875d97bd01b007c095f94"><code>chmod</code></a><code>(String path,Integer mode)</code></h4>
+
+<p>check the permission of targeting file, Windows does not support this</p>
+
+<h4 id="parameters-11">Parameters</h4>
+
+<ul>
+<li><p><code>path</code> the path to the targeting file</p></li>
+
+<li><p><code>mode</code> targeting file permission</p></li>
+</ul>
+
+<h4 id="public-static-static-chmodsync-d5-d8f-namespacefs-1a471a11730f2ab34cbe85287548ec6675-string-path-integer-mode"><code>public static static</code><a href="#d5/d8f/namespacefs_1a471a11730f2ab34cbe85287548ec6675"><code>chmodSync</code></a><code>(String path,Integer mode)</code></h4>
+
+<p>check the permission of targeting file, Windows does not support this. Sync version of <a href="#d5/d8f/namespacefs_1a5b69648f9d4875d97bd01b007c095f94">fs.chmod()</a>.</p>
+
+<h4 id="parameters-12">Parameters</h4>
+
+<ul>
+<li><p><code>path</code> the path to the targeting file</p></li>
+
+<li><p><code>mode</code> targeting file permission</p></li>
+</ul>
+
+<h4 id="public-static-stat-dc-da9-interfacestat-stat-d5-d8f-namespacefs-1a51eb9e7e0bebba7af47eeff6ddcb6425-string-path"><code>public static</code><a href="#dc/da9/interfaceStat"><code>Stat</code></a><a href="#d5/d8f/namespacefs_1a51eb9e7e0bebba7af47eeff6ddcb6425"><code>stat</code></a><code>(String path)</code></h4>
+
+<p>check file basic infomation/stat</p>
+
+<h4 id="parameters-13">Parameters</h4>
+
+<ul>
+<li><code>path</code> the path to the targeting file</li>
+</ul>
+
+<h4 id="returns-2">Returns</h4>
+
+<p>return file basic infomation/stat</p>
+
+<h4 id="public-static-stat-dc-da9-interfacestat-statsync-d5-d8f-namespacefs-1a73fcecc3120d7be9f3e9628e4354107f-string-path"><code>public static</code><a href="#dc/da9/interfaceStat"><code>Stat</code></a><a href="#d5/d8f/namespacefs_1a73fcecc3120d7be9f3e9628e4354107f"><code>statSync</code></a><code>(String path)</code></h4>
+
+<p>check file basic infomation/stat. Sync version of <a href="#d5/d8f/namespacefs_1a51eb9e7e0bebba7af47eeff6ddcb6425">fs.stat()</a>.</p>
+
+<h4 id="parameters-14">Parameters</h4>
+
+<ul>
+<li><code>path</code> the path to the targeting file</li>
+</ul>
+
+<h4 id="returns-3">Returns</h4>
+
+<p>return file basic infomation/stat</p>
+
+<h4 id="public-static-list-de-dd8-interfacelist-readdir-d5-d8f-namespacefs-1a598ef237aea287f4328743429f81ede1-string-path"><code>public static</code><a href="#de/dd8/interfaceList"><code>List</code></a><a href="#d5/d8f/namespacefs_1a598ef237aea287f4328743429f81ede1"><code>readdir</code></a><code>(String path)</code></h4>
+
+<p>read fileinfo inside target directory</p>
+
+<h4 id="parameters-15">Parameters</h4>
+
+<ul>
+<li><code>path</code> the path to the directory</li>
+</ul>
+
+<h4 id="returns-4">Returns</h4>
+
+<p>return a array of files&rsquo; info in target directory</p>
+
+<h4 id="public-static-list-de-dd8-interfacelist-readdirsync-d5-d8f-namespacefs-1a8b687854a662b716a575b6c8b80963b4-string-path"><code>public static</code><a href="#de/dd8/interfaceList"><code>List</code></a><a href="#d5/d8f/namespacefs_1a8b687854a662b716a575b6c8b80963b4"><code>readdirSync</code></a><code>(String path)</code></h4>
+
+<p>read fileinfo inside target directory. Sync version of <a href="#d5/d8f/namespacefs_1a598ef237aea287f4328743429f81ede1">fs.readdir()</a>.</p>
+
+<h4 id="parameters-16">Parameters</h4>
+
+<ul>
+<li><code>path</code> the path to the directory</li>
+</ul>
+
+<h4 id="returns-5">Returns</h4>
+
+<p>return a array of files&rsquo; info in target directory</p>
+
+<h4 id="public-static-seekablestream-d6-d9c-interfaceseekablestream-open-d5-d8f-namespacefs-1a9e774ee83e01eb9115e65c0c2c38e8b4-string-fname-string-flags"><code>public static</code><a href="#d6/d9c/interfaceSeekableStream"><code>SeekableStream</code></a><a href="#d5/d8f/namespacefs_1a9e774ee83e01eb9115e65c0c2c38e8b4"><code>open</code></a><code>(String fname,String flags)</code></h4>
+
+<p>open text file to read, write, or read and write</p>
+
+<h4 id="parameters-17">Parameters</h4>
+
+<ul>
+<li><p><code>fname</code> the name of file</p></li>
+
+<li><p><code>flags</code> define the method for opening file, default is &lsquo;r&rsquo;, read only, other supported methods see below:</p></li>
+
+<li><p>&lsquo;r&rsquo; ready only, throw excption if file dose not exists</p></li>
+
+<li><p>&lsquo;r+&rsquo; read and write, throw excption if file dose not exists</p></li>
+
+<li><p>&lsquo;w&rsquo; write only, create new if file dose not exist, othewise overwrite</p></li>
+
+<li><p>&lsquo;w+&rsquo; ready and write, create new if file dose not exist, othewise overwrite</p></li>
+
+<li><p>&lsquo;a&rsquo; write only add file, create new if file dose not exist, othewise overwrite</p></li>
+
+<li><p>&lsquo;a+&rsquo; read and write to add file, create new if file dose not exist, othewise overwrite</p></li>
+</ul>
+
+<h4 id="returns-6">Returns</h4>
+
+<p>return opened file object</p>
+
+<h4 id="public-static-seekablestream-d6-d9c-interfaceseekablestream-opensync-d5-d8f-namespacefs-1a405870e84dfb1e371e37dbfc84b91bb9-string-fname-string-flags"><code>public static</code><a href="#d6/d9c/interfaceSeekableStream"><code>SeekableStream</code></a><a href="#d5/d8f/namespacefs_1a405870e84dfb1e371e37dbfc84b91bb9"><code>openSync</code></a><code>(String fname,String flags)</code></h4>
+
+<p>open text file to read, write, or read and write. Sync version of <a href="#d5/d8f/namespacefs_1a9e774ee83e01eb9115e65c0c2c38e8b4">fs.open()</a>.</p>
+
+<h4 id="parameters-18">Parameters</h4>
+
+<ul>
+<li><p><code>fname</code> the name of file</p></li>
+
+<li><p><code>flags</code> define the method for opening file, default is &lsquo;r&rsquo;, read only, other supported methods see below:</p></li>
+
+<li><p>&lsquo;r&rsquo; ready only, throw excption if file dose not exists</p></li>
+
+<li><p>&lsquo;r+&rsquo; read and write, throw excption if file dose not exists</p></li>
+
+<li><p>&lsquo;w&rsquo; write only, create new if file dose not exist, othewise overwrite</p></li>
+
+<li><p>&lsquo;w+&rsquo; ready and write, create new if file dose not exist, othewise overwrite</p></li>
+
+<li><p>&lsquo;a&rsquo; write only add file, create new if file dose not exist, othewise overwrite</p></li>
+
+<li><p>&lsquo;a+&rsquo; read and write to add file, create new if file dose not exist, othewise overwrite</p></li>
+</ul>
+
+<h4 id="returns-7">Returns</h4>
+
+<p>return opened file object</p>
+
+<h4 id="public-static-bufferedstream-d0-d37-interfacebufferedstream-opentextstream-d5-d8f-namespacefs-1aaf625a15d9268621cb10eacc4154db5e-string-fname-string-flags"><code>public static</code><a href="#d0/d37/interfaceBufferedStream"><code>BufferedStream</code></a><a href="#d5/d8f/namespacefs_1aaf625a15d9268621cb10eacc4154db5e"><code>openTextStream</code></a><code>(String fname,String flags)</code></h4>
+
+<p>open text file to read, write, or read and write</p>
+
+<h4 id="parameters-19">Parameters</h4>
+
+<ul>
+<li><p><code>fname</code> the name of file</p></li>
+
+<li><p><code>flags</code> define the method for opening file, default is &lsquo;r&rsquo;, read only, other supported methods see below:</p></li>
+
+<li><p>&lsquo;r&rsquo; ready only, throw excption if file dose not exists</p></li>
+
+<li><p>&lsquo;r+&rsquo; read and write, throw excption if file dose not exists</p></li>
+
+<li><p>&lsquo;w&rsquo; write only, create new if file dose not exist, othewise overwrite</p></li>
+
+<li><p>&lsquo;w+&rsquo; ready and write, create new if file dose not exist, othewise overwrite</p></li>
+
+<li><p>&lsquo;a&rsquo; write only add file, create new if file dose not exist, othewise overwrite</p></li>
+
+<li><p>&lsquo;a+&rsquo; read and write to add file, create new if file dose not exist, othewise overwrite</p></li>
+</ul>
+
+<h4 id="returns-8">Returns</h4>
+
+<p>return opened file object</p>
+
+<h4 id="public-static-string-readtextfile-d5-d8f-namespacefs-1a3c55a9cb42fc1d40decfd30bd2e739e1-string-fname"><code>public static String</code><a href="#d5/d8f/namespacefs_1a3c55a9cb42fc1d40decfd30bd2e739e1"><code>readTextFile</code></a><code>(String fname)</code></h4>
+
+<p>open file and read the conent.</p>
+
+<h4 id="parameters-20">Parameters</h4>
+
+<ul>
+<li><code>fname</code> the name of file</li>
+</ul>
+
+<h4 id="returns-9">Returns</h4>
+
+<p>file content</p>
+
+<h4 id="public-static-string-readfile-d5-d8f-namespacefs-1a7e1ad1be495a3c5e986908fa56861acd-string-fname"><code>public static String</code><a href="#d5/d8f/namespacefs_1a7e1ad1be495a3c5e986908fa56861acd"><code>readFile</code></a><code>(String fname)</code></h4>
+
+<p>open a file, read the content</p>
+
+<h4 id="parameters-21">Parameters</h4>
+
+<ul>
+<li><code>fname</code> assign file name</li>
+</ul>
+
+<h4 id="returns-10">Returns</h4>
+
+<p>return content of opened file</p>
+
+<h4 id="public-static-buffer-d0-d11-classbuffer-readfilesync-d5-d8f-namespacefs-1af669e44c86fb17d611438696a9af0f18-string-fname"><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d5/d8f/namespacefs_1af669e44c86fb17d611438696a9af0f18"><code>readFileSync</code></a><code>(String fname)</code></h4>
+
+<p>open a file, read the content. Sync version of <a href="#d5/d8f/namespacefs_1a7e1ad1be495a3c5e986908fa56861acd">fs.readFile()</a>.</p>
+
+<h4 id="parameters-22">Parameters</h4>
+
+<ul>
+<li><code>fname</code> assign file name</li>
+</ul>
+
+<h4 id="returns-11">Returns</h4>
+
+<p>return content of opened file</p>
+
+<h4 id="public-static-array-readlines-d5-d8f-namespacefs-1acb42968e4acb281d4633997321392ab1-string-fname-integer-maxlines"><code>public static Array</code><a href="#d5/d8f/namespacefs_1acb42968e4acb281d4633997321392ab1"><code>readLines</code></a><code>(String fname,Integer maxlines)</code></h4>
+
+<p>open file, ready each line of text content intot an array, end of line is recognized based on EOL definition, by default, posix system: &ldquo;\n&rdquo;; windows system: &ldquo;\r\n&rdquo;</p>
+
+<h4 id="parameters-23">Parameters</h4>
+
+<ul>
+<li><p><code>fname</code> assign file name</p></li>
+
+<li><p><code>maxlines</code> define the maximum number of line to read, read all lines by default</p></li>
+</ul>
+
+<h4 id="returns-12">Returns</h4>
+
+<p>return the array containing every line of file content, if no content or connection is lost, then return an empty array</p>
+
+<h4 id="public-static-static-writetextfile-d5-d8f-namespacefs-1a7f608ea611628c8dc7aadc79f7056085-string-fname-string-txt"><code>public static static</code><a href="#d5/d8f/namespacefs_1a7f608ea611628c8dc7aadc79f7056085"><code>writeTextFile</code></a><code>(String fname,String txt)</code></h4>
+
+<p>create text file and write to file 创建文本文件，并写入内容</p>
+
+<h4 id="parameters-24">Parameters</h4>
+
+<ul>
+<li><p><code>fname</code> assign file name</p></li>
+
+<li><p><code>txt</code> sting to be written</p></li>
+</ul>
+
+<h4 id="public-static-static-writefile-d5-d8f-namespacefs-1a2b9fe79326ffd7bca6e432f1a667f306-string-fname-string-txt"><code>public static static</code><a href="#d5/d8f/namespacefs_1a2b9fe79326ffd7bca6e432f1a667f306"><code>writeFile</code></a><code>(String fname,String txt)</code></h4>
+
+<p>create file, and write new content</p>
+
+<h4 id="parameters-25">Parameters</h4>
+
+<ul>
+<li><p><code>fname</code> assign file name</p></li>
+
+<li><p><code>txt</code> the content you are going to write into file</p></li>
+</ul>
+
+<h4 id="public-static-static-writefilesync-d5-d8f-namespacefs-1a8a885a62f0e269f303cd59b00511eca0-string-fname-buffer-d0-d11-classbuffer-data"><code>public static static</code><a href="#d5/d8f/namespacefs_1a8a885a62f0e269f303cd59b00511eca0"><code>writeFileSync</code></a><code>(String fname,</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></h4>
+
+<p>create file, and write new content. Sync version of <a href="#d5/d8f/namespacefs_1a2b9fe79326ffd7bca6e432f1a667f306">fs.writeFile()</a>.</p>
+
+<h4 id="parameters-26">Parameters</h4>
+
+<ul>
+<li><p><code>fname</code> assign file name</p></li>
+
+<li><p><code>txt</code> the content you are going to write into file</p></li>
+</ul>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+
+      </div>
+    </div>
+
+    
+ 
+    
+
+    <div id="navigation">
+        
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+          
+
+        
+
+
+        
+            <a class="nav nav-prev" href="/module/encoding/" title="encoding"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/module/gd/" title="gd" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js"></script>
+    <script src="/js/jquery.sticky-kit.min.js"></script>
+    <script src="/js/featherlight.min.js"></script>
+    <script src="/js/html5shiv-printshiv.min.js"></script>
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js"></script>
+    <script src="/js/learn.js"></script>
+    <script src="/js/hugo-learn.js"></script>
+
+    
+    <link href="/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script src="/mermaid/mermaid.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+
+    
+
+  </body>
+</html>
+

@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.20.7" />
+    <meta name="description" content="Process handle module, to manage current process resources.">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>process :: fibjs</title>
+    <link href="/css/nucleus.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/hybrid.css" rel="stylesheet">
+    <link href="/css/featherlight.min.css" rel="stylesheet">
+    <link href="/css/horsey.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+
+    
+
+    
+
+  </head>
+  <body class="" data-url="/module/process/">
+    
+<nav id="sidebar" class="">
+  <div id="header-wrapper">
+    <div id="header">
+       
+	<p>Fibjs Documentation</p>
+ 
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/horsey.js"></script>
+<script type="text/javascript">
+    var baseurl = "http:\/\/example.org\/";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+
+    
+  </div>
+
+  <div class="highlightable">
+    <ul class="topics">
+        
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+        
+
+        
+        
+        
+        
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/modules/" class="dd-item 
+         
+        parent
+        "
+        >
+            <a href="/modules/">
+                <span>Modules</span>
+                
+                    
+                        <i class="fa fa-angle-down fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+                
+                
+                
+                    
+                
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/assert/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/assert/">
+                <span>assert</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base32/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base32/">
+                <span>base32</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64/">
+                <span>base64</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64vlq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64vlq/">
+                <span>base64vlq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/bson/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/bson/">
+                <span>bson</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/console/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/console/">
+                <span>console</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/coroutine/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/coroutine/">
+                <span>coroutine</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/crypto/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/crypto/">
+                <span>crypto</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/db/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/db/">
+                <span>db</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/encoding/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/encoding/">
+                <span>encoding</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/fs/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/fs/">
+                <span>fs</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/gd/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/gd/">
+                <span>gd</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/global/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/global/">
+                <span>global</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hash/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hash/">
+                <span>hash</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hex/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hex/">
+                <span>hex</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/http/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/http/">
+                <span>http</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/iconv/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/iconv/">
+                <span>iconv</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/io/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/io/">
+                <span>io</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/json/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/json/">
+                <span>json</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/mq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/mq/">
+                <span>mq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/net/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/net/">
+                <span>net</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/os/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/os/">
+                <span>os</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/path/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/path/">
+                <span>path</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/process/" class="dd-item 
+        active 
+        
+        "
+        >
+            <a href="/module/process/">
+                <span>process</span>
+                
+                
+            </a>
+            
+                
+                
+                
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/profiler/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/profiler/">
+                <span>profiler</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/re/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/re/">
+                <span>re</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/ssl/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/ssl/">
+                <span>ssl</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/test/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/test/">
+                <span>test</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/util/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/util/">
+                <span>util</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/uuid/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/uuid/">
+                <span>uuid</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/vm/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/vm/">
+                <span>vm</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/websocket/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/websocket/">
+                <span>websocket</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/xml/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/xml/">
+                <span>xml</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zip/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zip/">
+                <span>zip</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zlib/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zlib/">
+                <span>zlib</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/objects/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/objects/">
+                <span>Objects</span>
+                
+                    
+                        <i class="fa fa-angle-right fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/asyncwait/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/asyncwait/">
+                <span>AsyncWait</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/buffer/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/buffer/">
+                <span>Buffer</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+
+        
+
+        
+        
+        
+    </ul>
+    
+     
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+        
+          <div id="top-bar">
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                <span id="toc-menu"><a href=""><i class="fa fa-list-alt"></i></a></span>
+                <a href="http://example.org/">
+                  <span class="fa fa-arrow-circle-right" style="font-size:larger" aria-hidden="true"></span>
+                  fibjs
+                </a>
+                
+                   / <a href='/modules/'>Modules</a> / <a href='/module/process/'>process</a>
+                
+                
+            </div>
+            <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#members">Members</a>
+<ul>
+<li>
+<ul>
+<li><a href="#public-static-integer-umask-d8-d25-namespaceprocess-1a51e18d137c98fd88756d714f2022aa71-integer-mask"><code>public static Integer</code><a href="#d8/d25/namespaceprocess_1a51e18d137c98fd88756d714f2022aa71"><code>umask</code></a><code>(Integer mask)</code></a></li>
+<li><a href="#parameters">Parameters</a></li>
+<li><a href="#returns">Returns</a></li>
+<li><a href="#public-static-integer-umask-d8-d25-namespaceprocess-1aaf9d2a4e35aed285f9826e28419e930f-string-mask"><code>public static Integer</code><a href="#d8/d25/namespaceprocess_1aaf9d2a4e35aed285f9826e28419e930f"><code>umask</code></a><code>(String mask)</code></a></li>
+<li><a href="#parameters-1">Parameters</a></li>
+<li><a href="#returns-1">Returns</a></li>
+<li><a href="#public-static-integer-umask-d8-d25-namespaceprocess-1a7d39fd6d6085358f1fd9dd9e44777555"><code>public static Integer</code><a href="#d8/d25/namespaceprocess_1a7d39fd6d6085358f1fd9dd9e44777555"><code>umask</code></a><code>()</code></a></li>
+<li><a href="#returns-2">Returns</a></li>
+<li><a href="#public-static-static-exit-d8-d25-namespaceprocess-1a219dc13763dff453b237901c89bc6add-integer-code"><code>public static static</code><a href="#d8/d25/namespaceprocess_1a219dc13763dff453b237901c89bc6add"><code>exit</code></a><code>(Integer code)</code></a></li>
+<li><a href="#parameters-2">Parameters</a></li>
+<li><a href="#public-static-string-cwd-d8-d25-namespaceprocess-1a59492653e6cf45081a9c8a348c57af16"><code>public static String</code><a href="#d8/d25/namespaceprocess_1a59492653e6cf45081a9c8a348c57af16"><code>cwd</code></a><code>()</code></a></li>
+<li><a href="#returns-3">Returns</a></li>
+<li><a href="#public-static-static-chdir-d8-d25-namespaceprocess-1a8561579fcdf7f34e795e6937829a39ff-string-directory"><code>public static static</code><a href="#d8/d25/namespaceprocess_1a8561579fcdf7f34e795e6937829a39ff"><code>chdir</code></a><code>(String directory)</code></a></li>
+<li><a href="#parameters-3">Parameters</a></li>
+<li><a href="#public-static-number-uptime-d8-d25-namespaceprocess-1a37ac67356e04ce3c54b6a707f0e2783e"><code>public static Number</code><a href="#d8/d25/namespaceprocess_1a37ac67356e04ce3c54b6a707f0e2783e"><code>uptime</code></a><code>()</code></a></li>
+<li><a href="#returns-4">Returns</a></li>
+<li><a href="#public-static-object-memoryusage-d8-d25-namespaceprocess-1a30bf3a01655c4e12298c063786156d2b"><code>public static Object</code><a href="#d8/d25/namespaceprocess_1a30bf3a01655c4e12298c063786156d2b"><code>memoryUsage</code></a><code>()</code></a></li>
+<li><a href="#returns-5">Returns</a></li>
+<li><a href="#public-static-static-nexttick-d8-d25-namespaceprocess-1a5f1a7165f38798666a6fe0ed55b4404b-function-func"><code>public static static</code><a href="#d8/d25/namespaceprocess_1a5f1a7165f38798666a6fe0ed55b4404b"><code>nextTick</code></a><code>(Function func,...)</code></a></li>
+<li><a href="#parameters-4">Parameters</a></li>
+<li><a href="#public-static-subprocess-d8-d10-interfacesubprocess-open-d8-d25-namespaceprocess-1aae5284cd12d7829a4892eb43450b6e0b-string-command-array-args-object-opts"><code>public static</code><a href="#d8/d10/interfaceSubProcess"><code>SubProcess</code></a><a href="#d8/d25/namespaceprocess_1aae5284cd12d7829a4892eb43450b6e0b"><code>open</code></a><code>(String command,Array args,Object opts)</code></a></li>
+<li><a href="#parameters-5">Parameters</a></li>
+<li><a href="#returns-6">Returns</a></li>
+<li><a href="#public-static-subprocess-d8-d10-interfacesubprocess-open-d8-d25-namespaceprocess-1a8705d424d2621e41adc98d6755c176ab-string-command-object-opts"><code>public static</code><a href="#d8/d10/interfaceSubProcess"><code>SubProcess</code></a><a href="#d8/d25/namespaceprocess_1a8705d424d2621e41adc98d6755c176ab"><code>open</code></a><code>(String command,Object opts)</code></a></li>
+<li><a href="#parameters-6">Parameters</a></li>
+<li><a href="#returns-7">Returns</a></li>
+<li><a href="#public-static-subprocess-d8-d10-interfacesubprocess-start-d8-d25-namespaceprocess-1aa2569c7583e8dd1c3b92086002c6e741-string-command-array-args-object-opts"><code>public static</code><a href="#d8/d10/interfaceSubProcess"><code>SubProcess</code></a><a href="#d8/d25/namespaceprocess_1aa2569c7583e8dd1c3b92086002c6e741"><code>start</code></a><code>(String command,Array args,Object opts)</code></a></li>
+<li><a href="#parameters-7">Parameters</a></li>
+<li><a href="#returns-8">Returns</a></li>
+<li><a href="#public-static-subprocess-d8-d10-interfacesubprocess-start-d8-d25-namespaceprocess-1a930139c20bcdedef5d5fbd9ec22ed7ef-string-command-object-opts"><code>public static</code><a href="#d8/d10/interfaceSubProcess"><code>SubProcess</code></a><a href="#d8/d25/namespaceprocess_1a930139c20bcdedef5d5fbd9ec22ed7ef"><code>start</code></a><code>(String command,Object opts)</code></a></li>
+<li><a href="#parameters-8">Parameters</a></li>
+<li><a href="#returns-9">Returns</a></li>
+<li><a href="#public-static-integer-run-d8-d25-namespaceprocess-1add057f3b20e86373a9b1ba9e1757504c-string-command-array-args-object-opts"><code>public static Integer</code><a href="#d8/d25/namespaceprocess_1add057f3b20e86373a9b1ba9e1757504c"><code>run</code></a><code>(String command,Array args,Object opts)</code></a></li>
+<li><a href="#parameters-9">Parameters</a></li>
+<li><a href="#returns-10">Returns</a></li>
+<li><a href="#public-static-integer-run-d8-d25-namespaceprocess-1ada594bfe0c7da5d9346cb074292bb13d-string-command-object-opts"><code>public static Integer</code><a href="#d8/d25/namespaceprocess_1ada594bfe0c7da5d9346cb074292bb13d"><code>run</code></a><code>(String command,Object opts)</code></a></li>
+<li><a href="#parameters-10">Parameters</a></li>
+<li><a href="#returns-11">Returns</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+          </div>
+        
+        
+        <div id="body-inner">
+          
+            <h1>process</h1>
+          
+
+
+
+
+<p>Process handle module, to manage current process resources.</p>
+
+<p>To use it:</p>
+
+<pre><code class="language-cpp">var process = require('process');
+</code></pre>
+
+<h2 id="summary">Summary</h2>
+
+<table>
+<thead>
+<tr>
+<th>Members</th>
+<th>Descriptions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>public static Integer</code><a href="#d8/d25/namespaceprocess_1a51e18d137c98fd88756d714f2022aa71"><code>umask</code></a><code>(Integer mask)</code></td>
+<td>change the current umask，Windows does&rsquo;t support this.</td>
+</tr>
+
+<tr>
+<td><code>public static Integer</code><a href="#d8/d25/namespaceprocess_1aaf9d2a4e35aed285f9826e28419e930f"><code>umask</code></a><code>(String mask)</code></td>
+<td>change the current umask，Windows does&rsquo;t support this.</td>
+</tr>
+
+<tr>
+<td><code>public static Integer</code><a href="#d8/d25/namespaceprocess_1a7d39fd6d6085358f1fd9dd9e44777555"><code>umask</code></a><code>()</code></td>
+<td>return the current umask，Windows does&rsquo;t support this.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d8/d25/namespaceprocess_1a219dc13763dff453b237901c89bc6add"><code>exit</code></a><code>(Integer code)</code></td>
+<td>Exit current process, and return result.</td>
+</tr>
+
+<tr>
+<td><code>public static String</code><a href="#d8/d25/namespaceprocess_1a59492653e6cf45081a9c8a348c57af16"><code>cwd</code></a><code>()</code></td>
+<td>Return current work path of the operating system.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d8/d25/namespaceprocess_1a8561579fcdf7f34e795e6937829a39ff"><code>chdir</code></a><code>(String directory)</code></td>
+<td>Change the current work path of operating system.</td>
+</tr>
+
+<tr>
+<td><code>public static Number</code><a href="#d8/d25/namespaceprocess_1a37ac67356e04ce3c54b6a707f0e2783e"><code>uptime</code></a><code>()</code></td>
+<td>returns the system uptime in number of seconds.</td>
+</tr>
+
+<tr>
+<td><code>public static Object</code><a href="#d8/d25/namespaceprocess_1a30bf3a01655c4e12298c063786156d2b"><code>memoryUsage</code></a><code>()</code></td>
+<td>Get report of memory the current process consumpt.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d8/d25/namespaceprocess_1a5f1a7165f38798666a6fe0ed55b4404b"><code>nextTick</code></a><code>(Function func,...)</code></td>
+<td>start a fiber</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d8/d10/interfaceSubProcess"><code>SubProcess</code></a><a href="#d8/d25/namespaceprocess_1aae5284cd12d7829a4892eb43450b6e0b"><code>open</code></a><code>(String command,Array args,Object opts)</code></td>
+<td>Create chlid process taking charge of stdin and stdout and run bash command.</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d8/d10/interfaceSubProcess"><code>SubProcess</code></a><a href="#d8/d25/namespaceprocess_1a8705d424d2621e41adc98d6755c176ab"><code>open</code></a><code>(String command,Object opts)</code></td>
+<td>Create chlid process taking charge of stdin and stdout and run bash command.</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d8/d10/interfaceSubProcess"><code>SubProcess</code></a><a href="#d8/d25/namespaceprocess_1aa2569c7583e8dd1c3b92086002c6e741"><code>start</code></a><code>(String command,Array args,Object opts)</code></td>
+<td>Create chlid process and run bash command.</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d8/d10/interfaceSubProcess"><code>SubProcess</code></a><a href="#d8/d25/namespaceprocess_1a930139c20bcdedef5d5fbd9ec22ed7ef"><code>start</code></a><code>(String command,Object opts)</code></td>
+<td>Create chlid process and run bash command.</td>
+</tr>
+
+<tr>
+<td><code>public static Integer</code><a href="#d8/d25/namespaceprocess_1add057f3b20e86373a9b1ba9e1757504c"><code>run</code></a><code>(String command,Array args,Object opts)</code></td>
+<td>Run bash command and return result code.</td>
+</tr>
+
+<tr>
+<td><code>public static Integer</code><a href="#d8/d25/namespaceprocess_1ada594bfe0c7da5d9346cb074292bb13d"><code>run</code></a><code>(String command,Object opts)</code></td>
+<td>Run bash command and return result code.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="members">Members</h2>
+
+<h4 id="public-static-integer-umask-d8-d25-namespaceprocess-1a51e18d137c98fd88756d714f2022aa71-integer-mask"><code>public static Integer</code><a href="#d8/d25/namespaceprocess_1a51e18d137c98fd88756d714f2022aa71"><code>umask</code></a><code>(Integer mask)</code></h4>
+
+<p>change the current umask，Windows does&rsquo;t support this.</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><code>mask</code> the mask to set</li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<p>the previous mask</p>
+
+<h4 id="public-static-integer-umask-d8-d25-namespaceprocess-1aaf9d2a4e35aed285f9826e28419e930f-string-mask"><code>public static Integer</code><a href="#d8/d25/namespaceprocess_1aaf9d2a4e35aed285f9826e28419e930f"><code>umask</code></a><code>(String mask)</code></h4>
+
+<p>change the current umask，Windows does&rsquo;t support this.</p>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<ul>
+<li><code>mask</code> octonary string(e.g: &ldquo;0664&rdquo;)</li>
+</ul>
+
+<h4 id="returns-1">Returns</h4>
+
+<p>the previous mask</p>
+
+<h4 id="public-static-integer-umask-d8-d25-namespaceprocess-1a7d39fd6d6085358f1fd9dd9e44777555"><code>public static Integer</code><a href="#d8/d25/namespaceprocess_1a7d39fd6d6085358f1fd9dd9e44777555"><code>umask</code></a><code>()</code></h4>
+
+<p>return the current umask，Windows does&rsquo;t support this.</p>
+
+<h4 id="returns-2">Returns</h4>
+
+<p>the current mask</p>
+
+<h4 id="public-static-static-exit-d8-d25-namespaceprocess-1a219dc13763dff453b237901c89bc6add-integer-code"><code>public static static</code><a href="#d8/d25/namespaceprocess_1a219dc13763dff453b237901c89bc6add"><code>exit</code></a><code>(Integer code)</code></h4>
+
+<p>Exit current process, and return result.</p>
+
+<h4 id="parameters-2">Parameters</h4>
+
+<ul>
+<li><code>code</code> result of process.</li>
+</ul>
+
+<h4 id="public-static-string-cwd-d8-d25-namespaceprocess-1a59492653e6cf45081a9c8a348c57af16"><code>public static String</code><a href="#d8/d25/namespaceprocess_1a59492653e6cf45081a9c8a348c57af16"><code>cwd</code></a><code>()</code></h4>
+
+<p>Return current work path of the operating system.</p>
+
+<h4 id="returns-3">Returns</h4>
+
+<p>Work path.</p>
+
+<h4 id="public-static-static-chdir-d8-d25-namespaceprocess-1a8561579fcdf7f34e795e6937829a39ff-string-directory"><code>public static static</code><a href="#d8/d25/namespaceprocess_1a8561579fcdf7f34e795e6937829a39ff"><code>chdir</code></a><code>(String directory)</code></h4>
+
+<p>Change the current work path of operating system.</p>
+
+<h4 id="parameters-3">Parameters</h4>
+
+<ul>
+<li><code>directory</code> The new work path.</li>
+</ul>
+
+<h4 id="public-static-number-uptime-d8-d25-namespaceprocess-1a37ac67356e04ce3c54b6a707f0e2783e"><code>public static Number</code><a href="#d8/d25/namespaceprocess_1a37ac67356e04ce3c54b6a707f0e2783e"><code>uptime</code></a><code>()</code></h4>
+
+<p>returns the system uptime in number of seconds.</p>
+
+<h4 id="returns-4">Returns</h4>
+
+<p>seconds</p>
+
+<h4 id="public-static-object-memoryusage-d8-d25-namespaceprocess-1a30bf3a01655c4e12298c063786156d2b"><code>public static Object</code><a href="#d8/d25/namespaceprocess_1a30bf3a01655c4e12298c063786156d2b"><code>memoryUsage</code></a><code>()</code></h4>
+
+<p>Get report of memory the current process consumpt.</p>
+
+<h4 id="returns-5">Returns</h4>
+
+<p>Memory report object.</p>
+
+<p>Memory report like this:</p>
+
+<pre><code class="language-cpp">{
+  &quot;rss&quot;: 8622080,
+  &quot;heapTotal&quot;: 4083456,
+  &quot;heapUsed&quot;: 1621800
+}
+</code></pre>
+
+<p>among the report：</p>
+
+<ul>
+<li><p>rss Occupation of physical memory.</p></li>
+
+<li><p>heapTotal Total heap memory of v8.</p></li>
+
+<li><p>heapUsed Heap memory occupied by v8.</p></li>
+</ul>
+
+<h4 id="public-static-static-nexttick-d8-d25-namespaceprocess-1a5f1a7165f38798666a6fe0ed55b4404b-function-func"><code>public static static</code><a href="#d8/d25/namespaceprocess_1a5f1a7165f38798666a6fe0ed55b4404b"><code>nextTick</code></a><code>(Function func,...)</code></h4>
+
+<p>start a fiber</p>
+
+<h4 id="parameters-4">Parameters</h4>
+
+<ul>
+<li><p><code>func</code> function to be executed in the new fiber.</p></li>
+
+<li><p><code>...</code> params which will be passed to the func.</p></li>
+</ul>
+
+<h4 id="public-static-subprocess-d8-d10-interfacesubprocess-open-d8-d25-namespaceprocess-1aae5284cd12d7829a4892eb43450b6e0b-string-command-array-args-object-opts"><code>public static</code><a href="#d8/d10/interfaceSubProcess"><code>SubProcess</code></a><a href="#d8/d25/namespaceprocess_1aae5284cd12d7829a4892eb43450b6e0b"><code>open</code></a><code>(String command,Array args,Object opts)</code></h4>
+
+<p>Create chlid process taking charge of stdin and stdout and run bash command.</p>
+
+<h4 id="parameters-5">Parameters</h4>
+
+<ul>
+<li><p><code>command</code> Bash command to be executed.</p></li>
+
+<li><p><code>args</code> Arguments for bash command.</p></li>
+
+<li><p><code>opts</code> Option of child process, such as:</p>
+
+<pre><code class="language-cpp">{
+&quot;timeout&quot;: 100, // unit ms
+&quot;envs&quot;: [] // Enviroment variable of child process.
+}
+</code></pre></li>
+</ul>
+
+<h4 id="returns-6">Returns</h4>
+
+<p>Child process object containing result of command.</p>
+
+<h4 id="public-static-subprocess-d8-d10-interfacesubprocess-open-d8-d25-namespaceprocess-1a8705d424d2621e41adc98d6755c176ab-string-command-object-opts"><code>public static</code><a href="#d8/d10/interfaceSubProcess"><code>SubProcess</code></a><a href="#d8/d25/namespaceprocess_1a8705d424d2621e41adc98d6755c176ab"><code>open</code></a><code>(String command,Object opts)</code></h4>
+
+<p>Create chlid process taking charge of stdin and stdout and run bash command.</p>
+
+<h4 id="parameters-6">Parameters</h4>
+
+<ul>
+<li><p><code>command</code> Bash command.</p></li>
+
+<li><p><code>opts</code> Option of child process, such as:</p>
+
+<pre><code class="language-cpp">{
+&quot;timeout&quot;: 100, // unit ms
+&quot;envs&quot;: [] // Environment variable of child process.
+}
+</code></pre></li>
+</ul>
+
+<h4 id="returns-7">Returns</h4>
+
+<p>Child process object containing result of command.</p>
+
+<h4 id="public-static-subprocess-d8-d10-interfacesubprocess-start-d8-d25-namespaceprocess-1aa2569c7583e8dd1c3b92086002c6e741-string-command-array-args-object-opts"><code>public static</code><a href="#d8/d10/interfaceSubProcess"><code>SubProcess</code></a><a href="#d8/d25/namespaceprocess_1aa2569c7583e8dd1c3b92086002c6e741"><code>start</code></a><code>(String command,Array args,Object opts)</code></h4>
+
+<p>Create chlid process and run bash command.</p>
+
+<h4 id="parameters-7">Parameters</h4>
+
+<ul>
+<li><p><code>command</code> Bash command.</p></li>
+
+<li><p><code>args</code> Arguments of bash command.</p></li>
+
+<li><p><code>opts</code> Option of child process, such as:</p>
+
+<pre><code class="language-cpp">{
+&quot;timeout&quot;: 100, // unit ms
+&quot;envs&quot;: [] // Environment variable of child process.
+}
+</code></pre></li>
+</ul>
+
+<h4 id="returns-8">Returns</h4>
+
+<p>Child process object containing result of the command.</p>
+
+<h4 id="public-static-subprocess-d8-d10-interfacesubprocess-start-d8-d25-namespaceprocess-1a930139c20bcdedef5d5fbd9ec22ed7ef-string-command-object-opts"><code>public static</code><a href="#d8/d10/interfaceSubProcess"><code>SubProcess</code></a><a href="#d8/d25/namespaceprocess_1a930139c20bcdedef5d5fbd9ec22ed7ef"><code>start</code></a><code>(String command,Object opts)</code></h4>
+
+<p>Create chlid process and run bash command.</p>
+
+<h4 id="parameters-8">Parameters</h4>
+
+<ul>
+<li><p><code>command</code> Bash command.</p></li>
+
+<li><p><code>opts</code> Option of child process, such as:</p>
+
+<pre><code class="language-cpp">{
+&quot;timeout&quot;: 100, // unit ms
+&quot;envs&quot;: [] // Environment variable of child process.
+}
+</code></pre></li>
+</ul>
+
+<h4 id="returns-9">Returns</h4>
+
+<p>Child process object containing result of the command.</p>
+
+<h4 id="public-static-integer-run-d8-d25-namespaceprocess-1add057f3b20e86373a9b1ba9e1757504c-string-command-array-args-object-opts"><code>public static Integer</code><a href="#d8/d25/namespaceprocess_1add057f3b20e86373a9b1ba9e1757504c"><code>run</code></a><code>(String command,Array args,Object opts)</code></h4>
+
+<p>Run bash command and return result code.</p>
+
+<h4 id="parameters-9">Parameters</h4>
+
+<ul>
+<li><p><code>command</code> Bash command.</p></li>
+
+<li><p><code>args</code> Arguments of bash command.</p></li>
+
+<li><p><code>opts</code> Option of child process, such as:</p>
+
+<pre><code class="language-cpp">{
+&quot;timeout&quot;: 100, // unit ms
+&quot;envs&quot;: [] // Environment variable of child process.
+}
+</code></pre></li>
+</ul>
+
+<h4 id="returns-10">Returns</h4>
+
+<p>Result code of bash command.</p>
+
+<h4 id="public-static-integer-run-d8-d25-namespaceprocess-1ada594bfe0c7da5d9346cb074292bb13d-string-command-object-opts"><code>public static Integer</code><a href="#d8/d25/namespaceprocess_1ada594bfe0c7da5d9346cb074292bb13d"><code>run</code></a><code>(String command,Object opts)</code></h4>
+
+<p>Run bash command and return result code.</p>
+
+<h4 id="parameters-10">Parameters</h4>
+
+<ul>
+<li><p><code>command</code> Bash command.</p></li>
+
+<li><p><code>opts</code> Option of child process, such as:</p>
+
+<pre><code class="language-cpp">{
+&quot;timeout&quot;: 100, // unit ms
+&quot;envs&quot;: [] // Environment variable of child process.
+}
+</code></pre></li>
+</ul>
+
+<h4 id="returns-11">Returns</h4>
+
+<p>Result code of bash command.</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+
+      </div>
+    </div>
+
+    
+ 
+    
+
+    <div id="navigation">
+        
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+          
+
+        
+
+
+        
+            <a class="nav nav-prev" href="/module/path/" title="path"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/module/profiler/" title="profiler" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js"></script>
+    <script src="/js/jquery.sticky-kit.min.js"></script>
+    <script src="/js/featherlight.min.js"></script>
+    <script src="/js/html5shiv-printshiv.min.js"></script>
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js"></script>
+    <script src="/js/learn.js"></script>
+    <script src="/js/hugo-learn.js"></script>
+
+    
+    <link href="/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script src="/mermaid/mermaid.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+
+    
+
+  </body>
+</html>
+

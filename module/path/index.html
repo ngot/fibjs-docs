@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.20.7" />
+    <meta name="description" content="File path module.">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>path :: fibjs</title>
+    <link href="/css/nucleus.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/hybrid.css" rel="stylesheet">
+    <link href="/css/featherlight.min.css" rel="stylesheet">
+    <link href="/css/horsey.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+
+    
+
+    
+
+  </head>
+  <body class="" data-url="/module/path/">
+    
+<nav id="sidebar" class="">
+  <div id="header-wrapper">
+    <div id="header">
+       
+	<p>Fibjs Documentation</p>
+ 
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/horsey.js"></script>
+<script type="text/javascript">
+    var baseurl = "http:\/\/example.org\/";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+
+    
+  </div>
+
+  <div class="highlightable">
+    <ul class="topics">
+        
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+        
+
+        
+        
+        
+        
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/modules/" class="dd-item 
+         
+        parent
+        "
+        >
+            <a href="/modules/">
+                <span>Modules</span>
+                
+                    
+                        <i class="fa fa-angle-down fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+                
+                
+                
+                    
+                
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/assert/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/assert/">
+                <span>assert</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base32/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base32/">
+                <span>base32</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64/">
+                <span>base64</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64vlq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64vlq/">
+                <span>base64vlq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/bson/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/bson/">
+                <span>bson</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/console/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/console/">
+                <span>console</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/coroutine/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/coroutine/">
+                <span>coroutine</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/crypto/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/crypto/">
+                <span>crypto</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/db/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/db/">
+                <span>db</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/encoding/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/encoding/">
+                <span>encoding</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/fs/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/fs/">
+                <span>fs</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/gd/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/gd/">
+                <span>gd</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/global/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/global/">
+                <span>global</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hash/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hash/">
+                <span>hash</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hex/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hex/">
+                <span>hex</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/http/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/http/">
+                <span>http</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/iconv/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/iconv/">
+                <span>iconv</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/io/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/io/">
+                <span>io</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/json/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/json/">
+                <span>json</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/mq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/mq/">
+                <span>mq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/net/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/net/">
+                <span>net</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/os/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/os/">
+                <span>os</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/path/" class="dd-item 
+        active 
+        
+        "
+        >
+            <a href="/module/path/">
+                <span>path</span>
+                
+                
+            </a>
+            
+                
+                
+                
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/process/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/process/">
+                <span>process</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/profiler/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/profiler/">
+                <span>profiler</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/re/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/re/">
+                <span>re</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/ssl/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/ssl/">
+                <span>ssl</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/test/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/test/">
+                <span>test</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/util/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/util/">
+                <span>util</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/uuid/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/uuid/">
+                <span>uuid</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/vm/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/vm/">
+                <span>vm</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/websocket/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/websocket/">
+                <span>websocket</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/xml/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/xml/">
+                <span>xml</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zip/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zip/">
+                <span>zip</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zlib/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zlib/">
+                <span>zlib</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/objects/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/objects/">
+                <span>Objects</span>
+                
+                    
+                        <i class="fa fa-angle-right fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/asyncwait/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/asyncwait/">
+                <span>AsyncWait</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/buffer/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/buffer/">
+                <span>Buffer</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+
+        
+
+        
+        
+        
+    </ul>
+    
+     
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+        
+          <div id="top-bar">
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                <span id="toc-menu"><a href=""><i class="fa fa-list-alt"></i></a></span>
+                <a href="http://example.org/">
+                  <span class="fa fa-arrow-circle-right" style="font-size:larger" aria-hidden="true"></span>
+                  fibjs
+                </a>
+                
+                   / <a href='/modules/'>Modules</a> / <a href='/module/path/'>path</a>
+                
+                
+            </div>
+            <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#members">Members</a>
+<ul>
+<li>
+<ul>
+<li><a href="#public-static-string-normalize-d0-d43-namespacepath-1ab5940f0638ae1ecf73788c7c6e5da56c-string-path"><code>public static String</code><a href="#d0/d43/namespacepath_1ab5940f0638ae1ecf73788c7c6e5da56c"><code>normalize</code></a><code>(String path)</code></a></li>
+<li><a href="#parameters">Parameters</a></li>
+<li><a href="#returns">Returns</a></li>
+<li><a href="#public-static-string-basename-d0-d43-namespacepath-1a82751cb3c3cda3cbd756667343737f4d-string-path-string-ext"><code>public static String</code><a href="#d0/d43/namespacepath_1a82751cb3c3cda3cbd756667343737f4d"><code>basename</code></a><code>(String path,String ext)</code></a></li>
+<li><a href="#parameters-1">Parameters</a></li>
+<li><a href="#returns-1">Returns</a></li>
+<li><a href="#public-static-string-extname-d0-d43-namespacepath-1aea5f6966a2f57a23cb34dd2700f8ffe5-string-path"><code>public static String</code><a href="#d0/d43/namespacepath_1aea5f6966a2f57a23cb34dd2700f8ffe5"><code>extname</code></a><code>(String path)</code></a></li>
+<li><a href="#parameters-2">Parameters</a></li>
+<li><a href="#returns-2">Returns</a></li>
+<li><a href="#public-static-string-dirname-d0-d43-namespacepath-1aeb69e3ac13503ae13ec20bd954f8d5e7-string-path"><code>public static String</code><a href="#d0/d43/namespacepath_1aeb69e3ac13503ae13ec20bd954f8d5e7"><code>dirname</code></a><code>(String path)</code></a></li>
+<li><a href="#parameters-3">Parameters</a></li>
+<li><a href="#returns-3">Returns</a></li>
+<li><a href="#public-static-string-fullpath-d0-d43-namespacepath-1a39317bd9f009a2295d12865393d2d8d8-string-path"><code>public static String</code><a href="#d0/d43/namespacepath_1a39317bd9f009a2295d12865393d2d8d8"><code>fullpath</code></a><code>(String path)</code></a></li>
+<li><a href="#parameters-4">Parameters</a></li>
+<li><a href="#returns-4">Returns</a></li>
+<li><a href="#public-static-string-join-d0-d43-namespacepath-1ac551d9bf9f00720470cac3fdc098a8b3"><code>public static String</code><a href="#d0/d43/namespacepath_1ac551d9bf9f00720470cac3fdc098a8b3"><code>join</code></a><code>(...)</code></a></li>
+<li><a href="#parameters-5">Parameters</a></li>
+<li><a href="#returns-5">Returns</a></li>
+<li><a href="#public-static-string-resolve-d0-d43-namespacepath-1ad7a5c3dcc290cdf508621d865e52d1d8"><code>public static String</code><a href="#d0/d43/namespacepath_1ad7a5c3dcc290cdf508621d865e52d1d8"><code>resolve</code></a><code>(...)</code></a></li>
+<li><a href="#parameters-6">Parameters</a></li>
+<li><a href="#returns-6">Returns</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+          </div>
+        
+        
+        <div id="body-inner">
+          
+            <h1>path</h1>
+          
+
+
+
+
+<p><a href="#d3/d3a/interfaceFile">File</a> path module.</p>
+
+<p>To use it:</p>
+
+<pre><code class="language-cpp">var path = require('path');
+</code></pre>
+
+<h2 id="summary">Summary</h2>
+
+<table>
+<thead>
+<tr>
+<th>Members</th>
+<th>Descriptions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>public static String</code><a href="#d0/d43/namespacepath_1ab5940f0638ae1ecf73788c7c6e5da56c"><code>normalize</code></a><code>(String path)</code></td>
+<td>Normalize path.</td>
+</tr>
+
+<tr>
+<td><code>public static String</code><a href="#d0/d43/namespacepath_1a82751cb3c3cda3cbd756667343737f4d"><code>basename</code></a><code>(String path,String ext)</code></td>
+<td>Get file name in path, ignore extension with file has it.</td>
+</tr>
+
+<tr>
+<td><code>public static String</code><a href="#d0/d43/namespacepath_1aea5f6966a2f57a23cb34dd2700f8ffe5"><code>extname</code></a><code>(String path)</code></td>
+<td>Get file extension.</td>
+</tr>
+
+<tr>
+<td><code>public static String</code><a href="#d0/d43/namespacepath_1aeb69e3ac13503ae13ec20bd954f8d5e7"><code>dirname</code></a><code>(String path)</code></td>
+<td>Get directory in path.</td>
+</tr>
+
+<tr>
+<td><code>public static String</code><a href="#d0/d43/namespacepath_1a39317bd9f009a2295d12865393d2d8d8"><code>fullpath</code></a><code>(String path)</code></td>
+<td>Get full path.</td>
+</tr>
+
+<tr>
+<td><code>public static String</code><a href="#d0/d43/namespacepath_1ac551d9bf9f00720470cac3fdc098a8b3"><code>join</code></a><code>(...)</code></td>
+<td>Merge multiple paths to a single relative path.</td>
+</tr>
+
+<tr>
+<td><code>public static String</code><a href="#d0/d43/namespacepath_1ad7a5c3dcc290cdf508621d865e52d1d8"><code>resolve</code></a><code>(...)</code></td>
+<td>Merge multiple paths to a single absolute path.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="members">Members</h2>
+
+<h4 id="public-static-string-normalize-d0-d43-namespacepath-1ab5940f0638ae1ecf73788c7c6e5da56c-string-path"><code>public static String</code><a href="#d0/d43/namespacepath_1ab5940f0638ae1ecf73788c7c6e5da56c"><code>normalize</code></a><code>(String path)</code></h4>
+
+<p>Normalize path.</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><code>path</code> Original path</li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<p>Return normalized path</p>
+
+<h4 id="public-static-string-basename-d0-d43-namespacepath-1a82751cb3c3cda3cbd756667343737f4d-string-path-string-ext"><code>public static String</code><a href="#d0/d43/namespacepath_1a82751cb3c3cda3cbd756667343737f4d"><code>basename</code></a><code>(String path,String ext)</code></h4>
+
+<p>Get file name in path, ignore extension with file has it.</p>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<ul>
+<li><p><code>path</code> Original path</p></li>
+
+<li><p><code>ext</code> Given extension</p></li>
+</ul>
+
+<h4 id="returns-1">Returns</h4>
+
+<p>Return file name</p>
+
+<h4 id="public-static-string-extname-d0-d43-namespacepath-1aea5f6966a2f57a23cb34dd2700f8ffe5-string-path"><code>public static String</code><a href="#d0/d43/namespacepath_1aea5f6966a2f57a23cb34dd2700f8ffe5"><code>extname</code></a><code>(String path)</code></h4>
+
+<p>Get file extension.</p>
+
+<h4 id="parameters-2">Parameters</h4>
+
+<ul>
+<li><code>path</code> Original path</li>
+</ul>
+
+<h4 id="returns-2">Returns</h4>
+
+<p>Return file extension</p>
+
+<h4 id="public-static-string-dirname-d0-d43-namespacepath-1aeb69e3ac13503ae13ec20bd954f8d5e7-string-path"><code>public static String</code><a href="#d0/d43/namespacepath_1aeb69e3ac13503ae13ec20bd954f8d5e7"><code>dirname</code></a><code>(String path)</code></h4>
+
+<p>Get directory in path.</p>
+
+<h4 id="parameters-3">Parameters</h4>
+
+<ul>
+<li><code>path</code> Original path</li>
+</ul>
+
+<h4 id="returns-3">Returns</h4>
+
+<p>Return directory</p>
+
+<h4 id="public-static-string-fullpath-d0-d43-namespacepath-1a39317bd9f009a2295d12865393d2d8d8-string-path"><code>public static String</code><a href="#d0/d43/namespacepath_1a39317bd9f009a2295d12865393d2d8d8"><code>fullpath</code></a><code>(String path)</code></h4>
+
+<p>Get full path.</p>
+
+<h4 id="parameters-4">Parameters</h4>
+
+<ul>
+<li><code>path</code> Original path</li>
+</ul>
+
+<h4 id="returns-4">Returns</h4>
+
+<p>Return full path</p>
+
+<h4 id="public-static-string-join-d0-d43-namespacepath-1ac551d9bf9f00720470cac3fdc098a8b3"><code>public static String</code><a href="#d0/d43/namespacepath_1ac551d9bf9f00720470cac3fdc098a8b3"><code>join</code></a><code>(...)</code></h4>
+
+<p>Merge multiple paths to a single relative path.</p>
+
+<h4 id="parameters-5">Parameters</h4>
+
+<ul>
+<li><code>...</code> One or more relative paths</li>
+</ul>
+
+<h4 id="returns-5">Returns</h4>
+
+<p>Return new relative path</p>
+
+<h4 id="public-static-string-resolve-d0-d43-namespacepath-1ad7a5c3dcc290cdf508621d865e52d1d8"><code>public static String</code><a href="#d0/d43/namespacepath_1ad7a5c3dcc290cdf508621d865e52d1d8"><code>resolve</code></a><code>(...)</code></h4>
+
+<p>Merge multiple paths to a single absolute path.</p>
+
+<h4 id="parameters-6">Parameters</h4>
+
+<ul>
+<li><code>...</code> One or more relative paths</li>
+</ul>
+
+<h4 id="returns-6">Returns</h4>
+
+<p>Return new absolute path</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+
+      </div>
+    </div>
+
+    
+ 
+    
+
+    <div id="navigation">
+        
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+          
+
+        
+
+
+        
+            <a class="nav nav-prev" href="/module/os/" title="os"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/module/process/" title="process" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js"></script>
+    <script src="/js/jquery.sticky-kit.min.js"></script>
+    <script src="/js/featherlight.min.js"></script>
+    <script src="/js/html5shiv-printshiv.min.js"></script>
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js"></script>
+    <script src="/js/learn.js"></script>
+    <script src="/js/hugo-learn.js"></script>
+
+    
+    <link href="/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script src="/mermaid/mermaid.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+
+    
+
+  </body>
+</html>
+

@@ -1,0 +1,2516 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.20.7" />
+    <meta name="description" content="Assertion test module, if testing result is false, you will get an error. The way of handling error can be set as continue or throw exception.">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>assert :: fibjs</title>
+    <link href="/css/nucleus.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/hybrid.css" rel="stylesheet">
+    <link href="/css/featherlight.min.css" rel="stylesheet">
+    <link href="/css/horsey.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+
+    
+
+    
+
+  </head>
+  <body class="" data-url="/module/assert/">
+    
+<nav id="sidebar" class="">
+  <div id="header-wrapper">
+    <div id="header">
+       
+	<p>Fibjs Documentation</p>
+ 
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/horsey.js"></script>
+<script type="text/javascript">
+    var baseurl = "http:\/\/example.org\/";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+
+    
+  </div>
+
+  <div class="highlightable">
+    <ul class="topics">
+        
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+        
+
+        
+        
+        
+        
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/modules/" class="dd-item 
+         
+        parent
+        "
+        >
+            <a href="/modules/">
+                <span>Modules</span>
+                
+                    
+                        <i class="fa fa-angle-down fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+                
+                
+                
+                    
+                
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/assert/" class="dd-item 
+        active 
+        
+        "
+        >
+            <a href="/module/assert/">
+                <span>assert</span>
+                
+                
+            </a>
+            
+                
+                
+                
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base32/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base32/">
+                <span>base32</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64/">
+                <span>base64</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64vlq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64vlq/">
+                <span>base64vlq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/bson/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/bson/">
+                <span>bson</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/console/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/console/">
+                <span>console</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/coroutine/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/coroutine/">
+                <span>coroutine</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/crypto/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/crypto/">
+                <span>crypto</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/db/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/db/">
+                <span>db</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/encoding/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/encoding/">
+                <span>encoding</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/fs/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/fs/">
+                <span>fs</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/gd/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/gd/">
+                <span>gd</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/global/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/global/">
+                <span>global</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hash/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hash/">
+                <span>hash</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hex/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hex/">
+                <span>hex</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/http/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/http/">
+                <span>http</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/iconv/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/iconv/">
+                <span>iconv</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/io/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/io/">
+                <span>io</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/json/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/json/">
+                <span>json</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/mq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/mq/">
+                <span>mq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/net/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/net/">
+                <span>net</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/os/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/os/">
+                <span>os</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/path/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/path/">
+                <span>path</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/process/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/process/">
+                <span>process</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/profiler/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/profiler/">
+                <span>profiler</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/re/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/re/">
+                <span>re</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/ssl/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/ssl/">
+                <span>ssl</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/test/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/test/">
+                <span>test</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/util/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/util/">
+                <span>util</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/uuid/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/uuid/">
+                <span>uuid</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/vm/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/vm/">
+                <span>vm</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/websocket/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/websocket/">
+                <span>websocket</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/xml/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/xml/">
+                <span>xml</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zip/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zip/">
+                <span>zip</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zlib/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zlib/">
+                <span>zlib</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/objects/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/objects/">
+                <span>Objects</span>
+                
+                    
+                        <i class="fa fa-angle-right fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/asyncwait/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/asyncwait/">
+                <span>AsyncWait</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/buffer/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/buffer/">
+                <span>Buffer</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+
+        
+
+        
+        
+        
+    </ul>
+    
+     
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+        
+          <div id="top-bar">
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                <span id="toc-menu"><a href=""><i class="fa fa-list-alt"></i></a></span>
+                <a href="http://example.org/">
+                  <span class="fa fa-arrow-circle-right" style="font-size:larger" aria-hidden="true"></span>
+                  fibjs
+                </a>
+                
+                   / <a href='/modules/'>Modules</a> / <a href='/module/assert/'>assert</a>
+                
+                
+            </div>
+            <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#members">Members</a>
+<ul>
+<li>
+<ul>
+<li><a href="#public-static-static-ok-d2-dab-namespaceassert-1a6bc7d80bbf7943df46c671087f7cfce2-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a6bc7d80bbf7943df46c671087f7cfce2"><code>ok</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters">Parameters</a></li>
+<li><a href="#public-static-static-notok-d2-dab-namespaceassert-1ac587cf8bf42a5f632c7c03e672040de8-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1ac587cf8bf42a5f632c7c03e672040de8"><code>notOk</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-1">Parameters</a></li>
+<li><a href="#public-static-static-equal-d2-dab-namespaceassert-1af37037ca6be593c635dc7a312e45f17e-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1af37037ca6be593c635dc7a312e45f17e"><code>equal</code></a><code>(Value actual,Value expected,String msg)</code></a></li>
+<li><a href="#parameters-2">Parameters</a></li>
+<li><a href="#public-static-static-notequal-d2-dab-namespaceassert-1a2685f5cac15c1818fdd1be92cbf369c1-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a2685f5cac15c1818fdd1be92cbf369c1"><code>notEqual</code></a><code>(Value actual,Value expected,String msg)</code></a></li>
+<li><a href="#parameters-3">Parameters</a></li>
+<li><a href="#public-static-static-strictequal-d2-dab-namespaceassert-1a2cb47b83fabc213b290b9b4ce7564f35-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a2cb47b83fabc213b290b9b4ce7564f35"><code>strictEqual</code></a><code>(Value actual,Value expected,String msg)</code></a></li>
+<li><a href="#parameters-4">Parameters</a></li>
+<li><a href="#public-static-static-notstrictequal-d2-dab-namespaceassert-1a49a140f439d16080cdf86fbc02bf76cf-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a49a140f439d16080cdf86fbc02bf76cf"><code>notStrictEqual</code></a><code>(Value actual,Value expected,String msg)</code></a></li>
+<li><a href="#parameters-5">Parameters</a></li>
+<li><a href="#public-static-static-deepequal-d2-dab-namespaceassert-1aa4fc0c264fe253b71659fa15bd444d34-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1aa4fc0c264fe253b71659fa15bd444d34"><code>deepEqual</code></a><code>(Value actual,Value expected,String msg)</code></a></li>
+<li><a href="#parameters-6">Parameters</a></li>
+<li><a href="#public-static-static-notdeepequal-d2-dab-namespaceassert-1af2e1f574fd2ccb3c2c36717d14e33f67-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1af2e1f574fd2ccb3c2c36717d14e33f67"><code>notDeepEqual</code></a><code>(Value actual,Value expected,String msg)</code></a></li>
+<li><a href="#parameters-7">Parameters</a></li>
+<li><a href="#public-static-static-closeto-d2-dab-namespaceassert-1a57f9d7269de9767896481d6c6491b053-value-actual-value-expected-value-delta-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a57f9d7269de9767896481d6c6491b053"><code>closeTo</code></a><code>(Value actual,Value expected,Value delta,String msg)</code></a></li>
+<li><a href="#parameters-8">Parameters</a></li>
+<li><a href="#public-static-static-notcloseto-d2-dab-namespaceassert-1a785eff37919f22095e68cc20d85b0020-value-actual-value-expected-value-delta-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a785eff37919f22095e68cc20d85b0020"><code>notCloseTo</code></a><code>(Value actual,Value expected,Value delta,String msg)</code></a></li>
+<li><a href="#parameters-9">Parameters</a></li>
+<li><a href="#public-static-static-lessthan-d2-dab-namespaceassert-1a4b1b450014e4539994cd105a8f9d0eb9-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a4b1b450014e4539994cd105a8f9d0eb9"><code>lessThan</code></a><code>(Value actual,Value expected,String msg)</code></a></li>
+<li><a href="#parameters-10">Parameters</a></li>
+<li><a href="#public-static-static-notlessthan-d2-dab-namespaceassert-1a552b2247c9920297cad7068a1fb007f0-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a552b2247c9920297cad7068a1fb007f0"><code>notLessThan</code></a><code>(Value actual,Value expected,String msg)</code></a></li>
+<li><a href="#parameters-11">Parameters</a></li>
+<li><a href="#public-static-static-greaterthan-d2-dab-namespaceassert-1a402e1e36f03b891ad44a3281a64642a2-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a402e1e36f03b891ad44a3281a64642a2"><code>greaterThan</code></a><code>(Value actual,Value expected,String msg)</code></a></li>
+<li><a href="#parameters-12">Parameters</a></li>
+<li><a href="#public-static-static-notgreaterthan-d2-dab-namespaceassert-1ac0a045550d46df6659c6a97f2b1554b6-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1ac0a045550d46df6659c6a97f2b1554b6"><code>notGreaterThan</code></a><code>(Value actual,Value expected,String msg)</code></a></li>
+<li><a href="#parameters-13">Parameters</a></li>
+<li><a href="#public-static-static-exist-d2-dab-namespaceassert-1ae5e2442dccceb697ae9f41bce599cc48-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1ae5e2442dccceb697ae9f41bce599cc48"><code>exist</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-14">Parameters</a></li>
+<li><a href="#public-static-static-notexist-d2-dab-namespaceassert-1a3d4e62849c9d75031ece79a91c96aa39-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a3d4e62849c9d75031ece79a91c96aa39"><code>notExist</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-15">Parameters</a></li>
+<li><a href="#public-static-static-istrue-d2-dab-namespaceassert-1a20f89c88bfd5356e32731af24821968b-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a20f89c88bfd5356e32731af24821968b"><code>isTrue</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-16">Parameters</a></li>
+<li><a href="#public-static-static-isnottrue-d2-dab-namespaceassert-1affe6ecae30a890a57dec8b1b5148831e-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1affe6ecae30a890a57dec8b1b5148831e"><code>isNotTrue</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-17">Parameters</a></li>
+<li><a href="#public-static-static-isfalse-d2-dab-namespaceassert-1ad5c6df12d35b760fb09c4e34aa5fa2c0-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1ad5c6df12d35b760fb09c4e34aa5fa2c0"><code>isFalse</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-18">Parameters</a></li>
+<li><a href="#public-static-static-isnotfalse-d2-dab-namespaceassert-1a4e525c0ded5e3f6112a15ea878dbc4e2-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a4e525c0ded5e3f6112a15ea878dbc4e2"><code>isNotFalse</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-19">Parameters</a></li>
+<li><a href="#public-static-static-isnull-d2-dab-namespaceassert-1a86a30af0aa338b8db74bb1a805f497f7-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a86a30af0aa338b8db74bb1a805f497f7"><code>isNull</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-20">Parameters</a></li>
+<li><a href="#public-static-static-isnotnull-d2-dab-namespaceassert-1a353d3f0a16ba816b10eca0f4f55ad3ed-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a353d3f0a16ba816b10eca0f4f55ad3ed"><code>isNotNull</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-21">Parameters</a></li>
+<li><a href="#public-static-static-isundefined-d2-dab-namespaceassert-1ad7fedc8b1050fad9fc39df83da013809-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1ad7fedc8b1050fad9fc39df83da013809"><code>isUndefined</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-22">Parameters</a></li>
+<li><a href="#public-static-static-isdefined-d2-dab-namespaceassert-1a558fc550572cebc80cf2ca4545db5ab3-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a558fc550572cebc80cf2ca4545db5ab3"><code>isDefined</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-23">Parameters</a></li>
+<li><a href="#public-static-static-isfunction-d2-dab-namespaceassert-1a71a0eef48d3394bbd2f5659990f363e9-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a71a0eef48d3394bbd2f5659990f363e9"><code>isFunction</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-24">Parameters</a></li>
+<li><a href="#public-static-static-isnotfunction-d2-dab-namespaceassert-1a23848bb515a658f542169a3d4a19879b-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a23848bb515a658f542169a3d4a19879b"><code>isNotFunction</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-25">Parameters</a></li>
+<li><a href="#public-static-static-isobject-d2-dab-namespaceassert-1a817ff68d658d03fe86f8582be05dfe96-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a817ff68d658d03fe86f8582be05dfe96"><code>isObject</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-26">Parameters</a></li>
+<li><a href="#public-static-static-isnotobject-d2-dab-namespaceassert-1a9f20f8dc42056ee6bfa98761a1b8dd1c-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a9f20f8dc42056ee6bfa98761a1b8dd1c"><code>isNotObject</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-27">Parameters</a></li>
+<li><a href="#public-static-static-isarray-d2-dab-namespaceassert-1a4942ac3b5ab6bc9c09d4cc807101fb13-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a4942ac3b5ab6bc9c09d4cc807101fb13"><code>isArray</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-28">Parameters</a></li>
+<li><a href="#public-static-static-isnotarray-d2-dab-namespaceassert-1a019ae93c17fd2e99fd799028d6d3ee96-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a019ae93c17fd2e99fd799028d6d3ee96"><code>isNotArray</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-29">Parameters</a></li>
+<li><a href="#public-static-static-isstring-d2-dab-namespaceassert-1ad8d4452d1c18ac0762f27ad30d754d3e-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1ad8d4452d1c18ac0762f27ad30d754d3e"><code>isString</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-30">Parameters</a></li>
+<li><a href="#public-static-static-isnotstring-d2-dab-namespaceassert-1ae837cf0658bfa0eac5295ff9fcf0ce65-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1ae837cf0658bfa0eac5295ff9fcf0ce65"><code>isNotString</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-31">Parameters</a></li>
+<li><a href="#public-static-static-isnumber-d2-dab-namespaceassert-1a3185e0e120d14e566e94a451ace5d1af-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a3185e0e120d14e566e94a451ace5d1af"><code>isNumber</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-32">Parameters</a></li>
+<li><a href="#public-static-static-isnotnumber-d2-dab-namespaceassert-1af658587b29f21876f994e35ace690f1d-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1af658587b29f21876f994e35ace690f1d"><code>isNotNumber</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-33">Parameters</a></li>
+<li><a href="#public-static-static-isboolean-d2-dab-namespaceassert-1a52d954e5c3dd124d0839f5a6e2b181fd-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a52d954e5c3dd124d0839f5a6e2b181fd"><code>isBoolean</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-34">Parameters</a></li>
+<li><a href="#public-static-static-isnotboolean-d2-dab-namespaceassert-1a8d631ec59b0bb32668c8ac410d2a5f87-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a8d631ec59b0bb32668c8ac410d2a5f87"><code>isNotBoolean</code></a><code>(Value actual,String msg)</code></a></li>
+<li><a href="#parameters-35">Parameters</a></li>
+<li><a href="#public-static-static-typeof-d2-dab-namespaceassert-1a6accf1f518a6bea5c608ea513742cad3-value-actual-string-type-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a6accf1f518a6bea5c608ea513742cad3"><code>typeOf</code></a><code>(Value actual,String type,String msg)</code></a></li>
+<li><a href="#parameters-36">Parameters</a></li>
+<li><a href="#public-static-static-nottypeof-d2-dab-namespaceassert-1a78f313247072ec02fc062842d25203f3-value-actual-string-type-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a78f313247072ec02fc062842d25203f3"><code>notTypeOf</code></a><code>(Value actual,String type,String msg)</code></a></li>
+<li><a href="#parameters-37">Parameters</a></li>
+<li><a href="#public-static-static-property-d2-dab-namespaceassert-1aad5f5c5d5948e086adbe453e7efa957f-value-object-value-prop-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1aad5f5c5d5948e086adbe453e7efa957f"><code>property</code></a><code>(Value object,Value prop,String msg)</code></a></li>
+<li><a href="#parameters-38">Parameters</a></li>
+<li><a href="#public-static-static-notproperty-d2-dab-namespaceassert-1ae0e3e69d65ed263243ac2370a2d36c7e-value-object-value-prop-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1ae0e3e69d65ed263243ac2370a2d36c7e"><code>notProperty</code></a><code>(Value object,Value prop,String msg)</code></a></li>
+<li><a href="#parameters-39">Parameters</a></li>
+<li><a href="#public-static-static-deepproperty-d2-dab-namespaceassert-1a5129660776f5965ef0fc8e045a9d51d4-value-object-value-prop-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a5129660776f5965ef0fc8e045a9d51d4"><code>deepProperty</code></a><code>(Value object,Value prop,String msg)</code></a></li>
+<li><a href="#parameters-40">Parameters</a></li>
+<li><a href="#public-static-static-notdeepproperty-d2-dab-namespaceassert-1a202a5d1189e44f0cbab67cfcbdfb4fae-value-object-value-prop-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a202a5d1189e44f0cbab67cfcbdfb4fae"><code>notDeepProperty</code></a><code>(Value object,Value prop,String msg)</code></a></li>
+<li><a href="#parameters-41">Parameters</a></li>
+<li><a href="#public-static-static-propertyval-d2-dab-namespaceassert-1af1a7b26c9b66ed3ed7cd017316b56f7b-value-object-value-prop-value-value-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1af1a7b26c9b66ed3ed7cd017316b56f7b"><code>propertyVal</code></a><code>(Value object,Value prop,Value value,String msg)</code></a></li>
+<li><a href="#parameters-42">Parameters</a></li>
+<li><a href="#public-static-static-propertynotval-d2-dab-namespaceassert-1a5c45a31ca66fedc3926f3d68544fa189-value-object-value-prop-value-value-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a5c45a31ca66fedc3926f3d68544fa189"><code>propertyNotVal</code></a><code>(Value object,Value prop,Value value,String msg)</code></a></li>
+<li><a href="#parameters-43">Parameters</a></li>
+<li><a href="#public-static-static-deeppropertyval-d2-dab-namespaceassert-1a3a807667d3596b22f245aec1837a1d3d-value-object-value-prop-value-value-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a3a807667d3596b22f245aec1837a1d3d"><code>deepPropertyVal</code></a><code>(Value object,Value prop,Value value,String msg)</code></a></li>
+<li><a href="#parameters-44">Parameters</a></li>
+<li><a href="#public-static-static-deeppropertynotval-d2-dab-namespaceassert-1a2fe6b107e4c006046154d31897370d69-value-object-value-prop-value-value-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a2fe6b107e4c006046154d31897370d69"><code>deepPropertyNotVal</code></a><code>(Value object,Value prop,Value value,String msg)</code></a></li>
+<li><a href="#parameters-45">Parameters</a></li>
+<li><a href="#public-static-static-throws-d2-dab-namespaceassert-1a8ef18037a8c8401353a6336a16373380-function-block-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a8ef18037a8c8401353a6336a16373380"><code>throws</code></a><code>(Function block,String msg)</code></a></li>
+<li><a href="#parameters-46">Parameters</a></li>
+<li><a href="#public-static-static-doesnotthrow-d2-dab-namespaceassert-1aa41904a1025725f280feab1e7312fa5a-function-block-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1aa41904a1025725f280feab1e7312fa5a"><code>doesNotThrow</code></a><code>(Function block,String msg)</code></a></li>
+<li><a href="#parameters-47">Parameters</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+          </div>
+        
+        
+        <div id="body-inner">
+          
+            <h1>assert</h1>
+          
+
+
+
+
+<p>Assertion test module, if testing result is false, you will get an error. The way of handling error can be set as continue or throw exception.</p>
+
+<p>how to use:</p>
+
+<pre><code class="language-cpp">var assert = require('assert');
+</code></pre>
+
+<p>or using testing unit:</p>
+
+<pre><code class="language-cpp">var test = require('test');
+var assert = test.assert;
+</code></pre>
+
+<p>or you can use <a href="#df/d04/namespacetest_1a38550424e855b291100020778b09064a">test.setup</a> to set up test:</p>
+
+<pre><code class="language-cpp">require(&quot;test&quot;).setup();
+</code></pre>
+
+<h2 id="summary">Summary</h2>
+
+<table>
+<thead>
+<tr>
+<th>Members</th>
+<th>Descriptions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a6bc7d80bbf7943df46c671087f7cfce2"><code>ok</code></a><code>(Value actual,String msg)</code></td>
+<td>Return true when the testing result is ture, assertion failed when return false.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1ac587cf8bf42a5f632c7c03e672040de8"><code>notOk</code></a><code>(Value actual,String msg)</code></td>
+<td>Return true when the testing result is false, assertion failed when return true.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1af37037ca6be593c635dc7a312e45f17e"><code>equal</code></a><code>(Value actual,Value expected,String msg)</code></td>
+<td>Test value should match the expected one, assertion failed when not match.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a2685f5cac15c1818fdd1be92cbf369c1"><code>notEqual</code></a><code>(Value actual,Value expected,String msg)</code></td>
+<td>Test value should not have to match the expected one, assertion failed when match.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a2cb47b83fabc213b290b9b4ce7564f35"><code>strictEqual</code></a><code>(Value actual,Value expected,String msg)</code></td>
+<td>Test value should strictly match the expected one, assertion failed when not match.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a49a140f439d16080cdf86fbc02bf76cf"><code>notStrictEqual</code></a><code>(Value actual,Value expected,String msg)</code></td>
+<td>Test value should not have to strictly match the expected one, assertion failed when match.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1aa4fc0c264fe253b71659fa15bd444d34"><code>deepEqual</code></a><code>(Value actual,Value expected,String msg)</code></td>
+<td>Test value should deeply match the expected one, assertion failed when not match.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1af2e1f574fd2ccb3c2c36717d14e33f67"><code>notDeepEqual</code></a><code>(Value actual,Value expected,String msg)</code></td>
+<td>Test value should not have to deeply match the expected one, assertion failed when match.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a57f9d7269de9767896481d6c6491b053"><code>closeTo</code></a><code>(Value actual,Value expected,Value delta,String msg)</code></td>
+<td>Test value should closely match the expected one, assertion failed when not match.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a785eff37919f22095e68cc20d85b0020"><code>notCloseTo</code></a><code>(Value actual,Value expected,Value delta,String msg)</code></td>
+<td>Test value should not have to closely match the expected one, assertion failed when match.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a4b1b450014e4539994cd105a8f9d0eb9"><code>lessThan</code></a><code>(Value actual,Value expected,String msg)</code></td>
+<td>Test value should less than the expected one, assertion failed when get a greater or equal one.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a552b2247c9920297cad7068a1fb007f0"><code>notLessThan</code></a><code>(Value actual,Value expected,String msg)</code></td>
+<td>Test value should not have to less than the expected one, assertion failed when get a less one.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a402e1e36f03b891ad44a3281a64642a2"><code>greaterThan</code></a><code>(Value actual,Value expected,String msg)</code></td>
+<td>Test value should greater than the expected one, assertion failed when get a less or equal one.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1ac0a045550d46df6659c6a97f2b1554b6"><code>notGreaterThan</code></a><code>(Value actual,Value expected,String msg)</code></td>
+<td>Test value should not have to greater than the expected one, assertion failed when get a greater one.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1ae5e2442dccceb697ae9f41bce599cc48"><code>exist</code></a><code>(Value actual,String msg)</code></td>
+<td>Test value should be an existed one, assertion failed when the value is not existed.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a3d4e62849c9d75031ece79a91c96aa39"><code>notExist</code></a><code>(Value actual,String msg)</code></td>
+<td>Test value should not be an existed one, assertion failed when the value is existed.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a20f89c88bfd5356e32731af24821968b"><code>isTrue</code></a><code>(Value actual,String msg)</code></td>
+<td>Test value should be the Boolean true, assertion failed when the value is false.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1affe6ecae30a890a57dec8b1b5148831e"><code>isNotTrue</code></a><code>(Value actual,String msg)</code></td>
+<td>Test value should be the Boolean false, assertion failed when the value is true.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1ad5c6df12d35b760fb09c4e34aa5fa2c0"><code>isFalse</code></a><code>(Value actual,String msg)</code></td>
+<td>Test value should be the Boolean false, assertion failed when the value is true.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a4e525c0ded5e3f6112a15ea878dbc4e2"><code>isNotFalse</code></a><code>(Value actual,String msg)</code></td>
+<td>Test value should be the Boolean true, assertion failed when the value is false.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a86a30af0aa338b8db74bb1a805f497f7"><code>isNull</code></a><code>(Value actual,String msg)</code></td>
+<td>Test value should be the null, assertion failed when the value is not null.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a353d3f0a16ba816b10eca0f4f55ad3ed"><code>isNotNull</code></a><code>(Value actual,String msg)</code></td>
+<td>Test value should not be the null, assertion failed when the value is null.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1ad7fedc8b1050fad9fc39df83da013809"><code>isUndefined</code></a><code>(Value actual,String msg)</code></td>
+<td>Test value should be the undefined, assertion failed when the value is not undefined.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a558fc550572cebc80cf2ca4545db5ab3"><code>isDefined</code></a><code>(Value actual,String msg)</code></td>
+<td>Test value should not be the undefined, assertion failed when the value is undefined.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a71a0eef48d3394bbd2f5659990f363e9"><code>isFunction</code></a><code>(Value actual,String msg)</code></td>
+<td>The type of test value should be Function, assertion failed when the value is not a function.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a23848bb515a658f542169a3d4a19879b"><code>isNotFunction</code></a><code>(Value actual,String msg)</code></td>
+<td>The type of test value should not be Function, assertion failed when the value is a function.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a817ff68d658d03fe86f8582be05dfe96"><code>isObject</code></a><code>(Value actual,String msg)</code></td>
+<td>The type of test value should be Object, assertion failed when the value is not a object.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a9f20f8dc42056ee6bfa98761a1b8dd1c"><code>isNotObject</code></a><code>(Value actual,String msg)</code></td>
+<td>The type of test value should not be Object, assertion failed when the value is a object.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a4942ac3b5ab6bc9c09d4cc807101fb13"><code>isArray</code></a><code>(Value actual,String msg)</code></td>
+<td>The type of test value should be Array, assertion failed when the value is not an array.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a019ae93c17fd2e99fd799028d6d3ee96"><code>isNotArray</code></a><code>(Value actual,String msg)</code></td>
+<td>The type of test value should not be Array, assertion failed when the value is an array.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1ad8d4452d1c18ac0762f27ad30d754d3e"><code>isString</code></a><code>(Value actual,String msg)</code></td>
+<td>The type of test value should be String, assertion failed when the value is not a string.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1ae837cf0658bfa0eac5295ff9fcf0ce65"><code>isNotString</code></a><code>(Value actual,String msg)</code></td>
+<td>The type of test value should not be String, assertion failed when the value is a string.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a3185e0e120d14e566e94a451ace5d1af"><code>isNumber</code></a><code>(Value actual,String msg)</code></td>
+<td>The type of test value should be Number, assertion failed when the value is not a number.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1af658587b29f21876f994e35ace690f1d"><code>isNotNumber</code></a><code>(Value actual,String msg)</code></td>
+<td>The type of test value should not be Number, assertion failed when the value is a number.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a52d954e5c3dd124d0839f5a6e2b181fd"><code>isBoolean</code></a><code>(Value actual,String msg)</code></td>
+<td>The type of test value should be Boolean, assertion failed when the value is not a boolean.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a8d631ec59b0bb32668c8ac410d2a5f87"><code>isNotBoolean</code></a><code>(Value actual,String msg)</code></td>
+<td>The type of test value should not be Boolean, assertion failed when the value is a boolean.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a6accf1f518a6bea5c608ea513742cad3"><code>typeOf</code></a><code>(Value actual,String type,String msg)</code></td>
+<td>The type of test value should be the specified one, assertion failed when the value type is not match.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a78f313247072ec02fc062842d25203f3"><code>notTypeOf</code></a><code>(Value actual,String type,String msg)</code></td>
+<td>The type of test value should not be the specified one, assertion failed when the value type is match.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1aad5f5c5d5948e086adbe453e7efa957f"><code>property</code></a><code>(Value object,Value prop,String msg)</code></td>
+<td>The test value should contain the specified property, assertion failed when the property not be contained.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1ae0e3e69d65ed263243ac2370a2d36c7e"><code>notProperty</code></a><code>(Value object,Value prop,String msg)</code></td>
+<td>The test value should not contain the specified property, assertion failed when the property contained.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a5129660776f5965ef0fc8e045a9d51d4"><code>deepProperty</code></a><code>(Value object,Value prop,String msg)</code></td>
+<td>The test value should deeply contain the specified property, assertion failed when the property not be contained.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a202a5d1189e44f0cbab67cfcbdfb4fae"><code>notDeepProperty</code></a><code>(Value object,Value prop,String msg)</code></td>
+<td>The test value should not deeply contain the specified property, assertion failed when the property contained.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1af1a7b26c9b66ed3ed7cd017316b56f7b"><code>propertyVal</code></a><code>(Value object,Value prop,Value value,String msg)</code></td>
+<td>The specified property of test value should equal the given one, assertion failed when not match.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a5c45a31ca66fedc3926f3d68544fa189"><code>propertyNotVal</code></a><code>(Value object,Value prop,Value value,String msg)</code></td>
+<td>The specified property of test value should not equal the given one, assertion failed when match.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a3a807667d3596b22f245aec1837a1d3d"><code>deepPropertyVal</code></a><code>(Value object,Value prop,Value value,String msg)</code></td>
+<td>The specified property of test value should deeply equal the given one, assertion failed when not match.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a2fe6b107e4c006046154d31897370d69"><code>deepPropertyNotVal</code></a><code>(Value object,Value prop,Value value,String msg)</code></td>
+<td>The specified property of test value should not deeply equal the given one, assertion failed when match.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1a8ef18037a8c8401353a6336a16373380"><code>throws</code></a><code>(Function block,String msg)</code></td>
+<td>The block code should throw an error, assertion failed when not throw one.</td>
+</tr>
+
+<tr>
+<td><code>public static static</code><a href="#d2/dab/namespaceassert_1aa41904a1025725f280feab1e7312fa5a"><code>doesNotThrow</code></a><code>(Function block,String msg)</code></td>
+<td>The block code should not throw an error, assertion failed when throw one.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="members">Members</h2>
+
+<h4 id="public-static-static-ok-d2-dab-namespaceassert-1a6bc7d80bbf7943df46c671087f7cfce2-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a6bc7d80bbf7943df46c671087f7cfce2"><code>ok</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>Return true when the testing result is ture, assertion failed when return false.</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-notok-d2-dab-namespaceassert-1ac587cf8bf42a5f632c7c03e672040de8-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1ac587cf8bf42a5f632c7c03e672040de8"><code>notOk</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>Return true when the testing result is false, assertion failed when return true.</p>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-equal-d2-dab-namespaceassert-1af37037ca6be593c635dc7a312e45f17e-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1af37037ca6be593c635dc7a312e45f17e"><code>equal</code></a><code>(Value actual,Value expected,String msg)</code></h4>
+
+<p>Test value should match the expected one, assertion failed when not match.</p>
+
+<h4 id="parameters-2">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>expected</code> The expected value.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-notequal-d2-dab-namespaceassert-1a2685f5cac15c1818fdd1be92cbf369c1-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a2685f5cac15c1818fdd1be92cbf369c1"><code>notEqual</code></a><code>(Value actual,Value expected,String msg)</code></h4>
+
+<p>Test value should not have to match the expected one, assertion failed when match.</p>
+
+<h4 id="parameters-3">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>expected</code> The expected value.</p></li>
+
+<li><p><code>expected</code> expected value from unittest</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-strictequal-d2-dab-namespaceassert-1a2cb47b83fabc213b290b9b4ce7564f35-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a2cb47b83fabc213b290b9b4ce7564f35"><code>strictEqual</code></a><code>(Value actual,Value expected,String msg)</code></h4>
+
+<p>Test value should strictly match the expected one, assertion failed when not match.</p>
+
+<h4 id="parameters-4">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>expected</code> The expected value.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-notstrictequal-d2-dab-namespaceassert-1a49a140f439d16080cdf86fbc02bf76cf-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a49a140f439d16080cdf86fbc02bf76cf"><code>notStrictEqual</code></a><code>(Value actual,Value expected,String msg)</code></h4>
+
+<p>Test value should not have to strictly match the expected one, assertion failed when match.</p>
+
+<h4 id="parameters-5">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>expected</code> The expected value.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-deepequal-d2-dab-namespaceassert-1aa4fc0c264fe253b71659fa15bd444d34-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1aa4fc0c264fe253b71659fa15bd444d34"><code>deepEqual</code></a><code>(Value actual,Value expected,String msg)</code></h4>
+
+<p>Test value should deeply match the expected one, assertion failed when not match.</p>
+
+<h4 id="parameters-6">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>expected</code> The expected value.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-notdeepequal-d2-dab-namespaceassert-1af2e1f574fd2ccb3c2c36717d14e33f67-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1af2e1f574fd2ccb3c2c36717d14e33f67"><code>notDeepEqual</code></a><code>(Value actual,Value expected,String msg)</code></h4>
+
+<p>Test value should not have to deeply match the expected one, assertion failed when match.</p>
+
+<h4 id="parameters-7">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>expected</code> The expected value.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-closeto-d2-dab-namespaceassert-1a57f9d7269de9767896481d6c6491b053-value-actual-value-expected-value-delta-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a57f9d7269de9767896481d6c6491b053"><code>closeTo</code></a><code>(Value actual,Value expected,Value delta,String msg)</code></h4>
+
+<p>Test value should closely match the expected one, assertion failed when not match.</p>
+
+<h4 id="parameters-8">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>expected</code> The expected value.</p></li>
+
+<li><p><code>delta</code> Approximate decimal precision.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-notcloseto-d2-dab-namespaceassert-1a785eff37919f22095e68cc20d85b0020-value-actual-value-expected-value-delta-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a785eff37919f22095e68cc20d85b0020"><code>notCloseTo</code></a><code>(Value actual,Value expected,Value delta,String msg)</code></h4>
+
+<p>Test value should not have to closely match the expected one, assertion failed when match.</p>
+
+<h4 id="parameters-9">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>expected</code> The expected value.</p></li>
+
+<li><p><code>delta</code> Approximate decimal precision.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-lessthan-d2-dab-namespaceassert-1a4b1b450014e4539994cd105a8f9d0eb9-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a4b1b450014e4539994cd105a8f9d0eb9"><code>lessThan</code></a><code>(Value actual,Value expected,String msg)</code></h4>
+
+<p>Test value should less than the expected one, assertion failed when get a greater or equal one.</p>
+
+<h4 id="parameters-10">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>expected</code> The expected value.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-notlessthan-d2-dab-namespaceassert-1a552b2247c9920297cad7068a1fb007f0-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a552b2247c9920297cad7068a1fb007f0"><code>notLessThan</code></a><code>(Value actual,Value expected,String msg)</code></h4>
+
+<p>Test value should not have to less than the expected one, assertion failed when get a less one.</p>
+
+<h4 id="parameters-11">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>expected</code> The expected value.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-greaterthan-d2-dab-namespaceassert-1a402e1e36f03b891ad44a3281a64642a2-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a402e1e36f03b891ad44a3281a64642a2"><code>greaterThan</code></a><code>(Value actual,Value expected,String msg)</code></h4>
+
+<p>Test value should greater than the expected one, assertion failed when get a less or equal one.</p>
+
+<h4 id="parameters-12">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>expected</code> The expected value.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-notgreaterthan-d2-dab-namespaceassert-1ac0a045550d46df6659c6a97f2b1554b6-value-actual-value-expected-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1ac0a045550d46df6659c6a97f2b1554b6"><code>notGreaterThan</code></a><code>(Value actual,Value expected,String msg)</code></h4>
+
+<p>Test value should not have to greater than the expected one, assertion failed when get a greater one.</p>
+
+<h4 id="parameters-13">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>expected</code> The expected value.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-exist-d2-dab-namespaceassert-1ae5e2442dccceb697ae9f41bce599cc48-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1ae5e2442dccceb697ae9f41bce599cc48"><code>exist</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>Test value should be an existed one, assertion failed when the value is not existed.</p>
+
+<h4 id="parameters-14">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-notexist-d2-dab-namespaceassert-1a3d4e62849c9d75031ece79a91c96aa39-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a3d4e62849c9d75031ece79a91c96aa39"><code>notExist</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>Test value should not be an existed one, assertion failed when the value is existed.</p>
+
+<h4 id="parameters-15">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-istrue-d2-dab-namespaceassert-1a20f89c88bfd5356e32731af24821968b-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a20f89c88bfd5356e32731af24821968b"><code>isTrue</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>Test value should be the Boolean true, assertion failed when the value is false.</p>
+
+<h4 id="parameters-16">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isnottrue-d2-dab-namespaceassert-1affe6ecae30a890a57dec8b1b5148831e-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1affe6ecae30a890a57dec8b1b5148831e"><code>isNotTrue</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>Test value should be the Boolean false, assertion failed when the value is true.</p>
+
+<h4 id="parameters-17">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isfalse-d2-dab-namespaceassert-1ad5c6df12d35b760fb09c4e34aa5fa2c0-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1ad5c6df12d35b760fb09c4e34aa5fa2c0"><code>isFalse</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>Test value should be the Boolean false, assertion failed when the value is true.</p>
+
+<h4 id="parameters-18">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isnotfalse-d2-dab-namespaceassert-1a4e525c0ded5e3f6112a15ea878dbc4e2-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a4e525c0ded5e3f6112a15ea878dbc4e2"><code>isNotFalse</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>Test value should be the Boolean true, assertion failed when the value is false.</p>
+
+<h4 id="parameters-19">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isnull-d2-dab-namespaceassert-1a86a30af0aa338b8db74bb1a805f497f7-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a86a30af0aa338b8db74bb1a805f497f7"><code>isNull</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>Test value should be the null, assertion failed when the value is not null.</p>
+
+<h4 id="parameters-20">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isnotnull-d2-dab-namespaceassert-1a353d3f0a16ba816b10eca0f4f55ad3ed-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a353d3f0a16ba816b10eca0f4f55ad3ed"><code>isNotNull</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>Test value should not be the null, assertion failed when the value is null.</p>
+
+<h4 id="parameters-21">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isundefined-d2-dab-namespaceassert-1ad7fedc8b1050fad9fc39df83da013809-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1ad7fedc8b1050fad9fc39df83da013809"><code>isUndefined</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>Test value should be the undefined, assertion failed when the value is not undefined.</p>
+
+<h4 id="parameters-22">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isdefined-d2-dab-namespaceassert-1a558fc550572cebc80cf2ca4545db5ab3-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a558fc550572cebc80cf2ca4545db5ab3"><code>isDefined</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>Test value should not be the undefined, assertion failed when the value is undefined.</p>
+
+<h4 id="parameters-23">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isfunction-d2-dab-namespaceassert-1a71a0eef48d3394bbd2f5659990f363e9-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a71a0eef48d3394bbd2f5659990f363e9"><code>isFunction</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>The type of test value should be Function, assertion failed when the value is not a function.</p>
+
+<h4 id="parameters-24">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isnotfunction-d2-dab-namespaceassert-1a23848bb515a658f542169a3d4a19879b-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a23848bb515a658f542169a3d4a19879b"><code>isNotFunction</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>The type of test value should not be Function, assertion failed when the value is a function.</p>
+
+<h4 id="parameters-25">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isobject-d2-dab-namespaceassert-1a817ff68d658d03fe86f8582be05dfe96-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a817ff68d658d03fe86f8582be05dfe96"><code>isObject</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>The type of test value should be Object, assertion failed when the value is not a object.</p>
+
+<h4 id="parameters-26">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isnotobject-d2-dab-namespaceassert-1a9f20f8dc42056ee6bfa98761a1b8dd1c-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a9f20f8dc42056ee6bfa98761a1b8dd1c"><code>isNotObject</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>The type of test value should not be Object, assertion failed when the value is a object.</p>
+
+<h4 id="parameters-27">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isarray-d2-dab-namespaceassert-1a4942ac3b5ab6bc9c09d4cc807101fb13-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a4942ac3b5ab6bc9c09d4cc807101fb13"><code>isArray</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>The type of test value should be Array, assertion failed when the value is not an array.</p>
+
+<h4 id="parameters-28">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isnotarray-d2-dab-namespaceassert-1a019ae93c17fd2e99fd799028d6d3ee96-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a019ae93c17fd2e99fd799028d6d3ee96"><code>isNotArray</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>The type of test value should not be Array, assertion failed when the value is an array.</p>
+
+<h4 id="parameters-29">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isstring-d2-dab-namespaceassert-1ad8d4452d1c18ac0762f27ad30d754d3e-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1ad8d4452d1c18ac0762f27ad30d754d3e"><code>isString</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>The type of test value should be String, assertion failed when the value is not a string.</p>
+
+<h4 id="parameters-30">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isnotstring-d2-dab-namespaceassert-1ae837cf0658bfa0eac5295ff9fcf0ce65-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1ae837cf0658bfa0eac5295ff9fcf0ce65"><code>isNotString</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>The type of test value should not be String, assertion failed when the value is a string.</p>
+
+<h4 id="parameters-31">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isnumber-d2-dab-namespaceassert-1a3185e0e120d14e566e94a451ace5d1af-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a3185e0e120d14e566e94a451ace5d1af"><code>isNumber</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>The type of test value should be Number, assertion failed when the value is not a number.</p>
+
+<h4 id="parameters-32">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isnotnumber-d2-dab-namespaceassert-1af658587b29f21876f994e35ace690f1d-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1af658587b29f21876f994e35ace690f1d"><code>isNotNumber</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>The type of test value should not be Number, assertion failed when the value is a number.</p>
+
+<h4 id="parameters-33">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isboolean-d2-dab-namespaceassert-1a52d954e5c3dd124d0839f5a6e2b181fd-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a52d954e5c3dd124d0839f5a6e2b181fd"><code>isBoolean</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>The type of test value should be Boolean, assertion failed when the value is not a boolean.</p>
+
+<h4 id="parameters-34">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-isnotboolean-d2-dab-namespaceassert-1a8d631ec59b0bb32668c8ac410d2a5f87-value-actual-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a8d631ec59b0bb32668c8ac410d2a5f87"><code>isNotBoolean</code></a><code>(Value actual,String msg)</code></h4>
+
+<p>The type of test value should not be Boolean, assertion failed when the value is a boolean.</p>
+
+<h4 id="parameters-35">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-typeof-d2-dab-namespaceassert-1a6accf1f518a6bea5c608ea513742cad3-value-actual-string-type-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a6accf1f518a6bea5c608ea513742cad3"><code>typeOf</code></a><code>(Value actual,String type,String msg)</code></h4>
+
+<p>The type of test value should be the specified one, assertion failed when the value type is not match.</p>
+
+<h4 id="parameters-36">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>type</code> Specified type.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-nottypeof-d2-dab-namespaceassert-1a78f313247072ec02fc062842d25203f3-value-actual-string-type-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a78f313247072ec02fc062842d25203f3"><code>notTypeOf</code></a><code>(Value actual,String type,String msg)</code></h4>
+
+<p>The type of test value should not be the specified one, assertion failed when the value type is match.</p>
+
+<h4 id="parameters-37">Parameters</h4>
+
+<ul>
+<li><p><code>actual</code> The value need to be tested.</p></li>
+
+<li><p><code>type</code> Specified type.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-property-d2-dab-namespaceassert-1aad5f5c5d5948e086adbe453e7efa957f-value-object-value-prop-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1aad5f5c5d5948e086adbe453e7efa957f"><code>property</code></a><code>(Value object,Value prop,String msg)</code></h4>
+
+<p>The test value should contain the specified property, assertion failed when the property not be contained.</p>
+
+<h4 id="parameters-38">Parameters</h4>
+
+<ul>
+<li><p><code>object</code> The object to be tested.</p></li>
+
+<li><p><code>prop</code> Property to be tested, fields terminated by &lsquo;.&rsquo;</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-notproperty-d2-dab-namespaceassert-1ae0e3e69d65ed263243ac2370a2d36c7e-value-object-value-prop-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1ae0e3e69d65ed263243ac2370a2d36c7e"><code>notProperty</code></a><code>(Value object,Value prop,String msg)</code></h4>
+
+<p>The test value should not contain the specified property, assertion failed when the property contained.</p>
+
+<h4 id="parameters-39">Parameters</h4>
+
+<ul>
+<li><p><code>object</code> The object to be tested.</p></li>
+
+<li><p><code>prop</code> Property to be tested, fields terminated by &lsquo;.&rsquo;</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-deepproperty-d2-dab-namespaceassert-1a5129660776f5965ef0fc8e045a9d51d4-value-object-value-prop-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a5129660776f5965ef0fc8e045a9d51d4"><code>deepProperty</code></a><code>(Value object,Value prop,String msg)</code></h4>
+
+<p>The test value should deeply contain the specified property, assertion failed when the property not be contained.</p>
+
+<h4 id="parameters-40">Parameters</h4>
+
+<ul>
+<li><p><code>object</code> The object to be tested.</p></li>
+
+<li><p><code>prop</code> Property to be tested, fields terminated by &lsquo;.&rsquo;</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-notdeepproperty-d2-dab-namespaceassert-1a202a5d1189e44f0cbab67cfcbdfb4fae-value-object-value-prop-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a202a5d1189e44f0cbab67cfcbdfb4fae"><code>notDeepProperty</code></a><code>(Value object,Value prop,String msg)</code></h4>
+
+<p>The test value should not deeply contain the specified property, assertion failed when the property contained.</p>
+
+<h4 id="parameters-41">Parameters</h4>
+
+<ul>
+<li><p><code>object</code> The object to be tested.</p></li>
+
+<li><p><code>prop</code> Property to be tested, fields terminated by &lsquo;.&rsquo;</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-propertyval-d2-dab-namespaceassert-1af1a7b26c9b66ed3ed7cd017316b56f7b-value-object-value-prop-value-value-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1af1a7b26c9b66ed3ed7cd017316b56f7b"><code>propertyVal</code></a><code>(Value object,Value prop,Value value,String msg)</code></h4>
+
+<p>The specified property of test value should equal the given one, assertion failed when not match.</p>
+
+<h4 id="parameters-42">Parameters</h4>
+
+<ul>
+<li><p><code>object</code> The object to be tested.</p></li>
+
+<li><p><code>prop</code> Property to be tested, fields terminated by &lsquo;.&rsquo;</p></li>
+
+<li><p><code>value</code> Given value</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-propertynotval-d2-dab-namespaceassert-1a5c45a31ca66fedc3926f3d68544fa189-value-object-value-prop-value-value-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a5c45a31ca66fedc3926f3d68544fa189"><code>propertyNotVal</code></a><code>(Value object,Value prop,Value value,String msg)</code></h4>
+
+<p>The specified property of test value should not equal the given one, assertion failed when match.</p>
+
+<h4 id="parameters-43">Parameters</h4>
+
+<ul>
+<li><p><code>object</code> The object to be tested.</p></li>
+
+<li><p><code>prop</code> Property to be tested, fields terminated by &lsquo;.&rsquo;</p></li>
+
+<li><p><code>value</code> Given value</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-deeppropertyval-d2-dab-namespaceassert-1a3a807667d3596b22f245aec1837a1d3d-value-object-value-prop-value-value-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a3a807667d3596b22f245aec1837a1d3d"><code>deepPropertyVal</code></a><code>(Value object,Value prop,Value value,String msg)</code></h4>
+
+<p>The specified property of test value should deeply equal the given one, assertion failed when not match.</p>
+
+<h4 id="parameters-44">Parameters</h4>
+
+<ul>
+<li><p><code>object</code> The object to be tested.</p></li>
+
+<li><p><code>prop</code> Property to be tested, fields terminated by &lsquo;.&rsquo;</p></li>
+
+<li><p><code>value</code> Given value</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-deeppropertynotval-d2-dab-namespaceassert-1a2fe6b107e4c006046154d31897370d69-value-object-value-prop-value-value-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a2fe6b107e4c006046154d31897370d69"><code>deepPropertyNotVal</code></a><code>(Value object,Value prop,Value value,String msg)</code></h4>
+
+<p>The specified property of test value should not deeply equal the given one, assertion failed when match.</p>
+
+<h4 id="parameters-45">Parameters</h4>
+
+<ul>
+<li><p><code>object</code> The object to be tested.</p></li>
+
+<li><p><code>prop</code> Property to be tested, fields terminated by &lsquo;.&rsquo;</p></li>
+
+<li><p><code>value</code> Given value</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-throws-d2-dab-namespaceassert-1a8ef18037a8c8401353a6336a16373380-function-block-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1a8ef18037a8c8401353a6336a16373380"><code>throws</code></a><code>(Function block,String msg)</code></h4>
+
+<p>The block code should throw an error, assertion failed when not throw one.</p>
+
+<h4 id="parameters-46">Parameters</h4>
+
+<ul>
+<li><p><code>block</code> The code need to be test that specified as function.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+<h4 id="public-static-static-doesnotthrow-d2-dab-namespaceassert-1aa41904a1025725f280feab1e7312fa5a-function-block-string-msg"><code>public static static</code><a href="#d2/dab/namespaceassert_1aa41904a1025725f280feab1e7312fa5a"><code>doesNotThrow</code></a><code>(Function block,String msg)</code></h4>
+
+<p>The block code should not throw an error, assertion failed when throw one.</p>
+
+<h4 id="parameters-47">Parameters</h4>
+
+<ul>
+<li><p><code>block</code> The code need to be test that specified as function.</p></li>
+
+<li><p><code>msg</code> The message of assertion failed when return false.</p></li>
+</ul>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+
+      </div>
+    </div>
+
+    
+ 
+    
+
+    <div id="navigation">
+        
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+          
+
+        
+
+
+        
+            <a class="nav nav-prev" href="/modules/" title="Modules"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/module/base32/" title="base32" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js"></script>
+    <script src="/js/jquery.sticky-kit.min.js"></script>
+    <script src="/js/featherlight.min.js"></script>
+    <script src="/js/html5shiv-printshiv.min.js"></script>
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js"></script>
+    <script src="/js/learn.js"></script>
+    <script src="/js/hugo-learn.js"></script>
+
+    
+    <link href="/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script src="/mermaid/mermaid.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+
+    
+
+  </body>
+</html>
+

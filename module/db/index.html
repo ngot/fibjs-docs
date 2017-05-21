@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.20.7" />
+    <meta name="description" content="Database access module.">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>db :: fibjs</title>
+    <link href="/css/nucleus.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/hybrid.css" rel="stylesheet">
+    <link href="/css/featherlight.min.css" rel="stylesheet">
+    <link href="/css/horsey.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+
+    
+
+    
+
+  </head>
+  <body class="" data-url="/module/db/">
+    
+<nav id="sidebar" class="">
+  <div id="header-wrapper">
+    <div id="header">
+       
+	<p>Fibjs Documentation</p>
+ 
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+<script type="text/javascript" src="/js/lunr.min.js"></script>
+<script type="text/javascript" src="/js/horsey.js"></script>
+<script type="text/javascript">
+    var baseurl = "http:\/\/example.org\/";
+</script>
+<script type="text/javascript" src="/js/search.js"></script>
+
+    
+  </div>
+
+  <div class="highlightable">
+    <ul class="topics">
+        
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+        
+
+        
+        
+        
+        
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/modules/" class="dd-item 
+         
+        parent
+        "
+        >
+            <a href="/modules/">
+                <span>Modules</span>
+                
+                    
+                        <i class="fa fa-angle-down fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+                
+                
+                
+                    
+                
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/assert/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/assert/">
+                <span>assert</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base32/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base32/">
+                <span>base32</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64/">
+                <span>base64</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/base64vlq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/base64vlq/">
+                <span>base64vlq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/bson/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/bson/">
+                <span>bson</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/console/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/console/">
+                <span>console</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/coroutine/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/coroutine/">
+                <span>coroutine</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/crypto/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/crypto/">
+                <span>crypto</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/db/" class="dd-item 
+        active 
+        
+        "
+        >
+            <a href="/module/db/">
+                <span>db</span>
+                
+                
+            </a>
+            
+                
+                
+                
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/encoding/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/encoding/">
+                <span>encoding</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/fs/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/fs/">
+                <span>fs</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/gd/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/gd/">
+                <span>gd</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/global/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/global/">
+                <span>global</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hash/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hash/">
+                <span>hash</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/hex/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/hex/">
+                <span>hex</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/http/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/http/">
+                <span>http</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/iconv/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/iconv/">
+                <span>iconv</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/io/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/io/">
+                <span>io</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/json/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/json/">
+                <span>json</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/mq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/mq/">
+                <span>mq</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/net/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/net/">
+                <span>net</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/os/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/os/">
+                <span>os</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/path/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/path/">
+                <span>path</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/process/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/process/">
+                <span>process</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/profiler/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/profiler/">
+                <span>profiler</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/re/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/re/">
+                <span>re</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/ssl/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/ssl/">
+                <span>ssl</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/test/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/test/">
+                <span>test</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/util/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/util/">
+                <span>util</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/uuid/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/uuid/">
+                <span>uuid</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/vm/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/vm/">
+                <span>vm</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/websocket/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/websocket/">
+                <span>websocket</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/xml/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/xml/">
+                <span>xml</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zip/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zip/">
+                <span>zip</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zlib/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zlib/">
+                <span>zlib</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+            
+    
+    
+    
+    
+        <li data-nav-id="/objects/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/objects/">
+                <span>Objects</span>
+                
+                    
+                        <i class="fa fa-angle-right fa-lg category-icon"></i>
+                    
+                
+                
+            </a>
+            
+            
+            
+                <ul>
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/asyncwait/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/asyncwait/">
+                <span>AsyncWait</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/buffer/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/buffer/">
+                <span>Buffer</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                </ul>
+             
+        </li>
+    
+
+        
+
+        
+
+        
+        
+        
+    </ul>
+    
+     
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+        
+          <div id="top-bar">
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                <span id="toc-menu"><a href=""><i class="fa fa-list-alt"></i></a></span>
+                <a href="http://example.org/">
+                  <span class="fa fa-arrow-circle-right" style="font-size:larger" aria-hidden="true"></span>
+                  fibjs
+                </a>
+                
+                   / <a href='/modules/'>Modules</a> / <a href='/module/db/'>db</a>
+                
+                
+            </div>
+            <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#members">Members</a>
+<ul>
+<li>
+<ul>
+<li><a href="#public-static-object-db-d38-interfaceobject-open-d0-d45-namespacedb-1ae6a25ce20c2a752cf20e7a577207f198-string-connstring"><code>public static</code><a href="#db/d38/interfaceobject"><code>object</code></a><a href="#d0/d45/namespacedb_1ae6a25ce20c2a752cf20e7a577207f198"><code>open</code></a><code>(String connString)</code></a></li>
+<li><a href="#parameters">Parameters</a></li>
+<li><a href="#returns">Returns</a></li>
+<li><a href="#public-static-mysql-d2-d68-interfacemysql-openmysql-d0-d45-namespacedb-1ad989737ba63bbaeb48fc899769557f5e-string-connstring"><code>public static</code><a href="#d2/d68/interfaceMySQL"><code>MySQL</code></a><a href="#d0/d45/namespacedb_1ad989737ba63bbaeb48fc899769557f5e"><code>openMySQL</code></a><code>(String connString)</code></a></li>
+<li><a href="#parameters-1">Parameters</a></li>
+<li><a href="#returns-1">Returns</a></li>
+<li><a href="#public-static-sqlite-d7-df5-interfacesqlite-opensqlite-d0-d45-namespacedb-1a1986951d5ca68ee0ba8361053a84f637-string-connstring"><code>public static</code><a href="#d7/df5/interfaceSQLite"><code>SQLite</code></a><a href="#d0/d45/namespacedb_1a1986951d5ca68ee0ba8361053a84f637"><code>openSQLite</code></a><code>(String connString)</code></a></li>
+<li><a href="#parameters-2">Parameters</a></li>
+<li><a href="#returns-2">Returns</a></li>
+<li><a href="#public-static-mongodb-df-d69-interfacemongodb-openmongodb-d0-d45-namespacedb-1a29551281115a5042ad34b3d361dddc51-string-connstring"><code>public static</code><a href="#df/d69/interfaceMongoDB"><code>MongoDB</code></a><a href="#d0/d45/namespacedb_1a29551281115a5042ad34b3d361dddc51"><code>openMongoDB</code></a><code>(String connString)</code></a></li>
+<li><a href="#parameters-3">Parameters</a></li>
+<li><a href="#returns-3">Returns</a></li>
+<li><a href="#public-static-leveldb-d0-d9e-interfaceleveldb-openleveldb-d0-d45-namespacedb-1af39786855964f572f8d9e34a115bdaf6-string-connstring"><code>public static</code><a href="#d0/d9e/interfaceLevelDB"><code>LevelDB</code></a><a href="#d0/d45/namespacedb_1af39786855964f572f8d9e34a115bdaf6"><code>openLevelDB</code></a><code>(String connString)</code></a></li>
+<li><a href="#parameters-4">Parameters</a></li>
+<li><a href="#returns-4">Returns</a></li>
+<li><a href="#public-static-redis-d7-d32-interfaceredis-openredis-d0-d45-namespacedb-1a4d7f2379592b1a85a802b8b895ba27df-string-connstring"><code>public static</code><a href="#d7/d32/interfaceRedis"><code>Redis</code></a><a href="#d0/d45/namespacedb_1a4d7f2379592b1a85a802b8b895ba27df"><code>openRedis</code></a><code>(String connString)</code></a></li>
+<li><a href="#parameters-5">Parameters</a></li>
+<li><a href="#returns-5">Returns</a></li>
+<li><a href="#public-static-string-format-d0-d45-namespacedb-1a34aceab3cf280744a6293fd472a6cbcc-string-sql"><code>public static String</code><a href="#d0/d45/namespacedb_1a34aceab3cf280744a6293fd472a6cbcc"><code>format</code></a><code>(String sql,...)</code></a></li>
+<li><a href="#parameters-6">Parameters</a></li>
+<li><a href="#returns-6">Returns</a></li>
+<li><a href="#public-static-string-formatmysql-d0-d45-namespacedb-1a730e29b155df6b5c9a5c1b2ce97c8386-string-sql"><code>public static String</code><a href="#d0/d45/namespacedb_1a730e29b155df6b5c9a5c1b2ce97c8386"><code>formatMySQL</code></a><code>(String sql,...)</code></a></li>
+<li><a href="#parameters-7">Parameters</a></li>
+<li><a href="#returns-7">Returns</a></li>
+<li><a href="#public-static-string-escape-d0-d45-namespacedb-1aeb2f02c2858d45aeab3cd686e99ceabd-string-str-boolean-mysql"><code>public static String</code><a href="#d0/d45/namespacedb_1aeb2f02c2858d45aeab3cd686e99ceabd"><code>escape</code></a><code>(String str,Boolean mysql)</code></a></li>
+<li><a href="#parameters-8">Parameters</a></li>
+<li><a href="#returns-8">Returns</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+          </div>
+        
+        
+        <div id="body-inner">
+          
+            <h1>db</h1>
+          
+
+
+
+
+<p>Database access module.</p>
+
+<p>Basic module for create database and database operation, The way to use::</p>
+
+<pre><code class="language-cpp">var db = require('db');
+</code></pre>
+
+<h2 id="summary">Summary</h2>
+
+<table>
+<thead>
+<tr>
+<th>Members</th>
+<th>Descriptions</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>public static</code><a href="#db/d38/interfaceobject"><code>object</code></a><a href="#d0/d45/namespacedb_1ae6a25ce20c2a752cf20e7a577207f198"><code>open</code></a><code>(String connString)</code></td>
+<td>This method offer a general entrance to open a database, call different engines according to the providing connString.</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d2/d68/interfaceMySQL"><code>MySQL</code></a><a href="#d0/d45/namespacedb_1ad989737ba63bbaeb48fc899769557f5e"><code>openMySQL</code></a><code>(String connString)</code></td>
+<td>Open a mysql database.</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d7/df5/interfaceSQLite"><code>SQLite</code></a><a href="#d0/d45/namespacedb_1a1986951d5ca68ee0ba8361053a84f637"><code>openSQLite</code></a><code>(String connString)</code></td>
+<td>Open a sqlite database.</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#df/d69/interfaceMongoDB"><code>MongoDB</code></a><a href="#d0/d45/namespacedb_1a29551281115a5042ad34b3d361dddc51"><code>openMongoDB</code></a><code>(String connString)</code></td>
+<td>Open a mongodb database.</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d0/d9e/interfaceLevelDB"><code>LevelDB</code></a><a href="#d0/d45/namespacedb_1af39786855964f572f8d9e34a115bdaf6"><code>openLevelDB</code></a><code>(String connString)</code></td>
+<td>Open a leveldb database.</td>
+</tr>
+
+<tr>
+<td><code>public static</code><a href="#d7/d32/interfaceRedis"><code>Redis</code></a><a href="#d0/d45/namespacedb_1a4d7f2379592b1a85a802b8b895ba27df"><code>openRedis</code></a><code>(String connString)</code></td>
+<td>Open a <a href="#d7/d32/interfaceRedis">Redis</a> database.</td>
+</tr>
+
+<tr>
+<td><code>public static String</code><a href="#d0/d45/namespacedb_1a34aceab3cf280744a6293fd472a6cbcc"><code>format</code></a><code>(String sql,...)</code></td>
+<td>Formatting a sql command, and returns the formatted results.</td>
+</tr>
+
+<tr>
+<td><code>public static String</code><a href="#d0/d45/namespacedb_1a730e29b155df6b5c9a5c1b2ce97c8386"><code>formatMySQL</code></a><code>(String sql,...)</code></td>
+<td>Formatting a sql command, and returns the formatted results.</td>
+</tr>
+
+<tr>
+<td><code>public static String</code><a href="#d0/d45/namespacedb_1aeb2f02c2858d45aeab3cd686e99ceabd"><code>escape</code></a><code>(String str,Boolean mysql)</code></td>
+<td>String encoded as security coded SQL strings.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="members">Members</h2>
+
+<h4 id="public-static-object-db-d38-interfaceobject-open-d0-d45-namespacedb-1ae6a25ce20c2a752cf20e7a577207f198-string-connstring"><code>public static</code><a href="#db/d38/interfaceobject"><code>object</code></a><a href="#d0/d45/namespacedb_1ae6a25ce20c2a752cf20e7a577207f198"><code>open</code></a><code>(String connString)</code></h4>
+
+<p>This method offer a general entrance to open a database, call different engines according to the providing connString.</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><code>connString</code> Database Description, For example: mysql://user:pass@host/db</li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<p>Returns the database connection object.</p>
+
+<h4 id="public-static-mysql-d2-d68-interfacemysql-openmysql-d0-d45-namespacedb-1ad989737ba63bbaeb48fc899769557f5e-string-connstring"><code>public static</code><a href="#d2/d68/interfaceMySQL"><code>MySQL</code></a><a href="#d0/d45/namespacedb_1ad989737ba63bbaeb48fc899769557f5e"><code>openMySQL</code></a><code>(String connString)</code></h4>
+
+<p>Open a mysql database.</p>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<ul>
+<li><code>connString</code> Database Description, For example: mysql://user:pass@host/db</li>
+</ul>
+
+<h4 id="returns-1">Returns</h4>
+
+<p>Returns the database connection object.</p>
+
+<h4 id="public-static-sqlite-d7-df5-interfacesqlite-opensqlite-d0-d45-namespacedb-1a1986951d5ca68ee0ba8361053a84f637-string-connstring"><code>public static</code><a href="#d7/df5/interfaceSQLite"><code>SQLite</code></a><a href="#d0/d45/namespacedb_1a1986951d5ca68ee0ba8361053a84f637"><code>openSQLite</code></a><code>(String connString)</code></h4>
+
+<p>Open a sqlite database.</p>
+
+<h4 id="parameters-2">Parameters</h4>
+
+<ul>
+<li><code>connString</code> Database Description, For example: sqlite:test.db or test.db</li>
+</ul>
+
+<h4 id="returns-2">Returns</h4>
+
+<p>Returns the database connection object.</p>
+
+<h4 id="public-static-mongodb-df-d69-interfacemongodb-openmongodb-d0-d45-namespacedb-1a29551281115a5042ad34b3d361dddc51-string-connstring"><code>public static</code><a href="#df/d69/interfaceMongoDB"><code>MongoDB</code></a><a href="#d0/d45/namespacedb_1a29551281115a5042ad34b3d361dddc51"><code>openMongoDB</code></a><code>(String connString)</code></h4>
+
+<p>Open a mongodb database.</p>
+
+<h4 id="parameters-3">Parameters</h4>
+
+<ul>
+<li><code>connString</code> Database Description</li>
+</ul>
+
+<h4 id="returns-3">Returns</h4>
+
+<p>Returns the database connection object.</p>
+
+<h4 id="public-static-leveldb-d0-d9e-interfaceleveldb-openleveldb-d0-d45-namespacedb-1af39786855964f572f8d9e34a115bdaf6-string-connstring"><code>public static</code><a href="#d0/d9e/interfaceLevelDB"><code>LevelDB</code></a><a href="#d0/d45/namespacedb_1af39786855964f572f8d9e34a115bdaf6"><code>openLevelDB</code></a><code>(String connString)</code></h4>
+
+<p>Open a leveldb database.</p>
+
+<h4 id="parameters-4">Parameters</h4>
+
+<ul>
+<li><code>connString</code> Database Description, For example: level:test.db or test.db</li>
+</ul>
+
+<h4 id="returns-4">Returns</h4>
+
+<p>Returns the database connection object.</p>
+
+<h4 id="public-static-redis-d7-d32-interfaceredis-openredis-d0-d45-namespacedb-1a4d7f2379592b1a85a802b8b895ba27df-string-connstring"><code>public static</code><a href="#d7/d32/interfaceRedis"><code>Redis</code></a><a href="#d0/d45/namespacedb_1a4d7f2379592b1a85a802b8b895ba27df"><code>openRedis</code></a><code>(String connString)</code></h4>
+
+<p>Open a <a href="#d7/d32/interfaceRedis">Redis</a> database.</p>
+
+<h4 id="parameters-5">Parameters</h4>
+
+<ul>
+<li><code>connString</code> Database Description, For example: redis://server:port or &ldquo;server&rdquo;</li>
+</ul>
+
+<h4 id="returns-5">Returns</h4>
+
+<p>Returns the database connection object.</p>
+
+<h4 id="public-static-string-format-d0-d45-namespacedb-1a34aceab3cf280744a6293fd472a6cbcc-string-sql"><code>public static String</code><a href="#d0/d45/namespacedb_1a34aceab3cf280744a6293fd472a6cbcc"><code>format</code></a><code>(String sql,...)</code></h4>
+
+<p>Formatting a sql command, and returns the formatted results.</p>
+
+<h4 id="parameters-6">Parameters</h4>
+
+<ul>
+<li><p><code>sql</code> Format string, optional parameters can be specified as &lsquo;?&rsquo;, for example: &lsquo;SELECT FROM TEST WHERE [id]=?&rsquo;</p></li>
+
+<li><p><code>...</code> Optional parameter list</p></li>
+</ul>
+
+<h4 id="returns-6">Returns</h4>
+
+<p>Return the formatted sql command.</p>
+
+<h4 id="public-static-string-formatmysql-d0-d45-namespacedb-1a730e29b155df6b5c9a5c1b2ce97c8386-string-sql"><code>public static String</code><a href="#d0/d45/namespacedb_1a730e29b155df6b5c9a5c1b2ce97c8386"><code>formatMySQL</code></a><code>(String sql,...)</code></h4>
+
+<p>Formatting a sql command, and returns the formatted results.</p>
+
+<h4 id="parameters-7">Parameters</h4>
+
+<ul>
+<li><p><code>sql</code> Format string, optional parameters can be specified as &lsquo;?&rsquo;, for example: &lsquo;SELECT FROM TEST WHERE [id]=?&rsquo;</p></li>
+
+<li><p><code>...</code> Optional parameter list</p></li>
+</ul>
+
+<h4 id="returns-7">Returns</h4>
+
+<p>Return the formatted sql command.</p>
+
+<h4 id="public-static-string-escape-d0-d45-namespacedb-1aeb2f02c2858d45aeab3cd686e99ceabd-string-str-boolean-mysql"><code>public static String</code><a href="#d0/d45/namespacedb_1aeb2f02c2858d45aeab3cd686e99ceabd"><code>escape</code></a><code>(String str,Boolean mysql)</code></h4>
+
+<p>String encoded as security coded SQL strings.</p>
+
+<h4 id="parameters-8">Parameters</h4>
+
+<ul>
+<li><p><code>str</code> The string that need to be encoded</p></li>
+
+<li><p><code>mysql</code> Specify the Mysql encoding, the default value is false</p></li>
+</ul>
+
+<h4 id="returns-8">Returns</h4>
+
+<p>Returns the encoded string</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+
+      </div>
+    </div>
+
+    
+ 
+    
+
+    <div id="navigation">
+        
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+          
+
+        
+
+
+        
+            <a class="nav nav-prev" href="/module/crypto/" title="crypto"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/module/encoding/" title="encoding" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js"></script>
+    <script src="/js/jquery.sticky-kit.min.js"></script>
+    <script src="/js/featherlight.min.js"></script>
+    <script src="/js/html5shiv-printshiv.min.js"></script>
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js"></script>
+    <script src="/js/learn.js"></script>
+    <script src="/js/hugo-learn.js"></script>
+
+    
+    <link href="/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script src="/mermaid/mermaid.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+
+    
+
+  </body>
+</html>
+
