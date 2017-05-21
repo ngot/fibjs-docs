@@ -21,5 +21,7 @@ hugo
 
 cd public
 git add .
+ngot
+echo "fibjs.ngot.me" >> CNAME
 git commit -m "Publishing to gh-pages"
 git push origin gh-pages
