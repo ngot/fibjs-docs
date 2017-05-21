@@ -384,6 +384,28 @@
     
     
     
+        <li data-nav-id="/module/gui/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/gui/">
+                <span>gui</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/hash/" class="dd-item 
          
         
@@ -648,6 +670,28 @@
     
     
     
+        <li data-nav-id="/module/querystring/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/querystring/">
+                <span>querystring</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/re/" class="dd-item 
          
         
@@ -655,6 +699,50 @@
         >
             <a href="/module/re/">
                 <span>re</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/registry/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/registry/">
+                <span>registry</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/rpc/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/rpc/">
+                <span>rpc</span>
                 
                 
             </a>
@@ -699,6 +787,28 @@
         >
             <a href="/module/test/">
                 <span>test</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/url/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/url/">
+                <span>url</span>
                 
                 
             </a>
@@ -802,6 +912,28 @@
     
     
     
+        <li data-nav-id="/module/ws/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/ws/">
+                <span>ws</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/xml/" class="dd-item 
          
         
@@ -853,6 +985,28 @@
         >
             <a href="/module/zlib/">
                 <span>zlib</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zmq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zmq/">
+                <span>zmq</span>
                 
                 
             </a>
@@ -937,6 +1091,28 @@
     
 
                 
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/expect/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/expect/">
+                <span>Expect</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
                 </ul>
              
         </li>
@@ -1004,7 +1180,7 @@
 	
 	    <a class="newer-posts" href="/module/">&larr; Next Pages</a>
 	
-	<span class="page-number">Page 2 on 4</span>
+	<span class="page-number">Page 2 on 5</span>
 	
 	    <a class="older-posts" href="/module/page/3/">Previous Pages &rarr;</a>
 	
@@ -1018,9 +1194,13 @@
         <h2 class="post-title"><a href="/module/fs/">fs</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>file system module
-how to use
-var fs = require('fs');  Summary    Members Descriptions     public static Booleanexists(String path) search if the file or directory exists   public static BooleanexistsSync(String path) search if the file or directory exists. Sync version of fs.exists().   public static staticunlink(String path) the file you want to delete   public static staticunlinkSync(String path) the file you want to delete. <a class="read-more" href="/module/fs/">&raquo;</a></p>
+        <p>文件系统处理模块
+使用方法：
+var fs = require('fs');  Field Summary    Type Method and Description     const public const SEEK_SETSEEK_SETSEEK_SETseek 方式常量，移动到绝对位置
+   const public const SEEK_CURSEEK_CURSEEK_CURseek 方式常量，移动到当前位置的相对位置
+   const public const SEEK_ENDSEEK_ENDSEEK_ENDseek 方式常量，移动到文件结尾的相对位置
+    Method Summary    Type Method and Description     Boolean exists(String path)查询指定的文件或目录是否存在
+   Boolean existsSync(String path)查询指定的文件或目录是否存在，是 exists 的同步版兼容接口 <a class="read-more" href="/module/fs/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1041,9 +1221,14 @@ var fs = require('fs');  Summary    Members Descriptions     public static Boole
         <h2 class="post-title"><a href="/module/gd/">gd</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Image processing module.
-Base module. It can be used to create and manipulate image files. The way to use：
-var gd = require('gd');  Summary    Members Descriptions     public staticImagecreate(Integer width,Integer height,Integer color) Create a new image.   public staticImageload(Bufferdata) Decoded image from the format data.   public staticImageload(SeekableStreamstm) Decoded image from the stream object.   public staticImageload(String fname) Decoded image from the specified file. <a class="read-more" href="/module/gd/">&raquo;</a></p>
+        <p>图像文件处理模块
+基础模块。可用于创建和操作图像文件，引用方式：
+var gd = require('gd');  Field Summary    Type Method and Description     const public const NONENONENONE图像格式常量，标示当前图像来源为未知
+   const public const JPEGJPEGJPEG图像格式常量，标示当前图像来源为 jpeg 格式数据
+   const public const GIFGIFGIF图像格式常量，标示当前图像来源为 gif 格式数据
+   const public const PNGPNGPNG图像格式常量，标示当前图像来源为 png 格式数据
+   const public const TIFFTIFFTIFF图像格式常量，标示当前图像来源为 tiff 格式数据
+   const public const BMPBMPBMP图像格式常量，标示当前图像来源为 bmp 格式数据 <a class="read-more" href="/module/gd/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1064,8 +1249,41 @@ var gd = require('gd');  Summary    Members Descriptions     public staticImagec
         <h2 class="post-title"><a href="/module/global/">global</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Global object, which can be accessed by all scripts.
-Summary    Members Descriptions     public static staticrun(String fname,Array argv) Run a script.   public static Valuerequire(String id) Load a module and return module object, reference Module Management.   public static staticGC() Mandatory for garbage collection.   public static staticrepl(Array cmds) Enter the interactive mode, you can interactively execute the internal commands and code which can only be referenced when js start. <a class="read-more" href="/module/global/">&raquo;</a></p>
+        <p>全局对象，所有脚本均可以访问的基础对象
+Field Summary    Type Method and Description     void public static static BufferBufferBuffer二进制数据缓存对象，用于 io 读写的数据处理，参见 Buffer 对象。
+   void public static static Int64Int64Int6464位整数对象，参见 Int64 对象。
+   void public static static consoleconsoleconsole控制台访问对象
+   void public static static processprocessprocess控制台访问对象
+   readonly Worker public static readonly Worker MasterMasterMasterWorker 宿主对象，仅在 Worker 入口脚本有效
+   readonly Object public static readonly Object globalglobalglobal全局对象 <a class="read-more" href="/module/global/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/gui/">gui</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>输入输出处理模块
+使用方法：
+var gui = require('gui');  Field Summary    Type Method and Description     const public const IE7IE7IE7WebView ie 模拟版本，指定 ie7
+   const public const IE8IE8IE8WebView ie 模拟版本，指定 ie8
+   const public const IE9IE9IE9WebView ie 模拟版本，指定 ie9
+   const public const IE10IE10IE10WebView ie 模拟版本，指定 ie10
+   const public const IE11IE11IE11WebView ie 模拟版本，指定 ie11
+   const public const EDGEEDGEEDGEWebView ie 模拟版本，指定 edge <a class="read-more" href="/module/gui/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1086,8 +1304,15 @@ Summary    Members Descriptions     public static staticrun(String fname,Array a
         <h2 class="post-title"><a href="/module/hash/">hash</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Message digest calculation module, can be used to calculate the message digest and summary Signature.
-Summary    Members Descriptions     public staticDigestdigest(Integer algo,Bufferdata) Create a message digest object with the specified algorithm.   public staticDigestdigest(Integer algo) Create a message digest object with the specified algorithm.   public staticDigestmd2(Bufferdata) Create a MD2 message digest object.   public staticDigestmd4(Bufferdata) Create a MD4 message digest object. <a class="read-more" href="/module/hash/">&raquo;</a></p>
+        <p>信息摘要计算模块，可用于计算信息摘要和摘要签名
+Field Summary    Type Method and Description     const public const MD2MD2MD2MD2 信息摘要算法标识常量
+   const public const MD4MD4MD4MD4 信息摘要算法标识常量
+   const public const MD5MD5MD5MD5 信息摘要算法标识常量
+   const public const SHA1SHA1SHA1SHA1 信息摘要算法标识常量
+   const public const SHA224SHA224SHA224SHA224 信息摘要算法标识常量
+   const public const SHA256SHA256SHA256SHA256 信息摘要算法标识常量
+   const public const SHA384SHA384SHA384SHA384 信息摘要算法标识常量
+   const public const SHA512SHA512SHA512SHA512 信息摘要算法标识常量 <a class="read-more" href="/module/hash/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1108,9 +1333,13 @@ Summary    Members Descriptions     public staticDigestdigest(Integer algo,Buffe
         <h2 class="post-title"><a href="/module/hex/">hex</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>module with encode and decode operations between hex and string. to use:
-var encoding = require('encoding'); var hex = encoding.hex;  or:
-var hex = require('hex');  Summary    Members Descriptions     public static Stringencode(Bufferdata) Encode data whith hex format.   public staticBufferdecode(String data) Decode string to binary data with hex format.    Members public static Stringencode(Bufferdata) Encode data whith hex format. <a class="read-more" href="/module/hex/">&raquo;</a></p>
+        <p>hex 编码与解码模块 引用方式：
+var encoding = require('encoding'); var hex = encoding.hex;  或者
+var hex = require('hex');  Method Summary    Type Method and Description     String encode(Buffer data)以 hex 方式编码数据
+   Buffer decode(String data)以 hex 方式解码字符串为二进制数据
+    Method Detail encode String encode(Buffer data) 以 hex 方式编码数据
+Parameters  data 要编码的数据  Returns 返回编码的字符串
+  decode Buffer decode(String data) 以 hex 方式解码字符串为二进制数据 <a class="read-more" href="/module/hex/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1131,8 +1360,13 @@ var hex = require('hex');  Summary    Members Descriptions     public static Str
         <h2 class="post-title"><a href="/module/http/">http</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>HTTP transfer protocol module, handels http protocol.
-Summary    Members Descriptions     public staticHttpRequestnewRequest() create a http request object，reference HttpRequest   public staticHttpResponsenewResponse() create a http response object，reference HttpResponse   public staticHttpCookienewCookie() create a http cookie object，reference HttpCookie   public staticHttpServernewServer() create a http server，reference HttpServer   public staticHttpsServernewHttpsServer() create a https server, reference HttpsServer   public staticHttpHandlernewHandler() create a http protocol handler，reference HttpHandler   public staticHandlerfileHandler(String root,Object mimes) create a http static file processor, in case of using static file to respond http request   public staticHttpResponserequest(Streamconn,HttpRequestreq) send http request to connection object，return response   public staticHttpResponserequest(String method,String url,Object headers) assign requested url, and return   public staticHttpResponserequest(String method,String url,SeekableStreambody,Object headers) Request the specified url, and get the response. <a class="read-more" href="/module/http/">&raquo;</a></p>
+        <p>超文本传输协议模块，用以支持 http 协议处理
+Field Summary    Type Method and Description     readonly List public static readonly List cookiescookiescookies返回http客户端的 HttpCookie 对象列表
+   Integer public static Integer timeouttimeouttimeout查询和设置超时时间
+   Boolean public static Boolean enableCookieenableCookieenableCookiecookie功能开关，默认开启
+   Boolean public static Boolean autoRedirectautoRedirectautoRedirect自动redirect功能开关，默认开启
+   String public static String userAgentuserAgentuserAgent查询和设置 http 请求中的浏览器标识
+    Method Summary    Type Method and Description     HttpRequest new Request()创建一个 http 请求对象，参见 HttpRequest <a class="read-more" href="/module/http/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1153,9 +1387,13 @@ Summary    Members Descriptions     public staticHttpRequestnewRequest() create 
         <h2 class="post-title"><a href="/module/iconv/">iconv</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>iconv Module with encode and decode operations between text and binary. to use:
-var encoding = require('encoding'); var iconv = encoding.iconv;  or:
-var iconv = require('iconv');  Summary    Members Descriptions     public staticBufferencode(String charset,String data) Convert text to binary with iconv.   public static Stringdecode(String charset,Bufferdata) Convert binary to text with iconv.    Members public staticBufferencode(String charset,String data) Convert text to binary with iconv. <a class="read-more" href="/module/iconv/">&raquo;</a></p>
+        <p>iconv 编码与解码模块 引用方式：
+var encoding = require('encoding'); var iconv = encoding.iconv;  或者
+var iconv = require('iconv');  Method Summary    Type Method and Description     Buffer encode(String charset,String data)用 iconv 将文本转换为二进制数据
+   String decode(String charset,Buffer data)用 iconv 将 Buffer 内容转换为文本
+    Method Detail encode Buffer encode(String charset,String data) 用 iconv 将文本转换为二进制数据
+Parameters  charset 指定字符集
+ data 要转换的文本 <a class="read-more" href="/module/iconv/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1176,10 +1414,15 @@ var iconv = require('iconv');  Summary    Members Descriptions     public static
         <h2 class="post-title"><a href="/module/io/">io</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>IO module.
-To use it:
-var io = require('io');  Summary    Members Descriptions     public staticMemoryStreamnewMemoryStream() Create a memory stream, see MemoryStream.   public staticBufferedStreamnewBufferedStream() Create a buffered read stream, see BufferedStream.    Members public staticMemoryStreamnewMemoryStream() Create a memory stream, see MemoryStream.
-public staticBufferedStreamnewBufferedStream() Create a buffered read stream, see BufferedStream. <a class="read-more" href="/module/io/">&raquo;</a></p>
+        <p>输入输出处理模块
+使用方法：
+var io = require('io');  Method Summary    Type Method and Description     MemoryStream new MemoryStream()创建一个内存流对象，参见 MemoryStream
+   BufferedStream new BufferedStream()创建一个缓存流读取对象，参见 BufferedStream
+   Long copyStream(Stream from,Stream to,Long bytes)复制流数据到目标流中
+   void bridge(Stream stm1,Stream stm2)双向复制流数据，直到流中无数据，或者流被关闭
+    Method Detail MemoryStream MemoryStream new MemoryStream() 创建一个内存流对象，参见 MemoryStream
+  BufferedStream BufferedStream new BufferedStream() 创建一个缓存流读取对象，参见 BufferedStream
+  copyStream Long copyStream(Stream from,Stream to,Long bytes) 复制流数据到目标流中 <a class="read-more" href="/module/io/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1200,31 +1443,13 @@ public staticBufferedStreamnewBufferedStream() Create a buffered read stream, se
         <h2 class="post-title"><a href="/module/json/">json</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>json module with encode and decode operations. to use:
-var encoding = require('encoding'); var json = encoding.json;  or:
-var json = require('json');  Summary    Members Descriptions     public static Stringencode(Value data) Encode a json variable to string with json format.   public static Valuedecode(String data) Decode a string variable to json with json format.    Members public static Stringencode(Value data) Encode a json variable to string with json format. <a class="read-more" href="/module/json/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-
-
-
-
-   <article class="post module">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/module/mq/">mq</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Message queue module.
-Summary    Members Descriptions     public staticHandlerjsHandler(Value hdlr) Create a javascript message handler, return immediately when pass by value.   public staticAsyncWaitawait() Create async handler.   public staticHandlernullHandler() Create a empty handler.   public static staticinvoke(Handlerhdlr,objectv) Invoke a message or object to given handler.    Members public staticHandlerjsHandler(Value hdlr) Create a javascript message handler, return immediately when pass by value. <a class="read-more" href="/module/mq/">&raquo;</a></p>
+        <p>json 编码与解码模块 引用方式：
+var encoding = require('encoding'); var json = encoding.json;  或者
+var json = require('json');  Method Summary    Type Method and Description     String encode(Value data)以 json 格式编码变量
+   Value decode(String data)以 json 方式解码字符串为一个变量
+    Method Detail encode String encode(Value data) 以 json 格式编码变量
+Parameters  data 要编码的变量  Returns 返回编码的字符串
+  decode Value decode(String data) 以 json 方式解码字符串为一个变量 <a class="read-more" href="/module/json/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1247,7 +1472,7 @@ Summary    Members Descriptions     public staticHandlerjsHandler(Value hdlr) Cr
 	
 	    <a class="newer-posts" href="/module/">&larr; Next Pages</a>
 	
-	<span class="page-number">Page 2 on 4</span>
+	<span class="page-number">Page 2 on 5</span>
 	
 	    <a class="older-posts" href="/module/page/3/">Previous Pages &rarr;</a>
 	
@@ -1662,6 +1887,83 @@ Summary    Members Descriptions     public staticHandlerjsHandler(Value hdlr) Cr
             
         
                 
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
             
         
         
@@ -1672,6 +1974,17 @@ Summary    Members Descriptions     public staticHandlerjsHandler(Value hdlr) Cr
                     
                 
                 
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
                 
                     
             

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.20.7" />
-    <meta name="description" content="Module with encode and decode operations between hex and string.">
+    <meta name="description" content="hex 编码与解码模块 引用方式：">
 
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
@@ -390,6 +390,28 @@
     
     
     
+        <li data-nav-id="/module/gui/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/gui/">
+                <span>gui</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/hash/" class="dd-item 
          
         
@@ -658,6 +680,28 @@
     
     
     
+        <li data-nav-id="/module/querystring/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/querystring/">
+                <span>querystring</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/re/" class="dd-item 
          
         
@@ -665,6 +709,50 @@
         >
             <a href="/module/re/">
                 <span>re</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/registry/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/registry/">
+                <span>registry</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/rpc/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/rpc/">
+                <span>rpc</span>
                 
                 
             </a>
@@ -709,6 +797,28 @@
         >
             <a href="/module/test/">
                 <span>test</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/url/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/url/">
+                <span>url</span>
                 
                 
             </a>
@@ -812,6 +922,28 @@
     
     
     
+        <li data-nav-id="/module/ws/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/ws/">
+                <span>ws</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/xml/" class="dd-item 
          
         
@@ -863,6 +995,28 @@
         >
             <a href="/module/zlib/">
                 <span>zlib</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zmq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zmq/">
+                <span>zmq</span>
                 
                 
             </a>
@@ -947,6 +1101,28 @@
     
 
                 
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/expect/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/expect/">
+                <span>Expect</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
                 </ul>
              
         </li>
@@ -999,19 +1175,8 @@
 <ul>
 <li>
 <ul>
-<li><a href="#summary">Summary</a></li>
-<li><a href="#members">Members</a>
-<ul>
-<li>
-<ul>
-<li><a href="#public-static-string-encode-d3-da1-namespacehex-1a581b5701a55f8498bcc5d923490ea970-buffer-d0-d11-classbuffer-data"><code>public static String</code><a href="#d3/da1/namespacehex_1a581b5701a55f8498bcc5d923490ea970"><code>encode</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></a></li>
-<li><a href="#parameters">Parameters</a></li>
-<li><a href="#returns">Returns</a></li>
-<li><a href="#public-static-buffer-d0-d11-classbuffer-decode-d3-da1-namespacehex-1a011682402d37d61858e68f191d64ba16-string-data"><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d3/da1/namespacehex_1a011682402d37d61858e68f191d64ba16"><code>decode</code></a><code>(String data)</code></a></li>
-<li><a href="#parameters-1">Parameters</a></li>
-<li><a href="#returns-1">Returns</a></li>
-</ul></li>
-</ul></li>
+<li><a href="#method-summary">Method Summary</a></li>
+<li><a href="#method-detail">Method Detail</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -1029,69 +1194,86 @@
 
 
 
-<p>module with encode and decode operations between hex and string. to use:</p>
+<p>hex 编码与解码模块 引用方式：</p>
 
-<pre><code class="language-cpp">var encoding = require('encoding');
+<pre><code class="language-js">var encoding = require('encoding');
 var hex = encoding.hex;
 </code></pre>
 
-<p>or:</p>
+<p>或者</p>
 
-<pre><code class="language-cpp">var hex = require('hex');
+<pre><code class="language-js">var hex = require('hex');
 </code></pre>
 
-<h2 id="summary">Summary</h2>
+<h2 id="method-summary">Method Summary</h2>
 
 <table>
 <thead>
 <tr>
-<th>Members</th>
-<th>Descriptions</th>
+<th>Type</th>
+<th>Method and Description</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>public static String</code><a href="#d3/da1/namespacehex_1a581b5701a55f8498bcc5d923490ea970"><code>encode</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></td>
-<td>Encode data whith hex format.</td>
+<td>String</td>
+<td><code>encode(Buffer data)</code><p>以 hex 方式编码数据</p></td>
 </tr>
 
 <tr>
-<td><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d3/da1/namespacehex_1a011682402d37d61858e68f191d64ba16"><code>decode</code></a><code>(String data)</code></td>
-<td>Decode string to binary data with hex format.</td>
+<td>Buffer</td>
+<td><code>decode(String data)</code><p>以 hex 方式解码字符串为二进制数据</p></td>
 </tr>
 </tbody>
 </table>
 
-<h2 id="members">Members</h2>
+<h2 id="method-detail">Method Detail</h2>
 
-<h4 id="public-static-string-encode-d3-da1-namespacehex-1a581b5701a55f8498bcc5d923490ea970-buffer-d0-d11-classbuffer-data"><code>public static String</code><a href="#d3/da1/namespacehex_1a581b5701a55f8498bcc5d923490ea970"><code>encode</code></a><code>(</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><code>data)</code></h4>
+<p><div class="panel panel-default">
+	<div class="panel-heading">encode</div>
+	<div class="panel-body"><h4 id="string-encode-buffer-data"><strong>String</strong> <code>encode(Buffer data)</code></h4>
 
-<p>Encode data whith hex format.</p>
+<p>以 hex 方式编码数据</p>
 
 <h4 id="parameters">Parameters</h4>
 
 <ul>
-<li><code>data</code> Data to be encoded.</li>
+<li><code>data</code> 要编码的数据</li>
 </ul>
 
 <h4 id="returns">Returns</h4>
 
-<p>Encoded result string.</p>
+<p>返回编码的字符串</p>
+</div>
+	
+</div>
 
-<h4 id="public-static-buffer-d0-d11-classbuffer-decode-d3-da1-namespacehex-1a011682402d37d61858e68f191d64ba16-string-data"><code>public static</code><a href="#d0/d11/classBuffer"><code>Buffer</code></a><a href="#d3/da1/namespacehex_1a011682402d37d61858e68f191d64ba16"><code>decode</code></a><code>(String data)</code></h4>
+<div class="panel panel-default">
+	<div class="panel-heading">decode</div>
+	<div class="panel-body"><h4 id="buffer-decode-string-data"><strong>Buffer</strong> <code>decode(String data)</code></h4>
 
-<p>Decode string to binary data with hex format.</p>
+<p>以 hex 方式解码字符串为二进制数据</p>
 
-<h4 id="parameters-1">Parameters</h4>
+<h4 id="parameters">Parameters</h4>
 
 <ul>
-<li><code>data</code> String to be decode.</li>
+<li><code>data</code> 要解码的字符串</li>
 </ul>
 
-<h4 id="returns-1">Returns</h4>
+<h4 id="returns">Returns</h4>
 
-<p>Decoded binary data result.</p>
+<p>返回解码的二进制数据</p>
+</div>
+	
+</div>
+</p>
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>
 
 
 <footer class=" footline" >
@@ -1278,6 +1460,17 @@ var hex = encoding.hex;
             
                 
                     
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
                     
                 
                 
@@ -1508,6 +1701,72 @@ var hex = encoding.hex;
             
         
                 
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
             
         
         
@@ -1518,6 +1777,17 @@ var hex = encoding.hex;
                     
                 
                 
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
                 
                     
             

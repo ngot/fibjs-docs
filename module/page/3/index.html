@@ -384,6 +384,28 @@
     
     
     
+        <li data-nav-id="/module/gui/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/gui/">
+                <span>gui</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/hash/" class="dd-item 
          
         
@@ -648,6 +670,28 @@
     
     
     
+        <li data-nav-id="/module/querystring/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/querystring/">
+                <span>querystring</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/re/" class="dd-item 
          
         
@@ -655,6 +699,50 @@
         >
             <a href="/module/re/">
                 <span>re</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/registry/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/registry/">
+                <span>registry</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/rpc/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/rpc/">
+                <span>rpc</span>
                 
                 
             </a>
@@ -699,6 +787,28 @@
         >
             <a href="/module/test/">
                 <span>test</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/url/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/url/">
+                <span>url</span>
                 
                 
             </a>
@@ -802,6 +912,28 @@
     
     
     
+        <li data-nav-id="/module/ws/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/ws/">
+                <span>ws</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/xml/" class="dd-item 
          
         
@@ -853,6 +985,28 @@
         >
             <a href="/module/zlib/">
                 <span>zlib</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zmq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zmq/">
+                <span>zmq</span>
                 
                 
             </a>
@@ -937,6 +1091,28 @@
     
 
                 
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/expect/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/expect/">
+                <span>Expect</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
                 </ul>
              
         </li>
@@ -1004,7 +1180,7 @@
 	
 	    <a class="newer-posts" href="/module/page/2/">&larr; Next Pages</a>
 	
-	<span class="page-number">Page 3 on 4</span>
+	<span class="page-number">Page 3 on 5</span>
 	
 	    <a class="older-posts" href="/module/page/4/">Previous Pages &rarr;</a>
 	
@@ -1015,12 +1191,44 @@
 
    <article class="post module">
     <header class="post-header">
+        <h2 class="post-title"><a href="/module/mq/">mq</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>消息队列模块
+Field Summary    Type Method and Description     void public static static MessageMessageMessage创建一个消息对象，参见 Message
+   void public static static HttpHandlerHttpHandlerHttpHandler创建一个 http 协议处理器对象，参见 HttpHandler
+   void public static static HandlerHandlerHandler创建一个消息处理器对象，传递值内置处理器则直接返回
+   void public static static ChainChainChain创建一个消息处理器链处理对象，参见 Chain
+   void public static static RoutingRoutingRouting创建一个消息处理器路由对象，参见 Routing
+    Method Summary    Type Method and Description     Handler await()创建一个异步等待处理器 <a class="read-more" href="/module/mq/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
         <h2 class="post-title"><a href="/module/net/">net</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Network module.
-Used for create and operate netwrok resource, to use it:
-var net = require('net');  Summary    Members Descriptions     public static Stringresolve(String name,Integer family) Resolve address of given host.   public static Stringip(String name) Quick query host address, same as resolve(name)   public static Stringipv6(String name) Quick query host ipv6 address, same as resolve(name, net.AF_INET6)   public staticStreamconnect(String host,Integer port,Integer family) Create a Socket object and make connection, see Socket. <a class="read-more" href="/module/net/">&raquo;</a></p>
+        <p>网络访问模块
+基础模块。可用于创建和操作网络资源，引用方式：
+var net = require('net');  Field Summary    Type Method and Description     const public const AF_INETAF_INETAF_INET地址集常量，指定 ipv4
+   const public const AF_INET6AF_INET6AF_INET6地址集常量，指定 ipv6
+   const public const SOCK_STREAMSOCK_STREAMSOCK_STREAM协议族常量，指定 tcp
+   const public const SOCK_DGRAMSOCK_DGRAMSOCK_DGRAM协议族常量，指定 udp
+   void public static static SocketSocketSocket创建一个 Socket 对象，参见 Socket
+   void public static static SmtpSmtpSmtp创建一个 Smtp 对象，参见 Smtp <a class="read-more" href="/module/net/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1041,9 +1249,13 @@ var net = require('net');  Summary    Members Descriptions     public static Str
         <h2 class="post-title"><a href="/module/os/">os</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Operating system and file system module.
-To use it:
-var os = require('os');  Summary    Members Descriptions     public static Numberuptime() Get operating system time in seconds.   public static Arrayloadavg() Get system load average, 1, 5 and 15 minutes.   public static Longtotalmem() Get system total memory in bytes.   public static Longfreemem() Get system free memory in bytes.   public static ArrayCPUInfo() Get system CPU number and information. <a class="read-more" href="/module/os/">&raquo;</a></p>
+        <p>操作系统与文件系统处理模块
+使用方法：
+var os = require('os');  Field Summary    Type Method and Description     void public static static ServiceServiceServiceService 构造函数，参见 Service
+   readonly String public static readonly String hostnamehostnamehostname查询当前运行环境主机名
+   readonly String public static readonly String typetypetype查询当前运行环境操作系统名称
+   readonly String public static readonly String versionversionversion查询当前运行环境操作系统版本
+   readonly String public static readonly String archarcharch查询当前 cpu 环境，可能的结果为 &lsquo;amd64&rsquo;, &lsquo;arm&rsquo;, &lsquo;arm64&rsquo;, &lsquo;ia32&rsquo; <a class="read-more" href="/module/os/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1064,9 +1276,12 @@ var os = require('os');  Summary    Members Descriptions     public static Numbe
         <h2 class="post-title"><a href="/module/path/">path</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>File path module.
-To use it:
-var path = require('path');  Summary    Members Descriptions     public static Stringnormalize(String path) Normalize path.   public static Stringbasename(String path,String ext) Get file name in path, ignore extension with file has it.   public static Stringextname(String path) Get file extension.   public static Stringdirname(String path) Get directory in path.   public static Stringfullpath(String path) Get full path. <a class="read-more" href="/module/path/">&raquo;</a></p>
+        <p>文件路径处理模块
+引用方法：
+var path = require('path');  Field Summary    Type Method and Description     readonly String public static readonly String sepsepsep查询当前操作系统的路径分割字符，posix 返回 &lsquo;/&rsquo;, windows 返回 &lsquo;\&rsquo;
+   readonly String public static readonly String delimiterdelimiterdelimiter查询当前操作系统的多路径组合字符，posix 返回 &lsquo;:&lsquo;, windows 返回 &lsquo;;&rsquo;
+    Method Summary    Type Method and Description     String normalize(String path)标准化路径，处理路径中父目录等信息
+   String basename(String path,String ext)查询路径中的文件名称，若指定扩展名，则自动取消匹配的扩展名 <a class="read-more" href="/module/path/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1087,9 +1302,13 @@ var path = require('path');  Summary    Members Descriptions     public static S
         <h2 class="post-title"><a href="/module/process/">process</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Process handle module, to manage current process resources.
-To use it:
-var process = require('process');  Summary    Members Descriptions     public static Integerumask(Integer mask) change the current umask，Windows does&rsquo;t support this.   public static Integerumask(String mask) change the current umask，Windows does&rsquo;t support this.   public static Integerumask() return the current umask，Windows does&rsquo;t support this.   public static staticexit(Integer code) Exit current process, and return result. <a class="read-more" href="/module/process/">&raquo;</a></p>
+        <p>进程处理模块，用以管理当前进程的资源
+引用方法：
+var process = require('process');  Field Summary    Type Method and Description     readonly Array public static readonly Array argvargvargv返回当前进程的命令行参数
+   readonly Array public static readonly Array execArgvexecArgvexecArgv返回当前进程的特殊命令行参数，这些参数被 fibjs 用于设置运行环境
+   readonly String public static readonly String versionversionversion返回fibjs版本字符串
+   readonly String public static readonly String execPathexecPathexecPath查询当前运行执行文件完整路径
+   readonly Object public static readonly Object envenvenv查询当前进程的环境变量 <a class="read-more" href="/module/process/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1110,9 +1329,44 @@ var process = require('process');  Summary    Members Descriptions     public st
         <h2 class="post-title"><a href="/module/profiler/">profiler</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Memory profiler module.
-The way to use:
-var profiler = require('profiler');  Summary    Members Descriptions     public static staticsaveSnapshot(String fname) Save a HeapSnapshot with the specified name.   public staticHeapSnapshotloadSnapshot(String fname) Load a HeapSnapshot with the specified name.   public staticHeapSnapshottakeSnapshot() Get the current HeapSnapshot, HeapSnapshots record the state of the JS heap at some moment.   public static staticDeleteAllHeapSnapshots() Delete all HeapSnapshots. <a class="read-more" href="/module/profiler/">&raquo;</a></p>
+        <p>内存 profiler 模块
+使用方法：
+var profiler = require('profiler');  Field Summary    Type Method and Description     const public const Node_HiddenNode_HiddenNode_Hidden隐藏节点，当显示给用户时可以被过滤掉
+   const public const Node_ArrayNode_ArrayNode_Array数组
+   const public const Node_StringNode_StringNode_String字符串
+   const public const Node_ObjectNode_ObjectNode_ObjectJS对象（字符串和数组除外）
+   const public const Node_CodeNode_CodeNode_Code编译后的代码
+   const public const Node_ClosureNode_ClosureNode_Closure函数闭包
+   const public const Node_RegExpNode_RegExpNode_RegExp正则表达式
+   const public const Node_HeapNumberNode_HeapNumberNode_HeapNumber堆中排好序的数字 <a class="read-more" href="/module/profiler/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/querystring/">querystring</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>http query 处理模块
+引用方法：
+var querystring = require('querystring');  Method Summary    Type Method and Description     String escape(String str)url 部件字符串安全编码
+   String unescape(String str)url 安全字符串解码
+   HttpCollection parse(String str,String sep,String eq,Object opt)解析 query 字符串
+   String stringify(Object obj,String sep,String eq,Object opt)序列化一个对象为 query 字符串
+    Method Detail escape String escape(String str) url 部件字符串安全编码
+Parameters  url 要编码的 url  Returns 返回编码的字符串 <a class="read-more" href="/module/querystring/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1133,11 +1387,13 @@ var profiler = require('profiler');  Summary    Members Descriptions     public 
         <h2 class="post-title"><a href="/module/re/">re</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Regexp module.
-Summary    Members Descriptions     public staticRegexcompile(String pattern,String opt) Compile and return a template of regexp.    Members public staticRegexcompile(String pattern,String opt) Compile and return a template of regexp.
-Parameters  pattern Regexp pattern
- opt Match type, can be &ldquo;g&rdquo;, &ldquo;i&rdquo; or &ldquo;gi&rdquo;
-  Returns Return regexp object <a class="read-more" href="/module/re/">&raquo;</a></p>
+        <p> 正则表达式处理模块
+Method Summary    Type Method and Description     Regex compile(String pattern,String opt)编译一个正则表达式模版，并返回正则表达式处理对象
+    Method Detail compile Regex compile(String pattern,String opt) 编译一个正则表达式模版，并返回正则表达式处理对象
+Parameters  pattern 正则表达式
+ opt 规定匹配的类型。&rdquo;g&rdquo; 用于全局匹配，&rdquo;i&rdquo; 用于区分大小写，&rdquo;gi&rdquo; 用于全局区分大小写的匹配
+  Returns 返回正则表达式对象
+   td { vertical-align: top; }   <a class="read-more" href="/module/re/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1155,11 +1411,17 @@ Parameters  pattern Regexp pattern
 
    <article class="post module">
     <header class="post-header">
-        <h2 class="post-title"><a href="/module/ssl/">ssl</a></h2>
+        <h2 class="post-title"><a href="/module/registry/">registry</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>ssl/tls module
-Summary    Members Descriptions     public staticSslSocketnewSocket() Create a SslSocket object, see SslSocket.   public staticSslHandlernewHandler() Create a SslHandler object, see SslHandler.   public staticSslServernewServer() Create a SslServer object, see SslServer.   public staticStreamconnect(String url) Create a SslSocket and make connection.   public static staticsetClientCert(X509Certcrt,PKeykey) Set the default client certificate.   public static staticloadClientCertFile(String crtFile,String keyFile,String password) Load the default client certificate from a file. <a class="read-more" href="/module/ssl/">&raquo;</a></p>
+        <p>Windows 注册表访问模块 引用方式：
+var registry = require('registry'); var value = registry.get(registry.CLASSES_ROOT, &quot;\node1\node2\value&quot;);  Field Summary    Type Method and Description     const public const CLASSES_ROOTCLASSES_ROOTCLASSES_ROOT注册表根，存储Windows可识别的文件类型的详细列表，以及相关联的程序
+   const public const CURRENT_USERCURRENT_USERCURRENT_USER注册表根，存储当前用户设置的信息
+   const public const LOCAL_MACHINELOCAL_MACHINELOCAL_MACHINE注册表根，包括安装在计算机上的硬件和软件的信息
+   const public const USERSUSERSUSERS注册表根，包含使用计算机的用户的信息
+   const public const CURRENT_CONFIGCURRENT_CONFIGCURRENT_CONFIG注册表根，这个分支包含计算机当前的硬件配置信息
+   const public const SZSZSZ注册表数据类型，字符串
+   const public const EXPAND_SZEXPAND_SZEXPAND_SZ注册表数据类型，扩展字符串 <a class="read-more" href="/module/registry/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1177,57 +1439,15 @@ Summary    Members Descriptions     public staticSslSocketnewSocket() Create a S
 
    <article class="post module">
     <header class="post-header">
-        <h2 class="post-title"><a href="/module/test/">test</a></h2>
+        <h2 class="post-title"><a href="/module/rpc/">rpc</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Test Suite module that defines the test suite management.
+        <p> RPC module.
 To use it:
-var test = require('test');  Summary    Members Descriptions     public static staticdescribe(String name,Function block) The definition of a test module and can be nested definition.   public static staticxdescribe(String name,Function block) The definition of a test module to be stopped.   public static staticit(String name,Function block) Define a test project. <a class="read-more" href="/module/test/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-
-
-
-
-   <article class="post module">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/module/util/">util</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Common tools module.
-Summary    Members Descriptions     public static Stringformat(String fmt,...) Format string with variables.   public static Stringformat(...) Format variables.   public static BooleanisEmpty(Value v) Check if variable is empty(no enumerable property)   public static BooleanisArray(Value v) Check if variable is an array.   public static BooleanisBoolean(Value v) Check if variable is Boolean.   public static BooleanisNull(Value v) Check if variable is Null. <a class="read-more" href="/module/util/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-
-
-
-
-   <article class="post module">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/module/uuid/">uuid</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>uuid unique id module
-Fundamental module, used for create uuid
-var uuid = require('uuid');  Summary    Members Descriptions     public staticuuidValueuuid(String s) Generate uuid by given string.   public staticuuidValueuuid(Bufferdata) Generate uuid by given binary data.   public staticuuidValuenode() Generate uuid by time and host name.   public staticuuidValuemd5(Integer ns,String name) Generate uuid by given md5.   public staticuuidValuerandom() Generate uuid randomly. <a class="read-more" href="/module/uuid/">&raquo;</a></p>
+var rpc = require('rpc');  Summary    Type Method and Description     Handler json(Value hdlr)Generate a json-rpc message converter.
+    Method Detail json Handler json(Value hdlr) Generate a json-rpc message converter.
+Parameters  hdlr Built-in handler, handle function or javascript message mapping object, see mq.jsHandler  Returns Return handler
+   td { vertical-align: top; }   <a class="read-more" href="/module/rpc/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1250,7 +1470,7 @@ var uuid = require('uuid');  Summary    Members Descriptions     public staticuu
 	
 	    <a class="newer-posts" href="/module/page/2/">&larr; Next Pages</a>
 	
-	<span class="page-number">Page 3 on 4</span>
+	<span class="page-number">Page 3 on 5</span>
 	
 	    <a class="older-posts" href="/module/page/4/">Previous Pages &rarr;</a>
 	
@@ -1665,6 +1885,83 @@ var uuid = require('uuid');  Summary    Members Descriptions     public staticuu
             
         
                 
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
             
         
         
@@ -1675,6 +1972,17 @@ var uuid = require('uuid');  Summary    Members Descriptions     public staticuu
                     
                 
                 
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
                 
                     
             

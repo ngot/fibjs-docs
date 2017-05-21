@@ -384,6 +384,28 @@
     
     
     
+        <li data-nav-id="/module/gui/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/gui/">
+                <span>gui</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/hash/" class="dd-item 
          
         
@@ -648,6 +670,28 @@
     
     
     
+        <li data-nav-id="/module/querystring/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/querystring/">
+                <span>querystring</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/re/" class="dd-item 
          
         
@@ -655,6 +699,50 @@
         >
             <a href="/module/re/">
                 <span>re</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/registry/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/registry/">
+                <span>registry</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/rpc/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/rpc/">
+                <span>rpc</span>
                 
                 
             </a>
@@ -699,6 +787,28 @@
         >
             <a href="/module/test/">
                 <span>test</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/url/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/url/">
+                <span>url</span>
                 
                 
             </a>
@@ -802,6 +912,28 @@
     
     
     
+        <li data-nav-id="/module/ws/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/ws/">
+                <span>ws</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/xml/" class="dd-item 
          
         
@@ -853,6 +985,28 @@
         >
             <a href="/module/zlib/">
                 <span>zlib</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zmq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zmq/">
+                <span>zmq</span>
                 
                 
             </a>
@@ -937,6 +1091,28 @@
     
 
                 
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/expect/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/expect/">
+                <span>Expect</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
                 </ul>
              
         </li>
@@ -1004,7 +1180,9 @@
 	
 	    <a class="newer-posts" href="/module/page/3/">&larr; Next Pages</a>
 	
-	<span class="page-number">Page 4 on 4</span>
+	<span class="page-number">Page 4 on 5</span>
+	
+	    <a class="older-posts" href="/module/page/5/">Previous Pages &rarr;</a>
 	
 </nav>
 
@@ -1013,12 +1191,148 @@
 
    <article class="post module">
     <header class="post-header">
+        <h2 class="post-title"><a href="/module/ssl/">ssl</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>ssl/tls 模块
+Field Summary    Type Method and Description     const public const VERIFY_NONEVERIFY_NONEVERIFY_NONE证书验证模式，不验证
+   const public const VERIFY_OPTIONALVERIFY_OPTIONALVERIFY_OPTIONAL证书验证模式，可选验证，允许验证不通过
+   const public const VERIFY_REQUIREDVERIFY_REQUIREDVERIFY_REQUIRED证书验证模式，要求验证，验证不通过则中断
+   const public const BADCERT_EXPIREDBADCERT_EXPIREDBADCERT_EXPIRED证书验证结果，证书超时
+   const public const BADCERT_REVOKEDBADCERT_REVOKEDBADCERT_REVOKED证书验证结果，证书被撤销
+   const public const BADCERT_CN_MISMATCHBADCERT_CN_MISMATCHBADCERT_CN_MISMATCH证书验证结果，证书名错误
+   const public const BADCERT_NOT_TRUSTEDBADCERT_NOT_TRUSTEDBADCERT_NOT_TRUSTED证书验证结果，证书不可信
+   const public const ssl3ssl3ssl3ssl 协议版本 ssl 3. <a class="read-more" href="/module/ssl/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/test/">test</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>测试套件模块，用以定义管理测试套件
+引用方法：
+var test = require('test');  Field Summary    Type Method and Description     const public const BDDBDDBDD定义 BDD(Behavior Drive Development) 测试环境，支持 describe, xdescribe, it, xit, before, after, beforeEach 和 afterEach，同时初始化 assert 和expect
+   const public const TDDTDDTDD定义 TDD(Test Drive Development) 测试环境，支持 suite, xsuite, test, xtest, setup, teardown, suiteSetup 和 suiteTeardown，同时初始化 assert 和expect
+   void public static static assertassertassert断言测试模块，如果测试值为假，则报错，报错行为可设定继续运行或者错误抛出 <a class="read-more" href="/module/test/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/url/">url</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>url 处理模块
+Method Summary    Type Method and Description     String format(Object args)参数构造 UrlObject 对象
+   UrlObject parse(String url,Boolean parseQueryString)解析一个 url 字符串
+    Method Detail format String format(Object args) 参数构造 UrlObject 对象
+Parameters  args 指定构造参数的字典对象，支持的字段有：protocol, slashes, username, password, hostname, port, pathname, query, hash    parse UrlObject parse(String url,Boolean parseQueryString) 解析一个 url 字符串
+Parameters  url 指定需要解析的 url 字符串 <a class="read-more" href="/module/url/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/util/">util</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>常用工具模块
+Field Summary    Type Method and Description     void public static static StatsStatsStats数据统计对象，用以构建应用运行时数据收集，参见 Stats 对象。
+   void public static static LruCacheLruCacheLruCacheLRU(least recently used) 缓存对象，参见 LruCache 对象。
+    Method Summary    Type Method and Description     String format(String fmt,...)按照指定的格式格式化变量
+   String format(...)格式格式化变量
+   void inherits(Value constructor,Value superConstructor)从一个构造函数 constructor 继承原型方法到另一个。构造函数的原型将被设置为一个新的从超类（superConstructor）创建的对象。
+   Boolean isEmpty(Value v)检测给定的变量是否不包含任何值(没有可枚举的属性) <a class="read-more" href="/module/util/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/uuid/">uuid</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>uuid 唯一 id 模块
+基础模块。提供唯一 id 的创建于操作
+var uuid = require('uuid');  Field Summary    Type Method and Description     const public const DNSDNSDNSmd5 与 sha1 创建 uuid 时指定 name 命名为域名
+   const public const URLURLURLmd5 与 sha1 创建 uuid 时指定 name 命名为 url 地址
+   const public const OIDOIDOIDmd5 与 sha1 创建 uuid 时指定 name 命名为 ISO OID
+   const public const X509X509X509md5 与 sha1 创建 uuid 时指定 name 命名为 X. <a class="read-more" href="/module/uuid/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
         <h2 class="post-title"><a href="/module/vm/">vm</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Safe SandBox module, to isolate runtime based on safety level.
-By establishing a safe SandBox, you can limit the accessible resources when the script runs, and isolate different script execution environment, also can be customized for different environments base module to ensure the safety of the overall operating environment.
-Following example demonstrates a sandbox which is only allowed for accessing assert module, and add a and b as customized modules. <a class="read-more" href="/module/vm/">&raquo;</a></p>
+        <p> 安全沙箱模块，用于隔离不同安全等级的运行环境
+通过建立安全沙箱，可以限制脚本运行时可以接触的资源，隔离不同脚本执行环境，并可以为不同的环境定制基础模块，以保障整体运行环境的安全。
+下面的示例创建一个沙箱，限制只允许访问全局基础模块中的 assert 模块，并添加 a 和 b 两个定制模块：
+var vm = require('vm'); var sbox = new vm.SandBox({ a: 100, b: 200, assert: require('assert') }); var mod_in_sbox = sbox.require('./path/to/mod');  Method Summary    Type Method and Description     SandBox new SandBox()创建一个 SandBox 对象，参见 SandBox
+    Method Detail SandBox SandBox new SandBox() 创建一个 SandBox 对象，参见 SandBox
+   td { vertical-align: top; }   <a class="read-more" href="/module/vm/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1041,7 +1355,36 @@ Following example demonstrates a sandbox which is only allowed for accessing ass
     <section class="post-excerpt">
         <p>websocket support module
 To use it:
-var websocket = require('websocket');  Summary    Members Descriptions     public staticWebSocketMessagenewMessage() Create one websocket message object, refer WebSocketMessage.   public staticWebSocketHandlernewHandler() Create one websocket packet protocol conversion processor, refer WebSocketHandler.   public staticStreamconnect(String url) Create one websocket connection, and return a completed connection Stream object.    Members public staticWebSocketMessagenewMessage() Create one websocket message object, refer WebSocketMessage. <a class="read-more" href="/module/websocket/">&raquo;</a></p>
+var websocket = require('websocket');  Summary    Type Method and Description     const Integer public const Integer CONTINUECONTINUECONTINUESpecifies the message type 0 of websocket, which is a continue frame.
+   const Integer public const Integer TEXTTEXTTEXTSpecifies the message type 1 of websocket, which is a text frame.
+   const Integer public const Integer BINARYBINARYBINARYSpecifies the message type 2 of websocket, which is a binary frame. <a class="read-more" href="/module/websocket/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post module">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/module/ws/">ws</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>websocket 支持模块
+使用方法：
+var ws = require('ws');  Field Summary    Type Method and Description     const public const CONTINUECONTINUECONTINUE指定 websocket 消息类型 0，代表一个继续帧
+   const public const TEXTTEXTTEXT指定 websocket 消息类型 1，代表一个文本帧
+   const public const BINARYBINARYBINARY指定 websocket 消息类型 2，代表一个二进制帧
+   const public const CLOSECLOSECLOSE指定 websocket 消息类型 8，连接关闭
+   const public const PINGPINGPING指定 websocket 消息类型 9，代表一个 ping 帧 <a class="read-more" href="/module/ws/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1062,8 +1405,12 @@ var websocket = require('websocket');  Summary    Members Descriptions     publi
         <h2 class="post-title"><a href="/module/xml/">xml</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>xml module
-Summary    Members Descriptions     public staticXmlDocumentnewDocument() xml document object, see XmlDocument object   public staticXmlDocumentparse(String source,String type) Parse xml/html text and create XmlDocument object, does not support multiple languages.   public staticXmlDocumentparse(Buffersource,String type) Parse xml/html and create XmlDocument object, convert by given language.   public static Stringserialize(XmlNodenode) Serialize XmlNode to string.    Members public staticXmlDocumentnewDocument() xml document object, see XmlDocument object <a class="read-more" href="/module/xml/">&raquo;</a></p>
+        <p>xml 处理模块
+Field Summary    Type Method and Description     const public const ELEMENT_NODEELEMENT_NODEELEMENT_NODEXmlNode 的 nodeType 属性常量，表示节点为 XmlElement 对象
+   const public const ATTRIBUTE_NODEATTRIBUTE_NODEATTRIBUTE_NODEXmlNode 的 nodeType 属性常量，表示节点为 XmlAttr 对象
+   const public const TEXT_NODETEXT_NODETEXT_NODEXmlNode 的 nodeType 属性常量，表示节点为 XmlText 对象
+   const public const CDATA_SECTION_NODECDATA_SECTION_NODECDATA_SECTION_NODEXmlNode 的 nodeType 属性常量，表示节点为 XmlCDATASection 对象
+   const public const PROCESSING_INSTRUCTION_NODEPROCESSING_INSTRUCTION_NODEPROCESSING_INSTRUCTION_NODEXmlNode 的 nodeType 属性常量，表示节点为 XmlProcessingInstruction 对象 <a class="read-more" href="/module/xml/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1084,32 +1431,13 @@ Summary    Members Descriptions     public staticXmlDocumentnewDocument() xml do
         <h2 class="post-title"><a href="/module/zip/">zip</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Zip file processing module.
-It can be used to compress and decompress file into or from zip file. The way to use：
-var zip = require('zip');  Summary    Members Descriptions     public static BooleanisZipFile(String filename) Judge if the file is zip file.   public staticZipFileopen(String path,String mod,Integer compress_type) Open a zip file.   public staticZipFileopen(Bufferdata,String mod,Integer compress_type) Open buffer of zip file data. <a class="read-more" href="/module/zip/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-
-
-
-
-   <article class="post module">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/module/zlib/">zlib</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>zlib compression and decompression module
-To use it:
-var zlib = require('zlib');  Summary    Members Descriptions     public staticBufferdeflate(Bufferdata,Integer level) Use deflate to compress data (zlib format)   public static staticdeflateTo(Bufferdata,Streamstm,Integer level) Use deflate to compress data to stream (zlib format)   public static staticdeflateTo(Streamsrc,Streamstm,Integer level) Use deflate to compress a stream data to another (zlib format)   public staticBufferinflate(Bufferdata) Use deflate to decompress data (zlib format)   public static staticinflateTo(Bufferdata,Streamstm) Use deflate to decompress data to stream (zlib format)   public static staticinflateTo(Streamsrc,Streamstm) Use deflate to decompress a stream data to another (zlib format)   public staticBuffergzip(Bufferdata) Use gzip to compress data. <a class="read-more" href="/module/zlib/">&raquo;</a></p>
+        <p>zip 格式文件压缩解压模块
+使用方法：
+var zip = require('zip');  Field Summary    Type Method and Description     const public const ZIP_STOREDZIP_STOREDZIP_STORED压缩类型常量, 不压缩, 仅存储
+   const public const ZIP_DEFLATEDZIP_DEFLATEDZIP_DEFLATED压缩类型常量, 需要依赖zlib库进行压缩
+    Method Summary    Type Method and Description     Boolean isZipFile(String filename)判断文件是否是zip格式
+   ZipFile open(String path,String mod,Integer compress_type)打开一个zip文件
+   ZipFile open(Buffer data,String mod,Integer compress_type)打开一个zip文件 <a class="read-more" href="/module/zip/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1132,7 +1460,9 @@ var zlib = require('zlib');  Summary    Members Descriptions     public staticBu
 	
 	    <a class="newer-posts" href="/module/page/3/">&larr; Next Pages</a>
 	
-	<span class="page-number">Page 4 on 4</span>
+	<span class="page-number">Page 4 on 5</span>
+	
+	    <a class="older-posts" href="/module/page/5/">Previous Pages &rarr;</a>
 	
 </nav>
 
@@ -1545,6 +1875,83 @@ var zlib = require('zlib');  Summary    Members Descriptions     public staticBu
             
         
                 
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
             
         
         
@@ -1555,6 +1962,17 @@ var zlib = require('zlib');  Summary    Members Descriptions     public staticBu
                     
                 
                 
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
                 
                     
             

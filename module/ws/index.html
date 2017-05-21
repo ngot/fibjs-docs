@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.20.7" />
-    <meta name="description" content="正则表达式处理模块">
+    <meta name="description" content="websocket 支持模块">
 
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>re :: fibjs</title>
+    <title>ws :: fibjs</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -29,7 +29,7 @@
     
 
   </head>
-  <body class="" data-url="/module/re/">
+  <body class="" data-url="/module/ws/">
     
 <nav id="sidebar" class="">
   <div id="header-wrapper">
@@ -699,7 +699,7 @@
     
     
         <li data-nav-id="/module/re/" class="dd-item 
-        active 
+         
         
         "
         >
@@ -708,10 +708,6 @@
                 
                 
             </a>
-            
-                
-                
-                
             
             
             
@@ -923,7 +919,7 @@
     
     
         <li data-nav-id="/module/ws/" class="dd-item 
-         
+        active 
         
         "
         >
@@ -932,6 +928,10 @@
                 
                 
             </a>
+            
+                
+                
+                
             
             
             
@@ -1165,7 +1165,7 @@
                   fibjs
                 </a>
                 
-                   / <a href='/modules/'>Modules</a> / <a href='/module/re/'>re</a>
+                   / <a href='/modules/'>Modules</a> / <a href='/module/ws/'>ws</a>
                 
                 
             </div>
@@ -1175,7 +1175,9 @@
 <ul>
 <li>
 <ul>
+<li><a href="#field-summary">Field Summary</a></li>
 <li><a href="#method-summary">Method Summary</a></li>
+<li><a href="#field-detail">Field Detail</a></li>
 <li><a href="#method-detail">Method Detail</a></li>
 </ul></li>
 </ul>
@@ -1188,13 +1190,81 @@
         
         <div id="body-inner">
           
-            <h1>re</h1>
+            <h1>ws</h1>
           
 
 
 
 
-<p>正则表达式处理模块</p>
+<p>websocket 支持模块</p>
+
+<p>使用方法：</p>
+
+<pre><code class="language-js">var ws = require('ws');
+</code></pre>
+
+<h2 id="field-summary">Field Summary</h2>
+
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Method and Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>const</td>
+<td><code>public const CONTINUE</code><a href="#d6/d5b/namespacews_1a508f1a2f00bc868e36dc5e1de2111bca"><code>CONTINUE</code></a><code>CONTINUE</code><p>指定 websocket 消息类型 0，代表一个继续帧</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const TEXT</code><a href="#d6/d5b/namespacews_1a4d96d672e1a66d81b22160a35d64b2cd"><code>TEXT</code></a><code>TEXT</code><p>指定 websocket 消息类型 1，代表一个文本帧</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const BINARY</code><a href="#d6/d5b/namespacews_1afa728c423531bf6240c2533bd62c9eed"><code>BINARY</code></a><code>BINARY</code><p>指定 websocket 消息类型 2，代表一个二进制帧</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const CLOSE</code><a href="#d6/d5b/namespacews_1a8759852a22ada79b26a07268ec5dad66"><code>CLOSE</code></a><code>CLOSE</code><p>指定 websocket 消息类型 8，连接关闭</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const PING</code><a href="#d6/d5b/namespacews_1a6597dcb094e5c99f38eb6e431af1d189"><code>PING</code></a><code>PING</code><p>指定 websocket 消息类型 9，代表一个 ping 帧</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const PONG</code><a href="#d6/d5b/namespacews_1a973cddb539e8d34e5c0ce3c2ec0601d2"><code>PONG</code></a><code>PONG</code><p>指定 websocket 消息类型 10，代表一个 pong 帧</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const CONNECTING</code><a href="#d6/d5b/namespacews_1a100a1933795c1aed7ad3233250c71281"><code>CONNECTING</code></a><code>CONNECTING</code><p></p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const OPEN</code><a href="#d6/d5b/namespacews_1a6db6dcbbdb71ec2f1ef875e3871f9c38"><code>OPEN</code></a><code>OPEN</code><p></p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const CLOSING</code><a href="#d6/d5b/namespacews_1a7a860dc765bbe73ec65e1db33337930f"><code>CLOSING</code></a><code>CLOSING</code><p></p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const CLOSED</code><a href="#d6/d5b/namespacews_1a40bf77fb875ad8453691ef6ed0ef3b3e"><code>CLOSED</code></a><code>CLOSED</code><p></p></td>
+</tr>
+</tbody>
+</table>
 
 <h2 id="method-summary">Method Summary</h2>
 
@@ -1208,35 +1278,184 @@
 
 <tbody>
 <tr>
-<td>Regex</td>
-<td><code>compile(String pattern,String opt)</code><p>编译一个正则表达式模版，并返回正则表达式处理对象</p></td>
+<td>WebSocketMessage new</td>
+<td><code>Message()</code><p>创建一个 websocket 消息对象，参见 WebSocketMessage</p></td>
+</tr>
+
+<tr>
+<td>WebSocketHandler new</td>
+<td><code>Handler()</code><p>创建一个 websocket 包协议转换处理器，参见 WebSocketHandler</p></td>
+</tr>
+
+<tr>
+<td>WebSocket new</td>
+<td><code>Socket()</code><p></p></td>
+</tr>
+
+<tr>
+<td>Stream</td>
+<td><code>connect(String url,String origin)</code><p>创建一个 websocket 连接，并返回握手成功的 Stream 对象</p></td>
+</tr>
+
+<tr>
+<td>Handler</td>
+<td><code>upgrade(Function accept)</code><p>创建一个 websocket 协议处理器，从 http 接收 upgrade 请求并握手，生成 WebSocket 对象</p></td>
 </tr>
 </tbody>
 </table>
 
-<h2 id="method-detail">Method Detail</h2>
+<h2 id="field-detail">Field Detail</h2>
 
-<div class="panel panel-default">
-	<div class="panel-heading">compile</div>
-	<div class="panel-body"><h4 id="regex-compile-string-pattern-string-opt"><strong>Regex</strong> <code>compile(String pattern,String opt)</code></h4>
+<p><div class="panel panel-default">
+	<div class="panel-heading">CONTINUE</div>
+	<div class="panel-body"><h4 id="const-public-const-continue-continue-d6-d5b-namespacews-1a508f1a2f00bc868e36dc5e1de2111bca-continue"><strong>const</strong> <code>public const CONTINUE</code><a href="#d6/d5b/namespacews_1a508f1a2f00bc868e36dc5e1de2111bca"><code>CONTINUE</code></a><code>CONTINUE</code></h4>
 
-<p>编译一个正则表达式模版，并返回正则表达式处理对象</p>
-
-<h4 id="parameters">Parameters</h4>
-
-<ul>
-<li><p><code>pattern</code> 正则表达式</p></li>
-
-<li><p><code>opt</code> 规定匹配的类型。&rdquo;g&rdquo; 用于全局匹配，&rdquo;i&rdquo; 用于区分大小写，&rdquo;gi&rdquo; 用于全局区分大小写的匹配</p></li>
-</ul>
-
-<h4 id="returns">Returns</h4>
-
-<p>返回正则表达式对象</p>
+<p>指定 websocket 消息类型 0，代表一个继续帧</p>
 </div>
 	
 </div>
 
+<div class="panel panel-default">
+	<div class="panel-heading">TEXT</div>
+	<div class="panel-body"><h4 id="const-public-const-text-text-d6-d5b-namespacews-1a4d96d672e1a66d81b22160a35d64b2cd-text"><strong>const</strong> <code>public const TEXT</code><a href="#d6/d5b/namespacews_1a4d96d672e1a66d81b22160a35d64b2cd"><code>TEXT</code></a><code>TEXT</code></h4>
+
+<p>指定 websocket 消息类型 1，代表一个文本帧</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">BINARY</div>
+	<div class="panel-body"><h4 id="const-public-const-binary-binary-d6-d5b-namespacews-1afa728c423531bf6240c2533bd62c9eed-binary"><strong>const</strong> <code>public const BINARY</code><a href="#d6/d5b/namespacews_1afa728c423531bf6240c2533bd62c9eed"><code>BINARY</code></a><code>BINARY</code></h4>
+
+<p>指定 websocket 消息类型 2，代表一个二进制帧</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">CLOSE</div>
+	<div class="panel-body"><h4 id="const-public-const-close-close-d6-d5b-namespacews-1a8759852a22ada79b26a07268ec5dad66-close"><strong>const</strong> <code>public const CLOSE</code><a href="#d6/d5b/namespacews_1a8759852a22ada79b26a07268ec5dad66"><code>CLOSE</code></a><code>CLOSE</code></h4>
+
+<p>指定 websocket 消息类型 8，连接关闭</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">PING</div>
+	<div class="panel-body"><h4 id="const-public-const-ping-ping-d6-d5b-namespacews-1a6597dcb094e5c99f38eb6e431af1d189-ping"><strong>const</strong> <code>public const PING</code><a href="#d6/d5b/namespacews_1a6597dcb094e5c99f38eb6e431af1d189"><code>PING</code></a><code>PING</code></h4>
+
+<p>指定 websocket 消息类型 9，代表一个 ping 帧</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">PONG</div>
+	<div class="panel-body"><h4 id="const-public-const-pong-pong-d6-d5b-namespacews-1a973cddb539e8d34e5c0ce3c2ec0601d2-pong"><strong>const</strong> <code>public const PONG</code><a href="#d6/d5b/namespacews_1a973cddb539e8d34e5c0ce3c2ec0601d2"><code>PONG</code></a><code>PONG</code></h4>
+
+<p>指定 websocket 消息类型 10，代表一个 pong 帧</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">CONNECTING</div>
+	<div class="panel-body"><h4 id="const-public-const-connecting-connecting-d6-d5b-namespacews-1a100a1933795c1aed7ad3233250c71281-connecting"><strong>const</strong> <code>public const CONNECTING</code><a href="#d6/d5b/namespacews_1a100a1933795c1aed7ad3233250c71281"><code>CONNECTING</code></a><code>CONNECTING</code></h4>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">OPEN</div>
+	<div class="panel-body"><h4 id="const-public-const-open-open-d6-d5b-namespacews-1a6db6dcbbdb71ec2f1ef875e3871f9c38-open"><strong>const</strong> <code>public const OPEN</code><a href="#d6/d5b/namespacews_1a6db6dcbbdb71ec2f1ef875e3871f9c38"><code>OPEN</code></a><code>OPEN</code></h4>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">CLOSING</div>
+	<div class="panel-body"><h4 id="const-public-const-closing-closing-d6-d5b-namespacews-1a7a860dc765bbe73ec65e1db33337930f-closing"><strong>const</strong> <code>public const CLOSING</code><a href="#d6/d5b/namespacews_1a7a860dc765bbe73ec65e1db33337930f"><code>CLOSING</code></a><code>CLOSING</code></h4>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">CLOSED</div>
+	<div class="panel-body"><h4 id="const-public-const-closed-closed-d6-d5b-namespacews-1a40bf77fb875ad8453691ef6ed0ef3b3e-closed"><strong>const</strong> <code>public const CLOSED</code><a href="#d6/d5b/namespacews_1a40bf77fb875ad8453691ef6ed0ef3b3e"><code>CLOSED</code></a><code>CLOSED</code></h4>
+</div>
+	
+</div>
+</p>
+
+<h2 id="method-detail">Method Detail</h2>
+
+<p><div class="panel panel-default">
+	<div class="panel-heading">Message</div>
+	<div class="panel-body"><h4 id="websocketmessage-new-message"><strong>WebSocketMessage new</strong> <code>Message()</code></h4>
+
+<p>创建一个 websocket 消息对象，参见 WebSocketMessage</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">Handler</div>
+	<div class="panel-body"><h4 id="websockethandler-new-handler"><strong>WebSocketHandler new</strong> <code>Handler()</code></h4>
+
+<p>创建一个 websocket 包协议转换处理器，参见 WebSocketHandler</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">Socket</div>
+	<div class="panel-body"><h4 id="websocket-new-socket"><strong>WebSocket new</strong> <code>Socket()</code></h4>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">connect</div>
+	<div class="panel-body"><h4 id="stream-connect-string-url-string-origin"><strong>Stream</strong> <code>connect(String url,String origin)</code></h4>
+
+<p>创建一个 websocket 连接，并返回握手成功的 Stream 对象</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><p><code>url</code> 指定连接的 url，支持 ws:// 和 wss:// 协议</p></li>
+
+<li><p><code>origin</code> 指定连接的授权域名</p></li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回连接成功的 Stream 对象，可能为 Socket 或者 SslSocket</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">upgrade</div>
+	<div class="panel-body"><h4 id="handler-upgrade-function-accept"><strong>Handler</strong> <code>upgrade(Function accept)</code></h4>
+
+<p>创建一个 websocket 协议处理器，从 http 接收 upgrade 请求并握手，生成 WebSocket 对象</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><code>accept</code> 连接成功处理函数，参数为 WebSocket 对象</li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回协议处理器，可与 HttpServer, Chain, Routing 等对接</p>
+</div>
+	
+</div>
+</p>
 
 <style>
   td {
@@ -1572,6 +1791,116 @@
             
                 
                     
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
                     
                 
                 
@@ -1586,116 +1915,6 @@
                     
                         
                         
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
                     
                 
                 
@@ -1788,10 +2007,10 @@
 
 
         
-            <a class="nav nav-prev" href="/module/querystring/" title="querystring"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/module/websocket/" title="websocket"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/module/registry/" title="registry" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/module/xml/" title="xml" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

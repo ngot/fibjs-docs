@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.20.7" />
-    <meta name="description" content="Json module with encode and decode operations.">
+    <meta name="description" content="json 编码与解码模块 引用方式：">
 
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
@@ -390,6 +390,28 @@
     
     
     
+        <li data-nav-id="/module/gui/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/gui/">
+                <span>gui</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/hash/" class="dd-item 
          
         
@@ -658,6 +680,28 @@
     
     
     
+        <li data-nav-id="/module/querystring/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/querystring/">
+                <span>querystring</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/re/" class="dd-item 
          
         
@@ -665,6 +709,50 @@
         >
             <a href="/module/re/">
                 <span>re</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/registry/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/registry/">
+                <span>registry</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/rpc/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/rpc/">
+                <span>rpc</span>
                 
                 
             </a>
@@ -709,6 +797,28 @@
         >
             <a href="/module/test/">
                 <span>test</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/url/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/url/">
+                <span>url</span>
                 
                 
             </a>
@@ -812,6 +922,28 @@
     
     
     
+        <li data-nav-id="/module/ws/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/ws/">
+                <span>ws</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/xml/" class="dd-item 
          
         
@@ -863,6 +995,28 @@
         >
             <a href="/module/zlib/">
                 <span>zlib</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zmq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zmq/">
+                <span>zmq</span>
                 
                 
             </a>
@@ -947,6 +1101,28 @@
     
 
                 
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/expect/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/expect/">
+                <span>Expect</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
                 </ul>
              
         </li>
@@ -999,19 +1175,8 @@
 <ul>
 <li>
 <ul>
-<li><a href="#summary">Summary</a></li>
-<li><a href="#members">Members</a>
-<ul>
-<li>
-<ul>
-<li><a href="#public-static-string-encode-d1-db2-namespacejson-1a332abe5ce26d71b3d8d6c62fd7639181-value-data"><code>public static String</code><a href="#d1/db2/namespacejson_1a332abe5ce26d71b3d8d6c62fd7639181"><code>encode</code></a><code>(Value data)</code></a></li>
-<li><a href="#parameters">Parameters</a></li>
-<li><a href="#returns">Returns</a></li>
-<li><a href="#public-static-value-decode-d1-db2-namespacejson-1aeedd41dd1edaec86d654a1e1f7176952-string-data"><code>public static Value</code><a href="#d1/db2/namespacejson_1aeedd41dd1edaec86d654a1e1f7176952"><code>decode</code></a><code>(String data)</code></a></li>
-<li><a href="#parameters-1">Parameters</a></li>
-<li><a href="#returns-1">Returns</a></li>
-</ul></li>
-</ul></li>
+<li><a href="#method-summary">Method Summary</a></li>
+<li><a href="#method-detail">Method Detail</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -1029,69 +1194,86 @@
 
 
 
-<p>json module with encode and decode operations. to use:</p>
+<p>json 编码与解码模块 引用方式：</p>
 
-<pre><code class="language-cpp">var encoding = require('encoding');
+<pre><code class="language-js">var encoding = require('encoding');
 var json = encoding.json;
 </code></pre>
 
-<p>or:</p>
+<p>或者</p>
 
-<pre><code class="language-cpp">var json = require('json');
+<pre><code class="language-js">var json = require('json');
 </code></pre>
 
-<h2 id="summary">Summary</h2>
+<h2 id="method-summary">Method Summary</h2>
 
 <table>
 <thead>
 <tr>
-<th>Members</th>
-<th>Descriptions</th>
+<th>Type</th>
+<th>Method and Description</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><code>public static String</code><a href="#d1/db2/namespacejson_1a332abe5ce26d71b3d8d6c62fd7639181"><code>encode</code></a><code>(Value data)</code></td>
-<td>Encode a json variable to string with json format.</td>
+<td>String</td>
+<td><code>encode(Value data)</code><p>以 json 格式编码变量</p></td>
 </tr>
 
 <tr>
-<td><code>public static Value</code><a href="#d1/db2/namespacejson_1aeedd41dd1edaec86d654a1e1f7176952"><code>decode</code></a><code>(String data)</code></td>
-<td>Decode a string variable to json with json format.</td>
+<td>Value</td>
+<td><code>decode(String data)</code><p>以 json 方式解码字符串为一个变量</p></td>
 </tr>
 </tbody>
 </table>
 
-<h2 id="members">Members</h2>
+<h2 id="method-detail">Method Detail</h2>
 
-<h4 id="public-static-string-encode-d1-db2-namespacejson-1a332abe5ce26d71b3d8d6c62fd7639181-value-data"><code>public static String</code><a href="#d1/db2/namespacejson_1a332abe5ce26d71b3d8d6c62fd7639181"><code>encode</code></a><code>(Value data)</code></h4>
+<p><div class="panel panel-default">
+	<div class="panel-heading">encode</div>
+	<div class="panel-body"><h4 id="string-encode-value-data"><strong>String</strong> <code>encode(Value data)</code></h4>
 
-<p>Encode a json variable to string with json format.</p>
+<p>以 json 格式编码变量</p>
 
 <h4 id="parameters">Parameters</h4>
 
 <ul>
-<li><code>data</code> Value to be encoded.</li>
+<li><code>data</code> 要编码的变量</li>
 </ul>
 
 <h4 id="returns">Returns</h4>
 
-<p>The encoded string result.</p>
+<p>返回编码的字符串</p>
+</div>
+	
+</div>
 
-<h4 id="public-static-value-decode-d1-db2-namespacejson-1aeedd41dd1edaec86d654a1e1f7176952-string-data"><code>public static Value</code><a href="#d1/db2/namespacejson_1aeedd41dd1edaec86d654a1e1f7176952"><code>decode</code></a><code>(String data)</code></h4>
+<div class="panel panel-default">
+	<div class="panel-heading">decode</div>
+	<div class="panel-body"><h4 id="value-decode-string-data"><strong>Value</strong> <code>decode(String data)</code></h4>
 
-<p>Decode a string variable to json with json format.</p>
+<p>以 json 方式解码字符串为一个变量</p>
 
-<h4 id="parameters-1">Parameters</h4>
+<h4 id="parameters">Parameters</h4>
 
 <ul>
-<li><code>data</code> String to be decoded.</li>
+<li><code>data</code> 要解码的字符串</li>
 </ul>
 
-<h4 id="returns-1">Returns</h4>
+<h4 id="returns">Returns</h4>
 
-<p>Json value decoded result.</p>
+<p>返回解码的变量</p>
+</div>
+	
+</div>
+</p>
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>
 
 
 <footer class=" footline" >
@@ -1322,6 +1504,17 @@ var json = encoding.json;
             
                 
                     
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
                     
                 
                 
@@ -1508,6 +1701,72 @@ var json = encoding.json;
             
         
                 
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
             
         
         
@@ -1518,6 +1777,17 @@ var json = encoding.json;
                     
                 
                 
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
                 
                     
             

@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.20.7" />
-    <meta name="description" content="正则表达式处理模块">
+    <meta name="description" content="输入输出处理模块">
 
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>re :: fibjs</title>
+    <title>gui :: fibjs</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -29,7 +29,7 @@
     
 
   </head>
-  <body class="" data-url="/module/re/">
+  <body class="" data-url="/module/gui/">
     
 <nav id="sidebar" class="">
   <div id="header-wrapper">
@@ -391,7 +391,7 @@
     
     
         <li data-nav-id="/module/gui/" class="dd-item 
-         
+        active 
         
         "
         >
@@ -400,6 +400,10 @@
                 
                 
             </a>
+            
+                
+                
+                
             
             
             
@@ -699,7 +703,7 @@
     
     
         <li data-nav-id="/module/re/" class="dd-item 
-        active 
+         
         
         "
         >
@@ -708,10 +712,6 @@
                 
                 
             </a>
-            
-                
-                
-                
             
             
             
@@ -1165,7 +1165,7 @@
                   fibjs
                 </a>
                 
-                   / <a href='/modules/'>Modules</a> / <a href='/module/re/'>re</a>
+                   / <a href='/modules/'>Modules</a> / <a href='/module/gui/'>gui</a>
                 
                 
             </div>
@@ -1175,7 +1175,9 @@
 <ul>
 <li>
 <ul>
+<li><a href="#field-summary">Field Summary</a></li>
 <li><a href="#method-summary">Method Summary</a></li>
+<li><a href="#field-detail">Field Detail</a></li>
 <li><a href="#method-detail">Method Detail</a></li>
 </ul></li>
 </ul>
@@ -1188,13 +1190,61 @@
         
         <div id="body-inner">
           
-            <h1>re</h1>
+            <h1>gui</h1>
           
 
 
 
 
-<p>正则表达式处理模块</p>
+<p>输入输出处理模块</p>
+
+<p>使用方法：</p>
+
+<pre><code class="language-js">var gui = require('gui');
+</code></pre>
+
+<h2 id="field-summary">Field Summary</h2>
+
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Method and Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>const</td>
+<td><code>public const IE7</code><a href="#d7/dc4/namespacegui_1ad8c37755f921d0c57b7bfd73521ade41"><code>IE7</code></a><code>IE7</code><p>WebView ie 模拟版本，指定 ie7</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const IE8</code><a href="#d7/dc4/namespacegui_1ada6fcde41966fdeaf23c67c147e73681"><code>IE8</code></a><code>IE8</code><p>WebView ie 模拟版本，指定 ie8</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const IE9</code><a href="#d7/dc4/namespacegui_1aef8ecb99a23cd6a17fa91508afec4b4a"><code>IE9</code></a><code>IE9</code><p>WebView ie 模拟版本，指定 ie9</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const IE10</code><a href="#d7/dc4/namespacegui_1aa66c9989a9b5860cc0a027338dd7b332"><code>IE10</code></a><code>IE10</code><p>WebView ie 模拟版本，指定 ie10</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const IE11</code><a href="#d7/dc4/namespacegui_1add067efa6bf55af35c693496ef760639"><code>IE11</code></a><code>IE11</code><p>WebView ie 模拟版本，指定 ie11</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const EDGE</code><a href="#d7/dc4/namespacegui_1a77b51fbb35d819a319afcb6a02a0c23d"><code>EDGE</code></a><code>EDGE</code><p>WebView ie 模拟版本，指定 edge</p></td>
+</tr>
+</tbody>
+</table>
 
 <h2 id="method-summary">Method Summary</h2>
 
@@ -1208,35 +1258,144 @@
 
 <tbody>
 <tr>
-<td>Regex</td>
-<td><code>compile(String pattern,String opt)</code><p>编译一个正则表达式模版，并返回正则表达式处理对象</p></td>
+<td>void</td>
+<td><code>setVersion(Integer ver)</code><p></p></td>
+</tr>
+
+<tr>
+<td>WebView</td>
+<td><code>open(String url)</code><p>打开一个窗口并访问指定网址</p></td>
+</tr>
+
+<tr>
+<td>WebView</td>
+<td><code>open(String url,Map opt)</code><p>打开一个窗口并访问指定网址</p></td>
 </tr>
 </tbody>
 </table>
 
-<h2 id="method-detail">Method Detail</h2>
+<h2 id="field-detail">Field Detail</h2>
 
-<div class="panel panel-default">
-	<div class="panel-heading">compile</div>
-	<div class="panel-body"><h4 id="regex-compile-string-pattern-string-opt"><strong>Regex</strong> <code>compile(String pattern,String opt)</code></h4>
+<p><div class="panel panel-default">
+	<div class="panel-heading">IE7</div>
+	<div class="panel-body"><h4 id="const-public-const-ie7-ie7-d7-dc4-namespacegui-1ad8c37755f921d0c57b7bfd73521ade41-ie7"><strong>const</strong> <code>public const IE7</code><a href="#d7/dc4/namespacegui_1ad8c37755f921d0c57b7bfd73521ade41"><code>IE7</code></a><code>IE7</code></h4>
 
-<p>编译一个正则表达式模版，并返回正则表达式处理对象</p>
-
-<h4 id="parameters">Parameters</h4>
-
-<ul>
-<li><p><code>pattern</code> 正则表达式</p></li>
-
-<li><p><code>opt</code> 规定匹配的类型。&rdquo;g&rdquo; 用于全局匹配，&rdquo;i&rdquo; 用于区分大小写，&rdquo;gi&rdquo; 用于全局区分大小写的匹配</p></li>
-</ul>
-
-<h4 id="returns">Returns</h4>
-
-<p>返回正则表达式对象</p>
+<p>WebView ie 模拟版本，指定 ie7</p>
 </div>
 	
 </div>
 
+<div class="panel panel-default">
+	<div class="panel-heading">IE8</div>
+	<div class="panel-body"><h4 id="const-public-const-ie8-ie8-d7-dc4-namespacegui-1ada6fcde41966fdeaf23c67c147e73681-ie8"><strong>const</strong> <code>public const IE8</code><a href="#d7/dc4/namespacegui_1ada6fcde41966fdeaf23c67c147e73681"><code>IE8</code></a><code>IE8</code></h4>
+
+<p>WebView ie 模拟版本，指定 ie8</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">IE9</div>
+	<div class="panel-body"><h4 id="const-public-const-ie9-ie9-d7-dc4-namespacegui-1aef8ecb99a23cd6a17fa91508afec4b4a-ie9"><strong>const</strong> <code>public const IE9</code><a href="#d7/dc4/namespacegui_1aef8ecb99a23cd6a17fa91508afec4b4a"><code>IE9</code></a><code>IE9</code></h4>
+
+<p>WebView ie 模拟版本，指定 ie9</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">IE10</div>
+	<div class="panel-body"><h4 id="const-public-const-ie10-ie10-d7-dc4-namespacegui-1aa66c9989a9b5860cc0a027338dd7b332-ie10"><strong>const</strong> <code>public const IE10</code><a href="#d7/dc4/namespacegui_1aa66c9989a9b5860cc0a027338dd7b332"><code>IE10</code></a><code>IE10</code></h4>
+
+<p>WebView ie 模拟版本，指定 ie10</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">IE11</div>
+	<div class="panel-body"><h4 id="const-public-const-ie11-ie11-d7-dc4-namespacegui-1add067efa6bf55af35c693496ef760639-ie11"><strong>const</strong> <code>public const IE11</code><a href="#d7/dc4/namespacegui_1add067efa6bf55af35c693496ef760639"><code>IE11</code></a><code>IE11</code></h4>
+
+<p>WebView ie 模拟版本，指定 ie11</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">EDGE</div>
+	<div class="panel-body"><h4 id="const-public-const-edge-edge-d7-dc4-namespacegui-1a77b51fbb35d819a319afcb6a02a0c23d-edge"><strong>const</strong> <code>public const EDGE</code><a href="#d7/dc4/namespacegui_1a77b51fbb35d819a319afcb6a02a0c23d"><code>EDGE</code></a><code>EDGE</code></h4>
+
+<p>WebView ie 模拟版本，指定 edge</p>
+</div>
+	
+</div>
+</p>
+
+<h2 id="method-detail">Method Detail</h2>
+
+<p><div class="panel panel-default">
+	<div class="panel-heading">setVersion</div>
+	<div class="panel-body"><h4 id="void-setversion-integer-ver"><strong>void</strong> <code>setVersion(Integer ver)</code></h4>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">open</div>
+	<div class="panel-body"><h4 id="webview-open-string-url"><strong>WebView</strong> <code>open(String url)</code></h4>
+
+<p>打开一个窗口并访问指定网址</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><code>url</code> 指定的网址，，可以使用 fs:path 访问本地文件系统</li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回打开的窗口对象</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">open</div>
+	<div class="panel-body"><h4 id="webview-open-string-url-map-opt"><strong>WebView</strong> <code>open(String url,Map opt)</code></h4>
+
+<p>打开一个窗口并访问指定网址</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><p><code>url</code> 指定的网址，，可以使用 fs:path 访问本地文件系统</p></li>
+
+<li><p><code>opt</code> 打开窗口参数，支持以下参数:</p>
+
+<pre><code class="language-js">{
+&quot;left&quot;: 100, // 窗口左上角 x，缺省系统自动设定
+&quot;right&quot;: 100, // 窗口左上角 y，缺省系统自动设定
+&quot;width&quot;: 100, // 窗口宽度，缺省系统自动设定
+&quot;height&quot;: 100, // 窗口高度，缺省系统自动设定
+&quot;border&quot;: true, // 是否有边框，缺省有边框
+&quot;caption&quot;: true, // 是否有标题栏，缺省有标题栏
+&quot;resizable&quot;: true, // 是否可改变尺寸，缺省可以改变
+&quot;maximize&quot;: false, // 是否最大化显示，缺省不最大化
+&quot;visible&quot;: true, // 是否显示，缺省显示
+&quot;debug&quot;: false // 是否提示页面错误，缺省不提示
+}
+</code></pre>
+
+<p>当设定 width 和 height，而未设定 left 或 right 时，窗口将自动居中</p></li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回打开的窗口对象</p>
+</div>
+	
+</div>
+</p>
 
 <style>
   td {
@@ -1418,160 +1577,6 @@
             
                 
                     
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
                     
                 
                 
@@ -1586,6 +1591,160 @@
                     
                         
                         
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
                     
                 
                 
@@ -1788,10 +1947,10 @@
 
 
         
-            <a class="nav nav-prev" href="/module/querystring/" title="querystring"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/module/global/" title="global"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/module/registry/" title="registry" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/module/hash/" title="hash" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

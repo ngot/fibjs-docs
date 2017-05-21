@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.20.7" />
-    <meta name="description" content="正则表达式处理模块">
+    <meta name="description" content="zeroMQ 消息队列模块">
 
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>re :: fibjs</title>
+    <title>zmq :: fibjs</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -29,7 +29,7 @@
     
 
   </head>
-  <body class="" data-url="/module/re/">
+  <body class="" data-url="/module/zmq/">
     
 <nav id="sidebar" class="">
   <div id="header-wrapper">
@@ -699,7 +699,7 @@
     
     
         <li data-nav-id="/module/re/" class="dd-item 
-        active 
+         
         
         "
         >
@@ -708,10 +708,6 @@
                 
                 
             </a>
-            
-                
-                
-                
             
             
             
@@ -1011,7 +1007,7 @@
     
     
         <li data-nav-id="/module/zmq/" class="dd-item 
-         
+        active 
         
         "
         >
@@ -1020,6 +1016,10 @@
                 
                 
             </a>
+            
+                
+                
+                
             
             
             
@@ -1165,7 +1165,7 @@
                   fibjs
                 </a>
                 
-                   / <a href='/modules/'>Modules</a> / <a href='/module/re/'>re</a>
+                   / <a href='/modules/'>Modules</a> / <a href='/module/zmq/'>zmq</a>
                 
                 
             </div>
@@ -1175,7 +1175,9 @@
 <ul>
 <li>
 <ul>
+<li><a href="#field-summary">Field Summary</a></li>
 <li><a href="#method-summary">Method Summary</a></li>
+<li><a href="#field-detail">Field Detail</a></li>
 <li><a href="#method-detail">Method Detail</a></li>
 </ul></li>
 </ul>
@@ -1188,13 +1190,86 @@
         
         <div id="body-inner">
           
-            <h1>re</h1>
+            <h1>zmq</h1>
           
 
 
 
 
-<p>正则表达式处理模块</p>
+<p>zeroMQ 消息队列模块</p>
+
+<p>基础模块。提供 zeroMQ 消息队列支撑。</p>
+
+<pre><code class="language-js">var zmq = require('zmq');
+</code></pre>
+
+<h2 id="field-summary">Field Summary</h2>
+
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Method and Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>const</td>
+<td><code>public const PAIR</code><a href="#d0/db9/namespacezmq_1a0cf582143f8ad1d5060ca44f84a196d6"><code>PAIR</code></a><code>PAIR</code><p></p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const PUB</code><a href="#d0/db9/namespacezmq_1a8938ece6c580ed6aeae2179368d599e5"><code>PUB</code></a><code>PUB</code><p>发布类型，所发送的消息将会分发给所有订阅者。</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const SUB</code><a href="#d0/db9/namespacezmq_1aabb3b82c6fd99038391fb98dfa76d9e3"><code>SUB</code></a><code>SUB</code><p>订阅类型，用于接收 PUB 分发的消息。</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const REQ</code><a href="#d0/db9/namespacezmq_1aa9dd85405c58c45a4238b730436c3240"><code>REQ</code></a><code>REQ</code><p>请求类型，此类型的接口只允许交替进行 send 和 recv 消息，每一个接受的消息都是最后一次发送请求的响应。</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const REP</code><a href="#d0/db9/namespacezmq_1a145c41f4807ee98b45ec6442c4dc59e5"><code>REP</code></a><code>REP</code><p>响应类型，此类型的接口只允许交替进行 recv 和 send 消息，每一个发送的消息都会作为最后一次接受的请求的回应。</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const DEALER</code><a href="#d0/db9/namespacezmq_1addc34f8f986bc92870a796ecdb0b9f5e"><code>DEALER</code></a><code>DEALER</code><p></p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const ROUTER</code><a href="#d0/db9/namespacezmq_1add22d4fc7c01a63cd774d956e7844a76"><code>ROUTER</code></a><code>ROUTER</code><p></p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const PULL</code><a href="#d0/db9/namespacezmq_1a33a170a80fc29d2a1df0e9f1f720dd0a"><code>PULL</code></a><code>PULL</code><p>获取消息类型，上游推送的消息将被公平的分发到此类接口。</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const PUSH</code><a href="#d0/db9/namespacezmq_1a4ca198f5ea2eb66461b17ae36fe3462f"><code>PUSH</code></a><code>PUSH</code><p>推送类型，推送的消息将均衡发送到下游接口。</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const XPUB</code><a href="#d0/db9/namespacezmq_1aed994884371c1d20ee306ca462fa611c"><code>XPUB</code></a><code>XPUB</code><p></p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const XSUB</code><a href="#d0/db9/namespacezmq_1a6094372845cbc9870023139aef124d77"><code>XSUB</code></a><code>XSUB</code><p></p></td>
+</tr>
+</tbody>
+</table>
 
 <h2 id="method-summary">Method Summary</h2>
 
@@ -1208,31 +1283,109 @@
 
 <tbody>
 <tr>
-<td>Regex</td>
-<td><code>compile(String pattern,String opt)</code><p>编译一个正则表达式模版，并返回正则表达式处理对象</p></td>
+<td>ZmqSocket new</td>
+<td><code>Socket()</code><p></p></td>
 </tr>
 </tbody>
 </table>
 
+<h2 id="field-detail">Field Detail</h2>
+
+<p><div class="panel panel-default">
+	<div class="panel-heading">PAIR</div>
+	<div class="panel-body"><h4 id="const-public-const-pair-pair-d0-db9-namespacezmq-1a0cf582143f8ad1d5060ca44f84a196d6-pair"><strong>const</strong> <code>public const PAIR</code><a href="#d0/db9/namespacezmq_1a0cf582143f8ad1d5060ca44f84a196d6"><code>PAIR</code></a><code>PAIR</code></h4>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">PUB</div>
+	<div class="panel-body"><h4 id="const-public-const-pub-pub-d0-db9-namespacezmq-1a8938ece6c580ed6aeae2179368d599e5-pub"><strong>const</strong> <code>public const PUB</code><a href="#d0/db9/namespacezmq_1a8938ece6c580ed6aeae2179368d599e5"><code>PUB</code></a><code>PUB</code></h4>
+
+<p>发布类型，所发送的消息将会分发给所有订阅者。</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">SUB</div>
+	<div class="panel-body"><h4 id="const-public-const-sub-sub-d0-db9-namespacezmq-1aabb3b82c6fd99038391fb98dfa76d9e3-sub"><strong>const</strong> <code>public const SUB</code><a href="#d0/db9/namespacezmq_1aabb3b82c6fd99038391fb98dfa76d9e3"><code>SUB</code></a><code>SUB</code></h4>
+
+<p>订阅类型，用于接收 PUB 分发的消息。</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">REQ</div>
+	<div class="panel-body"><h4 id="const-public-const-req-req-d0-db9-namespacezmq-1aa9dd85405c58c45a4238b730436c3240-req"><strong>const</strong> <code>public const REQ</code><a href="#d0/db9/namespacezmq_1aa9dd85405c58c45a4238b730436c3240"><code>REQ</code></a><code>REQ</code></h4>
+
+<p>请求类型，此类型的接口只允许交替进行 send 和 recv 消息，每一个接受的消息都是最后一次发送请求的响应。</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">REP</div>
+	<div class="panel-body"><h4 id="const-public-const-rep-rep-d0-db9-namespacezmq-1a145c41f4807ee98b45ec6442c4dc59e5-rep"><strong>const</strong> <code>public const REP</code><a href="#d0/db9/namespacezmq_1a145c41f4807ee98b45ec6442c4dc59e5"><code>REP</code></a><code>REP</code></h4>
+
+<p>响应类型，此类型的接口只允许交替进行 recv 和 send 消息，每一个发送的消息都会作为最后一次接受的请求的回应。</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">DEALER</div>
+	<div class="panel-body"><h4 id="const-public-const-dealer-dealer-d0-db9-namespacezmq-1addc34f8f986bc92870a796ecdb0b9f5e-dealer"><strong>const</strong> <code>public const DEALER</code><a href="#d0/db9/namespacezmq_1addc34f8f986bc92870a796ecdb0b9f5e"><code>DEALER</code></a><code>DEALER</code></h4>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">ROUTER</div>
+	<div class="panel-body"><h4 id="const-public-const-router-router-d0-db9-namespacezmq-1add22d4fc7c01a63cd774d956e7844a76-router"><strong>const</strong> <code>public const ROUTER</code><a href="#d0/db9/namespacezmq_1add22d4fc7c01a63cd774d956e7844a76"><code>ROUTER</code></a><code>ROUTER</code></h4>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">PULL</div>
+	<div class="panel-body"><h4 id="const-public-const-pull-pull-d0-db9-namespacezmq-1a33a170a80fc29d2a1df0e9f1f720dd0a-pull"><strong>const</strong> <code>public const PULL</code><a href="#d0/db9/namespacezmq_1a33a170a80fc29d2a1df0e9f1f720dd0a"><code>PULL</code></a><code>PULL</code></h4>
+
+<p>获取消息类型，上游推送的消息将被公平的分发到此类接口。</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">PUSH</div>
+	<div class="panel-body"><h4 id="const-public-const-push-push-d0-db9-namespacezmq-1a4ca198f5ea2eb66461b17ae36fe3462f-push"><strong>const</strong> <code>public const PUSH</code><a href="#d0/db9/namespacezmq_1a4ca198f5ea2eb66461b17ae36fe3462f"><code>PUSH</code></a><code>PUSH</code></h4>
+
+<p>推送类型，推送的消息将均衡发送到下游接口。</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">XPUB</div>
+	<div class="panel-body"><h4 id="const-public-const-xpub-xpub-d0-db9-namespacezmq-1aed994884371c1d20ee306ca462fa611c-xpub"><strong>const</strong> <code>public const XPUB</code><a href="#d0/db9/namespacezmq_1aed994884371c1d20ee306ca462fa611c"><code>XPUB</code></a><code>XPUB</code></h4>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">XSUB</div>
+	<div class="panel-body"><h4 id="const-public-const-xsub-xsub-d0-db9-namespacezmq-1a6094372845cbc9870023139aef124d77-xsub"><strong>const</strong> <code>public const XSUB</code><a href="#d0/db9/namespacezmq_1a6094372845cbc9870023139aef124d77"><code>XSUB</code></a><code>XSUB</code></h4>
+</div>
+	
+</div>
+</p>
+
 <h2 id="method-detail">Method Detail</h2>
 
 <div class="panel panel-default">
-	<div class="panel-heading">compile</div>
-	<div class="panel-body"><h4 id="regex-compile-string-pattern-string-opt"><strong>Regex</strong> <code>compile(String pattern,String opt)</code></h4>
-
-<p>编译一个正则表达式模版，并返回正则表达式处理对象</p>
-
-<h4 id="parameters">Parameters</h4>
-
-<ul>
-<li><p><code>pattern</code> 正则表达式</p></li>
-
-<li><p><code>opt</code> 规定匹配的类型。&rdquo;g&rdquo; 用于全局匹配，&rdquo;i&rdquo; 用于区分大小写，&rdquo;gi&rdquo; 用于全局区分大小写的匹配</p></li>
-</ul>
-
-<h4 id="returns">Returns</h4>
-
-<p>返回正则表达式对象</p>
+	<div class="panel-heading">Socket</div>
+	<div class="panel-body"><h4 id="zmqsocket-new-socket"><strong>ZmqSocket new</strong> <code>Socket()</code></h4>
 </div>
 	
 </div>
@@ -1572,6 +1725,16 @@
             
                 
                     
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
                     
                 
                 
@@ -1580,169 +1743,159 @@
         
                 
                     
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                    
+                
+                
+                
+            
+        
+                
+            
+        
+        
+            
             
             
                 
                     
                         
                         
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
-                
-                
-                
-            
-        
-                
-            
-        
-        
-            
-            
-            
-                
                     
                 
                 
@@ -1788,10 +1941,10 @@
 
 
         
-            <a class="nav nav-prev" href="/module/querystring/" title="querystring"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/module/zlib/" title="zlib"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/module/registry/" title="registry" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/objects/" title="Objects" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

@@ -18,11 +18,19 @@
       
       <guid>http://example.org/modules/</guid>
       <description>A bunch of Modules are available with this theme :
- assert  Assertion test module, if testing result is false, you will get an error. The way of handling error can be set as continue or throw exception.
- base32  module with encode and decode operations.
- base64  module with encode and decode operations.
- base64vlq  module with encode and decode operations.
- bson  bson module with encode and decode operations.</description>
+ assert  断言测试模块，如果测试值为假，则报错，报错行为可设定继续运行或者错误抛出
+ base32  base32 编码与解码模块 引用方式：
+ base64  base64 编码与解码模块 引用方式：
+ base64vlq  base64vlq 编码与解码模块 引用方式：
+ bson  bson 编码与解码模块 引用方式：
+ console  控制台访问对象
+ coroutine  并发控制模块
+ crypto  加密算法模块
+ db  数据库访问模块
+ encoding  编码与解码模块，用于处理不同的数据编码格式与二进制之间的转换 引用方式：
+ fs  文件系统处理模块
+ gd  图像文件处理模块
+ global  全局对象，所有脚本均可以访问的基础对象</description>
     </item>
     
     <item>
@@ -31,8 +39,9 @@
       <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
       
       <guid>http://example.org/objects/</guid>
-      <description> Objects :  AsyncWait  AsyncWait Object
- Buffer  Buffer ObjectBuffer ObjectBuffer ObjectBuffer ObjectBuffer ObjectBuffer ObjectBuffer Object
+      <description> Objects :  AsyncWait  MessageHandler object for asynchronous waiting.
+ Buffer  二进制数据缓存对象，用于 io 读写的数据处理
+ Expect  断言期望对象
  </description>
     </item>
     
@@ -51,8 +60,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/object/asyncwait/</guid>
-      <description>class AsyncWait class AsyncWait : public Handler  MessageHandler object for asynchronous waiting.
-Summary    Members Descriptions     publicend() Finish waiting, moving on to handle the message.   publicHandlerinvoke(objectv) handle a message or an object   publicdispose() Force dispose object immediately.   public StringtoString() Return string representation of object, normally is &amp;ldquo;[Native Object]&amp;rdquo; and can be implemented by object itself.   public ValuetoJSON(String key) Return JSON representation of object, normally is readable attributes collection.</description>
+      <description>class AsyncWait : public Handler  MessageHandler object for asynchronous waiting.
+Summary    Type Method and Description     void end()Finish waiting, moving on to handle the message.
+   Handler invoke(object v)handle a message or an object
+   void dispose()Force dispose object immediately.
+   String toString()Return string representation of object, normally is &amp;ldquo;[Native Object]&amp;rdquo; and can be implemented by object itself.</description>
     </item>
     
     <item>
@@ -61,9 +73,29 @@ Summary    Members Descriptions     publicend() Finish waiting, moving on to han
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/object/buffer/</guid>
-      <description>class Buffer class Buffer : public object  Binary buffer used in dealing with I/O reading and writing.
-Buffer object is a global basic class which can be created by &amp;ldquo;new Buffer(&amp;hellip;)&amp;rdquo; at anytime:
-var buf = new Buffer();  Summary    Members Descriptions     public Integeroperator[] The binary data in the buffer can be accessed by using subscript.   public readonly Integerlength The buffer size.</description>
+      <description>class Buffer : public object  二进制数据缓存对象，用于 io 读写的数据处理
+Buffer 对象为全局基础类，在任何时候都可以直接以 new Buffer(&amp;hellip;) 创建：
+var buf = new Buffer();  Constructor Summary    Method and Description     Buffer(Array datas)缓存对象构造函数
+   Buffer(ArrayBuffer datas)缓存对象构造函数
+   Buffer(TypedArray datas)缓存对象构造函数
+   Buffer(Buffer buffer)缓存对象构造函数
+   Buffer(String str,String codec)缓存对象构造函数
+   Buffer(Integer size)缓存对象构造函数
+    Field Summary    Type Method and Description     Integer public Integer operator[]operator[]operator[]缓存对象可使用下标直接访问二进制数据</description>
+    </item>
+    
+    <item>
+      <title>Expect</title>
+      <link>http://example.org/object/expect/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/object/expect/</guid>
+      <description>class Expect : public object  断言期望对象
+Expect 对象为 assert 模块内部对象，用于实现 expect 风格断言，创建：
+var test = require(&amp;quot;test&amp;quot;); var obj = test.expect(exp);  或者直接引用：
+var expect = require(&amp;quot;expect&amp;quot;); var obj = expect(exp);  或者通过 test.setup 配置：
+require(&amp;quot;test&amp;quot;).setup(); var obj = expect(exp);  Field Summary    Type Method and Description     readonly Expect public readonly Expect tototo无任何修改，仅用于构建语义
+   readonly Expect public readonly Expect bebebe无任何修改，仅用于构建语义</description>
     </item>
     
     <item>
@@ -72,11 +104,15 @@ var buf = new Buffer();  Summary    Members Descriptions     public Integeropera
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/assert/</guid>
-      <description>Assertion test module, if testing result is false, you will get an error. The way of handling error can be set as continue or throw exception.
-how to use:
-var assert = require(&#39;assert&#39;);  or using testing unit:
-var test = require(&#39;test&#39;); var assert = test.assert;  or you can use test.setup to set up test:
-require(&amp;quot;test&amp;quot;).setup();  Summary    Members Descriptions     public static staticok(Value actual,String msg) Return true when the testing result is ture, assertion failed when return false.</description>
+      <description>断言测试模块，如果测试值为假，则报错，报错行为可设定继续运行或者错误抛出
+引用方法：
+var assert = require(&#39;assert&#39;);  或者通过 test 模块引用：
+var test = require(&#39;test&#39;); var assert = test.assert;  或者通过 test.setup 配置：
+require(&amp;quot;test&amp;quot;).setup();  Method Summary    Type Method and Description     void Function(Value actual,String msg)测试数值为真，为假则断言失败
+   void ok(Value actual,String msg)测试数值为真，为假则断言失败
+   void notOk(Value actual,String msg)测试数值为假，为真则断言失败
+   void equal(Value actual,Value expected,String msg)测试数值等于预期值，不相等则断言失败
+   void notEqual(Value actual,Value expected,String msg)测试数值不等于预期值，相等则断言失败</description>
     </item>
     
     <item>
@@ -85,9 +121,13 @@ require(&amp;quot;test&amp;quot;).setup();  Summary    Members Descriptions     
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/base32/</guid>
-      <description>base32 module with encode and decode operations. to use:
-var encoding = require(&#39;encoding&#39;); var base32 = encoding.base32;  or:
-var base32 = require(&#39;base32&#39;);  Summary    Members Descriptions     public static Stringencode(Bufferdata) Encode buffer data to string with base32 format.   public staticBufferdecode(String data) Decode string to binary data with base32 format.    Members public static Stringencode(Bufferdata) Encode buffer data to string with base32 format.</description>
+      <description>base32 编码与解码模块 引用方式：
+var encoding = require(&#39;encoding&#39;); var base32 = encoding.base32;  或者
+var base32 = require(&#39;base32&#39;);  Method Summary    Type Method and Description     String encode(Buffer data)以 base32 方式编码数据
+   Buffer decode(String data)以 base32 方式解码字符串为二进制数据
+    Method Detail encode String encode(Buffer data) 以 base32 方式编码数据
+Parameters  data 要编码的数据  Returns 返回编码的字符串
+  decode Buffer decode(String data) 以 base32 方式解码字符串为二进制数据</description>
     </item>
     
     <item>
@@ -96,9 +136,13 @@ var base32 = require(&#39;base32&#39;);  Summary    Members Descriptions     pub
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/base64/</guid>
-      <description>base64 module with encode and decode operations. to use:
-var encoding = require(&#39;encoding&#39;); var base64 = encoding.base64;  or:
-var base64 = require(&#39;base64&#39;);  Summary    Members Descriptions     public static Stringencode(Bufferdata) Encode buffer data to string with base64 format.   public staticBufferdecode(String data) Decode string to binary data with base64 format.    Members public static Stringencode(Bufferdata) Encode buffer data to string with base64 format.</description>
+      <description>base64 编码与解码模块 引用方式：
+var encoding = require(&#39;encoding&#39;); var base64 = encoding.base64;  或者
+var base64 = require(&#39;base64&#39;);  Method Summary    Type Method and Description     String encode(Buffer data)以 base64 方式编码数据
+   Buffer decode(String data)以 base64 方式解码字符串为二进制数据
+    Method Detail encode String encode(Buffer data) 以 base64 方式编码数据
+Parameters  data 要编码的数据  Returns 返回编码的字符串
+  decode Buffer decode(String data) 以 base64 方式解码字符串为二进制数据</description>
     </item>
     
     <item>
@@ -107,9 +151,13 @@ var base64 = require(&#39;base64&#39;);  Summary    Members Descriptions     pub
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/base64vlq/</guid>
-      <description>base64vlq module with encode and decode operations. to use:
-var encoding = require(&#39;encoding&#39;); var base64vlq = encoding.base64vlq;  or:
-var base64vlq = require(&#39;base64vlq&#39;);  Summary    Members Descriptions     public static Stringencode(Integer data) Encode int data to string with base64vlq format.   public static Stringencode(Array data) Encode array data to string with base64vlq format.   public static Arraydecode(String data) Decode string to binary data with base64vlq format.</description>
+      <description>base64vlq 编码与解码模块 引用方式：
+var encoding = require(&#39;encoding&#39;); var base64vlq = encoding.base64vlq;  或者
+var base64vlq = require(&#39;base64vlq&#39;);  Method Summary    Type Method and Description     String encode(Integer data)以 base64vlq 方式编码数据
+   String encode(Array data)以 base64vlq 方式编码数据
+   Array decode(String data)以 base64vlq 方式解码字符串为二进制数据
+    Method Detail encode String encode(Integer data) 以 base64vlq 方式编码数据
+Parameters  data 要编码的数据  Returns 返回编码的字符串</description>
     </item>
     
     <item>
@@ -118,9 +166,13 @@ var base64vlq = require(&#39;base64vlq&#39;);  Summary    Members Descriptions  
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/bson/</guid>
-      <description>bson module with encode and decode operations. to use:
-var encoding = require(&#39;encoding&#39;); var bson = encoding.bson;  or:
-var bson = require(&#39;bson&#39;);  Summary    Members Descriptions     public staticBufferencode(Object data) Encode object to binary data with bson format.   public static Objectdecode(Bufferdata) Decode binary data to object with bson format.    Members public staticBufferencode(Object data) Encode object to binary data with bson format.</description>
+      <description>bson 编码与解码模块 引用方式：
+var encoding = require(&#39;encoding&#39;); var bson = encoding.bson;  或者
+var bson = require(&#39;bson&#39;);  Method Summary    Type Method and Description     Buffer encode(Object data)以 bson 格式编码变量
+   Object decode(Buffer data)以 bson 方式解码字符串为一个变量
+    Method Detail encode Buffer encode(Object data) 以 bson 格式编码变量
+Parameters  data 要编码的变量  Returns 返回编码的二进制数据
+  decode Object decode(Buffer data) 以 bson 方式解码字符串为一个变量</description>
     </item>
     
     <item>
@@ -129,12 +181,16 @@ var bson = require(&#39;bson&#39;);  Summary    Members Descriptions     public 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/console/</guid>
-      <description>console module
-Global reference. Console can be used to log info, warnings and errors. Log can be trace on different device when initialized from config files for tracking. Console logs support formatted output, e.g.
-console.log(&amp;quot;%d + %d = %d&amp;quot;, 100, 200, 100 + 200);   s - string
- d - number, including initeger and numbers
- j - output in JSON
- %% - output &amp;ldquo; character</description>
+      <description>控制台访问对象
+全局对象。可用于提示信息，警告和错误记录。通过启动配置文件，可将日志定位 到不同的设备，以便于跟踪。日志支持格式化输出，例如：
+console.log(&amp;quot;%d + %d = %d&amp;quot;, 100, 200, 100 + 200);  可以使用的格式化参数如下：
+ s - 字符串
+ d - 数字，包括整数和数字
+ j - 以 JSON 格式输出对象
+ %% - 输出字符 &amp;ldquo; 本身
+  Field Summary    Type Method and Description     const public const FATALFATALFATALloglevel 级别常量
+   const public const ALERTALERTALERTloglevel 级别常量
+   const public const CRITCRITCRITloglevel 级别常量</description>
     </item>
     
     <item>
@@ -143,9 +199,14 @@ console.log(&amp;quot;%d + %d = %d&amp;quot;, 100, 200, 100 + 200);   s - string
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/coroutine/</guid>
-      <description>Concurrency control module.
-The way to use: var coroutine = require(&amp;lsquo;coroutine&amp;rsquo;);
-Summary    Members Descriptions     public staticFiberstart(Function func,...) Start a fibers and return the fiber Object.   public static Arrayparallel(Array funcs,Integer fibers) Execute a set of functions parallel, and wait for the return.   public static Arrayparallel(Array datas,Function func,Integer fibers) Execute a function deal with a set of data parallel, and wait for the return.</description>
+      <description>并发控制模块
+引用方法：var coroutine = require(&amp;lsquo;coroutine&amp;rsquo;);
+Field Summary    Type Method and Description     void public static static LockLockLock锁对象，参见 Lock
+   void public static static SemaphoreSemaphoreSemaphore信号量对象，参见 Semaphore
+   void public static static ConditionConditionCondition条件变量对象，参见 Condition
+   void public static static EventEventEvent事件对象，参见 Event
+   void public static static BlockQueueBlockQueueBlockQueue阻塞队列对象，参见 BlockQueue
+   void public static static WorkerWorkerWorker独立线程工作对象，参见 Worker</description>
     </item>
     
     <item>
@@ -154,9 +215,12 @@ Summary    Members Descriptions     public staticFiberstart(Function func,...) S
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/crypto/</guid>
-      <description>Encryption algorithm module.
-The way to use:
-var crypto = require(&#39;crypto&#39;);  Summary    Members Descriptions     public staticPKeyloadPKey(String filename,String password) Load a PEM/DER format key file.   public staticX509CertloadCert(String filename) Load a CRT/PEM/DER/TXT format certificate can be called multiple times.   public staticX509CrlloadCrl(String filename) Load a PEM/DER format revoked certificate can be called multiple times.   public staticX509ReqloadReq(String filename) Load a PEM/DER format requested certificate can be called multiple times.</description>
+      <description>加密算法模块
+使用方法：
+var crypto = require(&#39;crypto&#39;);  Field Summary    Type Method and Description     const public const AESAESAES指定对称加密算法 AES，支持 128, 192, 256 位 key，分组密码工作模式支持 ECB, CBC, CFB128, CTR, GCM
+   const public const CAMELLIACAMELLIACAMELLIA指定对称加密算法 CAMELLIA，支持 128, 192, 256 位 key，分组密码工作模式支持 ECB, CBC, CFB128, CTR, GCM
+   const public const DESDESDES指定对称加密算法 DES，支持 64 位 key，分组密码工作模式支持 ECB, CBC
+   const public const DES_EDEDES_EDEDES_EDE指定对称加密算法 DES-EDE，支持 128 位 key，分组密码工作模式支持 ECB, CBC</description>
     </item>
     
     <item>
@@ -165,9 +229,15 @@ var crypto = require(&#39;crypto&#39;);  Summary    Members Descriptions     pub
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/db/</guid>
-      <description>Database access module.
-Basic module for create database and database operation, The way to use::
-var db = require(&#39;db&#39;);  Summary    Members Descriptions     public staticobjectopen(String connString) This method offer a general entrance to open a database, call different engines according to the providing connString.   public staticMySQLopenMySQL(String connString) Open a mysql database.   public staticSQLiteopenSQLite(String connString) Open a sqlite database.   public staticMongoDBopenMongoDB(String connString) Open a mongodb database.</description>
+      <description>数据库访问模块
+基础模块。可用于创建和操作数据库资源，引用方式：
+var db = require(&#39;db&#39;);  Method Summary    Type Method and Description     object open(String connString)打开一个数据库，此方法为通用入口，根据提供的 connString 不同调用不同的引擎
+   MySQL openMySQL(String connString)打开一个 mysql 数据库
+   MSSQL openMSSQL(String connString)打开一个 mysql 数据库
+   SQLite openSQLite(String connString)打开一个 sqlite 数据库
+   MongoDB openMongoDB(String connString)打开一个 mongodb 数据库
+   LevelDB openLevelDB(String connString)打开一个 leveldb 数据库
+   Redis openRedis(String connString)打开一个 Redis 数据库</description>
     </item>
     
     <item>
@@ -176,8 +246,13 @@ var db = require(&#39;db&#39;);  Summary    Members Descriptions     public stat
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/encoding/</guid>
-      <description>module with encode and decode operations between hex and other format data. to use:
-var encoding = require(&#39;encoding&#39;);  Summary    Members Descriptions     public static Stringjsstr(String str,Boolean json) Encode the string to Javascript escaped string that can be contained in the javascript code.   public static StringencodeURI(String url) Url encoding.   public static StringencodeURIComponent(String url) Url component encoding.   public static StringdecodeURI(String url) Url decoding.</description>
+      <description>编码与解码模块，用于处理不同的数据编码格式与二进制之间的转换 引用方式：
+var encoding = require(&#39;encoding&#39;);  Field Summary    Type Method and Description     void public static static base32base32base32base32 编码与解码模块
+   void public static static base64base64base64base64 编码与解码模块
+   void public static static base64vlqbase64vlqbase64vlqbase64vlq 编码与解码模块
+   void public static static hexhexhexhex 编码与解码模块
+   void public static static iconviconviconviconv 编码与解码模块
+   void public static static jsonjsonjsonjson 编码与解码模块</description>
     </item>
     
     <item>
@@ -186,9 +261,13 @@ var encoding = require(&#39;encoding&#39;);  Summary    Members Descriptions    
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/fs/</guid>
-      <description>file system module
-how to use
-var fs = require(&#39;fs&#39;);  Summary    Members Descriptions     public static Booleanexists(String path) search if the file or directory exists   public static BooleanexistsSync(String path) search if the file or directory exists. Sync version of fs.exists().   public static staticunlink(String path) the file you want to delete   public static staticunlinkSync(String path) the file you want to delete.</description>
+      <description>文件系统处理模块
+使用方法：
+var fs = require(&#39;fs&#39;);  Field Summary    Type Method and Description     const public const SEEK_SETSEEK_SETSEEK_SETseek 方式常量，移动到绝对位置
+   const public const SEEK_CURSEEK_CURSEEK_CURseek 方式常量，移动到当前位置的相对位置
+   const public const SEEK_ENDSEEK_ENDSEEK_ENDseek 方式常量，移动到文件结尾的相对位置
+    Method Summary    Type Method and Description     Boolean exists(String path)查询指定的文件或目录是否存在
+   Boolean existsSync(String path)查询指定的文件或目录是否存在，是 exists 的同步版兼容接口</description>
     </item>
     
     <item>
@@ -197,9 +276,14 @@ var fs = require(&#39;fs&#39;);  Summary    Members Descriptions     public stat
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/gd/</guid>
-      <description>Image processing module.
-Base module. It can be used to create and manipulate image files. The way to use：
-var gd = require(&#39;gd&#39;);  Summary    Members Descriptions     public staticImagecreate(Integer width,Integer height,Integer color) Create a new image.   public staticImageload(Bufferdata) Decoded image from the format data.   public staticImageload(SeekableStreamstm) Decoded image from the stream object.   public staticImageload(String fname) Decoded image from the specified file.</description>
+      <description>图像文件处理模块
+基础模块。可用于创建和操作图像文件，引用方式：
+var gd = require(&#39;gd&#39;);  Field Summary    Type Method and Description     const public const NONENONENONE图像格式常量，标示当前图像来源为未知
+   const public const JPEGJPEGJPEG图像格式常量，标示当前图像来源为 jpeg 格式数据
+   const public const GIFGIFGIF图像格式常量，标示当前图像来源为 gif 格式数据
+   const public const PNGPNGPNG图像格式常量，标示当前图像来源为 png 格式数据
+   const public const TIFFTIFFTIFF图像格式常量，标示当前图像来源为 tiff 格式数据
+   const public const BMPBMPBMP图像格式常量，标示当前图像来源为 bmp 格式数据</description>
     </item>
     
     <item>
@@ -208,8 +292,29 @@ var gd = require(&#39;gd&#39;);  Summary    Members Descriptions     public stat
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/global/</guid>
-      <description>Global object, which can be accessed by all scripts.
-Summary    Members Descriptions     public static staticrun(String fname,Array argv) Run a script.   public static Valuerequire(String id) Load a module and return module object, reference Module Management.   public static staticGC() Mandatory for garbage collection.   public static staticrepl(Array cmds) Enter the interactive mode, you can interactively execute the internal commands and code which can only be referenced when js start.</description>
+      <description>全局对象，所有脚本均可以访问的基础对象
+Field Summary    Type Method and Description     void public static static BufferBufferBuffer二进制数据缓存对象，用于 io 读写的数据处理，参见 Buffer 对象。
+   void public static static Int64Int64Int6464位整数对象，参见 Int64 对象。
+   void public static static consoleconsoleconsole控制台访问对象
+   void public static static processprocessprocess控制台访问对象
+   readonly Worker public static readonly Worker MasterMasterMasterWorker 宿主对象，仅在 Worker 入口脚本有效
+   readonly Object public static readonly Object globalglobalglobal全局对象</description>
+    </item>
+    
+    <item>
+      <title>gui</title>
+      <link>http://example.org/module/gui/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/gui/</guid>
+      <description>输入输出处理模块
+使用方法：
+var gui = require(&#39;gui&#39;);  Field Summary    Type Method and Description     const public const IE7IE7IE7WebView ie 模拟版本，指定 ie7
+   const public const IE8IE8IE8WebView ie 模拟版本，指定 ie8
+   const public const IE9IE9IE9WebView ie 模拟版本，指定 ie9
+   const public const IE10IE10IE10WebView ie 模拟版本，指定 ie10
+   const public const IE11IE11IE11WebView ie 模拟版本，指定 ie11
+   const public const EDGEEDGEEDGEWebView ie 模拟版本，指定 edge</description>
     </item>
     
     <item>
@@ -218,8 +323,15 @@ Summary    Members Descriptions     public static staticrun(String fname,Array a
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/hash/</guid>
-      <description>Message digest calculation module, can be used to calculate the message digest and summary Signature.
-Summary    Members Descriptions     public staticDigestdigest(Integer algo,Bufferdata) Create a message digest object with the specified algorithm.   public staticDigestdigest(Integer algo) Create a message digest object with the specified algorithm.   public staticDigestmd2(Bufferdata) Create a MD2 message digest object.   public staticDigestmd4(Bufferdata) Create a MD4 message digest object.</description>
+      <description>信息摘要计算模块，可用于计算信息摘要和摘要签名
+Field Summary    Type Method and Description     const public const MD2MD2MD2MD2 信息摘要算法标识常量
+   const public const MD4MD4MD4MD4 信息摘要算法标识常量
+   const public const MD5MD5MD5MD5 信息摘要算法标识常量
+   const public const SHA1SHA1SHA1SHA1 信息摘要算法标识常量
+   const public const SHA224SHA224SHA224SHA224 信息摘要算法标识常量
+   const public const SHA256SHA256SHA256SHA256 信息摘要算法标识常量
+   const public const SHA384SHA384SHA384SHA384 信息摘要算法标识常量
+   const public const SHA512SHA512SHA512SHA512 信息摘要算法标识常量</description>
     </item>
     
     <item>
@@ -228,9 +340,13 @@ Summary    Members Descriptions     public staticDigestdigest(Integer algo,Buffe
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/hex/</guid>
-      <description>module with encode and decode operations between hex and string. to use:
-var encoding = require(&#39;encoding&#39;); var hex = encoding.hex;  or:
-var hex = require(&#39;hex&#39;);  Summary    Members Descriptions     public static Stringencode(Bufferdata) Encode data whith hex format.   public staticBufferdecode(String data) Decode string to binary data with hex format.    Members public static Stringencode(Bufferdata) Encode data whith hex format.</description>
+      <description>hex 编码与解码模块 引用方式：
+var encoding = require(&#39;encoding&#39;); var hex = encoding.hex;  或者
+var hex = require(&#39;hex&#39;);  Method Summary    Type Method and Description     String encode(Buffer data)以 hex 方式编码数据
+   Buffer decode(String data)以 hex 方式解码字符串为二进制数据
+    Method Detail encode String encode(Buffer data) 以 hex 方式编码数据
+Parameters  data 要编码的数据  Returns 返回编码的字符串
+  decode Buffer decode(String data) 以 hex 方式解码字符串为二进制数据</description>
     </item>
     
     <item>
@@ -239,8 +355,13 @@ var hex = require(&#39;hex&#39;);  Summary    Members Descriptions     public st
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/http/</guid>
-      <description>HTTP transfer protocol module, handels http protocol.
-Summary    Members Descriptions     public staticHttpRequestnewRequest() create a http request object，reference HttpRequest   public staticHttpResponsenewResponse() create a http response object，reference HttpResponse   public staticHttpCookienewCookie() create a http cookie object，reference HttpCookie   public staticHttpServernewServer() create a http server，reference HttpServer   public staticHttpsServernewHttpsServer() create a https server, reference HttpsServer   public staticHttpHandlernewHandler() create a http protocol handler，reference HttpHandler   public staticHandlerfileHandler(String root,Object mimes) create a http static file processor, in case of using static file to respond http request   public staticHttpResponserequest(Streamconn,HttpRequestreq) send http request to connection object，return response   public staticHttpResponserequest(String method,String url,Object headers) assign requested url, and return   public staticHttpResponserequest(String method,String url,SeekableStreambody,Object headers) Request the specified url, and get the response.</description>
+      <description>超文本传输协议模块，用以支持 http 协议处理
+Field Summary    Type Method and Description     readonly List public static readonly List cookiescookiescookies返回http客户端的 HttpCookie 对象列表
+   Integer public static Integer timeouttimeouttimeout查询和设置超时时间
+   Boolean public static Boolean enableCookieenableCookieenableCookiecookie功能开关，默认开启
+   Boolean public static Boolean autoRedirectautoRedirectautoRedirect自动redirect功能开关，默认开启
+   String public static String userAgentuserAgentuserAgent查询和设置 http 请求中的浏览器标识
+    Method Summary    Type Method and Description     HttpRequest new Request()创建一个 http 请求对象，参见 HttpRequest</description>
     </item>
     
     <item>
@@ -249,9 +370,13 @@ Summary    Members Descriptions     public staticHttpRequestnewRequest() create 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/iconv/</guid>
-      <description>iconv Module with encode and decode operations between text and binary. to use:
-var encoding = require(&#39;encoding&#39;); var iconv = encoding.iconv;  or:
-var iconv = require(&#39;iconv&#39;);  Summary    Members Descriptions     public staticBufferencode(String charset,String data) Convert text to binary with iconv.   public static Stringdecode(String charset,Bufferdata) Convert binary to text with iconv.    Members public staticBufferencode(String charset,String data) Convert text to binary with iconv.</description>
+      <description>iconv 编码与解码模块 引用方式：
+var encoding = require(&#39;encoding&#39;); var iconv = encoding.iconv;  或者
+var iconv = require(&#39;iconv&#39;);  Method Summary    Type Method and Description     Buffer encode(String charset,String data)用 iconv 将文本转换为二进制数据
+   String decode(String charset,Buffer data)用 iconv 将 Buffer 内容转换为文本
+    Method Detail encode Buffer encode(String charset,String data) 用 iconv 将文本转换为二进制数据
+Parameters  charset 指定字符集
+ data 要转换的文本</description>
     </item>
     
     <item>
@@ -260,10 +385,15 @@ var iconv = require(&#39;iconv&#39;);  Summary    Members Descriptions     publi
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/io/</guid>
-      <description>IO module.
-To use it:
-var io = require(&#39;io&#39;);  Summary    Members Descriptions     public staticMemoryStreamnewMemoryStream() Create a memory stream, see MemoryStream.   public staticBufferedStreamnewBufferedStream() Create a buffered read stream, see BufferedStream.    Members public staticMemoryStreamnewMemoryStream() Create a memory stream, see MemoryStream.
-public staticBufferedStreamnewBufferedStream() Create a buffered read stream, see BufferedStream.</description>
+      <description>输入输出处理模块
+使用方法：
+var io = require(&#39;io&#39;);  Method Summary    Type Method and Description     MemoryStream new MemoryStream()创建一个内存流对象，参见 MemoryStream
+   BufferedStream new BufferedStream()创建一个缓存流读取对象，参见 BufferedStream
+   Long copyStream(Stream from,Stream to,Long bytes)复制流数据到目标流中
+   void bridge(Stream stm1,Stream stm2)双向复制流数据，直到流中无数据，或者流被关闭
+    Method Detail MemoryStream MemoryStream new MemoryStream() 创建一个内存流对象，参见 MemoryStream
+  BufferedStream BufferedStream new BufferedStream() 创建一个缓存流读取对象，参见 BufferedStream
+  copyStream Long copyStream(Stream from,Stream to,Long bytes) 复制流数据到目标流中</description>
     </item>
     
     <item>
@@ -272,9 +402,13 @@ public staticBufferedStreamnewBufferedStream() Create a buffered read stream, se
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/json/</guid>
-      <description>json module with encode and decode operations. to use:
-var encoding = require(&#39;encoding&#39;); var json = encoding.json;  or:
-var json = require(&#39;json&#39;);  Summary    Members Descriptions     public static Stringencode(Value data) Encode a json variable to string with json format.   public static Valuedecode(String data) Decode a string variable to json with json format.    Members public static Stringencode(Value data) Encode a json variable to string with json format.</description>
+      <description>json 编码与解码模块 引用方式：
+var encoding = require(&#39;encoding&#39;); var json = encoding.json;  或者
+var json = require(&#39;json&#39;);  Method Summary    Type Method and Description     String encode(Value data)以 json 格式编码变量
+   Value decode(String data)以 json 方式解码字符串为一个变量
+    Method Detail encode String encode(Value data) 以 json 格式编码变量
+Parameters  data 要编码的变量  Returns 返回编码的字符串
+  decode Value decode(String data) 以 json 方式解码字符串为一个变量</description>
     </item>
     
     <item>
@@ -283,8 +417,13 @@ var json = require(&#39;json&#39;);  Summary    Members Descriptions     public 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/mq/</guid>
-      <description>Message queue module.
-Summary    Members Descriptions     public staticHandlerjsHandler(Value hdlr) Create a javascript message handler, return immediately when pass by value.   public staticAsyncWaitawait() Create async handler.   public staticHandlernullHandler() Create a empty handler.   public static staticinvoke(Handlerhdlr,objectv) Invoke a message or object to given handler.    Members public staticHandlerjsHandler(Value hdlr) Create a javascript message handler, return immediately when pass by value.</description>
+      <description>消息队列模块
+Field Summary    Type Method and Description     void public static static MessageMessageMessage创建一个消息对象，参见 Message
+   void public static static HttpHandlerHttpHandlerHttpHandler创建一个 http 协议处理器对象，参见 HttpHandler
+   void public static static HandlerHandlerHandler创建一个消息处理器对象，传递值内置处理器则直接返回
+   void public static static ChainChainChain创建一个消息处理器链处理对象，参见 Chain
+   void public static static RoutingRoutingRouting创建一个消息处理器路由对象，参见 Routing
+    Method Summary    Type Method and Description     Handler await()创建一个异步等待处理器</description>
     </item>
     
     <item>
@@ -293,9 +432,14 @@ Summary    Members Descriptions     public staticHandlerjsHandler(Value hdlr) Cr
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/net/</guid>
-      <description>Network module.
-Used for create and operate netwrok resource, to use it:
-var net = require(&#39;net&#39;);  Summary    Members Descriptions     public static Stringresolve(String name,Integer family) Resolve address of given host.   public static Stringip(String name) Quick query host address, same as resolve(name)   public static Stringipv6(String name) Quick query host ipv6 address, same as resolve(name, net.AF_INET6)   public staticStreamconnect(String host,Integer port,Integer family) Create a Socket object and make connection, see Socket.</description>
+      <description>网络访问模块
+基础模块。可用于创建和操作网络资源，引用方式：
+var net = require(&#39;net&#39;);  Field Summary    Type Method and Description     const public const AF_INETAF_INETAF_INET地址集常量，指定 ipv4
+   const public const AF_INET6AF_INET6AF_INET6地址集常量，指定 ipv6
+   const public const SOCK_STREAMSOCK_STREAMSOCK_STREAM协议族常量，指定 tcp
+   const public const SOCK_DGRAMSOCK_DGRAMSOCK_DGRAM协议族常量，指定 udp
+   void public static static SocketSocketSocket创建一个 Socket 对象，参见 Socket
+   void public static static SmtpSmtpSmtp创建一个 Smtp 对象，参见 Smtp</description>
     </item>
     
     <item>
@@ -304,9 +448,13 @@ var net = require(&#39;net&#39;);  Summary    Members Descriptions     public st
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/os/</guid>
-      <description>Operating system and file system module.
-To use it:
-var os = require(&#39;os&#39;);  Summary    Members Descriptions     public static Numberuptime() Get operating system time in seconds.   public static Arrayloadavg() Get system load average, 1, 5 and 15 minutes.   public static Longtotalmem() Get system total memory in bytes.   public static Longfreemem() Get system free memory in bytes.   public static ArrayCPUInfo() Get system CPU number and information.</description>
+      <description>操作系统与文件系统处理模块
+使用方法：
+var os = require(&#39;os&#39;);  Field Summary    Type Method and Description     void public static static ServiceServiceServiceService 构造函数，参见 Service
+   readonly String public static readonly String hostnamehostnamehostname查询当前运行环境主机名
+   readonly String public static readonly String typetypetype查询当前运行环境操作系统名称
+   readonly String public static readonly String versionversionversion查询当前运行环境操作系统版本
+   readonly String public static readonly String archarcharch查询当前 cpu 环境，可能的结果为 &amp;lsquo;amd64&amp;rsquo;, &amp;lsquo;arm&amp;rsquo;, &amp;lsquo;arm64&amp;rsquo;, &amp;lsquo;ia32&amp;rsquo;</description>
     </item>
     
     <item>
@@ -315,9 +463,12 @@ var os = require(&#39;os&#39;);  Summary    Members Descriptions     public stat
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/path/</guid>
-      <description>File path module.
-To use it:
-var path = require(&#39;path&#39;);  Summary    Members Descriptions     public static Stringnormalize(String path) Normalize path.   public static Stringbasename(String path,String ext) Get file name in path, ignore extension with file has it.   public static Stringextname(String path) Get file extension.   public static Stringdirname(String path) Get directory in path.   public static Stringfullpath(String path) Get full path.</description>
+      <description>文件路径处理模块
+引用方法：
+var path = require(&#39;path&#39;);  Field Summary    Type Method and Description     readonly String public static readonly String sepsepsep查询当前操作系统的路径分割字符，posix 返回 &amp;lsquo;/&amp;rsquo;, windows 返回 &amp;lsquo;\&amp;rsquo;
+   readonly String public static readonly String delimiterdelimiterdelimiter查询当前操作系统的多路径组合字符，posix 返回 &amp;lsquo;:&amp;lsquo;, windows 返回 &amp;lsquo;;&amp;rsquo;
+    Method Summary    Type Method and Description     String normalize(String path)标准化路径，处理路径中父目录等信息
+   String basename(String path,String ext)查询路径中的文件名称，若指定扩展名，则自动取消匹配的扩展名</description>
     </item>
     
     <item>
@@ -326,9 +477,13 @@ var path = require(&#39;path&#39;);  Summary    Members Descriptions     public 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/process/</guid>
-      <description>Process handle module, to manage current process resources.
-To use it:
-var process = require(&#39;process&#39;);  Summary    Members Descriptions     public static Integerumask(Integer mask) change the current umask，Windows does&amp;rsquo;t support this.   public static Integerumask(String mask) change the current umask，Windows does&amp;rsquo;t support this.   public static Integerumask() return the current umask，Windows does&amp;rsquo;t support this.   public static staticexit(Integer code) Exit current process, and return result.</description>
+      <description>进程处理模块，用以管理当前进程的资源
+引用方法：
+var process = require(&#39;process&#39;);  Field Summary    Type Method and Description     readonly Array public static readonly Array argvargvargv返回当前进程的命令行参数
+   readonly Array public static readonly Array execArgvexecArgvexecArgv返回当前进程的特殊命令行参数，这些参数被 fibjs 用于设置运行环境
+   readonly String public static readonly String versionversionversion返回fibjs版本字符串
+   readonly String public static readonly String execPathexecPathexecPath查询当前运行执行文件完整路径
+   readonly Object public static readonly Object envenvenv查询当前进程的环境变量</description>
     </item>
     
     <item>
@@ -337,9 +492,32 @@ var process = require(&#39;process&#39;);  Summary    Members Descriptions     p
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/profiler/</guid>
-      <description>Memory profiler module.
-The way to use:
-var profiler = require(&#39;profiler&#39;);  Summary    Members Descriptions     public static staticsaveSnapshot(String fname) Save a HeapSnapshot with the specified name.   public staticHeapSnapshotloadSnapshot(String fname) Load a HeapSnapshot with the specified name.   public staticHeapSnapshottakeSnapshot() Get the current HeapSnapshot, HeapSnapshots record the state of the JS heap at some moment.   public static staticDeleteAllHeapSnapshots() Delete all HeapSnapshots.</description>
+      <description>内存 profiler 模块
+使用方法：
+var profiler = require(&#39;profiler&#39;);  Field Summary    Type Method and Description     const public const Node_HiddenNode_HiddenNode_Hidden隐藏节点，当显示给用户时可以被过滤掉
+   const public const Node_ArrayNode_ArrayNode_Array数组
+   const public const Node_StringNode_StringNode_String字符串
+   const public const Node_ObjectNode_ObjectNode_ObjectJS对象（字符串和数组除外）
+   const public const Node_CodeNode_CodeNode_Code编译后的代码
+   const public const Node_ClosureNode_ClosureNode_Closure函数闭包
+   const public const Node_RegExpNode_RegExpNode_RegExp正则表达式
+   const public const Node_HeapNumberNode_HeapNumberNode_HeapNumber堆中排好序的数字</description>
+    </item>
+    
+    <item>
+      <title>querystring</title>
+      <link>http://example.org/module/querystring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/querystring/</guid>
+      <description>http query 处理模块
+引用方法：
+var querystring = require(&#39;querystring&#39;);  Method Summary    Type Method and Description     String escape(String str)url 部件字符串安全编码
+   String unescape(String str)url 安全字符串解码
+   HttpCollection parse(String str,String sep,String eq,Object opt)解析 query 字符串
+   String stringify(Object obj,String sep,String eq,Object opt)序列化一个对象为 query 字符串
+    Method Detail escape String escape(String str) url 部件字符串安全编码
+Parameters  url 要编码的 url  Returns 返回编码的字符串</description>
     </item>
     
     <item>
@@ -348,11 +526,43 @@ var profiler = require(&#39;profiler&#39;);  Summary    Members Descriptions    
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/re/</guid>
-      <description>Regexp module.
-Summary    Members Descriptions     public staticRegexcompile(String pattern,String opt) Compile and return a template of regexp.    Members public staticRegexcompile(String pattern,String opt) Compile and return a template of regexp.
-Parameters  pattern Regexp pattern
- opt Match type, can be &amp;ldquo;g&amp;rdquo;, &amp;ldquo;i&amp;rdquo; or &amp;ldquo;gi&amp;rdquo;
-  Returns Return regexp object</description>
+      <description> 正则表达式处理模块
+Method Summary    Type Method and Description     Regex compile(String pattern,String opt)编译一个正则表达式模版，并返回正则表达式处理对象
+    Method Detail compile Regex compile(String pattern,String opt) 编译一个正则表达式模版，并返回正则表达式处理对象
+Parameters  pattern 正则表达式
+ opt 规定匹配的类型。&amp;rdquo;g&amp;rdquo; 用于全局匹配，&amp;rdquo;i&amp;rdquo; 用于区分大小写，&amp;rdquo;gi&amp;rdquo; 用于全局区分大小写的匹配
+  Returns 返回正则表达式对象
+   td { vertical-align: top; }  </description>
+    </item>
+    
+    <item>
+      <title>registry</title>
+      <link>http://example.org/module/registry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/registry/</guid>
+      <description>Windows 注册表访问模块 引用方式：
+var registry = require(&#39;registry&#39;); var value = registry.get(registry.CLASSES_ROOT, &amp;quot;\node1\node2\value&amp;quot;);  Field Summary    Type Method and Description     const public const CLASSES_ROOTCLASSES_ROOTCLASSES_ROOT注册表根，存储Windows可识别的文件类型的详细列表，以及相关联的程序
+   const public const CURRENT_USERCURRENT_USERCURRENT_USER注册表根，存储当前用户设置的信息
+   const public const LOCAL_MACHINELOCAL_MACHINELOCAL_MACHINE注册表根，包括安装在计算机上的硬件和软件的信息
+   const public const USERSUSERSUSERS注册表根，包含使用计算机的用户的信息
+   const public const CURRENT_CONFIGCURRENT_CONFIGCURRENT_CONFIG注册表根，这个分支包含计算机当前的硬件配置信息
+   const public const SZSZSZ注册表数据类型，字符串
+   const public const EXPAND_SZEXPAND_SZEXPAND_SZ注册表数据类型，扩展字符串</description>
+    </item>
+    
+    <item>
+      <title>rpc</title>
+      <link>http://example.org/module/rpc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/rpc/</guid>
+      <description> RPC module.
+To use it:
+var rpc = require(&#39;rpc&#39;);  Summary    Type Method and Description     Handler json(Value hdlr)Generate a json-rpc message converter.
+    Method Detail json Handler json(Value hdlr) Generate a json-rpc message converter.
+Parameters  hdlr Built-in handler, handle function or javascript message mapping object, see mq.jsHandler  Returns Return handler
+   td { vertical-align: top; }  </description>
     </item>
     
     <item>
@@ -361,8 +571,15 @@ Parameters  pattern Regexp pattern
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/ssl/</guid>
-      <description>ssl/tls module
-Summary    Members Descriptions     public staticSslSocketnewSocket() Create a SslSocket object, see SslSocket.   public staticSslHandlernewHandler() Create a SslHandler object, see SslHandler.   public staticSslServernewServer() Create a SslServer object, see SslServer.   public staticStreamconnect(String url) Create a SslSocket and make connection.   public static staticsetClientCert(X509Certcrt,PKeykey) Set the default client certificate.   public static staticloadClientCertFile(String crtFile,String keyFile,String password) Load the default client certificate from a file.</description>
+      <description>ssl/tls 模块
+Field Summary    Type Method and Description     const public const VERIFY_NONEVERIFY_NONEVERIFY_NONE证书验证模式，不验证
+   const public const VERIFY_OPTIONALVERIFY_OPTIONALVERIFY_OPTIONAL证书验证模式，可选验证，允许验证不通过
+   const public const VERIFY_REQUIREDVERIFY_REQUIREDVERIFY_REQUIRED证书验证模式，要求验证，验证不通过则中断
+   const public const BADCERT_EXPIREDBADCERT_EXPIREDBADCERT_EXPIRED证书验证结果，证书超时
+   const public const BADCERT_REVOKEDBADCERT_REVOKEDBADCERT_REVOKED证书验证结果，证书被撤销
+   const public const BADCERT_CN_MISMATCHBADCERT_CN_MISMATCHBADCERT_CN_MISMATCH证书验证结果，证书名错误
+   const public const BADCERT_NOT_TRUSTEDBADCERT_NOT_TRUSTEDBADCERT_NOT_TRUSTED证书验证结果，证书不可信
+   const public const ssl3ssl3ssl3ssl 协议版本 ssl 3.</description>
     </item>
     
     <item>
@@ -371,9 +588,25 @@ Summary    Members Descriptions     public staticSslSocketnewSocket() Create a S
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/test/</guid>
-      <description>Test Suite module that defines the test suite management.
-To use it:
-var test = require(&#39;test&#39;);  Summary    Members Descriptions     public static staticdescribe(String name,Function block) The definition of a test module and can be nested definition.   public static staticxdescribe(String name,Function block) The definition of a test module to be stopped.   public static staticit(String name,Function block) Define a test project.</description>
+      <description>测试套件模块，用以定义管理测试套件
+引用方法：
+var test = require(&#39;test&#39;);  Field Summary    Type Method and Description     const public const BDDBDDBDD定义 BDD(Behavior Drive Development) 测试环境，支持 describe, xdescribe, it, xit, before, after, beforeEach 和 afterEach，同时初始化 assert 和expect
+   const public const TDDTDDTDD定义 TDD(Test Drive Development) 测试环境，支持 suite, xsuite, test, xtest, setup, teardown, suiteSetup 和 suiteTeardown，同时初始化 assert 和expect
+   void public static static assertassertassert断言测试模块，如果测试值为假，则报错，报错行为可设定继续运行或者错误抛出</description>
+    </item>
+    
+    <item>
+      <title>url</title>
+      <link>http://example.org/module/url/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/url/</guid>
+      <description>url 处理模块
+Method Summary    Type Method and Description     String format(Object args)参数构造 UrlObject 对象
+   UrlObject parse(String url,Boolean parseQueryString)解析一个 url 字符串
+    Method Detail format String format(Object args) 参数构造 UrlObject 对象
+Parameters  args 指定构造参数的字典对象，支持的字段有：protocol, slashes, username, password, hostname, port, pathname, query, hash    parse UrlObject parse(String url,Boolean parseQueryString) 解析一个 url 字符串
+Parameters  url 指定需要解析的 url 字符串</description>
     </item>
     
     <item>
@@ -382,8 +615,13 @@ var test = require(&#39;test&#39;);  Summary    Members Descriptions     public 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/util/</guid>
-      <description>Common tools module.
-Summary    Members Descriptions     public static Stringformat(String fmt,...) Format string with variables.   public static Stringformat(...) Format variables.   public static BooleanisEmpty(Value v) Check if variable is empty(no enumerable property)   public static BooleanisArray(Value v) Check if variable is an array.   public static BooleanisBoolean(Value v) Check if variable is Boolean.   public static BooleanisNull(Value v) Check if variable is Null.</description>
+      <description>常用工具模块
+Field Summary    Type Method and Description     void public static static StatsStatsStats数据统计对象，用以构建应用运行时数据收集，参见 Stats 对象。
+   void public static static LruCacheLruCacheLruCacheLRU(least recently used) 缓存对象，参见 LruCache 对象。
+    Method Summary    Type Method and Description     String format(String fmt,...)按照指定的格式格式化变量
+   String format(...)格式格式化变量
+   void inherits(Value constructor,Value superConstructor)从一个构造函数 constructor 继承原型方法到另一个。构造函数的原型将被设置为一个新的从超类（superConstructor）创建的对象。
+   Boolean isEmpty(Value v)检测给定的变量是否不包含任何值(没有可枚举的属性)</description>
     </item>
     
     <item>
@@ -392,9 +630,12 @@ Summary    Members Descriptions     public static Stringformat(String fmt,...) F
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/uuid/</guid>
-      <description>uuid unique id module
-Fundamental module, used for create uuid
-var uuid = require(&#39;uuid&#39;);  Summary    Members Descriptions     public staticuuidValueuuid(String s) Generate uuid by given string.   public staticuuidValueuuid(Bufferdata) Generate uuid by given binary data.   public staticuuidValuenode() Generate uuid by time and host name.   public staticuuidValuemd5(Integer ns,String name) Generate uuid by given md5.   public staticuuidValuerandom() Generate uuid randomly.</description>
+      <description>uuid 唯一 id 模块
+基础模块。提供唯一 id 的创建于操作
+var uuid = require(&#39;uuid&#39;);  Field Summary    Type Method and Description     const public const DNSDNSDNSmd5 与 sha1 创建 uuid 时指定 name 命名为域名
+   const public const URLURLURLmd5 与 sha1 创建 uuid 时指定 name 命名为 url 地址
+   const public const OIDOIDOIDmd5 与 sha1 创建 uuid 时指定 name 命名为 ISO OID
+   const public const X509X509X509md5 与 sha1 创建 uuid 时指定 name 命名为 X.</description>
     </item>
     
     <item>
@@ -403,9 +644,12 @@ var uuid = require(&#39;uuid&#39;);  Summary    Members Descriptions     public 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/vm/</guid>
-      <description>Safe SandBox module, to isolate runtime based on safety level.
-By establishing a safe SandBox, you can limit the accessible resources when the script runs, and isolate different script execution environment, also can be customized for different environments base module to ensure the safety of the overall operating environment.
-Following example demonstrates a sandbox which is only allowed for accessing assert module, and add a and b as customized modules.</description>
+      <description> 安全沙箱模块，用于隔离不同安全等级的运行环境
+通过建立安全沙箱，可以限制脚本运行时可以接触的资源，隔离不同脚本执行环境，并可以为不同的环境定制基础模块，以保障整体运行环境的安全。
+下面的示例创建一个沙箱，限制只允许访问全局基础模块中的 assert 模块，并添加 a 和 b 两个定制模块：
+var vm = require(&#39;vm&#39;); var sbox = new vm.SandBox({ a: 100, b: 200, assert: require(&#39;assert&#39;) }); var mod_in_sbox = sbox.require(&#39;./path/to/mod&#39;);  Method Summary    Type Method and Description     SandBox new SandBox()创建一个 SandBox 对象，参见 SandBox
+    Method Detail SandBox SandBox new SandBox() 创建一个 SandBox 对象，参见 SandBox
+   td { vertical-align: top; }  </description>
     </item>
     
     <item>
@@ -416,7 +660,24 @@ Following example demonstrates a sandbox which is only allowed for accessing ass
       <guid>http://example.org/module/websocket/</guid>
       <description>websocket support module
 To use it:
-var websocket = require(&#39;websocket&#39;);  Summary    Members Descriptions     public staticWebSocketMessagenewMessage() Create one websocket message object, refer WebSocketMessage.   public staticWebSocketHandlernewHandler() Create one websocket packet protocol conversion processor, refer WebSocketHandler.   public staticStreamconnect(String url) Create one websocket connection, and return a completed connection Stream object.    Members public staticWebSocketMessagenewMessage() Create one websocket message object, refer WebSocketMessage.</description>
+var websocket = require(&#39;websocket&#39;);  Summary    Type Method and Description     const Integer public const Integer CONTINUECONTINUECONTINUESpecifies the message type 0 of websocket, which is a continue frame.
+   const Integer public const Integer TEXTTEXTTEXTSpecifies the message type 1 of websocket, which is a text frame.
+   const Integer public const Integer BINARYBINARYBINARYSpecifies the message type 2 of websocket, which is a binary frame.</description>
+    </item>
+    
+    <item>
+      <title>ws</title>
+      <link>http://example.org/module/ws/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/ws/</guid>
+      <description>websocket 支持模块
+使用方法：
+var ws = require(&#39;ws&#39;);  Field Summary    Type Method and Description     const public const CONTINUECONTINUECONTINUE指定 websocket 消息类型 0，代表一个继续帧
+   const public const TEXTTEXTTEXT指定 websocket 消息类型 1，代表一个文本帧
+   const public const BINARYBINARYBINARY指定 websocket 消息类型 2，代表一个二进制帧
+   const public const CLOSECLOSECLOSE指定 websocket 消息类型 8，连接关闭
+   const public const PINGPINGPING指定 websocket 消息类型 9，代表一个 ping 帧</description>
     </item>
     
     <item>
@@ -425,8 +686,12 @@ var websocket = require(&#39;websocket&#39;);  Summary    Members Descriptions  
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/xml/</guid>
-      <description>xml module
-Summary    Members Descriptions     public staticXmlDocumentnewDocument() xml document object, see XmlDocument object   public staticXmlDocumentparse(String source,String type) Parse xml/html text and create XmlDocument object, does not support multiple languages.   public staticXmlDocumentparse(Buffersource,String type) Parse xml/html and create XmlDocument object, convert by given language.   public static Stringserialize(XmlNodenode) Serialize XmlNode to string.    Members public staticXmlDocumentnewDocument() xml document object, see XmlDocument object</description>
+      <description>xml 处理模块
+Field Summary    Type Method and Description     const public const ELEMENT_NODEELEMENT_NODEELEMENT_NODEXmlNode 的 nodeType 属性常量，表示节点为 XmlElement 对象
+   const public const ATTRIBUTE_NODEATTRIBUTE_NODEATTRIBUTE_NODEXmlNode 的 nodeType 属性常量，表示节点为 XmlAttr 对象
+   const public const TEXT_NODETEXT_NODETEXT_NODEXmlNode 的 nodeType 属性常量，表示节点为 XmlText 对象
+   const public const CDATA_SECTION_NODECDATA_SECTION_NODECDATA_SECTION_NODEXmlNode 的 nodeType 属性常量，表示节点为 XmlCDATASection 对象
+   const public const PROCESSING_INSTRUCTION_NODEPROCESSING_INSTRUCTION_NODEPROCESSING_INSTRUCTION_NODEXmlNode 的 nodeType 属性常量，表示节点为 XmlProcessingInstruction 对象</description>
     </item>
     
     <item>
@@ -435,9 +700,13 @@ Summary    Members Descriptions     public staticXmlDocumentnewDocument() xml do
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/zip/</guid>
-      <description>Zip file processing module.
-It can be used to compress and decompress file into or from zip file. The way to use：
-var zip = require(&#39;zip&#39;);  Summary    Members Descriptions     public static BooleanisZipFile(String filename) Judge if the file is zip file.   public staticZipFileopen(String path,String mod,Integer compress_type) Open a zip file.   public staticZipFileopen(Bufferdata,String mod,Integer compress_type) Open buffer of zip file data.</description>
+      <description>zip 格式文件压缩解压模块
+使用方法：
+var zip = require(&#39;zip&#39;);  Field Summary    Type Method and Description     const public const ZIP_STOREDZIP_STOREDZIP_STORED压缩类型常量, 不压缩, 仅存储
+   const public const ZIP_DEFLATEDZIP_DEFLATEDZIP_DEFLATED压缩类型常量, 需要依赖zlib库进行压缩
+    Method Summary    Type Method and Description     Boolean isZipFile(String filename)判断文件是否是zip格式
+   ZipFile open(String path,String mod,Integer compress_type)打开一个zip文件
+   ZipFile open(Buffer data,String mod,Integer compress_type)打开一个zip文件</description>
     </item>
     
     <item>
@@ -446,9 +715,29 @@ var zip = require(&#39;zip&#39;);  Summary    Members Descriptions     public st
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/module/zlib/</guid>
-      <description>zlib compression and decompression module
-To use it:
-var zlib = require(&#39;zlib&#39;);  Summary    Members Descriptions     public staticBufferdeflate(Bufferdata,Integer level) Use deflate to compress data (zlib format)   public static staticdeflateTo(Bufferdata,Streamstm,Integer level) Use deflate to compress data to stream (zlib format)   public static staticdeflateTo(Streamsrc,Streamstm,Integer level) Use deflate to compress a stream data to another (zlib format)   public staticBufferinflate(Bufferdata) Use deflate to decompress data (zlib format)   public static staticinflateTo(Bufferdata,Streamstm) Use deflate to decompress data to stream (zlib format)   public static staticinflateTo(Streamsrc,Streamstm) Use deflate to decompress a stream data to another (zlib format)   public staticBuffergzip(Bufferdata) Use gzip to compress data.</description>
+      <description>zlib 压缩解压模块
+使用方法：
+var zlib = require(&#39;zlib&#39;);  Field Summary    Type Method and Description     const public const NO_COMPRESSIONNO_COMPRESSIONNO_COMPRESSIONdeflate 压缩级别，设定不压缩
+   const public const BEST_SPEEDBEST_SPEEDBEST_SPEEDdeflate 压缩级别，设定最快压缩
+   const public const BEST_COMPRESSIONBEST_COMPRESSIONBEST_COMPRESSIONdeflate 压缩级别，设定最高压缩
+   const public const DEFAULT_COMPRESSIONDEFAULT_COMPRESSIONDEFAULT_COMPRESSIONdeflate 压缩级别，设定缺省设置
+    Method Summary    Type Method and Description     Buffer deflate(Buffer data,Integer level)使用 deflate 算法压缩数据(zlib格式)</description>
+    </item>
+    
+    <item>
+      <title>zmq</title>
+      <link>http://example.org/module/zmq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/module/zmq/</guid>
+      <description>zeroMQ 消息队列模块
+基础模块。提供 zeroMQ 消息队列支撑。
+var zmq = require(&#39;zmq&#39;);  Field Summary    Type Method and Description     const public const PAIRPAIRPAIR
+   const public const PUBPUBPUB发布类型，所发送的消息将会分发给所有订阅者。
+   const public const SUBSUBSUB订阅类型，用于接收 PUB 分发的消息。
+   const public const REQREQREQ请求类型，此类型的接口只允许交替进行 send 和 recv 消息，每一个接受的消息都是最后一次发送请求的响应。
+   const public const REPREPREP响应类型，此类型的接口只允许交替进行 recv 和 send 消息，每一个发送的消息都会作为最后一次接受的请求的回应。
+   const public const DEALERDEALERDEALER</description>
     </item>
     
   </channel>

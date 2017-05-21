@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.20.7" />
-    <meta name="description" content="正则表达式处理模块">
+    <meta name="description" content="http query 处理模块">
 
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>re :: fibjs</title>
+    <title>querystring :: fibjs</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -29,7 +29,7 @@
     
 
   </head>
-  <body class="" data-url="/module/re/">
+  <body class="" data-url="/module/querystring/">
     
 <nav id="sidebar" class="">
   <div id="header-wrapper">
@@ -677,7 +677,7 @@
     
     
         <li data-nav-id="/module/querystring/" class="dd-item 
-         
+        active 
         
         "
         >
@@ -686,6 +686,10 @@
                 
                 
             </a>
+            
+                
+                
+                
             
             
             
@@ -699,7 +703,7 @@
     
     
         <li data-nav-id="/module/re/" class="dd-item 
-        active 
+         
         
         "
         >
@@ -708,10 +712,6 @@
                 
                 
             </a>
-            
-                
-                
-                
             
             
             
@@ -1165,7 +1165,7 @@
                   fibjs
                 </a>
                 
-                   / <a href='/modules/'>Modules</a> / <a href='/module/re/'>re</a>
+                   / <a href='/modules/'>Modules</a> / <a href='/module/querystring/'>querystring</a>
                 
                 
             </div>
@@ -1188,13 +1188,18 @@
         
         <div id="body-inner">
           
-            <h1>re</h1>
+            <h1>querystring</h1>
           
 
 
 
 
-<p>正则表达式处理模块</p>
+<p>http query 处理模块</p>
+
+<p>引用方法：</p>
+
+<pre><code class="language-js">var querystring = require('querystring');
+</code></pre>
 
 <h2 id="method-summary">Method Summary</h2>
 
@@ -1208,35 +1213,113 @@
 
 <tbody>
 <tr>
-<td>Regex</td>
-<td><code>compile(String pattern,String opt)</code><p>编译一个正则表达式模版，并返回正则表达式处理对象</p></td>
+<td>String</td>
+<td><code>escape(String str)</code><p>url 部件字符串安全编码</p></td>
+</tr>
+
+<tr>
+<td>String</td>
+<td><code>unescape(String str)</code><p>url 安全字符串解码</p></td>
+</tr>
+
+<tr>
+<td>HttpCollection</td>
+<td><code>parse(String str,String sep,String eq,Object opt)</code><p>解析 query 字符串</p></td>
+</tr>
+
+<tr>
+<td>String</td>
+<td><code>stringify(Object obj,String sep,String eq,Object opt)</code><p>序列化一个对象为 query 字符串</p></td>
 </tr>
 </tbody>
 </table>
 
 <h2 id="method-detail">Method Detail</h2>
 
-<div class="panel panel-default">
-	<div class="panel-heading">compile</div>
-	<div class="panel-body"><h4 id="regex-compile-string-pattern-string-opt"><strong>Regex</strong> <code>compile(String pattern,String opt)</code></h4>
+<p><div class="panel panel-default">
+	<div class="panel-heading">escape</div>
+	<div class="panel-body"><h4 id="string-escape-string-str"><strong>String</strong> <code>escape(String str)</code></h4>
 
-<p>编译一个正则表达式模版，并返回正则表达式处理对象</p>
+<p>url 部件字符串安全编码</p>
 
 <h4 id="parameters">Parameters</h4>
 
 <ul>
-<li><p><code>pattern</code> 正则表达式</p></li>
-
-<li><p><code>opt</code> 规定匹配的类型。&rdquo;g&rdquo; 用于全局匹配，&rdquo;i&rdquo; 用于区分大小写，&rdquo;gi&rdquo; 用于全局区分大小写的匹配</p></li>
+<li><code>url</code> 要编码的 url</li>
 </ul>
 
 <h4 id="returns">Returns</h4>
 
-<p>返回正则表达式对象</p>
+<p>返回编码的字符串</p>
 </div>
 	
 </div>
 
+<div class="panel panel-default">
+	<div class="panel-heading">unescape</div>
+	<div class="panel-body"><h4 id="string-unescape-string-str"><strong>String</strong> <code>unescape(String str)</code></h4>
+
+<p>url 安全字符串解码</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><code>url</code> 要解码的 url</li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回解码的字符串</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">parse</div>
+	<div class="panel-body"><h4 id="httpcollection-parse-string-str-string-sep-string-eq-object-opt"><strong>HttpCollection</strong> <code>parse(String str,String sep,String eq,Object opt)</code></h4>
+
+<p>解析 query 字符串</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><p><code>str</code> 要解析的字符串</p></li>
+
+<li><p><code>sep</code> 解析时使用的分割字符串，缺省为 &amp;</p></li>
+
+<li><p><code>eq</code> 解析时使用的赋值字符串，缺省为 =</p></li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回解码的对象</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">stringify</div>
+	<div class="panel-body"><h4 id="string-stringify-object-obj-string-sep-string-eq-object-opt"><strong>String</strong> <code>stringify(Object obj,String sep,String eq,Object opt)</code></h4>
+
+<p>序列化一个对象为 query 字符串</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><p><code>obj</code> 要序列化的对象</p></li>
+
+<li><p><code>sep</code> 序列化时使用的分割字符串，缺省为 &amp;</p></li>
+
+<li><p><code>eq</code> 序列化时使用的赋值字符串，缺省为 =</p></li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回序列化后的字符串</p>
+</div>
+	
+</div>
+</p>
 
 <style>
   td {
@@ -1561,17 +1644,6 @@
             
                 
                     
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
-                    
                     
                 
                 
@@ -1586,6 +1658,17 @@
                     
                         
                         
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
                     
                 
                 
@@ -1788,10 +1871,10 @@
 
 
         
-            <a class="nav nav-prev" href="/module/querystring/" title="querystring"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/module/profiler/" title="profiler"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/module/registry/" title="registry" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/module/re/" title="re" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

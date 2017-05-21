@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.20.7" />
-    <meta name="description" content="xml 处理模块">
+    <meta name="description" content="断言期望对象">
 
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>xml :: fibjs</title>
+    <title>Expect :: fibjs</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -29,7 +29,7 @@
     
 
   </head>
-  <body class="" data-url="/module/xml/">
+  <body class="" data-url="/object/expect/">
     
 <nav id="sidebar" class="">
   <div id="header-wrapper">
@@ -76,24 +76,18 @@
     
         <li data-nav-id="/modules/" class="dd-item 
          
-        parent
+        
         "
         >
             <a href="/modules/">
                 <span>Modules</span>
                 
                     
-                        <i class="fa fa-angle-down fa-lg category-icon"></i>
+                        <i class="fa fa-angle-right fa-lg category-icon"></i>
                     
                 
                 
             </a>
-            
-                
-                
-                
-                    
-                
             
             
             
@@ -941,7 +935,7 @@
     
     
         <li data-nav-id="/module/xml/" class="dd-item 
-        active 
+         
         
         "
         >
@@ -950,10 +944,6 @@
                 
                 
             </a>
-            
-                
-                
-                
             
             
             
@@ -1040,18 +1030,24 @@
     
         <li data-nav-id="/objects/" class="dd-item 
          
-        
+        parent
         "
         >
             <a href="/objects/">
                 <span>Objects</span>
                 
                     
-                        <i class="fa fa-angle-right fa-lg category-icon"></i>
+                        <i class="fa fa-angle-down fa-lg category-icon"></i>
                     
                 
                 
             </a>
+            
+                
+                
+                
+                    
+                
             
             
             
@@ -1107,7 +1103,7 @@
     
     
         <li data-nav-id="/object/expect/" class="dd-item 
-         
+        active 
         
         "
         >
@@ -1116,6 +1112,10 @@
                 
                 
             </a>
+            
+                
+                
+                
             
             
             
@@ -1165,7 +1165,7 @@
                   fibjs
                 </a>
                 
-                   / <a href='/modules/'>Modules</a> / <a href='/module/xml/'>xml</a>
+                   / <a href='/objects/'>Objects</a> / <a href='/object/expect/'>Expect</a>
                 
                 
             </div>
@@ -1190,13 +1190,34 @@
         
         <div id="body-inner">
           
-            <h1>xml</h1>
+            <h1>Expect</h1>
           
 
 
 
 
-<p>xml 处理模块</p>
+<pre><code class="language-js">class Expect : public object
+</code></pre>
+
+<p>断言期望对象</p>
+
+<p>Expect 对象为 assert 模块内部对象，用于实现 expect 风格断言，创建：</p>
+
+<pre><code class="language-js">var test = require(&quot;test&quot;);
+var obj = test.expect(exp);
+</code></pre>
+
+<p>或者直接引用：</p>
+
+<pre><code class="language-js">var expect = require(&quot;expect&quot;);
+var obj = expect(exp);
+</code></pre>
+
+<p>或者通过 test.setup 配置：</p>
+
+<pre><code class="language-js">require(&quot;test&quot;).setup();
+var obj = expect(exp);
+</code></pre>
 
 <h2 id="field-summary">Field Summary</h2>
 
@@ -1210,43 +1231,128 @@
 
 <tbody>
 <tr>
-<td>const</td>
-<td><code>public const ELEMENT_NODE</code><a href="#d8/dd3/namespacexml_1ab311752b8246c43e16053423d479c73a"><code>ELEMENT_NODE</code></a><code>ELEMENT_NODE</code><p>XmlNode 的 nodeType 属性常量，表示节点为 XmlElement 对象</p></td>
+<td>readonly Expect</td>
+<td><code>public readonly Expect to</code><a href="#dd/d7a/classExpect_1a4e211fec62704ffb2e78c235732157e6"><code>to</code></a><code>to</code><p>无任何修改，仅用于构建语义</p></td>
 </tr>
 
 <tr>
-<td>const</td>
-<td><code>public const ATTRIBUTE_NODE</code><a href="#d8/dd3/namespacexml_1afe14a5a6967d6768efe217f373647bf1"><code>ATTRIBUTE_NODE</code></a><code>ATTRIBUTE_NODE</code><p>XmlNode 的 nodeType 属性常量，表示节点为 XmlAttr 对象</p></td>
+<td>readonly Expect</td>
+<td><code>public readonly Expect be</code><a href="#dd/d7a/classExpect_1aa2896b5ae99886b5fce68ba05058e18f"><code>be</code></a><code>be</code><p>无任何修改，仅用于构建语义</p></td>
 </tr>
 
 <tr>
-<td>const</td>
-<td><code>public const TEXT_NODE</code><a href="#d8/dd3/namespacexml_1a4d199c62d6eebe73d90a5d1248935edb"><code>TEXT_NODE</code></a><code>TEXT_NODE</code><p>XmlNode 的 nodeType 属性常量，表示节点为 XmlText 对象</p></td>
+<td>readonly Expect</td>
+<td><code>public readonly Expect been</code><a href="#dd/d7a/classExpect_1a14299251d029a0cfc8bcef53c98c47f9"><code>been</code></a><code>been</code><p>无任何修改，仅用于构建语义</p></td>
 </tr>
 
 <tr>
-<td>const</td>
-<td><code>public const CDATA_SECTION_NODE</code><a href="#d8/dd3/namespacexml_1a51744426f0a0093feb84fa76ef0e0f99"><code>CDATA_SECTION_NODE</code></a><code>CDATA_SECTION_NODE</code><p>XmlNode 的 nodeType 属性常量，表示节点为 XmlCDATASection 对象</p></td>
+<td>readonly Expect</td>
+<td><code>public readonly Expect is</code><a href="#dd/d7a/classExpect_1a5c4eaa8bc0a75b697baacf1a761881ba"><code>is</code></a><code>is</code><p>无任何修改，仅用于构建语义</p></td>
 </tr>
 
 <tr>
-<td>const</td>
-<td><code>public const PROCESSING_INSTRUCTION_NODE</code><a href="#d8/dd3/namespacexml_1aa4834e4a22fdda71e99ac1e3a1cec09a"><code>PROCESSING_INSTRUCTION_NODE</code></a><code>PROCESSING_INSTRUCTION_NODE</code><p>XmlNode 的 nodeType 属性常量，表示节点为 XmlProcessingInstruction 对象</p></td>
+<td>readonly Expect</td>
+<td><code>public readonly Expect that</code><a href="#dd/d7a/classExpect_1a35480010d927aa457b70359fa41d4b33"><code>that</code></a><code>that</code><p>无任何修改，仅用于构建语义</p></td>
 </tr>
 
 <tr>
-<td>const</td>
-<td><code>public const COMMENT_NODE</code><a href="#d8/dd3/namespacexml_1afa6d78573a0ea1615b5e60a03bd217e4"><code>COMMENT_NODE</code></a><code>COMMENT_NODE</code><p>XmlNode 的 nodeType 属性常量，表示节点为 XmlComment 对象</p></td>
+<td>readonly Expect</td>
+<td><code>public readonly Expect and</code><a href="#dd/d7a/classExpect_1a477561addec2b0d9feb3ed003a622aa4"><code>and</code></a><code>and</code><p>无任何修改，仅用于构建语义</p></td>
 </tr>
 
 <tr>
-<td>const</td>
-<td><code>public const DOCUMENT_NODE</code><a href="#d8/dd3/namespacexml_1ac6530153d760a4819a51f0328797622a"><code>DOCUMENT_NODE</code></a><code>DOCUMENT_NODE</code><p>XmlNode 的 nodeType 属性常量，表示节点为 XmlDocument 对象</p></td>
+<td>readonly Expect</td>
+<td><code>public readonly Expect have</code><a href="#dd/d7a/classExpect_1abf30a5901c5cd7fb1a9f7d35420c07a2"><code>have</code></a><code>have</code><p>无任何修改，仅用于构建语义</p></td>
 </tr>
 
 <tr>
-<td>const</td>
-<td><code>public const DOCUMENT_TYPE_NODE</code><a href="#d8/dd3/namespacexml_1ade5a1368668d8f3f61c0c335c9b03509"><code>DOCUMENT_TYPE_NODE</code></a><code>DOCUMENT_TYPE_NODE</code><p>XmlNode 的 nodeType 属性常量，表示节点为 XmlDocumentType 对象</p></td>
+<td>readonly Expect</td>
+<td><code>public readonly Expect with</code><a href="#dd/d7a/classExpect_1a8f99dbedc53310d436ff867240460b6d"><code>with</code></a><code>with</code><p>无任何修改，仅用于构建语义</p></td>
+</tr>
+
+<tr>
+<td>readonly Expect</td>
+<td><code>public readonly Expect at</code><a href="#dd/d7a/classExpect_1af1a9af111c7d75aea76bae7a8127c55e"><code>at</code></a><code>at</code><p>无任何修改，仅用于构建语义</p></td>
+</tr>
+
+<tr>
+<td>readonly Expect</td>
+<td><code>public readonly Expect of</code><a href="#dd/d7a/classExpect_1a87b9425fa84dadc6b008cbff4988ec63"><code>of</code></a><code>of</code><p>无任何修改，仅用于构建语义</p></td>
+</tr>
+
+<tr>
+<td>readonly Expect</td>
+<td><code>public readonly Expect same</code><a href="#dd/d7a/classExpect_1a26edc025931583875ab49d56077d59bd"><code>same</code></a><code>same</code><p>无任何修改，仅用于构建语义</p></td>
+</tr>
+
+<tr>
+<td>readonly Expect</td>
+<td><code>public readonly Expect not</code><a href="#dd/d7a/classExpect_1aa18a68b7a171f5e222cb7da0f7978414"><code>not</code></a><code>not</code><p>取反当前比对</p></td>
+</tr>
+
+<tr>
+<td>readonly Expect</td>
+<td><code>public readonly Expect deep</code><a href="#dd/d7a/classExpect_1a3035232cdf5cd2c9c9773219aed627b1"><code>deep</code></a><code>deep</code><p>标记当前比对为深度比较</p></td>
+</tr>
+
+<tr>
+<td>readonly Boolean</td>
+<td><code>public readonly Boolean ok</code><a href="#dd/d7a/classExpect_1a883134539d614088308b32e8ec3e4782"><code>ok</code></a><code>ok</code><p>断言给定数值为真，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>readonly Boolean</td>
+<td><code>public readonly Boolean true</code><a href="#dd/d7a/classExpect_1aaad4e98d0e6f706cf8c331e89f4a1542"><code>true</code></a><code>true</code><p>断言给定数值为 Boolean 类型 true，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>readonly Boolean</td>
+<td><code>public readonly Boolean false</code><a href="#dd/d7a/classExpect_1ae56ec0fe55dba24bb29e995412f23aa9"><code>false</code></a><code>false</code><p>断言给定数值为 Boolean 类型 false，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>readonly Boolean</td>
+<td><code>public readonly Boolean null</code><a href="#dd/d7a/classExpect_1a748b25298cfcd7b14ae225fd293e078d"><code>null</code></a><code>null</code><p>断言给定数值为 null，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>readonly Boolean</td>
+<td><code>public readonly Boolean undefined</code><a href="#dd/d7a/classExpect_1a09c2d66511679a6a0db4fde9c990b417"><code>undefined</code></a><code>undefined</code><p>断言给定数值为 undefined，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>readonly Boolean</td>
+<td><code>public readonly Boolean function</code><a href="#dd/d7a/classExpect_1a56fee8d1a1afca7efde4840df6502913"><code>function</code></a><code>function</code><p>断言给定数值为函数，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>readonly Boolean</td>
+<td><code>public readonly Boolean object</code><a href="#dd/d7a/classExpect_1a6adad9cf5d338a5b75b1e4d1b665cdc8"><code>object</code></a><code>object</code><p>断言给定数值为对象，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>readonly Boolean</td>
+<td><code>public readonly Boolean array</code><a href="#dd/d7a/classExpect_1acde4d7cd6ad6d48edd984bf1c6849d1d"><code>array</code></a><code>array</code><p>断言给定数值为数组，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>readonly Boolean</td>
+<td><code>public readonly Boolean string</code><a href="#dd/d7a/classExpect_1a82d5903aca490a3a6c416b138cadc2f0"><code>string</code></a><code>string</code><p>断言给定数值为字符串，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>readonly Boolean</td>
+<td><code>public readonly Boolean number</code><a href="#dd/d7a/classExpect_1a72b6c7f69edf1e014f932f44cc2c44d0"><code>number</code></a><code>number</code><p>断言给定数值为数字，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>readonly Boolean</td>
+<td><code>public readonly Boolean boolean</code><a href="#dd/d7a/classExpect_1ad9fea5eb5bacb3840bedd40451df047d"><code>boolean</code></a><code>boolean</code><p>断言给定数值为 Boolean 类型，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>readonly Boolean</td>
+<td><code>public readonly Boolean exist</code><a href="#dd/d7a/classExpect_1ac4f92d399ab7f74970d0bbc709fded48"><code>exist</code></a><code>exist</code><p>断言给定数值存在，断言失败则抛出错误</p></td>
 </tr>
 </tbody>
 </table>
@@ -1263,23 +1369,93 @@
 
 <tbody>
 <tr>
-<td>XmlDocument new</td>
-<td><code>Document()</code><p>xml 文档对象，参见 XmlDocument 对象</p></td>
+<td>void</td>
+<td><code>a(String type)</code><p>断言给定数值为制定类型，断言失败则抛出错误</p></td>
 </tr>
 
 <tr>
-<td>XmlDocument</td>
-<td><code>parse(String source,String type)</code><p>解析 xml/html 文本，并创建 XmlDocument 对象，不支持多语种</p></td>
+<td>void</td>
+<td><code>an(String type)</code><p>断言给定数值为制定类型，断言失败则抛出错误</p></td>
 </tr>
 
 <tr>
-<td>XmlDocument</td>
-<td><code>parse(Buffer source,String type)</code><p>解析 xml/html，并创建 XmlDocument 对象，解析时会根据指定的语种转换</p></td>
+<td>void</td>
+<td><code>equal(Value expected)</code><p>断言给定数值严格等于预期的数值，若标记 deep 则深度比较，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><code>eql(Value expected)</code><p>断言给定数值严格等于预期的数值，若标记 deep 则深度比较，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><code>above(Value expected)</code><p>断言给定数值大于预期的数值，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><code>greaterThan(Value expected)</code><p>断言给定数值大于预期的数值，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><code>least(Value expected)</code><p>断言给定数值最小为预期的数值，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><code>below(Value expected)</code><p>断言给定数值小于预期的数值，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><code>lessThan(Value expected)</code><p>断言给定数值小于预期的数值，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><code>most(Value expected)</code><p>断言给定数值最大为预期的数值，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><code>property(Value prop)</code><p>断言给定数值包含指定属性，标记 deep 则深度比较，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><code>property(Value prop,Value value)</code><p>断言给定数值指定属性的值为给定值，标记 deep 则深度比较，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><code>closeTo(Value expected,Value delta)</code><p>测试数值近似等于预期值，断言失败则抛出错误</p></td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><code>dispose()</code><p>强制回收对象，调用此方法后，对象资源将立即释放</p></td>
+</tr>
+
+<tr>
+<td>Boolean</td>
+<td><code>equals(object expected)</code><p>比较当前对象与给定的对象是否相等</p></td>
 </tr>
 
 <tr>
 <td>String</td>
-<td><code>serialize(XmlNode node)</code><p>序列化 XmlNode 为字符串</p></td>
+<td><code>toString()</code><p>返回对象的字符串表示，一般返回 &ldquo;[Native Object]&ldquo;，对象可以根据自己的特性重新实现</p></td>
+</tr>
+
+<tr>
+<td>Value</td>
+<td><code>toJSON(String key)</code><p>返回对象的 JSON 格式表示，一般返回对象定义的可读属性集合</p></td>
+</tr>
+
+<tr>
+<td>Value</td>
+<td><code>valueOf()</code><p>返回对象本身的数值</p></td>
 </tr>
 </tbody>
 </table>
@@ -1287,73 +1463,278 @@
 <h2 id="field-detail">Field Detail</h2>
 
 <p><div class="panel panel-default">
-	<div class="panel-heading">ELEMENT_NODE</div>
-	<div class="panel-body"><h4 id="const-public-const-element-node-element-node-d8-dd3-namespacexml-1ab311752b8246c43e16053423d479c73a-element-node"><strong>const</strong> <code>public const ELEMENT_NODE</code><a href="#d8/dd3/namespacexml_1ab311752b8246c43e16053423d479c73a"><code>ELEMENT_NODE</code></a><code>ELEMENT_NODE</code></h4>
+	<div class="panel-heading">to</div>
+	<div class="panel-body"><h4 id="readonly-expect-public-readonly-expect-to-to-dd-d7a-classexpect-1a4e211fec62704ffb2e78c235732157e6-to"><strong>readonly Expect</strong> <code>public readonly Expect to</code><a href="#dd/d7a/classExpect_1a4e211fec62704ffb2e78c235732157e6"><code>to</code></a><code>to</code></h4>
 
-<p>XmlNode 的 nodeType 属性常量，表示节点为 XmlElement 对象</p>
+<p>无任何修改，仅用于构建语义</p>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回对象本身</p>
 </div>
 	
 </div>
 
 <div class="panel panel-default">
-	<div class="panel-heading">ATTRIBUTE_NODE</div>
-	<div class="panel-body"><h4 id="const-public-const-attribute-node-attribute-node-d8-dd3-namespacexml-1afe14a5a6967d6768efe217f373647bf1-attribute-node"><strong>const</strong> <code>public const ATTRIBUTE_NODE</code><a href="#d8/dd3/namespacexml_1afe14a5a6967d6768efe217f373647bf1"><code>ATTRIBUTE_NODE</code></a><code>ATTRIBUTE_NODE</code></h4>
+	<div class="panel-heading">be</div>
+	<div class="panel-body"><h4 id="readonly-expect-public-readonly-expect-be-be-dd-d7a-classexpect-1aa2896b5ae99886b5fce68ba05058e18f-be"><strong>readonly Expect</strong> <code>public readonly Expect be</code><a href="#dd/d7a/classExpect_1aa2896b5ae99886b5fce68ba05058e18f"><code>be</code></a><code>be</code></h4>
 
-<p>XmlNode 的 nodeType 属性常量，表示节点为 XmlAttr 对象</p>
+<p>无任何修改，仅用于构建语义</p>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回对象本身</p>
 </div>
 	
 </div>
 
 <div class="panel panel-default">
-	<div class="panel-heading">TEXT_NODE</div>
-	<div class="panel-body"><h4 id="const-public-const-text-node-text-node-d8-dd3-namespacexml-1a4d199c62d6eebe73d90a5d1248935edb-text-node"><strong>const</strong> <code>public const TEXT_NODE</code><a href="#d8/dd3/namespacexml_1a4d199c62d6eebe73d90a5d1248935edb"><code>TEXT_NODE</code></a><code>TEXT_NODE</code></h4>
+	<div class="panel-heading">been</div>
+	<div class="panel-body"><h4 id="readonly-expect-public-readonly-expect-been-been-dd-d7a-classexpect-1a14299251d029a0cfc8bcef53c98c47f9-been"><strong>readonly Expect</strong> <code>public readonly Expect been</code><a href="#dd/d7a/classExpect_1a14299251d029a0cfc8bcef53c98c47f9"><code>been</code></a><code>been</code></h4>
 
-<p>XmlNode 的 nodeType 属性常量，表示节点为 XmlText 对象</p>
+<p>无任何修改，仅用于构建语义</p>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回对象本身</p>
 </div>
 	
 </div>
 
 <div class="panel panel-default">
-	<div class="panel-heading">CDATA_SECTION_NODE</div>
-	<div class="panel-body"><h4 id="const-public-const-cdata-section-node-cdata-section-node-d8-dd3-namespacexml-1a51744426f0a0093feb84fa76ef0e0f99-cdata-section-node"><strong>const</strong> <code>public const CDATA_SECTION_NODE</code><a href="#d8/dd3/namespacexml_1a51744426f0a0093feb84fa76ef0e0f99"><code>CDATA_SECTION_NODE</code></a><code>CDATA_SECTION_NODE</code></h4>
+	<div class="panel-heading">is</div>
+	<div class="panel-body"><h4 id="readonly-expect-public-readonly-expect-is-is-dd-d7a-classexpect-1a5c4eaa8bc0a75b697baacf1a761881ba-is"><strong>readonly Expect</strong> <code>public readonly Expect is</code><a href="#dd/d7a/classExpect_1a5c4eaa8bc0a75b697baacf1a761881ba"><code>is</code></a><code>is</code></h4>
 
-<p>XmlNode 的 nodeType 属性常量，表示节点为 XmlCDATASection 对象</p>
+<p>无任何修改，仅用于构建语义</p>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回对象本身</p>
 </div>
 	
 </div>
 
 <div class="panel panel-default">
-	<div class="panel-heading">PROCESSING_INSTRUCTION_NODE</div>
-	<div class="panel-body"><h4 id="const-public-const-processing-instruction-node-processing-instruction-node-d8-dd3-namespacexml-1aa4834e4a22fdda71e99ac1e3a1cec09a-processing-instruction-node"><strong>const</strong> <code>public const PROCESSING_INSTRUCTION_NODE</code><a href="#d8/dd3/namespacexml_1aa4834e4a22fdda71e99ac1e3a1cec09a"><code>PROCESSING_INSTRUCTION_NODE</code></a><code>PROCESSING_INSTRUCTION_NODE</code></h4>
+	<div class="panel-heading">that</div>
+	<div class="panel-body"><h4 id="readonly-expect-public-readonly-expect-that-that-dd-d7a-classexpect-1a35480010d927aa457b70359fa41d4b33-that"><strong>readonly Expect</strong> <code>public readonly Expect that</code><a href="#dd/d7a/classExpect_1a35480010d927aa457b70359fa41d4b33"><code>that</code></a><code>that</code></h4>
 
-<p>XmlNode 的 nodeType 属性常量，表示节点为 XmlProcessingInstruction 对象</p>
+<p>无任何修改，仅用于构建语义</p>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回对象本身</p>
 </div>
 	
 </div>
 
 <div class="panel panel-default">
-	<div class="panel-heading">COMMENT_NODE</div>
-	<div class="panel-body"><h4 id="const-public-const-comment-node-comment-node-d8-dd3-namespacexml-1afa6d78573a0ea1615b5e60a03bd217e4-comment-node"><strong>const</strong> <code>public const COMMENT_NODE</code><a href="#d8/dd3/namespacexml_1afa6d78573a0ea1615b5e60a03bd217e4"><code>COMMENT_NODE</code></a><code>COMMENT_NODE</code></h4>
+	<div class="panel-heading">and</div>
+	<div class="panel-body"><h4 id="readonly-expect-public-readonly-expect-and-and-dd-d7a-classexpect-1a477561addec2b0d9feb3ed003a622aa4-and"><strong>readonly Expect</strong> <code>public readonly Expect and</code><a href="#dd/d7a/classExpect_1a477561addec2b0d9feb3ed003a622aa4"><code>and</code></a><code>and</code></h4>
 
-<p>XmlNode 的 nodeType 属性常量，表示节点为 XmlComment 对象</p>
+<p>无任何修改，仅用于构建语义</p>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回对象本身</p>
 </div>
 	
 </div>
 
 <div class="panel panel-default">
-	<div class="panel-heading">DOCUMENT_NODE</div>
-	<div class="panel-body"><h4 id="const-public-const-document-node-document-node-d8-dd3-namespacexml-1ac6530153d760a4819a51f0328797622a-document-node"><strong>const</strong> <code>public const DOCUMENT_NODE</code><a href="#d8/dd3/namespacexml_1ac6530153d760a4819a51f0328797622a"><code>DOCUMENT_NODE</code></a><code>DOCUMENT_NODE</code></h4>
+	<div class="panel-heading">have</div>
+	<div class="panel-body"><h4 id="readonly-expect-public-readonly-expect-have-have-dd-d7a-classexpect-1abf30a5901c5cd7fb1a9f7d35420c07a2-have"><strong>readonly Expect</strong> <code>public readonly Expect have</code><a href="#dd/d7a/classExpect_1abf30a5901c5cd7fb1a9f7d35420c07a2"><code>have</code></a><code>have</code></h4>
 
-<p>XmlNode 的 nodeType 属性常量，表示节点为 XmlDocument 对象</p>
+<p>无任何修改，仅用于构建语义</p>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回对象本身</p>
 </div>
 	
 </div>
 
 <div class="panel panel-default">
-	<div class="panel-heading">DOCUMENT_TYPE_NODE</div>
-	<div class="panel-body"><h4 id="const-public-const-document-type-node-document-type-node-d8-dd3-namespacexml-1ade5a1368668d8f3f61c0c335c9b03509-document-type-node"><strong>const</strong> <code>public const DOCUMENT_TYPE_NODE</code><a href="#d8/dd3/namespacexml_1ade5a1368668d8f3f61c0c335c9b03509"><code>DOCUMENT_TYPE_NODE</code></a><code>DOCUMENT_TYPE_NODE</code></h4>
+	<div class="panel-heading">with</div>
+	<div class="panel-body"><h4 id="readonly-expect-public-readonly-expect-with-with-dd-d7a-classexpect-1a8f99dbedc53310d436ff867240460b6d-with"><strong>readonly Expect</strong> <code>public readonly Expect with</code><a href="#dd/d7a/classExpect_1a8f99dbedc53310d436ff867240460b6d"><code>with</code></a><code>with</code></h4>
 
-<p>XmlNode 的 nodeType 属性常量，表示节点为 XmlDocumentType 对象</p>
+<p>无任何修改，仅用于构建语义</p>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回对象本身</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">at</div>
+	<div class="panel-body"><h4 id="readonly-expect-public-readonly-expect-at-at-dd-d7a-classexpect-1af1a9af111c7d75aea76bae7a8127c55e-at"><strong>readonly Expect</strong> <code>public readonly Expect at</code><a href="#dd/d7a/classExpect_1af1a9af111c7d75aea76bae7a8127c55e"><code>at</code></a><code>at</code></h4>
+
+<p>无任何修改，仅用于构建语义</p>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回对象本身</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">of</div>
+	<div class="panel-body"><h4 id="readonly-expect-public-readonly-expect-of-of-dd-d7a-classexpect-1a87b9425fa84dadc6b008cbff4988ec63-of"><strong>readonly Expect</strong> <code>public readonly Expect of</code><a href="#dd/d7a/classExpect_1a87b9425fa84dadc6b008cbff4988ec63"><code>of</code></a><code>of</code></h4>
+
+<p>无任何修改，仅用于构建语义</p>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回对象本身</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">same</div>
+	<div class="panel-body"><h4 id="readonly-expect-public-readonly-expect-same-same-dd-d7a-classexpect-1a26edc025931583875ab49d56077d59bd-same"><strong>readonly Expect</strong> <code>public readonly Expect same</code><a href="#dd/d7a/classExpect_1a26edc025931583875ab49d56077d59bd"><code>same</code></a><code>same</code></h4>
+
+<p>无任何修改，仅用于构建语义</p>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回对象本身</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">not</div>
+	<div class="panel-body"><h4 id="readonly-expect-public-readonly-expect-not-not-dd-d7a-classexpect-1aa18a68b7a171f5e222cb7da0f7978414-not"><strong>readonly Expect</strong> <code>public readonly Expect not</code><a href="#dd/d7a/classExpect_1aa18a68b7a171f5e222cb7da0f7978414"><code>not</code></a><code>not</code></h4>
+
+<p>取反当前比对</p>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回对象本身</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">deep</div>
+	<div class="panel-body"><h4 id="readonly-expect-public-readonly-expect-deep-deep-dd-d7a-classexpect-1a3035232cdf5cd2c9c9773219aed627b1-deep"><strong>readonly Expect</strong> <code>public readonly Expect deep</code><a href="#dd/d7a/classExpect_1a3035232cdf5cd2c9c9773219aed627b1"><code>deep</code></a><code>deep</code></h4>
+
+<p>标记当前比对为深度比较</p>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回对象本身</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">ok</div>
+	<div class="panel-body"><h4 id="readonly-boolean-public-readonly-boolean-ok-ok-dd-d7a-classexpect-1a883134539d614088308b32e8ec3e4782-ok"><strong>readonly Boolean</strong> <code>public readonly Boolean ok</code><a href="#dd/d7a/classExpect_1a883134539d614088308b32e8ec3e4782"><code>ok</code></a><code>ok</code></h4>
+
+<p>断言给定数值为真，断言失败则抛出错误</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">true</div>
+	<div class="panel-body"><h4 id="readonly-boolean-public-readonly-boolean-true-true-dd-d7a-classexpect-1aaad4e98d0e6f706cf8c331e89f4a1542-true"><strong>readonly Boolean</strong> <code>public readonly Boolean true</code><a href="#dd/d7a/classExpect_1aaad4e98d0e6f706cf8c331e89f4a1542"><code>true</code></a><code>true</code></h4>
+
+<p>断言给定数值为 Boolean 类型 true，断言失败则抛出错误</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">false</div>
+	<div class="panel-body"><h4 id="readonly-boolean-public-readonly-boolean-false-false-dd-d7a-classexpect-1ae56ec0fe55dba24bb29e995412f23aa9-false"><strong>readonly Boolean</strong> <code>public readonly Boolean false</code><a href="#dd/d7a/classExpect_1ae56ec0fe55dba24bb29e995412f23aa9"><code>false</code></a><code>false</code></h4>
+
+<p>断言给定数值为 Boolean 类型 false，断言失败则抛出错误</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">null</div>
+	<div class="panel-body"><h4 id="readonly-boolean-public-readonly-boolean-null-null-dd-d7a-classexpect-1a748b25298cfcd7b14ae225fd293e078d-null"><strong>readonly Boolean</strong> <code>public readonly Boolean null</code><a href="#dd/d7a/classExpect_1a748b25298cfcd7b14ae225fd293e078d"><code>null</code></a><code>null</code></h4>
+
+<p>断言给定数值为 null，断言失败则抛出错误</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">undefined</div>
+	<div class="panel-body"><h4 id="readonly-boolean-public-readonly-boolean-undefined-undefined-dd-d7a-classexpect-1a09c2d66511679a6a0db4fde9c990b417-undefined"><strong>readonly Boolean</strong> <code>public readonly Boolean undefined</code><a href="#dd/d7a/classExpect_1a09c2d66511679a6a0db4fde9c990b417"><code>undefined</code></a><code>undefined</code></h4>
+
+<p>断言给定数值为 undefined，断言失败则抛出错误</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">function</div>
+	<div class="panel-body"><h4 id="readonly-boolean-public-readonly-boolean-function-function-dd-d7a-classexpect-1a56fee8d1a1afca7efde4840df6502913-function"><strong>readonly Boolean</strong> <code>public readonly Boolean function</code><a href="#dd/d7a/classExpect_1a56fee8d1a1afca7efde4840df6502913"><code>function</code></a><code>function</code></h4>
+
+<p>断言给定数值为函数，断言失败则抛出错误</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">object</div>
+	<div class="panel-body"><h4 id="readonly-boolean-public-readonly-boolean-object-object-dd-d7a-classexpect-1a6adad9cf5d338a5b75b1e4d1b665cdc8-object"><strong>readonly Boolean</strong> <code>public readonly Boolean object</code><a href="#dd/d7a/classExpect_1a6adad9cf5d338a5b75b1e4d1b665cdc8"><code>object</code></a><code>object</code></h4>
+
+<p>断言给定数值为对象，断言失败则抛出错误</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">array</div>
+	<div class="panel-body"><h4 id="readonly-boolean-public-readonly-boolean-array-array-dd-d7a-classexpect-1acde4d7cd6ad6d48edd984bf1c6849d1d-array"><strong>readonly Boolean</strong> <code>public readonly Boolean array</code><a href="#dd/d7a/classExpect_1acde4d7cd6ad6d48edd984bf1c6849d1d"><code>array</code></a><code>array</code></h4>
+
+<p>断言给定数值为数组，断言失败则抛出错误</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">string</div>
+	<div class="panel-body"><h4 id="readonly-boolean-public-readonly-boolean-string-string-dd-d7a-classexpect-1a82d5903aca490a3a6c416b138cadc2f0-string"><strong>readonly Boolean</strong> <code>public readonly Boolean string</code><a href="#dd/d7a/classExpect_1a82d5903aca490a3a6c416b138cadc2f0"><code>string</code></a><code>string</code></h4>
+
+<p>断言给定数值为字符串，断言失败则抛出错误</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">number</div>
+	<div class="panel-body"><h4 id="readonly-boolean-public-readonly-boolean-number-number-dd-d7a-classexpect-1a72b6c7f69edf1e014f932f44cc2c44d0-number"><strong>readonly Boolean</strong> <code>public readonly Boolean number</code><a href="#dd/d7a/classExpect_1a72b6c7f69edf1e014f932f44cc2c44d0"><code>number</code></a><code>number</code></h4>
+
+<p>断言给定数值为数字，断言失败则抛出错误</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">boolean</div>
+	<div class="panel-body"><h4 id="readonly-boolean-public-readonly-boolean-boolean-boolean-dd-d7a-classexpect-1ad9fea5eb5bacb3840bedd40451df047d-boolean"><strong>readonly Boolean</strong> <code>public readonly Boolean boolean</code><a href="#dd/d7a/classExpect_1ad9fea5eb5bacb3840bedd40451df047d"><code>boolean</code></a><code>boolean</code></h4>
+
+<p>断言给定数值为 Boolean 类型，断言失败则抛出错误</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">exist</div>
+	<div class="panel-body"><h4 id="readonly-boolean-public-readonly-boolean-exist-exist-dd-d7a-classexpect-1ac4f92d399ab7f74970d0bbc709fded48-exist"><strong>readonly Boolean</strong> <code>public readonly Boolean exist</code><a href="#dd/d7a/classExpect_1ac4f92d399ab7f74970d0bbc709fded48"><code>exist</code></a><code>exist</code></h4>
+
+<p>断言给定数值存在，断言失败则抛出错误</p>
 </div>
 	
 </div>
@@ -1362,71 +1743,273 @@
 <h2 id="method-detail">Method Detail</h2>
 
 <p><div class="panel panel-default">
-	<div class="panel-heading">Document</div>
-	<div class="panel-body"><h4 id="xmldocument-new-document"><strong>XmlDocument new</strong> <code>Document()</code></h4>
+	<div class="panel-heading">a</div>
+	<div class="panel-body"><h4 id="void-a-string-type"><strong>void</strong> <code>a(String type)</code></h4>
 
-<p>xml 文档对象，参见 XmlDocument 对象</p>
+<p>断言给定数值为制定类型，断言失败则抛出错误</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><code>type</code> 指定断言的数据类型字符串</li>
+</ul>
 </div>
 	
 </div>
 
 <div class="panel panel-default">
-	<div class="panel-heading">parse</div>
-	<div class="panel-body"><h4 id="xmldocument-parse-string-source-string-type"><strong>XmlDocument</strong> <code>parse(String source,String type)</code></h4>
+	<div class="panel-heading">an</div>
+	<div class="panel-body"><h4 id="void-an-string-type"><strong>void</strong> <code>an(String type)</code></h4>
 
-<p>解析 xml/html 文本，并创建 XmlDocument 对象，不支持多语种</p>
+<p>断言给定数值为制定类型，断言失败则抛出错误</p>
 
 <h4 id="parameters">Parameters</h4>
 
 <ul>
-<li><p><code>source</code> 指定需要解析的 xml/html 文本</p></li>
-
-<li><p><code>type</code> 指定文本类型，缺省为 text/xml，也可指定为 text/html</p></li>
+<li><code>type</code> 指定断言的数据类型字符串</li>
 </ul>
-
-<h4 id="returns">Returns</h4>
-
-<p>返回创建的 XmlDocument 对象</p>
 </div>
 	
 </div>
 
 <div class="panel panel-default">
-	<div class="panel-heading">parse</div>
-	<div class="panel-body"><h4 id="xmldocument-parse-buffer-source-string-type"><strong>XmlDocument</strong> <code>parse(Buffer source,String type)</code></h4>
+	<div class="panel-heading">equal</div>
+	<div class="panel-body"><h4 id="void-equal-value-expected"><strong>void</strong> <code>equal(Value expected)</code></h4>
 
-<p>解析 xml/html，并创建 XmlDocument 对象，解析时会根据指定的语种转换</p>
+<p>断言给定数值严格等于预期的数值，若标记 deep 则深度比较，断言失败则抛出错误</p>
 
 <h4 id="parameters">Parameters</h4>
 
 <ul>
-<li><p><code>source</code> 指定需要解析的 xml/html 二进制数据</p></li>
-
-<li><p><code>type</code> 指定文本类型，缺省为 text/xml，也可指定为 text/html</p></li>
+<li><code>expected</code> 预期的数值</li>
 </ul>
-
-<h4 id="returns">Returns</h4>
-
-<p>返回创建的 XmlDocument 对象</p>
 </div>
 	
 </div>
 
 <div class="panel panel-default">
-	<div class="panel-heading">serialize</div>
-	<div class="panel-body"><h4 id="string-serialize-xmlnode-node"><strong>String</strong> <code>serialize(XmlNode node)</code></h4>
+	<div class="panel-heading">eql</div>
+	<div class="panel-body"><h4 id="void-eql-value-expected"><strong>void</strong> <code>eql(Value expected)</code></h4>
 
-<p>序列化 XmlNode 为字符串</p>
+<p>断言给定数值严格等于预期的数值，若标记 deep 则深度比较，断言失败则抛出错误</p>
 
 <h4 id="parameters">Parameters</h4>
 
 <ul>
-<li><code>node</code> 指定需要序列化的 XmlNode</li>
+<li><code>expected</code> 预期的数值</li>
+</ul>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">above</div>
+	<div class="panel-body"><h4 id="void-above-value-expected"><strong>void</strong> <code>above(Value expected)</code></h4>
+
+<p>断言给定数值大于预期的数值，断言失败则抛出错误</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><code>expected</code> 预期的数值</li>
+</ul>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">greaterThan</div>
+	<div class="panel-body"><h4 id="void-greaterthan-value-expected"><strong>void</strong> <code>greaterThan(Value expected)</code></h4>
+
+<p>断言给定数值大于预期的数值，断言失败则抛出错误</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><code>expected</code> 预期的数值</li>
+</ul>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">least</div>
+	<div class="panel-body"><h4 id="void-least-value-expected"><strong>void</strong> <code>least(Value expected)</code></h4>
+
+<p>断言给定数值最小为预期的数值，断言失败则抛出错误</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><code>expected</code> 预期的数值</li>
+</ul>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">below</div>
+	<div class="panel-body"><h4 id="void-below-value-expected"><strong>void</strong> <code>below(Value expected)</code></h4>
+
+<p>断言给定数值小于预期的数值，断言失败则抛出错误</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><code>expected</code> 预期的数值</li>
+</ul>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">lessThan</div>
+	<div class="panel-body"><h4 id="void-lessthan-value-expected"><strong>void</strong> <code>lessThan(Value expected)</code></h4>
+
+<p>断言给定数值小于预期的数值，断言失败则抛出错误</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><code>expected</code> 预期的数值</li>
+</ul>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">most</div>
+	<div class="panel-body"><h4 id="void-most-value-expected"><strong>void</strong> <code>most(Value expected)</code></h4>
+
+<p>断言给定数值最大为预期的数值，断言失败则抛出错误</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><code>expected</code> 预期的数值</li>
+</ul>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">property</div>
+	<div class="panel-body"><h4 id="void-property-value-prop"><strong>void</strong> <code>property(Value prop)</code></h4>
+
+<p>断言给定数值包含指定属性，标记 deep 则深度比较，断言失败则抛出错误</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><code>prop</code> 要测试的属性</li>
+</ul>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">property</div>
+	<div class="panel-body"><h4 id="void-property-value-prop-value-value"><strong>void</strong> <code>property(Value prop,Value value)</code></h4>
+
+<p>断言给定数值指定属性的值为给定值，标记 deep 则深度比较，断言失败则抛出错误</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><p><code>prop</code> 要测试的属性</p></li>
+
+<li><p><code>value</code> 给定的值</p></li>
+</ul>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">closeTo</div>
+	<div class="panel-body"><h4 id="void-closeto-value-expected-value-delta"><strong>void</strong> <code>closeTo(Value expected,Value delta)</code></h4>
+
+<p>测试数值近似等于预期值，断言失败则抛出错误</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><p><code>expected</code> 预期的数值</p></li>
+
+<li><p><code>delta</code> 近似的小数精度</p></li>
+</ul>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">dispose</div>
+	<div class="panel-body"><h4 id="void-dispose"><strong>void</strong> <code>dispose()</code></h4>
+
+<p>强制回收对象，调用此方法后，对象资源将立即释放</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">equals</div>
+	<div class="panel-body"><h4 id="boolean-equals-object-expected"><strong>Boolean</strong> <code>equals(object expected)</code></h4>
+
+<p>比较当前对象与给定的对象是否相等</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><code>expected</code> 制定比较的目标对象</li>
 </ul>
 
 <h4 id="returns">Returns</h4>
 
-<p>返回序列化的字符串</p>
+<p>返回对象比较的结果</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">toString</div>
+	<div class="panel-body"><h4 id="string-tostring"><strong>String</strong> <code>toString()</code></h4>
+
+<p>返回对象的字符串表示，一般返回 &ldquo;[Native Object]&ldquo;，对象可以根据自己的特性重新实现</p>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回对象的字符串表示</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">toJSON</div>
+	<div class="panel-body"><h4 id="value-tojson-string-key"><strong>Value</strong> <code>toJSON(String key)</code></h4>
+
+<p>返回对象的 JSON 格式表示，一般返回对象定义的可读属性集合</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><code>key</code> 未使用</li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回包含可 JSON 序列化的值</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">valueOf</div>
+	<div class="panel-body"><h4 id="value-valueof"><strong>Value</strong> <code>valueOf()</code></h4>
+
+<p>返回对象本身的数值</p>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回对象本身的数值</p>
 </div>
 	
 </div>
@@ -1887,7 +2470,6 @@
             
                 
                     
-                    
                 
                 
                 
@@ -1898,9 +2480,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1967,6 +2546,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1982,10 +2562,8 @@
 
 
         
-            <a class="nav nav-prev" href="/module/ws/" title="ws"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/object/buffer/" title="Buffer"> <i class="fa fa-chevron-left"></i></a>
         
-        
-            <a class="nav nav-next" href="/module/zip/" title="zip" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

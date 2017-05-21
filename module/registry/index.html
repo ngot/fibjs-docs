@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.20.7" />
-    <meta name="description" content="正则表达式处理模块">
+    <meta name="description" content="Windows 注册表访问模块 引用方式：">
 
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <title>re :: fibjs</title>
+    <title>registry :: fibjs</title>
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hybrid.css" rel="stylesheet">
@@ -29,7 +29,7 @@
     
 
   </head>
-  <body class="" data-url="/module/re/">
+  <body class="" data-url="/module/registry/">
     
 <nav id="sidebar" class="">
   <div id="header-wrapper">
@@ -699,7 +699,7 @@
     
     
         <li data-nav-id="/module/re/" class="dd-item 
-        active 
+         
         
         "
         >
@@ -708,10 +708,6 @@
                 
                 
             </a>
-            
-                
-                
-                
             
             
             
@@ -725,7 +721,7 @@
     
     
         <li data-nav-id="/module/registry/" class="dd-item 
-         
+        active 
         
         "
         >
@@ -734,6 +730,10 @@
                 
                 
             </a>
+            
+                
+                
+                
             
             
             
@@ -1165,7 +1165,7 @@
                   fibjs
                 </a>
                 
-                   / <a href='/modules/'>Modules</a> / <a href='/module/re/'>re</a>
+                   / <a href='/modules/'>Modules</a> / <a href='/module/registry/'>registry</a>
                 
                 
             </div>
@@ -1175,7 +1175,9 @@
 <ul>
 <li>
 <ul>
+<li><a href="#field-summary">Field Summary</a></li>
 <li><a href="#method-summary">Method Summary</a></li>
+<li><a href="#field-detail">Field Detail</a></li>
 <li><a href="#method-detail">Method Detail</a></li>
 </ul></li>
 </ul>
@@ -1188,13 +1190,75 @@
         
         <div id="body-inner">
           
-            <h1>re</h1>
+            <h1>registry</h1>
           
 
 
 
 
-<p>正则表达式处理模块</p>
+<p>Windows 注册表访问模块 引用方式：</p>
+
+<pre><code class="language-js">var registry = require('registry');
+var value = registry.get(registry.CLASSES_ROOT, &quot;\node1\node2\value&quot;);
+</code></pre>
+
+<h2 id="field-summary">Field Summary</h2>
+
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Method and Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>const</td>
+<td><code>public const CLASSES_ROOT</code><a href="#de/d1f/namespaceregistry_1a169064db623c1c7d0204b197f98a0486"><code>CLASSES_ROOT</code></a><code>CLASSES_ROOT</code><p>注册表根，存储Windows可识别的文件类型的详细列表，以及相关联的程序</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const CURRENT_USER</code><a href="#de/d1f/namespaceregistry_1a643771ab43dd2c5d8928cdcda2591187"><code>CURRENT_USER</code></a><code>CURRENT_USER</code><p>注册表根，存储当前用户设置的信息</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const LOCAL_MACHINE</code><a href="#de/d1f/namespaceregistry_1a4151273437253276232b77ac49add3a2"><code>LOCAL_MACHINE</code></a><code>LOCAL_MACHINE</code><p>注册表根，包括安装在计算机上的硬件和软件的信息</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const USERS</code><a href="#de/d1f/namespaceregistry_1a4962469ceb053f31ad137610e83863bf"><code>USERS</code></a><code>USERS</code><p>注册表根，包含使用计算机的用户的信息</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const CURRENT_CONFIG</code><a href="#de/d1f/namespaceregistry_1a3a98fe918f95011c757278e1a7ea6aaf"><code>CURRENT_CONFIG</code></a><code>CURRENT_CONFIG</code><p>注册表根，这个分支包含计算机当前的硬件配置信息</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const SZ</code><a href="#de/d1f/namespaceregistry_1a4f43a31a288aa96864578dc1dede5fe9"><code>SZ</code></a><code>SZ</code><p>注册表数据类型，字符串</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const EXPAND_SZ</code><a href="#de/d1f/namespaceregistry_1ab23e2e3ac7b22931578e1aff3ab037fe"><code>EXPAND_SZ</code></a><code>EXPAND_SZ</code><p>注册表数据类型，扩展字符串</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const DWORD</code><a href="#de/d1f/namespaceregistry_1ac52af98904b43315db870da1f75f03c4"><code>DWORD</code></a><code>DWORD</code><p>注册表数据类型，32 位数值</p></td>
+</tr>
+
+<tr>
+<td>const</td>
+<td><code>public const QWORD</code><a href="#de/d1f/namespaceregistry_1a290213ccdd98f1a63aadef76c5d49a85"><code>QWORD</code></a><code>QWORD</code><p>注册表数据类型，64 位数值</p></td>
+</tr>
+</tbody>
+</table>
 
 <h2 id="method-summary">Method Summary</h2>
 
@@ -1208,35 +1272,293 @@
 
 <tbody>
 <tr>
-<td>Regex</td>
-<td><code>compile(String pattern,String opt)</code><p>编译一个正则表达式模版，并返回正则表达式处理对象</p></td>
+<td>List</td>
+<td><code>listSubKey(Integer root,String key)</code><p>返回指定键值下的所有子健</p></td>
+</tr>
+
+<tr>
+<td>List</td>
+<td><code>listValue(Integer root,String key)</code><p>返回指定键值下的所有数据的健</p></td>
+</tr>
+
+<tr>
+<td>Value</td>
+<td><code>get(Integer root,String key)</code><p>查询指定键值的数值</p></td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><code>set(Integer root,String key,Number value,Integer type)</code><p>设置指定键值为数字</p></td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><code>set(Integer root,String key,String value,Integer type)</code><p>设置指定键值为字符串</p></td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><code>set(Integer root,String key,Array value)</code><p>设置指定键值为多字符串</p></td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><code>set(Integer root,String key,Buffer value)</code><p>设置指定键值为二进制</p></td>
+</tr>
+
+<tr>
+<td>void</td>
+<td><code>del(Integer root,String key)</code><p>删除指定键值的数值</p></td>
 </tr>
 </tbody>
 </table>
 
-<h2 id="method-detail">Method Detail</h2>
+<h2 id="field-detail">Field Detail</h2>
 
-<div class="panel panel-default">
-	<div class="panel-heading">compile</div>
-	<div class="panel-body"><h4 id="regex-compile-string-pattern-string-opt"><strong>Regex</strong> <code>compile(String pattern,String opt)</code></h4>
+<p><div class="panel panel-default">
+	<div class="panel-heading">CLASSES_ROOT</div>
+	<div class="panel-body"><h4 id="const-public-const-classes-root-classes-root-de-d1f-namespaceregistry-1a169064db623c1c7d0204b197f98a0486-classes-root"><strong>const</strong> <code>public const CLASSES_ROOT</code><a href="#de/d1f/namespaceregistry_1a169064db623c1c7d0204b197f98a0486"><code>CLASSES_ROOT</code></a><code>CLASSES_ROOT</code></h4>
 
-<p>编译一个正则表达式模版，并返回正则表达式处理对象</p>
-
-<h4 id="parameters">Parameters</h4>
-
-<ul>
-<li><p><code>pattern</code> 正则表达式</p></li>
-
-<li><p><code>opt</code> 规定匹配的类型。&rdquo;g&rdquo; 用于全局匹配，&rdquo;i&rdquo; 用于区分大小写，&rdquo;gi&rdquo; 用于全局区分大小写的匹配</p></li>
-</ul>
-
-<h4 id="returns">Returns</h4>
-
-<p>返回正则表达式对象</p>
+<p>注册表根，存储Windows可识别的文件类型的详细列表，以及相关联的程序</p>
 </div>
 	
 </div>
 
+<div class="panel panel-default">
+	<div class="panel-heading">CURRENT_USER</div>
+	<div class="panel-body"><h4 id="const-public-const-current-user-current-user-de-d1f-namespaceregistry-1a643771ab43dd2c5d8928cdcda2591187-current-user"><strong>const</strong> <code>public const CURRENT_USER</code><a href="#de/d1f/namespaceregistry_1a643771ab43dd2c5d8928cdcda2591187"><code>CURRENT_USER</code></a><code>CURRENT_USER</code></h4>
+
+<p>注册表根，存储当前用户设置的信息</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">LOCAL_MACHINE</div>
+	<div class="panel-body"><h4 id="const-public-const-local-machine-local-machine-de-d1f-namespaceregistry-1a4151273437253276232b77ac49add3a2-local-machine"><strong>const</strong> <code>public const LOCAL_MACHINE</code><a href="#de/d1f/namespaceregistry_1a4151273437253276232b77ac49add3a2"><code>LOCAL_MACHINE</code></a><code>LOCAL_MACHINE</code></h4>
+
+<p>注册表根，包括安装在计算机上的硬件和软件的信息</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">USERS</div>
+	<div class="panel-body"><h4 id="const-public-const-users-users-de-d1f-namespaceregistry-1a4962469ceb053f31ad137610e83863bf-users"><strong>const</strong> <code>public const USERS</code><a href="#de/d1f/namespaceregistry_1a4962469ceb053f31ad137610e83863bf"><code>USERS</code></a><code>USERS</code></h4>
+
+<p>注册表根，包含使用计算机的用户的信息</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">CURRENT_CONFIG</div>
+	<div class="panel-body"><h4 id="const-public-const-current-config-current-config-de-d1f-namespaceregistry-1a3a98fe918f95011c757278e1a7ea6aaf-current-config"><strong>const</strong> <code>public const CURRENT_CONFIG</code><a href="#de/d1f/namespaceregistry_1a3a98fe918f95011c757278e1a7ea6aaf"><code>CURRENT_CONFIG</code></a><code>CURRENT_CONFIG</code></h4>
+
+<p>注册表根，这个分支包含计算机当前的硬件配置信息</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">SZ</div>
+	<div class="panel-body"><h4 id="const-public-const-sz-sz-de-d1f-namespaceregistry-1a4f43a31a288aa96864578dc1dede5fe9-sz"><strong>const</strong> <code>public const SZ</code><a href="#de/d1f/namespaceregistry_1a4f43a31a288aa96864578dc1dede5fe9"><code>SZ</code></a><code>SZ</code></h4>
+
+<p>注册表数据类型，字符串</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">EXPAND_SZ</div>
+	<div class="panel-body"><h4 id="const-public-const-expand-sz-expand-sz-de-d1f-namespaceregistry-1ab23e2e3ac7b22931578e1aff3ab037fe-expand-sz"><strong>const</strong> <code>public const EXPAND_SZ</code><a href="#de/d1f/namespaceregistry_1ab23e2e3ac7b22931578e1aff3ab037fe"><code>EXPAND_SZ</code></a><code>EXPAND_SZ</code></h4>
+
+<p>注册表数据类型，扩展字符串</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">DWORD</div>
+	<div class="panel-body"><h4 id="const-public-const-dword-dword-de-d1f-namespaceregistry-1ac52af98904b43315db870da1f75f03c4-dword"><strong>const</strong> <code>public const DWORD</code><a href="#de/d1f/namespaceregistry_1ac52af98904b43315db870da1f75f03c4"><code>DWORD</code></a><code>DWORD</code></h4>
+
+<p>注册表数据类型，32 位数值</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">QWORD</div>
+	<div class="panel-body"><h4 id="const-public-const-qword-qword-de-d1f-namespaceregistry-1a290213ccdd98f1a63aadef76c5d49a85-qword"><strong>const</strong> <code>public const QWORD</code><a href="#de/d1f/namespaceregistry_1a290213ccdd98f1a63aadef76c5d49a85"><code>QWORD</code></a><code>QWORD</code></h4>
+
+<p>注册表数据类型，64 位数值</p>
+</div>
+	
+</div>
+</p>
+
+<h2 id="method-detail">Method Detail</h2>
+
+<p><div class="panel panel-default">
+	<div class="panel-heading">listSubKey</div>
+	<div class="panel-body"><h4 id="list-listsubkey-integer-root-string-key"><strong>List</strong> <code>listSubKey(Integer root,String key)</code></h4>
+
+<p>返回指定键值下的所有子健</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><p><code>root</code> 指定注册表根</p></li>
+
+<li><p><code>key</code> 指定键值</p></li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回该键值下所有子健</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">listValue</div>
+	<div class="panel-body"><h4 id="list-listvalue-integer-root-string-key"><strong>List</strong> <code>listValue(Integer root,String key)</code></h4>
+
+<p>返回指定键值下的所有数据的健</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><p><code>root</code> 指定注册表根</p></li>
+
+<li><p><code>key</code> 指定键值</p></li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回该键值下所有数据的健</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">get</div>
+	<div class="panel-body"><h4 id="value-get-integer-root-string-key"><strong>Value</strong> <code>get(Integer root,String key)</code></h4>
+
+<p>查询指定键值的数值</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><p><code>root</code> 指定注册表根</p></li>
+
+<li><p><code>key</code> 指定键值</p></li>
+</ul>
+
+<h4 id="returns">Returns</h4>
+
+<p>返回指定键值的数值</p>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">set</div>
+	<div class="panel-body"><h4 id="void-set-integer-root-string-key-number-value-integer-type"><strong>void</strong> <code>set(Integer root,String key,Number value,Integer type)</code></h4>
+
+<p>设置指定键值为数字</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><p><code>root</code> 指定注册表根</p></li>
+
+<li><p><code>key</code> 指定键值</p></li>
+
+<li><p><code>value</code> 指定数字</p></li>
+
+<li><p><code>type</code> 指定类型，允许的类型为 DWORD 和 QWORD，缺省为 DWORD</p></li>
+</ul>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">set</div>
+	<div class="panel-body"><h4 id="void-set-integer-root-string-key-string-value-integer-type"><strong>void</strong> <code>set(Integer root,String key,String value,Integer type)</code></h4>
+
+<p>设置指定键值为字符串</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><p><code>root</code> 指定注册表根</p></li>
+
+<li><p><code>key</code> 指定键值</p></li>
+
+<li><p><code>value</code> 指定字符串</p></li>
+
+<li><p><code>type</code> 指定类型，允许的类型为 SZ 和 EXPAND_SZ，缺省为 SZ</p></li>
+</ul>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">set</div>
+	<div class="panel-body"><h4 id="void-set-integer-root-string-key-array-value"><strong>void</strong> <code>set(Integer root,String key,Array value)</code></h4>
+
+<p>设置指定键值为多字符串</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><p><code>root</code> 指定注册表根</p></li>
+
+<li><p><code>key</code> 指定键值</p></li>
+
+<li><p><code>value</code> 指定多字符串数组</p></li>
+</ul>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">set</div>
+	<div class="panel-body"><h4 id="void-set-integer-root-string-key-buffer-value"><strong>void</strong> <code>set(Integer root,String key,Buffer value)</code></h4>
+
+<p>设置指定键值为二进制</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><p><code>root</code> 指定注册表根</p></li>
+
+<li><p><code>key</code> 指定键值</p></li>
+
+<li><p><code>value</code> 指定二进制数据</p></li>
+</ul>
+</div>
+	
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">del</div>
+	<div class="panel-body"><h4 id="void-del-integer-root-string-key"><strong>void</strong> <code>del(Integer root,String key)</code></h4>
+
+<p>删除指定键值的数值</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<ul>
+<li><p><code>root</code> 指定注册表根</p></li>
+
+<li><p><code>key</code> 指定键值</p></li>
+</ul>
+</div>
+	
+</div>
+</p>
 
 <style>
   td {
@@ -1572,6 +1894,17 @@
             
                 
                     
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
                     
                 
                 
@@ -1586,17 +1919,6 @@
                     
                         
                         
-                    
-                
-                
-                
-            
-        
-                
-                    
-            
-            
-                
                     
                 
                 
@@ -1788,10 +2110,10 @@
 
 
         
-            <a class="nav nav-prev" href="/module/querystring/" title="querystring"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/module/re/" title="re"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/module/registry/" title="registry" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/module/rpc/" title="rpc" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

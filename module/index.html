@@ -384,6 +384,28 @@
     
     
     
+        <li data-nav-id="/module/gui/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/gui/">
+                <span>gui</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/hash/" class="dd-item 
          
         
@@ -648,6 +670,28 @@
     
     
     
+        <li data-nav-id="/module/querystring/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/querystring/">
+                <span>querystring</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/re/" class="dd-item 
          
         
@@ -655,6 +699,50 @@
         >
             <a href="/module/re/">
                 <span>re</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/registry/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/registry/">
+                <span>registry</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/rpc/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/rpc/">
+                <span>rpc</span>
                 
                 
             </a>
@@ -699,6 +787,28 @@
         >
             <a href="/module/test/">
                 <span>test</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/url/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/url/">
+                <span>url</span>
                 
                 
             </a>
@@ -802,6 +912,28 @@
     
     
     
+        <li data-nav-id="/module/ws/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/ws/">
+                <span>ws</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/xml/" class="dd-item 
          
         
@@ -853,6 +985,28 @@
         >
             <a href="/module/zlib/">
                 <span>zlib</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zmq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zmq/">
+                <span>zmq</span>
                 
                 
             </a>
@@ -937,6 +1091,28 @@
     
 
                 
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/expect/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/expect/">
+                <span>Expect</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
                 </ul>
              
         </li>
@@ -1002,7 +1178,7 @@
 <div class="extra-pagination inner">
 <nav class="pagination" role="navigation">
 	
-	<span class="page-number">Page 1 on 4</span>
+	<span class="page-number">Page 1 on 5</span>
 	
 	    <a class="older-posts" href="/module/page/2/">Previous Pages &rarr;</a>
 	
@@ -1016,11 +1192,15 @@
         <h2 class="post-title"><a href="/module/assert/">assert</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Assertion test module, if testing result is false, you will get an error. The way of handling error can be set as continue or throw exception.
-how to use:
-var assert = require('assert');  or using testing unit:
-var test = require('test'); var assert = test.assert;  or you can use test.setup to set up test:
-require(&quot;test&quot;).setup();  Summary    Members Descriptions     public static staticok(Value actual,String msg) Return true when the testing result is ture, assertion failed when return false. <a class="read-more" href="/module/assert/">&raquo;</a></p>
+        <p>断言测试模块，如果测试值为假，则报错，报错行为可设定继续运行或者错误抛出
+引用方法：
+var assert = require('assert');  或者通过 test 模块引用：
+var test = require('test'); var assert = test.assert;  或者通过 test.setup 配置：
+require(&quot;test&quot;).setup();  Method Summary    Type Method and Description     void Function(Value actual,String msg)测试数值为真，为假则断言失败
+   void ok(Value actual,String msg)测试数值为真，为假则断言失败
+   void notOk(Value actual,String msg)测试数值为假，为真则断言失败
+   void equal(Value actual,Value expected,String msg)测试数值等于预期值，不相等则断言失败
+   void notEqual(Value actual,Value expected,String msg)测试数值不等于预期值，相等则断言失败 <a class="read-more" href="/module/assert/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1041,9 +1221,13 @@ require(&quot;test&quot;).setup();  Summary    Members Descriptions     public s
         <h2 class="post-title"><a href="/module/base32/">base32</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>base32 module with encode and decode operations. to use:
-var encoding = require('encoding'); var base32 = encoding.base32;  or:
-var base32 = require('base32');  Summary    Members Descriptions     public static Stringencode(Bufferdata) Encode buffer data to string with base32 format.   public staticBufferdecode(String data) Decode string to binary data with base32 format.    Members public static Stringencode(Bufferdata) Encode buffer data to string with base32 format. <a class="read-more" href="/module/base32/">&raquo;</a></p>
+        <p>base32 编码与解码模块 引用方式：
+var encoding = require('encoding'); var base32 = encoding.base32;  或者
+var base32 = require('base32');  Method Summary    Type Method and Description     String encode(Buffer data)以 base32 方式编码数据
+   Buffer decode(String data)以 base32 方式解码字符串为二进制数据
+    Method Detail encode String encode(Buffer data) 以 base32 方式编码数据
+Parameters  data 要编码的数据  Returns 返回编码的字符串
+  decode Buffer decode(String data) 以 base32 方式解码字符串为二进制数据 <a class="read-more" href="/module/base32/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1064,9 +1248,13 @@ var base32 = require('base32');  Summary    Members Descriptions     public stat
         <h2 class="post-title"><a href="/module/base64/">base64</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>base64 module with encode and decode operations. to use:
-var encoding = require('encoding'); var base64 = encoding.base64;  or:
-var base64 = require('base64');  Summary    Members Descriptions     public static Stringencode(Bufferdata) Encode buffer data to string with base64 format.   public staticBufferdecode(String data) Decode string to binary data with base64 format.    Members public static Stringencode(Bufferdata) Encode buffer data to string with base64 format. <a class="read-more" href="/module/base64/">&raquo;</a></p>
+        <p>base64 编码与解码模块 引用方式：
+var encoding = require('encoding'); var base64 = encoding.base64;  或者
+var base64 = require('base64');  Method Summary    Type Method and Description     String encode(Buffer data)以 base64 方式编码数据
+   Buffer decode(String data)以 base64 方式解码字符串为二进制数据
+    Method Detail encode String encode(Buffer data) 以 base64 方式编码数据
+Parameters  data 要编码的数据  Returns 返回编码的字符串
+  decode Buffer decode(String data) 以 base64 方式解码字符串为二进制数据 <a class="read-more" href="/module/base64/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1087,9 +1275,13 @@ var base64 = require('base64');  Summary    Members Descriptions     public stat
         <h2 class="post-title"><a href="/module/base64vlq/">base64vlq</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>base64vlq module with encode and decode operations. to use:
-var encoding = require('encoding'); var base64vlq = encoding.base64vlq;  or:
-var base64vlq = require('base64vlq');  Summary    Members Descriptions     public static Stringencode(Integer data) Encode int data to string with base64vlq format.   public static Stringencode(Array data) Encode array data to string with base64vlq format.   public static Arraydecode(String data) Decode string to binary data with base64vlq format. <a class="read-more" href="/module/base64vlq/">&raquo;</a></p>
+        <p>base64vlq 编码与解码模块 引用方式：
+var encoding = require('encoding'); var base64vlq = encoding.base64vlq;  或者
+var base64vlq = require('base64vlq');  Method Summary    Type Method and Description     String encode(Integer data)以 base64vlq 方式编码数据
+   String encode(Array data)以 base64vlq 方式编码数据
+   Array decode(String data)以 base64vlq 方式解码字符串为二进制数据
+    Method Detail encode String encode(Integer data) 以 base64vlq 方式编码数据
+Parameters  data 要编码的数据  Returns 返回编码的字符串 <a class="read-more" href="/module/base64vlq/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1110,9 +1302,13 @@ var base64vlq = require('base64vlq');  Summary    Members Descriptions     publi
         <h2 class="post-title"><a href="/module/bson/">bson</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>bson module with encode and decode operations. to use:
-var encoding = require('encoding'); var bson = encoding.bson;  or:
-var bson = require('bson');  Summary    Members Descriptions     public staticBufferencode(Object data) Encode object to binary data with bson format.   public static Objectdecode(Bufferdata) Decode binary data to object with bson format.    Members public staticBufferencode(Object data) Encode object to binary data with bson format. <a class="read-more" href="/module/bson/">&raquo;</a></p>
+        <p>bson 编码与解码模块 引用方式：
+var encoding = require('encoding'); var bson = encoding.bson;  或者
+var bson = require('bson');  Method Summary    Type Method and Description     Buffer encode(Object data)以 bson 格式编码变量
+   Object decode(Buffer data)以 bson 方式解码字符串为一个变量
+    Method Detail encode Buffer encode(Object data) 以 bson 格式编码变量
+Parameters  data 要编码的变量  Returns 返回编码的二进制数据
+  decode Object decode(Buffer data) 以 bson 方式解码字符串为一个变量 <a class="read-more" href="/module/bson/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1133,12 +1329,16 @@ var bson = require('bson');  Summary    Members Descriptions     public staticBu
         <h2 class="post-title"><a href="/module/console/">console</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>console module
-Global reference. Console can be used to log info, warnings and errors. Log can be trace on different device when initialized from config files for tracking. Console logs support formatted output, e.g.
-console.log(&quot;%d + %d = %d&quot;, 100, 200, 100 + 200);   s - string
- d - number, including initeger and numbers
- j - output in JSON
- %% - output &ldquo; character <a class="read-more" href="/module/console/">&raquo;</a></p>
+        <p>控制台访问对象
+全局对象。可用于提示信息，警告和错误记录。通过启动配置文件，可将日志定位 到不同的设备，以便于跟踪。日志支持格式化输出，例如：
+console.log(&quot;%d + %d = %d&quot;, 100, 200, 100 + 200);  可以使用的格式化参数如下：
+ s - 字符串
+ d - 数字，包括整数和数字
+ j - 以 JSON 格式输出对象
+ %% - 输出字符 &ldquo; 本身
+  Field Summary    Type Method and Description     const public const FATALFATALFATALloglevel 级别常量
+   const public const ALERTALERTALERTloglevel 级别常量
+   const public const CRITCRITCRITloglevel 级别常量 <a class="read-more" href="/module/console/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1159,9 +1359,14 @@ console.log(&quot;%d + %d = %d&quot;, 100, 200, 100 + 200);   s - string
         <h2 class="post-title"><a href="/module/coroutine/">coroutine</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Concurrency control module.
-The way to use: var coroutine = require(&lsquo;coroutine&rsquo;);
-Summary    Members Descriptions     public staticFiberstart(Function func,...) Start a fibers and return the fiber Object.   public static Arrayparallel(Array funcs,Integer fibers) Execute a set of functions parallel, and wait for the return.   public static Arrayparallel(Array datas,Function func,Integer fibers) Execute a function deal with a set of data parallel, and wait for the return. <a class="read-more" href="/module/coroutine/">&raquo;</a></p>
+        <p>并发控制模块
+引用方法：var coroutine = require(&lsquo;coroutine&rsquo;);
+Field Summary    Type Method and Description     void public static static LockLockLock锁对象，参见 Lock
+   void public static static SemaphoreSemaphoreSemaphore信号量对象，参见 Semaphore
+   void public static static ConditionConditionCondition条件变量对象，参见 Condition
+   void public static static EventEventEvent事件对象，参见 Event
+   void public static static BlockQueueBlockQueueBlockQueue阻塞队列对象，参见 BlockQueue
+   void public static static WorkerWorkerWorker独立线程工作对象，参见 Worker <a class="read-more" href="/module/coroutine/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1182,9 +1387,12 @@ Summary    Members Descriptions     public staticFiberstart(Function func,...) S
         <h2 class="post-title"><a href="/module/crypto/">crypto</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Encryption algorithm module.
-The way to use:
-var crypto = require('crypto');  Summary    Members Descriptions     public staticPKeyloadPKey(String filename,String password) Load a PEM/DER format key file.   public staticX509CertloadCert(String filename) Load a CRT/PEM/DER/TXT format certificate can be called multiple times.   public staticX509CrlloadCrl(String filename) Load a PEM/DER format revoked certificate can be called multiple times.   public staticX509ReqloadReq(String filename) Load a PEM/DER format requested certificate can be called multiple times. <a class="read-more" href="/module/crypto/">&raquo;</a></p>
+        <p>加密算法模块
+使用方法：
+var crypto = require('crypto');  Field Summary    Type Method and Description     const public const AESAESAES指定对称加密算法 AES，支持 128, 192, 256 位 key，分组密码工作模式支持 ECB, CBC, CFB128, CTR, GCM
+   const public const CAMELLIACAMELLIACAMELLIA指定对称加密算法 CAMELLIA，支持 128, 192, 256 位 key，分组密码工作模式支持 ECB, CBC, CFB128, CTR, GCM
+   const public const DESDESDES指定对称加密算法 DES，支持 64 位 key，分组密码工作模式支持 ECB, CBC
+   const public const DES_EDEDES_EDEDES_EDE指定对称加密算法 DES-EDE，支持 128 位 key，分组密码工作模式支持 ECB, CBC <a class="read-more" href="/module/crypto/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1205,9 +1413,15 @@ var crypto = require('crypto');  Summary    Members Descriptions     public stat
         <h2 class="post-title"><a href="/module/db/">db</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>Database access module.
-Basic module for create database and database operation, The way to use::
-var db = require('db');  Summary    Members Descriptions     public staticobjectopen(String connString) This method offer a general entrance to open a database, call different engines according to the providing connString.   public staticMySQLopenMySQL(String connString) Open a mysql database.   public staticSQLiteopenSQLite(String connString) Open a sqlite database.   public staticMongoDBopenMongoDB(String connString) Open a mongodb database. <a class="read-more" href="/module/db/">&raquo;</a></p>
+        <p>数据库访问模块
+基础模块。可用于创建和操作数据库资源，引用方式：
+var db = require('db');  Method Summary    Type Method and Description     object open(String connString)打开一个数据库，此方法为通用入口，根据提供的 connString 不同调用不同的引擎
+   MySQL openMySQL(String connString)打开一个 mysql 数据库
+   MSSQL openMSSQL(String connString)打开一个 mysql 数据库
+   SQLite openSQLite(String connString)打开一个 sqlite 数据库
+   MongoDB openMongoDB(String connString)打开一个 mongodb 数据库
+   LevelDB openLevelDB(String connString)打开一个 leveldb 数据库
+   Redis openRedis(String connString)打开一个 Redis 数据库 <a class="read-more" href="/module/db/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1228,8 +1442,13 @@ var db = require('db');  Summary    Members Descriptions     public staticobject
         <h2 class="post-title"><a href="/module/encoding/">encoding</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>module with encode and decode operations between hex and other format data. to use:
-var encoding = require('encoding');  Summary    Members Descriptions     public static Stringjsstr(String str,Boolean json) Encode the string to Javascript escaped string that can be contained in the javascript code.   public static StringencodeURI(String url) Url encoding.   public static StringencodeURIComponent(String url) Url component encoding.   public static StringdecodeURI(String url) Url decoding. <a class="read-more" href="/module/encoding/">&raquo;</a></p>
+        <p>编码与解码模块，用于处理不同的数据编码格式与二进制之间的转换 引用方式：
+var encoding = require('encoding');  Field Summary    Type Method and Description     void public static static base32base32base32base32 编码与解码模块
+   void public static static base64base64base64base64 编码与解码模块
+   void public static static base64vlqbase64vlqbase64vlqbase64vlq 编码与解码模块
+   void public static static hexhexhexhex 编码与解码模块
+   void public static static iconviconviconviconv 编码与解码模块
+   void public static static jsonjsonjsonjson 编码与解码模块 <a class="read-more" href="/module/encoding/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1250,7 +1469,7 @@ var encoding = require('encoding');  Summary    Members Descriptions     public 
 
 <nav class="pagination" role="navigation">
 	
-	<span class="page-number">Page 1 on 4</span>
+	<span class="page-number">Page 1 on 5</span>
 	
 	    <a class="older-posts" href="/module/page/2/">Previous Pages &rarr;</a>
 	
@@ -1665,6 +1884,83 @@ var encoding = require('encoding');  Summary    Members Descriptions     public 
             
         
                 
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
             
         
         
@@ -1675,6 +1971,17 @@ var encoding = require('encoding');  Summary    Members Descriptions     public 
                     
                 
                 
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
                 
                     
             

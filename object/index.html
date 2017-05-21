@@ -384,6 +384,28 @@
     
     
     
+        <li data-nav-id="/module/gui/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/gui/">
+                <span>gui</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/hash/" class="dd-item 
          
         
@@ -648,6 +670,28 @@
     
     
     
+        <li data-nav-id="/module/querystring/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/querystring/">
+                <span>querystring</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/re/" class="dd-item 
          
         
@@ -655,6 +699,50 @@
         >
             <a href="/module/re/">
                 <span>re</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/registry/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/registry/">
+                <span>registry</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/rpc/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/rpc/">
+                <span>rpc</span>
                 
                 
             </a>
@@ -699,6 +787,28 @@
         >
             <a href="/module/test/">
                 <span>test</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/url/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/url/">
+                <span>url</span>
                 
                 
             </a>
@@ -802,6 +912,28 @@
     
     
     
+        <li data-nav-id="/module/ws/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/ws/">
+                <span>ws</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
         <li data-nav-id="/module/xml/" class="dd-item 
          
         
@@ -853,6 +985,28 @@
         >
             <a href="/module/zlib/">
                 <span>zlib</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/module/zmq/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/module/zmq/">
+                <span>zmq</span>
                 
                 
             </a>
@@ -927,6 +1081,28 @@
         >
             <a href="/object/buffer/">
                 <span>Buffer</span>
+                
+                
+            </a>
+            
+            
+            
+        </li>
+    
+
+                
+                    
+    
+    
+    
+    
+        <li data-nav-id="/object/expect/" class="dd-item 
+         
+        
+        "
+        >
+            <a href="/object/expect/">
+                <span>Expect</span>
                 
                 
             </a>
@@ -1014,8 +1190,11 @@
         <h2 class="post-title"><a href="/object/asyncwait/">AsyncWait</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>class AsyncWait class AsyncWait : public Handler  MessageHandler object for asynchronous waiting.
-Summary    Members Descriptions     publicend() Finish waiting, moving on to handle the message.   publicHandlerinvoke(objectv) handle a message or an object   publicdispose() Force dispose object immediately.   public StringtoString() Return string representation of object, normally is &ldquo;[Native Object]&rdquo; and can be implemented by object itself.   public ValuetoJSON(String key) Return JSON representation of object, normally is readable attributes collection. <a class="read-more" href="/object/asyncwait/">&raquo;</a></p>
+        <p>class AsyncWait : public Handler  MessageHandler object for asynchronous waiting.
+Summary    Type Method and Description     void end()Finish waiting, moving on to handle the message.
+   Handler invoke(object v)handle a message or an object
+   void dispose()Force dispose object immediately.
+   String toString()Return string representation of object, normally is &ldquo;[Native Object]&rdquo; and can be implemented by object itself. <a class="read-more" href="/object/asyncwait/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1036,9 +1215,41 @@ Summary    Members Descriptions     publicend() Finish waiting, moving on to han
         <h2 class="post-title"><a href="/object/buffer/">Buffer</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>class Buffer class Buffer : public object  Binary buffer used in dealing with I/O reading and writing.
-Buffer object is a global basic class which can be created by &ldquo;new Buffer(&hellip;)&rdquo; at anytime:
-var buf = new Buffer();  Summary    Members Descriptions     public Integeroperator[] The binary data in the buffer can be accessed by using subscript.   public readonly Integerlength The buffer size. <a class="read-more" href="/object/buffer/">&raquo;</a></p>
+        <p>class Buffer : public object  二进制数据缓存对象，用于 io 读写的数据处理
+Buffer 对象为全局基础类，在任何时候都可以直接以 new Buffer(&hellip;) 创建：
+var buf = new Buffer();  Constructor Summary    Method and Description     Buffer(Array datas)缓存对象构造函数
+   Buffer(ArrayBuffer datas)缓存对象构造函数
+   Buffer(TypedArray datas)缓存对象构造函数
+   Buffer(Buffer buffer)缓存对象构造函数
+   Buffer(String str,String codec)缓存对象构造函数
+   Buffer(Integer size)缓存对象构造函数
+    Field Summary    Type Method and Description     Integer public Integer operator[]operator[]operator[]缓存对象可使用下标直接访问二进制数据 <a class="read-more" href="/object/buffer/">&raquo;</a></p>
+    </section>
+    <footer class=" footline" >
+         
+        
+
+        
+        
+
+    </footer>
+</article>
+
+
+
+
+
+   <article class="post object">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/object/expect/">Expect</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>class Expect : public object  断言期望对象
+Expect 对象为 assert 模块内部对象，用于实现 expect 风格断言，创建：
+var test = require(&quot;test&quot;); var obj = test.expect(exp);  或者直接引用：
+var expect = require(&quot;expect&quot;); var obj = expect(exp);  或者通过 test.setup 配置：
+require(&quot;test&quot;).setup(); var obj = expect(exp);  Field Summary    Type Method and Description     readonly Expect public readonly Expect tototo无任何修改，仅用于构建语义
+   readonly Expect public readonly Expect bebebe无任何修改，仅用于构建语义 <a class="read-more" href="/object/expect/">&raquo;</a></p>
     </section>
     <footer class=" footline" >
          
@@ -1472,6 +1683,83 @@ var buf = new Buffer();  Summary    Members Descriptions     public Integeropera
             
         
                 
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
+                
             
         
         
@@ -1482,6 +1770,17 @@ var buf = new Buffer();  Summary    Members Descriptions     public Integeropera
                     
                 
                 
+                
+                    
+            
+            
+                
+                    
+                
+                
+                
+            
+        
                 
                     
             

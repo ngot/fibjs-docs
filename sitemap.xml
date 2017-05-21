@@ -35,6 +35,10 @@
   </url>
   
   <url>
+    <loc>http://example.org/object/expect/</loc>
+  </url>
+  
+  <url>
     <loc>http://example.org/module/</loc>
     <priority>0</priority>
   </url>
@@ -102,6 +106,10 @@
   </url>
   
   <url>
+    <loc>http://example.org/module/gui/</loc>
+  </url>
+  
+  <url>
     <loc>http://example.org/module/hash/</loc>
   </url>
   
@@ -150,7 +158,19 @@
   </url>
   
   <url>
+    <loc>http://example.org/module/querystring/</loc>
+  </url>
+  
+  <url>
     <loc>http://example.org/module/re/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/registry/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/rpc/</loc>
   </url>
   
   <url>
@@ -159,6 +179,10 @@
   
   <url>
     <loc>http://example.org/module/test/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/url/</loc>
   </url>
   
   <url>
@@ -178,6 +202,10 @@
   </url>
   
   <url>
+    <loc>http://example.org/module/ws/</loc>
+  </url>
+  
+  <url>
     <loc>http://example.org/module/xml/</loc>
   </url>
   
@@ -187,6 +215,10 @@
   
   <url>
     <loc>http://example.org/module/zlib/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/module/zmq/</loc>
   </url>
   
 </urlset>
