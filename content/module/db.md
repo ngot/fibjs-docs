@@ -1,128 +1,169 @@
 +++
 draft = false
 title = "db"
-description = "Database access module."
+description = "数据库访问模块"
 [menu.main]
 parent = "modules"
 identifier = "db"
 +++
 
-Database access module.
+数据库访问模块
 
-Basic module for create database and database operation, The way to use:: 
-```cpp
+基础模块。可用于创建和操作数据库资源，引用方式： 
+```js
 var db = require('db');
 ```
 
-## Summary
+## Method Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static `[`object`](#db/d38/interfaceobject)` `[`open`](#d0/d45/namespacedb_1ae6a25ce20c2a752cf20e7a577207f198)`(String connString)`            | This method offer a general entrance to open a database, call different engines according to the providing connString.
-`public static `[`MySQL`](#d2/d68/interfaceMySQL)` `[`openMySQL`](#d0/d45/namespacedb_1ad989737ba63bbaeb48fc899769557f5e)`(String connString)`            | Open a mysql database.
-`public static `[`SQLite`](#d7/df5/interfaceSQLite)` `[`openSQLite`](#d0/d45/namespacedb_1a1986951d5ca68ee0ba8361053a84f637)`(String connString)`            | Open a sqlite database.
-`public static `[`MongoDB`](#df/d69/interfaceMongoDB)` `[`openMongoDB`](#d0/d45/namespacedb_1a29551281115a5042ad34b3d361dddc51)`(String connString)`            | Open a mongodb database.
-`public static `[`LevelDB`](#d0/d9e/interfaceLevelDB)` `[`openLevelDB`](#d0/d45/namespacedb_1af39786855964f572f8d9e34a115bdaf6)`(String connString)`            | Open a leveldb database.
-`public static `[`Redis`](#d7/d32/interfaceRedis)` `[`openRedis`](#d0/d45/namespacedb_1a4d7f2379592b1a85a802b8b895ba27df)`(String connString)`            | Open a [Redis](#d7/d32/interfaceRedis) database.
-`public static String `[`format`](#d0/d45/namespacedb_1a34aceab3cf280744a6293fd472a6cbcc)`(String sql,...)`            | Formatting a sql command, and returns the formatted results.
-`public static String `[`formatMySQL`](#d0/d45/namespacedb_1a730e29b155df6b5c9a5c1b2ce97c8386)`(String sql,...)`            | Formatting a sql command, and returns the formatted results.
-`public static String `[`escape`](#d0/d45/namespacedb_1aeb2f02c2858d45aeab3cd686e99ceabd)`(String str,Boolean mysql)`            | String encoded as security coded SQL strings.
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+object            | `open(String connString)`<p>打开一个数据库，此方法为通用入口，根据提供的 connString 不同调用不同的引擎</p>
+MySQL            | `openMySQL(String connString)`<p>打开一个 mysql 数据库</p>
+MSSQL            | `openMSSQL(String connString)`<p>打开一个 mysql 数据库</p>
+SQLite            | `openSQLite(String connString)`<p>打开一个 sqlite 数据库</p>
+MongoDB            | `openMongoDB(String connString)`<p>打开一个 mongodb 数据库</p>
+LevelDB            | `openLevelDB(String connString)`<p>打开一个 leveldb 数据库</p>
+Redis            | `openRedis(String connString)`<p>打开一个 Redis 数据库</p>
+String            | `format(String sql,...)`<p>格式化一个 sql 命令，并返回格式化结果</p>
+String            | `formatMySQL(String sql,...)`<p>格式化一个 mysql 命令，并返回格式化结果</p>
+String            | `formatMSSQL(String sql,...)`<p>格式化一个 mssql 命令，并返回格式化结果</p>
+String            | `escape(String str,Boolean mysql)`<p>将字符串编码为 SQL 安全编码字符串</p>
 
-## Members
+## Method Detail
 
-#### `public static `[`object`](#db/d38/interfaceobject)` `[`open`](#d0/d45/namespacedb_1ae6a25ce20c2a752cf20e7a577207f198)`(String connString)` 
+{{% panel theme="default" header="open" %}}
+#### **object** `open(String connString)`
 
-This method offer a general entrance to open a database, call different engines according to the providing connString.
-
-#### Parameters
-* `connString` Database Description, For example: mysql://user:pass@host/db 
-
-#### Returns
-Returns the database connection object.
-
-#### `public static `[`MySQL`](#d2/d68/interfaceMySQL)` `[`openMySQL`](#d0/d45/namespacedb_1ad989737ba63bbaeb48fc899769557f5e)`(String connString)` 
-
-Open a mysql database.
+打开一个数据库，此方法为通用入口，根据提供的 connString 不同调用不同的引擎
 
 #### Parameters
-* `connString` Database Description, For example: mysql://user:pass@host/db 
+* `connString` 数据库描述，如：mysql://user:pass@host/db 
 
 #### Returns
-Returns the database connection object.
+返回数据库连接对象
+{{% /panel %}}
+{{% panel theme="default" header="openMySQL" %}}
+#### **MySQL** `openMySQL(String connString)`
 
-#### `public static `[`SQLite`](#d7/df5/interfaceSQLite)` `[`openSQLite`](#d0/d45/namespacedb_1a1986951d5ca68ee0ba8361053a84f637)`(String connString)` 
-
-Open a sqlite database.
+打开一个 mysql 数据库
 
 #### Parameters
-* `connString` Database Description, For example: sqlite:test.db or test.db 
+* `connString` 数据库描述，如：mysql://user:pass@host/db 
 
 #### Returns
-Returns the database connection object.
+返回数据库连接对象
+{{% /panel %}}
+{{% panel theme="default" header="openMSSQL" %}}
+#### **MSSQL** `openMSSQL(String connString)`
 
-#### `public static `[`MongoDB`](#df/d69/interfaceMongoDB)` `[`openMongoDB`](#d0/d45/namespacedb_1a29551281115a5042ad34b3d361dddc51)`(String connString)` 
-
-Open a mongodb database.
+打开一个 mysql 数据库
 
 #### Parameters
-* `connString` Database Description 
+* `connString` 数据库描述，如：mssql://user:pass@host/db 
 
 #### Returns
-Returns the database connection object.
+返回数据库连接对象
+{{% /panel %}}
+{{% panel theme="default" header="openSQLite" %}}
+#### **SQLite** `openSQLite(String connString)`
 
-#### `public static `[`LevelDB`](#d0/d9e/interfaceLevelDB)` `[`openLevelDB`](#d0/d45/namespacedb_1af39786855964f572f8d9e34a115bdaf6)`(String connString)` 
-
-Open a leveldb database.
+打开一个 sqlite 数据库
 
 #### Parameters
-* `connString` Database Description, For example: level:test.db or test.db 
+* `connString` 数据库描述，如：sqlite:test.db 或者 test.db 
 
 #### Returns
-Returns the database connection object.
+返回数据库连接对象
+{{% /panel %}}
+{{% panel theme="default" header="openMongoDB" %}}
+#### **MongoDB** `openMongoDB(String connString)`
 
-#### `public static `[`Redis`](#d7/d32/interfaceRedis)` `[`openRedis`](#d0/d45/namespacedb_1a4d7f2379592b1a85a802b8b895ba27df)`(String connString)` 
-
-Open a [Redis](#d7/d32/interfaceRedis) database.
+打开一个 mongodb 数据库
 
 #### Parameters
-* `connString` Database Description, For example: redis://server:port or "server" 
+* `connString` 数据库描述 
 
 #### Returns
-Returns the database connection object.
+返回数据库连接对象
+{{% /panel %}}
+{{% panel theme="default" header="openLevelDB" %}}
+#### **LevelDB** `openLevelDB(String connString)`
 
-#### `public static String `[`format`](#d0/d45/namespacedb_1a34aceab3cf280744a6293fd472a6cbcc)`(String sql,...)` 
-
-Formatting a sql command, and returns the formatted results.
+打开一个 leveldb 数据库
 
 #### Parameters
-* `sql` Format string, optional parameters can be specified as '?', for example: 'SELECT FROM TEST WHERE [id]=?' 
-
-* `...` Optional parameter list 
+* `connString` 数据库描述，如：level:test.db 或者 test.db 
 
 #### Returns
-Return the formatted sql command.
+返回数据库对象
+{{% /panel %}}
+{{% panel theme="default" header="openRedis" %}}
+#### **Redis** `openRedis(String connString)`
 
-#### `public static String `[`formatMySQL`](#d0/d45/namespacedb_1a730e29b155df6b5c9a5c1b2ce97c8386)`(String sql,...)` 
-
-Formatting a sql command, and returns the formatted results.
+打开一个 Redis 数据库
 
 #### Parameters
-* `sql` Format string, optional parameters can be specified as '?', for example: 'SELECT FROM TEST WHERE [id]=?' 
-
-* `...` Optional parameter list 
+* `connString` 数据库描述，如：redis://server:port 或者 "server" 
 
 #### Returns
-Return the formatted sql command.
+返回数据库连接对象
+{{% /panel %}}
+{{% panel theme="default" header="format" %}}
+#### **String** `format(String sql,...)`
 
-#### `public static String `[`escape`](#d0/d45/namespacedb_1aeb2f02c2858d45aeab3cd686e99ceabd)`(String str,Boolean mysql)` 
-
-String encoded as security coded SQL strings.
+格式化一个 sql 命令，并返回格式化结果
 
 #### Parameters
-* `str` The string that need to be encoded 
+* `sql` 格式化字符串，可选参数用 ? 指定。例如：'SELECT FROM TEST WHERE [id]=?' 
 
-* `mysql` Specify the Mysql encoding, the default value is false 
+* `...` 可选参数列表 
 
 #### Returns
-Returns the encoded string
+返回格式化之后的 sql 命令
+{{% /panel %}}
+{{% panel theme="default" header="formatMySQL" %}}
+#### **String** `formatMySQL(String sql,...)`
 
+格式化一个 mysql 命令，并返回格式化结果
+
+#### Parameters
+* `sql` 格式化字符串，可选参数用 ? 指定。例如：'SELECT FROM TEST WHERE [id]=?' 
+
+* `...` 可选参数列表 
+
+#### Returns
+返回格式化之后的 sql 命令
+{{% /panel %}}
+{{% panel theme="default" header="formatMSSQL" %}}
+#### **String** `formatMSSQL(String sql,...)`
+
+格式化一个 mssql 命令，并返回格式化结果
+
+#### Parameters
+* `sql` 格式化字符串，可选参数用 ? 指定。例如：'SELECT FROM TEST WHERE [id]=?' 
+
+* `...` 可选参数列表 
+
+#### Returns
+返回格式化之后的 sql 命令
+{{% /panel %}}
+{{% panel theme="default" header="escape" %}}
+#### **String** `escape(String str,Boolean mysql)`
+
+将字符串编码为 SQL 安全编码字符串
+
+#### Parameters
+* `str` 要编码的字符串 
+
+* `mysql` 指定 mysql 编码，缺省为 false 
+
+#### Returns
+返回编码后的字符串
+{{% /panel %}}
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

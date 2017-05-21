@@ -1,49 +1,57 @@
 +++
 draft = false
 title = "json"
-description = "Json module with encode and decode operations."
+description = "json 编码与解码模块 引用方式："
 [menu.main]
 parent = "modules"
 identifier = "json"
 +++
 
-json module with encode and decode operations. to use:
+json 编码与解码模块 引用方式：
 
-```cpp
+```js
 var encoding = require('encoding');
 var json = encoding.json;
 ```
- or: 
-```cpp
+ 或者 
+```js
 var json = require('json');
 ```
 
-## Summary
+## Method Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static String `[`encode`](#d1/db2/namespacejson_1a332abe5ce26d71b3d8d6c62fd7639181)`(Value data)`            | Encode a json variable to string with json format.
-`public static Value `[`decode`](#d1/db2/namespacejson_1aeedd41dd1edaec86d654a1e1f7176952)`(String data)`            | Decode a string variable to json with json format.
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+String            | `encode(Value data)`<p>以 json 格式编码变量</p>
+Value            | `decode(String data)`<p>以 json 方式解码字符串为一个变量</p>
 
-## Members
+## Method Detail
 
-#### `public static String `[`encode`](#d1/db2/namespacejson_1a332abe5ce26d71b3d8d6c62fd7639181)`(Value data)` 
+{{% panel theme="default" header="encode" %}}
+#### **String** `encode(Value data)`
 
-Encode a json variable to string with json format.
-
-#### Parameters
-* `data` Value to be encoded. 
-
-#### Returns
-The encoded string result.
-
-#### `public static Value `[`decode`](#d1/db2/namespacejson_1aeedd41dd1edaec86d654a1e1f7176952)`(String data)` 
-
-Decode a string variable to json with json format.
+以 json 格式编码变量
 
 #### Parameters
-* `data` String to be decoded. 
+* `data` 要编码的变量 
 
 #### Returns
-Json value decoded result.
+返回编码的字符串
+{{% /panel %}}
+{{% panel theme="default" header="decode" %}}
+#### **Value** `decode(String data)`
 
+以 json 方式解码字符串为一个变量
+
+#### Parameters
+* `data` 要解码的字符串 
+
+#### Returns
+返回解码的变量
+{{% /panel %}}
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

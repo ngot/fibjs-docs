@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@fibjs/mkdirp": "^1.0.1",
+    "@fibjs/rmdirr": "^1.0.1"
+  }
+}

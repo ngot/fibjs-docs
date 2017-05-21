@@ -1,53 +1,61 @@
 +++
 draft = false
 title = "iconv"
-description = "iconv Module with encode and decode operations between text and binary."
+description = "iconv 编码与解码模块 引用方式："
 [menu.main]
 parent = "modules"
 identifier = "iconv"
 +++
 
-iconv Module with encode and decode operations between text and binary. to use:
+iconv 编码与解码模块 引用方式：
 
-```cpp
+```js
 var encoding = require('encoding');
 var iconv = encoding.iconv;
 ```
- or: 
-```cpp
+ 或者 
+```js
 var iconv = require('iconv');
 ```
 
-## Summary
+## Method Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static `[`Buffer`](#d0/d11/classBuffer)` `[`encode`](#df/d0d/namespaceiconv_1a2b847d0399bc812657931cefcc7fb0bd)`(String charset,String data)`            | Convert text to binary with iconv.
-`public static String `[`decode`](#df/d0d/namespaceiconv_1acaccba51ff251325271bf58e4a90040b)`(String charset,`[`Buffer`](#d0/d11/classBuffer)` data)`            | Convert binary to text with iconv.
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+Buffer            | `encode(String charset,String data)`<p>用 iconv 将文本转换为二进制数据</p>
+String            | `decode(String charset,Buffer data)`<p>用 iconv 将 Buffer 内容转换为文本</p>
 
-## Members
+## Method Detail
 
-#### `public static `[`Buffer`](#d0/d11/classBuffer)` `[`encode`](#df/d0d/namespaceiconv_1a2b847d0399bc812657931cefcc7fb0bd)`(String charset,String data)` 
+{{% panel theme="default" header="encode" %}}
+#### **Buffer** `encode(String charset,String data)`
 
-Convert text to binary with iconv.
-
-#### Parameters
-* `charset` The charset to be use. 
-
-* `data` The text to be converted. 
-
-#### Returns
-The binary encoded result.
-
-#### `public static String `[`decode`](#df/d0d/namespaceiconv_1acaccba51ff251325271bf58e4a90040b)`(String charset,`[`Buffer`](#d0/d11/classBuffer)` data)` 
-
-Convert binary to text with iconv.
+用 iconv 将文本转换为二进制数据
 
 #### Parameters
-* `charset` The charset to be use. 
+* `charset` 指定字符集 
 
-* `data` Binary to be converted. 
+* `data` 要转换的文本 
 
 #### Returns
-The text decoded result.
+返回解码的二进制数据
+{{% /panel %}}
+{{% panel theme="default" header="decode" %}}
+#### **String** `decode(String charset,Buffer data)`
 
+用 iconv 将 Buffer 内容转换为文本
+
+#### Parameters
+* `charset` 指定字符集 
+
+* `data` 要转换的二进制数据 
+
+#### Returns
+返回编码的字符串
+{{% /panel %}}
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

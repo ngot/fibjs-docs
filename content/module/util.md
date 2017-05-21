@@ -1,448 +1,549 @@
 +++
 draft = false
 title = "util"
-description = "Common tools module."
+description = "常用工具模块"
 [menu.main]
 parent = "modules"
 identifier = "util"
 +++
 
-Common tools module.
+常用工具模块
 
-## Summary
+## Field Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static String `[`format`](#d6/d72/namespaceutil_1a0e62c6dffcb92af6c4d397f66d49aeda)`(String fmt,...)`            | Format string with variables.
-`public static String `[`format`](#d6/d72/namespaceutil_1a622d3f4ba0f379119973e8c5b3d06841)`(...)`            | Format variables.
-`public static Boolean `[`isEmpty`](#d6/d72/namespaceutil_1aef5ab4a130ee02216b8e0a7be55b6d0d)`(Value v)`            | Check if variable is empty(no enumerable property)
-`public static Boolean `[`isArray`](#d6/d72/namespaceutil_1ad3750ee06a6344f1b775b3c7cdcfcbbc)`(Value v)`            | Check if variable is an array.
-`public static Boolean `[`isBoolean`](#d6/d72/namespaceutil_1a2e8ba3944a9a4ba546ab32a82ac6ee75)`(Value v)`            | Check if variable is Boolean.
-`public static Boolean `[`isNull`](#d6/d72/namespaceutil_1a398963fdc1a176c77f5c8ff432e76751)`(Value v)`            | Check if variable is Null.
-`public static Boolean `[`isNullOrUndefined`](#d6/d72/namespaceutil_1a339eedde3e882a57f529205c1004816e)`(Value v)`            | Check if variable is Null or Undefined.
-`public static Boolean `[`isNumber`](#d6/d72/namespaceutil_1a70aba7b6339267e79399dd1f3532393e)`(Value v)`            | Check if variable is a number.
-`public static Boolean `[`isString`](#d6/d72/namespaceutil_1a53b05938f4a3601a494f3733d1015d26)`(Value v)`            | Check if variable is a string.
-`public static Boolean `[`isUndefined`](#d6/d72/namespaceutil_1a714d17751c410e69c111fc0d849b1cf8)`(Value v)`            | Check if variable is Undefined.
-`public static Boolean `[`isRegExp`](#d6/d72/namespaceutil_1a197f6d19eb64708964feb8aeb51bc7a3)`(Value v)`            | Check if variable is a regexp object.
-`public static Boolean `[`isObject`](#d6/d72/namespaceutil_1a9e2502fcac90ea85c1b5250b12b9136f)`(Value v)`            | Check if variable is an object.
-`public static Boolean `[`isDate`](#d6/d72/namespaceutil_1a021ed90060f67225f96dc44d2a5fbcb9)`(Value v)`            | Check if variable is date object.
-`public static Boolean `[`isFunction`](#d6/d72/namespaceutil_1a1a6991dfe0aa363fbebb231e67f5d118)`(Value v)`            | Check if variable is a function.
-`public static Boolean `[`isBuffer`](#d6/d72/namespaceutil_1a9b04005af45be1e1f72010fc527ee4ba)`(Value v)`            | Check if variable is a [Buffer](#d0/d11/classBuffer) object.
-`public static Boolean `[`has`](#d6/d72/namespaceutil_1a74c60b5a6328e1154f392e634cb40328)`(Value v,String key)`            | Check if object contains given key.
-`public static Array `[`keys`](#d6/d72/namespaceutil_1af18e734bb5d88ed2d8a950b55701a508)`(Value v)`            | Get an array of all keys.
-`public static Array `[`values`](#d6/d72/namespaceutil_1a635d7c351eeae4580728d278ef79c8c3)`(Value v)`            | Get an array of all values.
-`public static Value `[`clone`](#d6/d72/namespaceutil_1ac5b6c43b53cdaa1ee2b948766afaebd0)`(Value v)`            | Clone a variable, copy internal content if it's an object or array.
-`public static Value `[`extend`](#d6/d72/namespaceutil_1a7e6ad69b1143fc3a406c8a74d9bac73e)`(Value v,...)`            | Extend one or more values of objects to given object.
-`public static Object `[`pick`](#d6/d72/namespaceutil_1aa0eef00f17cd0bd5953a1613aa2f3c70)`(Value v,...)`            | Return a copy of object with filtered attributes.
-`public static Object `[`omit`](#d6/d72/namespaceutil_1a819fa689debef312b6ec388e8b6fa0c4)`(Value v,...)`            | Return a copy of object, exclude given attributes.
-`public static Value `[`first`](#d6/d72/namespaceutil_1a27d45a4bba7a8874fba7391dee3be9dd)`(Value v)`            | Get first element in array.
-`public static Value `[`first`](#d6/d72/namespaceutil_1af9c17139c1ed0e4a7d0aa3244990768a)`(Value v,Integer n)`            | Get first number of elements in array.
-`public static Value `[`last`](#d6/d72/namespaceutil_1adabb887de98cc0bd54035af02452225b)`(Value v)`            | Get last element in array.
-`public static Value `[`last`](#d6/d72/namespaceutil_1a764290a833d1fbfdb3616374f54be720)`(Value v,Integer n)`            | Get number of element in the end of array.
-`public static Array `[`unique`](#d6/d72/namespaceutil_1aa4e3b3c1ed02f946cd77e6b10ffe5209)`(Value v,Boolean sorted)`            | Get array without duplicates.
-`public static Array `[`union`](#d6/d72/namespaceutil_1aae81b8225da8434a2513f9cea9c716a4)`(...)`            | Union one or more arrays into one unique array.
-`public static Array `[`intersection`](#d6/d72/namespaceutil_1adf0b6b3970027bac03b8a52ebd580b72)`(...)`            | Return intersections of arrays.
-`public static Array `[`flatten`](#d6/d72/namespaceutil_1aa9c3e271b742d44d012e3039bcdf7eb2)`(Value arr,Boolean shallow)`            | Convert multi-dimension arrays into one-dimension, only reduce one dimension if you pass shallow argument.
-`public static Array `[`without`](#d6/d72/namespaceutil_1a0c5e0bae5b173e9264e980cc2e956c64)`(Value arr,...)`            | Return an array without given elements.
-`public static Array `[`difference`](#d6/d72/namespaceutil_1aeee7da8e5a98a9794221cbbff0e1c43e)`(Array list,...)`            | Return differences of arrays.
-`public static Value `[`each`](#d6/d72/namespaceutil_1ac2e49de0b478db47c018ee9459251fac)`(Value list,Function iterator,Value context)`            | Iterate list in order. If context is passed, then bind iterator to context. Each iteration will pass three arguments to context: element, index and list.
-`public static Array `[`map`](#d6/d72/namespaceutil_1a24e6b2ce72bf4f22904c4e0761f2b7b8)`(Value list,Function iterator,Value context)`            | Use iterator to map values to new array. If context is passed, then bind iterator to context. Each iteration will pass three arguments to context: element, index and list.
-`public static Value `[`reduce`](#d6/d72/namespaceutil_1a119418c6ae84d9848a7521b0d23ed6da)`(Value list,Function iterator,Value memo,Value context)`            | Reduce every element in list to a single number. If context is passed, then bind iterator to context. Each iteration will pass four arguments to context: memo, element, index and list.
-`public static Object `[`buildInfo`](#d6/d72/namespaceutil_1a38b22f190ce11008314b51470042ce2b)`()`            | Get current engine and components information.
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+void            | `public static static Stats`[`Stats`](#d6/d72/namespaceutil_1aa2c3668cf097906a77de04ae7243fd1e)`Stats`<p>数据统计对象，用以构建应用运行时数据收集，参见 Stats 对象。</p>
+void            | `public static static LruCache`[`LruCache`](#d6/d72/namespaceutil_1a3ede61ad29d3fe58b912ef9b9e7ed326)`LruCache`<p>LRU(least recently used) 缓存对象，参见 LruCache 对象。</p>
 
-## Members
+## Method Summary
 
-#### `public static String `[`format`](#d6/d72/namespaceutil_1a0e62c6dffcb92af6c4d397f66d49aeda)`(String fmt,...)` 
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+String            | `format(String fmt,...)`<p>按照指定的格式格式化变量</p>
+String            | `format(...)`<p>格式格式化变量</p>
+void            | `inherits(Value constructor,Value superConstructor)`<p>从一个构造函数 constructor 继承原型方法到另一个。构造函数的原型将被设置为一个新的从超类（superConstructor）创建的对象。</p>
+Boolean            | `isEmpty(Value v)`<p>检测给定的变量是否不包含任何值(没有可枚举的属性)</p>
+Boolean            | `isArray(Value v)`<p>检测给定的变量是否是数组</p>
+Boolean            | `isBoolean(Value v)`<p>检测给定的变量是否是 Boolean</p>
+Boolean            | `isNull(Value v)`<p>检测给定的变量是否是 Null</p>
+Boolean            | `isNullOrUndefined(Value v)`<p>检测给定的变量是否是 Null 或者 Undefined</p>
+Boolean            | `isNumber(Value v)`<p>检测给定的变量是否是数字</p>
+Boolean            | `isString(Value v)`<p>检测给定的变量是否是字符串</p>
+Boolean            | `isUndefined(Value v)`<p>检测给定的变量是否是 Undefined</p>
+Boolean            | `isRegExp(Value v)`<p>检测给定的变量是否是正则对象</p>
+Boolean            | `isObject(Value v)`<p>检测给定的变量是否是对象</p>
+Boolean            | `isDate(Value v)`<p>检测给定的变量是否是日期对象</p>
+Boolean            | `isFunction(Value v)`<p>检测给定的变量是否是函数对象</p>
+Boolean            | `isBuffer(Value v)`<p>检测给定的变量是否是函数 Buffer 对象</p>
+Boolean            | `has(Value v,String key)`<p>查询指定对象是否包含给定的键</p>
+Array            | `keys(Value v)`<p>查询指定对象的全部键数组</p>
+Array            | `values(Value v)`<p>查询指定对象的全部值数组</p>
+Value            | `clone(Value v)`<p>克隆给定变量，如果是对象或数组，则复制内容到新对象</p>
+Value            | `extend(Value v,...)`<p>将一个或者多个对象的键值扩展到指定对象</p>
+Object            | `pick(Value v,...)`<p>返回一个object副本，只过滤出指定键的属性值</p>
+Object            | `omit(Value v,...)`<p>返回一个object副本，只过排除指定键的属性值</p>
+Value            | `first(Value v)`<p>获取数组的第一个元素</p>
+Value            | `first(Value v,Integer n)`<p>获取数组的开始多个元素</p>
+Value            | `last(Value v)`<p>获取数组的第后一个元素</p>
+Value            | `last(Value v,Integer n)`<p>获取数组的结尾多个元素</p>
+Array            | `unique(Value v,Boolean sorted)`<p>获取数组的元素去重后的副本</p>
+Array            | `union(...)`<p>将一个或者多个数组的值合并成一个值唯一的数组</p>
+Array            | `intersection(...)`<p>返回一个包含 arr 数组中排除一个或者多个数组元素的交集</p>
+Array            | `flatten(Value arr,Boolean shallow)`<p>将一个嵌套多层的数组(嵌套可以是任何层数)转换为只有一层的数组。 如果你传递 shallow 参数，数组将只减少一维的嵌套。</p>
+Array            | `without(Value arr,...)`<p>返回一个包含 arr 数组中排除一个或者多个元素后的数组</p>
+Array            | `difference(Array list,...)`<p>返回一个包含 arr 数组中排除 without 数组元素之后的数组</p>
+Value            | `each(Value list,Function iterator,Value context)`<p>遍历 list 中的所有元素，按顺序用遍历输出每个元素。如果传递了 context 参数，则把 iterator 绑定到 context 对象上。每次调用 iterator 都会传递三个参数：(element, index, list)</p>
+Array            | `map(Value list,Function iterator,Value context)`<p>通过变换函数（iterator迭代器）把 list 中的每个值映射到一个新的数组中。如果传递了 context 参数，则把 iterator 绑定到 context 对象上。每次调用 iterator 都会传递三个参数：(element, index, list)</p>
+Value            | `reduce(Value list,Function iterator,Value memo,Value context)`<p>把 list中 元素归结为一个单独的数值。如果传递了 context 参数，则把 iterator 绑定到 context 对象上。每次调用 iterator 都会传递三个参数：(memo, element, index, list)</p>
+Buffer            | `compile(String srcname,String script,Integer mode)`<p>编译脚本为二进制代码</p>
+Buffer            | `compile(String script,Integer mode)`<p>编译脚本为二进制代码</p>
+Object            | `buildInfo()`<p>查询当前引擎及各组件版本信息</p>
 
-Format string with variables.
+## Field Detail
 
-#### Parameters
-* `fmt` Format string 
+{{% panel theme="default" header="Stats" %}}
+#### **void** `public static static Stats`[`Stats`](#d6/d72/namespaceutil_1aa2c3668cf097906a77de04ae7243fd1e)`Stats`
 
-* `...` Aeguments 
+数据统计对象，用以构建应用运行时数据收集，参见 Stats 对象。
 
-#### Returns
-Return formatted string
+{{% /panel %}}
+{{% panel theme="default" header="LruCache" %}}
+#### **void** `public static static LruCache`[`LruCache`](#d6/d72/namespaceutil_1a3ede61ad29d3fe58b912ef9b9e7ed326)`LruCache`
 
-#### `public static String `[`format`](#d6/d72/namespaceutil_1a622d3f4ba0f379119973e8c5b3d06841)`(...)` 
+LRU(least recently used) 缓存对象，参见 LruCache 对象。
 
-Format variables.
+{{% /panel %}}
 
-#### Parameters
-* `...` Aeguments 
+## Method Detail
 
-#### Returns
-Return formatted string
+{{% panel theme="default" header="format" %}}
+#### **String** `format(String fmt,...)`
 
-#### `public static Boolean `[`isEmpty`](#d6/d72/namespaceutil_1aef5ab4a130ee02216b8e0a7be55b6d0d)`(Value v)` 
-
-Check if variable is empty(no enumerable property)
-
-#### Parameters
-* `v` Variable to check 
-
-#### Returns
-Return true when it's empty
-
-#### `public static Boolean `[`isArray`](#d6/d72/namespaceutil_1ad3750ee06a6344f1b775b3c7cdcfcbbc)`(Value v)` 
-
-Check if variable is an array.
+按照指定的格式格式化变量
 
 #### Parameters
-* `v` Variable to check 
+* `fmt` 格式化字符串 
+
+* `...` 可选参数列表 
 
 #### Returns
-Return true when it's an array
+返回格式化后的字符串
+{{% /panel %}}
+{{% panel theme="default" header="format" %}}
+#### **String** `format(...)`
 
-#### `public static Boolean `[`isBoolean`](#d6/d72/namespaceutil_1a2e8ba3944a9a4ba546ab32a82ac6ee75)`(Value v)` 
-
-Check if variable is Boolean.
+格式格式化变量
 
 #### Parameters
-* `v` Variable to check 
+* `...` 可选参数列表 
 
 #### Returns
-Return true when it's a Boolean
+返回格式化后的字符串
+{{% /panel %}}
+{{% panel theme="default" header="inherits" %}}
+#### **void** `inherits(Value constructor,Value superConstructor)`
 
-#### `public static Boolean `[`isNull`](#d6/d72/namespaceutil_1a398963fdc1a176c77f5c8ff432e76751)`(Value v)` 
-
-Check if variable is Null.
+从一个构造函数 constructor 继承原型方法到另一个。构造函数的原型将被设置为一个新的从超类（superConstructor）创建的对象。
 
 #### Parameters
-* `v` Variable to check 
+* `constructor` 初始的构造函数 
 
-#### Returns
-Return true when it's Null
+* `superConstructor` 被继承的超类
+{{% /panel %}}
+{{% panel theme="default" header="isEmpty" %}}
+#### **Boolean** `isEmpty(Value v)`
 
-#### `public static Boolean `[`isNullOrUndefined`](#d6/d72/namespaceutil_1a339eedde3e882a57f529205c1004816e)`(Value v)` 
-
-Check if variable is Null or Undefined.
-
-#### Parameters
-* `v` Variable to check 
-
-#### Returns
-Return true when it's Null or Undefined
-
-#### `public static Boolean `[`isNumber`](#d6/d72/namespaceutil_1a70aba7b6339267e79399dd1f3532393e)`(Value v)` 
-
-Check if variable is a number.
+检测给定的变量是否不包含任何值(没有可枚举的属性)
 
 #### Parameters
-* `v` Variable to check 
+* `v` 给定需要检测的变量 
 
 #### Returns
-Return true when it's a number
+如果为空则返回 True
+{{% /panel %}}
+{{% panel theme="default" header="isArray" %}}
+#### **Boolean** `isArray(Value v)`
 
-#### `public static Boolean `[`isString`](#d6/d72/namespaceutil_1a53b05938f4a3601a494f3733d1015d26)`(Value v)` 
-
-Check if variable is a string.
+检测给定的变量是否是数组
 
 #### Parameters
-* `v` Variable to check 
+* `v` 给定需要检测的变量 
 
 #### Returns
-Return true when it's a string
+如果是数组则返回 True
+{{% /panel %}}
+{{% panel theme="default" header="isBoolean" %}}
+#### **Boolean** `isBoolean(Value v)`
 
-#### `public static Boolean `[`isUndefined`](#d6/d72/namespaceutil_1a714d17751c410e69c111fc0d849b1cf8)`(Value v)` 
-
-Check if variable is Undefined.
+检测给定的变量是否是 Boolean
 
 #### Parameters
-* `v` Variable to check 
+* `v` 给定需要检测的变量 
 
 #### Returns
-Return true when it's Undefined
+如果是 Boolean 则返回 True
+{{% /panel %}}
+{{% panel theme="default" header="isNull" %}}
+#### **Boolean** `isNull(Value v)`
 
-#### `public static Boolean `[`isRegExp`](#d6/d72/namespaceutil_1a197f6d19eb64708964feb8aeb51bc7a3)`(Value v)` 
-
-Check if variable is a regexp object.
+检测给定的变量是否是 Null
 
 #### Parameters
-* `v` Variable to check 
+* `v` 给定需要检测的变量 
 
 #### Returns
-Return true when it's a regexp object
+如果是 Null 则返回 True
+{{% /panel %}}
+{{% panel theme="default" header="isNullOrUndefined" %}}
+#### **Boolean** `isNullOrUndefined(Value v)`
 
-#### `public static Boolean `[`isObject`](#d6/d72/namespaceutil_1a9e2502fcac90ea85c1b5250b12b9136f)`(Value v)` 
-
-Check if variable is an object.
+检测给定的变量是否是 Null 或者 Undefined
 
 #### Parameters
-* `v` Variable to check 
+* `v` 给定需要检测的变量 
 
 #### Returns
-Return true when it's an object
+如果是 Null 或者 Undefined 则返回 True
+{{% /panel %}}
+{{% panel theme="default" header="isNumber" %}}
+#### **Boolean** `isNumber(Value v)`
 
-#### `public static Boolean `[`isDate`](#d6/d72/namespaceutil_1a021ed90060f67225f96dc44d2a5fbcb9)`(Value v)` 
-
-Check if variable is date object.
+检测给定的变量是否是数字
 
 #### Parameters
-* `v` Variable to check 
+* `v` 给定需要检测的变量 
 
 #### Returns
-Return true when it's date object
+如果是数字则返回 True
+{{% /panel %}}
+{{% panel theme="default" header="isString" %}}
+#### **Boolean** `isString(Value v)`
 
-#### `public static Boolean `[`isFunction`](#d6/d72/namespaceutil_1a1a6991dfe0aa363fbebb231e67f5d118)`(Value v)` 
-
-Check if variable is a function.
+检测给定的变量是否是字符串
 
 #### Parameters
-* `v` Variable to check 
+* `v` 给定需要检测的变量 
 
 #### Returns
-Return true when it's a function
+如果是字符串则返回 True
+{{% /panel %}}
+{{% panel theme="default" header="isUndefined" %}}
+#### **Boolean** `isUndefined(Value v)`
 
-#### `public static Boolean `[`isBuffer`](#d6/d72/namespaceutil_1a9b04005af45be1e1f72010fc527ee4ba)`(Value v)` 
-
-Check if variable is a [Buffer](#d0/d11/classBuffer) object.
+检测给定的变量是否是 Undefined
 
 #### Parameters
-* `v` Variable to check 
+* `v` 给定需要检测的变量 
 
 #### Returns
-Return true when it's a [Buffer](#d0/d11/classBuffer) object
+如果是 Undefined 则返回 True
+{{% /panel %}}
+{{% panel theme="default" header="isRegExp" %}}
+#### **Boolean** `isRegExp(Value v)`
 
-#### `public static Boolean `[`has`](#d6/d72/namespaceutil_1a74c60b5a6328e1154f392e634cb40328)`(Value v,String key)` 
-
-Check if object contains given key.
+检测给定的变量是否是正则对象
 
 #### Parameters
-* `v` Object to check 
-
-* `key` Key to query 
+* `v` 给定需要检测的变量 
 
 #### Returns
-Return true when it contains key
+如果是正则对象则返回 True
+{{% /panel %}}
+{{% panel theme="default" header="isObject" %}}
+#### **Boolean** `isObject(Value v)`
 
-#### `public static Array `[`keys`](#d6/d72/namespaceutil_1af18e734bb5d88ed2d8a950b55701a508)`(Value v)` 
-
-Get an array of all keys.
+检测给定的变量是否是对象
 
 #### Parameters
-* `v` Object to check 
+* `v` 给定需要检测的变量 
 
 #### Returns
-Return an array of all keys
+如果是对象则返回 True
+{{% /panel %}}
+{{% panel theme="default" header="isDate" %}}
+#### **Boolean** `isDate(Value v)`
 
-#### `public static Array `[`values`](#d6/d72/namespaceutil_1a635d7c351eeae4580728d278ef79c8c3)`(Value v)` 
-
-Get an array of all values.
+检测给定的变量是否是日期对象
 
 #### Parameters
-* `v` Object to check 
+* `v` 给定需要检测的变量 
 
 #### Returns
-Return an array of all keys
+如果是日期对象则返回 True
+{{% /panel %}}
+{{% panel theme="default" header="isFunction" %}}
+#### **Boolean** `isFunction(Value v)`
 
-#### `public static Value `[`clone`](#d6/d72/namespaceutil_1ac5b6c43b53cdaa1ee2b948766afaebd0)`(Value v)` 
-
-Clone a variable, copy internal content if it's an object or array.
+检测给定的变量是否是函数对象
 
 #### Parameters
-* `v` Variable to clone 
+* `v` 给定需要检测的变量 
 
 #### Returns
-Return cloned result
+如果是函数对象则返回 True
+{{% /panel %}}
+{{% panel theme="default" header="isBuffer" %}}
+#### **Boolean** `isBuffer(Value v)`
 
-#### `public static Value `[`extend`](#d6/d72/namespaceutil_1a7e6ad69b1143fc3a406c8a74d9bac73e)`(Value v,...)` 
-
-Extend one or more values of objects to given object.
+检测给定的变量是否是函数 Buffer 对象
 
 #### Parameters
-* `v` Object to be extended 
-
-* `...` One or more objects to extend 
+* `v` 给定需要检测的变量 
 
 #### Returns
-Return extended object
+如果是函数 Buffer 对象则返回 True
+{{% /panel %}}
+{{% panel theme="default" header="has" %}}
+#### **Boolean** `has(Value v,String key)`
 
-#### `public static Object `[`pick`](#d6/d72/namespaceutil_1aa0eef00f17cd0bd5953a1613aa2f3c70)`(Value v,...)` 
-
-Return a copy of object with filtered attributes.
+查询指定对象是否包含给定的键
 
 #### Parameters
-* `v` Object to filter 
+* `v` 给定需要查询的对象 
 
-* `...` One or more attributes 
+* `key` 指定需要查询的键 
 
 #### Returns
-Return copy of object
+返回对象的全部键数组
+{{% /panel %}}
+{{% panel theme="default" header="keys" %}}
+#### **Array** `keys(Value v)`
 
-#### `public static Object `[`omit`](#d6/d72/namespaceutil_1a819fa689debef312b6ec388e8b6fa0c4)`(Value v,...)` 
-
-Return a copy of object, exclude given attributes.
+查询指定对象的全部键数组
 
 #### Parameters
-* `v` Object to filter 
-
-* `...` One or more attributes to exclude 
+* `v` 给定需要查询的对象 
 
 #### Returns
-Return copy of object
+返回对象的全部键数组
+{{% /panel %}}
+{{% panel theme="default" header="values" %}}
+#### **Array** `values(Value v)`
 
-#### `public static Value `[`first`](#d6/d72/namespaceutil_1a27d45a4bba7a8874fba7391dee3be9dd)`(Value v)` 
-
-Get first element in array.
+查询指定对象的全部值数组
 
 #### Parameters
-* `v` Array to access 
+* `v` 给定需要查询的对象 
 
 #### Returns
-Return element
+返回对象的全部值数组
+{{% /panel %}}
+{{% panel theme="default" header="clone" %}}
+#### **Value** `clone(Value v)`
 
-#### `public static Value `[`first`](#d6/d72/namespaceutil_1af9c17139c1ed0e4a7d0aa3244990768a)`(Value v,Integer n)` 
-
-Get first number of elements in array.
+克隆给定变量，如果是对象或数组，则复制内容到新对象
 
 #### Parameters
-* `v` Array to access 
-
-* `n` Number of elements to get 
+* `v` 给定要克隆的变量 
 
 #### Returns
-Return array of elements
+返回克隆结果
+{{% /panel %}}
+{{% panel theme="default" header="extend" %}}
+#### **Value** `extend(Value v,...)`
 
-#### `public static Value `[`last`](#d6/d72/namespaceutil_1adabb887de98cc0bd54035af02452225b)`(Value v)` 
-
-Get last element in array.
+将一个或者多个对象的键值扩展到指定对象
 
 #### Parameters
-* `v` Array to access 
+* `v` 指定要扩展的对象 
+
+* `...` 指定一个或者多个用于扩展的对象 
 
 #### Returns
-Return element
+返回扩展的结果
+{{% /panel %}}
+{{% panel theme="default" header="pick" %}}
+#### **Object** `pick(Value v,...)`
 
-#### `public static Value `[`last`](#d6/d72/namespaceutil_1a764290a833d1fbfdb3616374f54be720)`(Value v,Integer n)` 
-
-Get number of element in the end of array.
+返回一个object副本，只过滤出指定键的属性值
 
 #### Parameters
-* `v` Array to access 
+* `v` 指定要过滤的对象 
 
-* `n` Number of elements to get 
+* `...` 指定一个或者多个用于选择的键 
 
 #### Returns
-Return array of elements
+返回过滤的结果
+{{% /panel %}}
+{{% panel theme="default" header="omit" %}}
+#### **Object** `omit(Value v,...)`
 
-#### `public static Array `[`unique`](#d6/d72/namespaceutil_1aa4e3b3c1ed02f946cd77e6b10ffe5209)`(Value v,Boolean sorted)` 
-
-Get array without duplicates.
+返回一个object副本，只过排除指定键的属性值
 
 #### Parameters
-* `v` Array to access 
+* `v` 指定要过滤的对象 
 
-* `sorted` Indicates whether to sort or not, will use quick sort 
+* `...` 指定一个或者多个用于排除的键 
 
 #### Returns
-Return unique array
+返回排除的结果
+{{% /panel %}}
+{{% panel theme="default" header="first" %}}
+#### **Value** `first(Value v)`
 
-#### `public static Array `[`union`](#d6/d72/namespaceutil_1aae81b8225da8434a2513f9cea9c716a4)`(...)` 
-
-Union one or more arrays into one unique array.
+获取数组的第一个元素
 
 #### Parameters
-* `...` Arrays to union 
+* `v` 给定要获取的数组 
 
 #### Returns
-Return unioned array
+返回获取的元素
+{{% /panel %}}
+{{% panel theme="default" header="first" %}}
+#### **Value** `first(Value v,Integer n)`
 
-#### `public static Array `[`intersection`](#d6/d72/namespaceutil_1adf0b6b3970027bac03b8a52ebd580b72)`(...)` 
-
-Return intersections of arrays.
+获取数组的开始多个元素
 
 #### Parameters
-* `...` Arrays to check 
+* `v` 给定要获取的数组 
+
+* `n` 指定要获取的元素个数 
 
 #### Returns
-Return intersections
+返回获取的元素数组
+{{% /panel %}}
+{{% panel theme="default" header="last" %}}
+#### **Value** `last(Value v)`
 
-#### `public static Array `[`flatten`](#d6/d72/namespaceutil_1aa9c3e271b742d44d012e3039bcdf7eb2)`(Value arr,Boolean shallow)` 
-
-Convert multi-dimension arrays into one-dimension, only reduce one dimension if you pass shallow argument.
+获取数组的第后一个元素
 
 #### Parameters
-* `arr` Array to convert 
-
-* `shallow` Indicates whether to reduce only one dimension or not, default is false 
+* `v` 给定要获取的数组 
 
 #### Returns
-Return converted array
+返回获取的元素
+{{% /panel %}}
+{{% panel theme="default" header="last" %}}
+#### **Value** `last(Value v,Integer n)`
 
-#### `public static Array `[`without`](#d6/d72/namespaceutil_1a0c5e0bae5b173e9264e980cc2e956c64)`(Value arr,...)` 
-
-Return an array without given elements.
+获取数组的结尾多个元素
 
 #### Parameters
-* `arr` Array to access 
+* `v` 给定要获取的数组 
 
-* `...` Elements to exclude 
+* `n` 指定要获取的元素个数 
 
 #### Returns
-Return result array
+返回获取的元素数组
+{{% /panel %}}
+{{% panel theme="default" header="unique" %}}
+#### **Array** `unique(Value v,Boolean sorted)`
 
-#### `public static Array `[`difference`](#d6/d72/namespaceutil_1aeee7da8e5a98a9794221cbbff0e1c43e)`(Array list,...)` 
-
-Return differences of arrays.
+获取数组的元素去重后的副本
 
 #### Parameters
-* `list` Arrays to check 
+* `v` 给定要去重的数组 
+
+* `sorted` 指定数组是否排序，如果指定数组排序，将使用快速算法 
 
 #### Returns
-Return differences
+返回去重元素后的数组
+{{% /panel %}}
+{{% panel theme="default" header="union" %}}
+#### **Array** `union(...)`
 
-#### `public static Value `[`each`](#d6/d72/namespaceutil_1ac2e49de0b478db47c018ee9459251fac)`(Value list,Function iterator,Value context)` 
-
-Iterate list in order. If context is passed, then bind iterator to context. Each iteration will pass three arguments to context: element, index and list.
+将一个或者多个数组的值合并成一个值唯一的数组
 
 #### Parameters
-* `list` [List](#de/dd8/interfaceList) or object to iterate 
-
-* `iterator` Iterator callback 
-
-* `context` Context object for binding 
+* `...` 指定一个或者多个用于合并的数组 
 
 #### Returns
-Return list itself
+返回合并的结果
+{{% /panel %}}
+{{% panel theme="default" header="intersection" %}}
+#### **Array** `intersection(...)`
 
-#### `public static Array `[`map`](#d6/d72/namespaceutil_1a24e6b2ce72bf4f22904c4e0761f2b7b8)`(Value list,Function iterator,Value context)` 
-
-Use iterator to map values to new array. If context is passed, then bind iterator to context. Each iteration will pass three arguments to context: element, index and list.
+返回一个包含 arr 数组中排除一个或者多个数组元素的交集
 
 #### Parameters
-* `list` [List](#de/dd8/interfaceList) or object to iterate 
-
-* `iterator` Iterator callback 
-
-* `context` Context object for binding 
+* `...` 指定一个或者多个用于计算交集的数组 
 
 #### Returns
-Return result array
+返回计算交集的结果
+{{% /panel %}}
+{{% panel theme="default" header="flatten" %}}
+#### **Array** `flatten(Value arr,Boolean shallow)`
 
-#### `public static Value `[`reduce`](#d6/d72/namespaceutil_1a119418c6ae84d9848a7521b0d23ed6da)`(Value list,Function iterator,Value memo,Value context)` 
-
-Reduce every element in list to a single number. If context is passed, then bind iterator to context. Each iteration will pass four arguments to context: memo, element, index and list.
+将一个嵌套多层的数组(嵌套可以是任何层数)转换为只有一层的数组。 如果你传递 shallow 参数，数组将只减少一维的嵌套。
 
 #### Parameters
-* `list` [List](#de/dd8/interfaceList) or object to iterate 
+* `arr` 指定需要转换的数组 
 
-* `iterator` Iterator callback 
-
-* `memo` Initial value 
-
-* `context` Context object for binding 
+* `shallow` 指定是否只减少一维的嵌套，缺省为 false 
 
 #### Returns
-Return result array
+返回转换的结果
+{{% /panel %}}
+{{% panel theme="default" header="without" %}}
+#### **Array** `without(Value arr,...)`
 
-#### `public static Object `[`buildInfo`](#d6/d72/namespaceutil_1a38b22f190ce11008314b51470042ce2b)`()` 
+返回一个包含 arr 数组中排除一个或者多个元素后的数组
 
-Get current engine and components information.
+#### Parameters
+* `arr` 指定需要排除的数组 
+
+* `...` 指定一个或者多个用于排除的元素 
 
 #### Returns
-Struct info: 
-```cpp
+返回排除的结果
+{{% /panel %}}
+{{% panel theme="default" header="difference" %}}
+#### **Array** `difference(Array list,...)`
+
+返回一个包含 arr 数组中排除 without 数组元素之后的数组
+
+#### Parameters
+* `list` 指定需要排除的数组 
+
+* `...` 指定用于排除的一个或者多个数组 
+
+#### Returns
+返回排除的结果
+{{% /panel %}}
+{{% panel theme="default" header="each" %}}
+#### **Value** `each(Value list,Function iterator,Value context)`
+
+遍历 list 中的所有元素，按顺序用遍历输出每个元素。如果传递了 context 参数，则把 iterator 绑定到 context 对象上。每次调用 iterator 都会传递三个参数：(element, index, list)
+
+#### Parameters
+* `list` 指定需要遍历的列表或对象 
+
+* `iterator` 指定用于遍历的回调函数 
+
+* `context` 指定调用 iterator 时绑定的 context 对象 
+
+#### Returns
+返回 list 本身
+{{% /panel %}}
+{{% panel theme="default" header="map" %}}
+#### **Array** `map(Value list,Function iterator,Value context)`
+
+通过变换函数（iterator迭代器）把 list 中的每个值映射到一个新的数组中。如果传递了 context 参数，则把 iterator 绑定到 context 对象上。每次调用 iterator 都会传递三个参数：(element, index, list)
+
+#### Parameters
+* `list` 指定需要变换的列表或对象 
+
+* `iterator` 指定用于变换的回调函数 
+
+* `context` 指定调用 iterator 时绑定的 context 对象 
+
+#### Returns
+返回变换的结果
+{{% /panel %}}
+{{% panel theme="default" header="reduce" %}}
+#### **Value** `reduce(Value list,Function iterator,Value memo,Value context)`
+
+把 list中 元素归结为一个单独的数值。如果传递了 context 参数，则把 iterator 绑定到 context 对象上。每次调用 iterator 都会传递三个参数：(memo, element, index, list)
+
+#### Parameters
+* `list` 指定需要归结的列表或对象 
+
+* `iterator` 指定用于归结的回调函数 
+
+* `memo` 指定归结的初始值 
+
+* `context` 指定调用 iterator 时绑定的 context 对象 
+
+#### Returns
+返回归结的结果
+{{% /panel %}}
+{{% panel theme="default" header="compile" %}}
+#### **Buffer** `compile(String srcname,String script,Integer mode)`
+
+编译脚本为二进制代码
+
+#### Parameters
+* `srcname` 指定要添加的脚本名称 
+
+* `script` 指定要编译的脚本代码 
+
+* `mode` 编译模式，0: module, 1: main, 2: script, 3: worker，缺省为 0 
+
+#### Returns
+返回编译出的二进制代码
+{{% /panel %}}
+{{% panel theme="default" header="compile" %}}
+#### **Buffer** `compile(String script,Integer mode)`
+
+编译脚本为二进制代码
+
+#### Parameters
+* `script` 指定要编译的脚本代码 
+
+* `mode` 编译模式，0: module, 1: main, 2: script, 3: worker，缺省为 0 
+
+#### Returns
+返回编译出的二进制代码
+{{% /panel %}}
+{{% panel theme="default" header="buildInfo" %}}
+#### **Object** `buildInfo()`
+
+查询当前引擎及各组件版本信息
+
+#### Returns
+返回结构如下： 
+```js
 {
   "fibjs": "0.1.0",
   "svn": 1753,
@@ -465,4 +566,10 @@ Struct info:
   }
 }
 ```
+{{% /panel %}}
 
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

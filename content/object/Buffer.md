@@ -1,673 +1,1018 @@
 +++
 draft = false
 title = "Buffer"
-description = "Buffer ObjectBuffer ObjectBuffer ObjectBuffer ObjectBuffer ObjectBuffer ObjectBuffer Object"
+description = "二进制数据缓存对象，用于 io 读写的数据处理"
 [menu.main]
 parent = "objects"
 identifier = "Buffer"
 +++
 
-## class `Buffer` 
-
-```
-class Buffer
-  : public object
+```js
+class Buffer : public object
 ```  
 
-Binary buffer used in dealing with I/O reading and writing.
+二进制数据缓存对象，用于 io 读写的数据处理
 
-[Buffer](#d0/d11/classBuffer) object is a global basic class which can be created by "new Buffer(...)" at anytime: 
-```cpp
+Buffer 对象为全局基础类，在任何时候都可以直接以 new Buffer(...) 创建： 
+```js
 var buf = new Buffer();
 ```
 
-## Summary
+## Constructor Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public Integer `[`operator[]`](#d0/d11/classBuffer_1ab9877007db2fad366b7fb0fae861243a) | The binary data in the buffer can be accessed by using subscript.
-`public readonly Integer `[`length`](#d0/d11/classBuffer_1a31eae850157fbe1e15cf7e333c795793) | The buffer size.
-`public  `[`Buffer`](#d0/d11/classBuffer_1af19634a31b59ee8f2f4031715bf89952)`(Array datas)` | [Buffer](#d0/d11/classBuffer) constructor.
-`public  `[`Buffer`](#d0/d11/classBuffer_1ac16e65f2c0d120d046cb02cc1841c17d)`(`[`Buffer`](#d0/d11/classBuffer)` buffer)` | [Buffer](#d0/d11/classBuffer) constructor.
-`public  `[`Buffer`](#d0/d11/classBuffer_1ab9e33ff0da7a8dd5c812330c1ed08c17)`(String str,String codec)` | [Buffer](#d0/d11/classBuffer) constructor.
-`public  `[`Buffer`](#d0/d11/classBuffer_1a09fe57b4916e313b00c53a215445e469)`(Integer size)` | [Buffer](#d0/d11/classBuffer) constructor.
-`public  `[`resize`](#d0/d11/classBuffer_1a551023131e4c63b198902143e5e5b274)`(Integer sz)` | Resize the buffer.
-`public  `[`append`](#d0/d11/classBuffer_1a64a2c7fc815862b7c1d7858873bb33b0)`(Array datas)` | Write an array into the buffer.
-`public  `[`append`](#d0/d11/classBuffer_1af5518d7092942ab80c07ab4829788ede)`(`[`Buffer`](#d0/d11/classBuffer)` data)` | Write a set of binary data into the buffer.
-`public  `[`append`](#d0/d11/classBuffer_1add739e82ae1d7a72104a6cf9030e0f8d)`(String str,String codec)` | Write a string encoded in utf-8 into buffer.
-`public Integer `[`write`](#d0/d11/classBuffer_1a366815494060d39ea7ba8d8e581dd233)`(String str,Integer offset,Integer length,String codec)` | Writes string to the buffer at offset using the given encoding.
-`public  `[`fill`](#d0/d11/classBuffer_1a73dff65a83fcdd9b45b04409159092e4)`(Integer v,Integer offset,Integer end)` | Fill the buffer with the specified objects.
-`public  `[`fill`](#d0/d11/classBuffer_1a944242c8ef0838da5ad88824e4f2216c)`(`[`Buffer`](#d0/d11/classBuffer)` v,Integer offset,Integer end)` | Fill the buffer with the specified objects.
-`public  `[`fill`](#d0/d11/classBuffer_1ab6d72a8f9ba86a750b753c0875937f51)`(String v,Integer offset,Integer end)` | Fill the buffer with the specified objects.
-`public Boolean `[`equals`](#d0/d11/classBuffer_1ab9dcbdb139e1fb0d2a4d5c7fa595edaa)`(`[`Buffer`](#d0/d11/classBuffer)` buf)` | Whether this and otherBuffer have the same bytes.
-`public Integer `[`compare`](#d0/d11/classBuffer_1a75f1e644fc46657e3f6b6383da864e78)`(`[`Buffer`](#d0/d11/classBuffer)` buf)` | Compare the contents of the buffer.
-`public Integer `[`copy`](#d0/d11/classBuffer_1a20c0b25cc08d40d7d988689808cd3553)`(`[`Buffer`](#d0/d11/classBuffer)` targetBuffer,Integer targetStart,Integer sourceStart,Integer sourceEnd)` | Copies data from a region of this buffer to a region in the target buffer even if the target memory region overlaps with the source. If undefined the targetStart and sourceStart parameters default to 0 while sourceEnd defaults to buffer.length.
-`public Integer `[`readUInt8`](#d0/d11/classBuffer_1a31773d42f004ef4effdee037a2471038)`(Integer offset,Boolean noAssert)` | Read an unsigned 8-bit integer from the buffer.
-`public Integer `[`readUInt16LE`](#d0/d11/classBuffer_1a67d1ffd55c172fa1e7fe7dd681408027)`(Integer offset,Boolean noAssert)` | Read an unsigned 16-bit integer from the buffer and use the little-endian format for storage.
-`public Integer `[`readUInt16BE`](#d0/d11/classBuffer_1a2ed9c44da8519639a1d84ee50ddb5755)`(Integer offset,Boolean noAssert)` | Read an unsigned 16-bit integer from the buffer and use the big-endian format for storage.
-`public Long `[`readUInt32LE`](#d0/d11/classBuffer_1a5f255361274039c12fbd58cea3a8972a)`(Integer offset,Boolean noAssert)` | Read an unsigned 32-bit integer from the buffer and use the little-endian format for storage.
-`public Long `[`readUInt32BE`](#d0/d11/classBuffer_1a93a3f8f65710bc2ffdebd3d48338d521)`(Integer offset,Boolean noAssert)` | Read an unsigned 32-bit integer from the buffer and use the big-endian format for storage.
-`public Integer `[`readInt8`](#d0/d11/classBuffer_1a01c6953280f5ed7df68813f93b4d31a5)`(Integer offset,Boolean noAssert)` | Read an 8-bit integer from the buffer.
-`public Integer `[`readInt16LE`](#d0/d11/classBuffer_1a83839ad4bc296d7fbdfeb91e6c1bcbf2)`(Integer offset,Boolean noAssert)` | Read an 16-bit integer from the buffer and use the little-endian format for storage.
-`public Integer `[`readInt16BE`](#d0/d11/classBuffer_1ac2aaf87f746c6e86dff94fb8f144192a)`(Integer offset,Boolean noAssert)` | Read an 16-bit integer from the buffer and use the big-endian format for storage.
-`public Integer `[`readInt32LE`](#d0/d11/classBuffer_1a237125974fd43b21ceb407882d6f36a7)`(Integer offset,Boolean noAssert)` | Read an 32-bit integer from the buffer and use the little-endian format for storage.
-`public Integer `[`readInt32BE`](#d0/d11/classBuffer_1a07c4b7a5e0af4402ad257d0dfdd1904d)`(Integer offset,Boolean noAssert)` | Read an 32-bit integer from the buffer and use the big-endian format for storage.
-`public `[`Int64`](#df/dc1/interfaceInt64)` `[`readInt64LE`](#d0/d11/classBuffer_1a815bd9ece8bd366e812befaeabe837ef)`(Integer offset,Boolean noAssert)` | Read an 64-bit integer from the buffer and use the little-endian format for storage.
-`public `[`Int64`](#df/dc1/interfaceInt64)` `[`readInt64BE`](#d0/d11/classBuffer_1ad42f80b9e720054bac2e9269e92afb1d)`(Integer offset,Boolean noAssert)` | Read an 64-bit integer from the buffer and use the big-endian format for storage.
-`public Number `[`readFloatLE`](#d0/d11/classBuffer_1a522729af2a77d8235a4d39eed45fcdbd)`(Integer offset,Boolean noAssert)` | Read a float from the buffer and use the little-endian format for storage.
-`public Number `[`readFloatBE`](#d0/d11/classBuffer_1ac264d4c959f984dd261e60402f12a49c)`(Integer offset,Boolean noAssert)` | Read a float from the buffer and use the big-endian format for storage.
-`public Number `[`readDoubleLE`](#d0/d11/classBuffer_1a2ec44f49809c3b79b67f1d1ab2e76ec1)`(Integer offset,Boolean noAssert)` | Read a double from the buffer and use the little-endian format for storage.
-`public Number `[`readDoubleBE`](#d0/d11/classBuffer_1a79c9e6fbbf0db3acc7fc1768af10b7b2)`(Integer offset,Boolean noAssert)` | Read a double from the buffer and use the big-endian format for storage.
-`public  `[`writeUInt8`](#d0/d11/classBuffer_1a514f40b16e5df5477378ea5bcc6d330b)`(Integer value,Integer offset,Boolean noAssert)` | Write an unsigned 8-bit integer into the buffer.
-`public  `[`writeUInt16LE`](#d0/d11/classBuffer_1ad3440f99e0ee40eb4020f6009258c913)`(Integer value,Integer offset,Boolean noAssert)` | Write an unsigned 16-bit integer into the buffer and use the little-endian format for storage.
-`public  `[`writeUInt16BE`](#d0/d11/classBuffer_1ab853658a8ccf049770a020d6ab3a0f40)`(Integer value,Integer offset,Boolean noAssert)` | Write an unsigned 16-bit integer into the buffer and use the big-endian format for storage.
-`public  `[`writeUInt32LE`](#d0/d11/classBuffer_1a48da952960d8282fed63a3ffdee0f4bc)`(Long value,Integer offset,Boolean noAssert)` | Write an unsigned 32-bit integer into the buffer and use the little-endian format for storage.
-`public  `[`writeUInt32BE`](#d0/d11/classBuffer_1af93834e211723ddd6caf1edc9ddb22cc)`(Long value,Integer offset,Boolean noAssert)` | Write an unsigned 32-bit integer into the buffer and use the big-endian format for storage.
-`public  `[`writeInt8`](#d0/d11/classBuffer_1afad216b40b5a7f0c9980cadf63a9288d)`(Integer value,Integer offset,Boolean noAssert)` | Write an 8-bit integer into the buffer.
-`public  `[`writeInt16LE`](#d0/d11/classBuffer_1af8a10eb6889789a38a8949c4526ad981)`(Integer value,Integer offset,Boolean noAssert)` | Write a 16-bit integer into the buffer and use the little-endian format for storage.
-`public  `[`writeInt16BE`](#d0/d11/classBuffer_1a0500f514967f73ae1c58b40757da1a26)`(Integer value,Integer offset,Boolean noAssert)` | Write a 16-bit integer into the buffer and use the big-endian format for storage.
-`public  `[`writeInt32LE`](#d0/d11/classBuffer_1a86121684507df1c289b08eadcc9bf573)`(Integer value,Integer offset,Boolean noAssert)` | Write a 32-bit integer into the buffer and use the little-endian format for storage.
-`public  `[`writeInt32BE`](#d0/d11/classBuffer_1a2b4ed494d86af3b7b2b46b12c3ef5cd7)`(Integer value,Integer offset,Boolean noAssert)` | Write a 32-bit integer into the buffer and use the big-endian format for storage.
-`public  `[`writeInt64LE`](#d0/d11/classBuffer_1a1476421a3d84a0d27b02a44a7f38d680)`(`[`Int64`](#df/dc1/interfaceInt64)` value,Integer offset,Boolean noAssert)` | Write a 64-bit integer into the buffer and use the little-endian format for storage.
-`public  `[`writeInt64BE`](#d0/d11/classBuffer_1a81e7bbb73392e704ca83b6fe9d48bf5a)`(`[`Int64`](#df/dc1/interfaceInt64)` value,Integer offset,Boolean noAssert)` | Write a 64-bit integer into the buffer and use the big-endian format for storage.
-`public  `[`writeFloatLE`](#d0/d11/classBuffer_1af0da2db736bab85c79464a57ab05df54)`(Number value,Integer offset,Boolean noAssert)` | Write a float into the buffer and use the little-endian format for storage.
-`public  `[`writeFloatBE`](#d0/d11/classBuffer_1ab81698ec4b2b292809b43bbba9a12c98)`(Number value,Integer offset,Boolean noAssert)` | Write a float into the buffer and use the big-endian format for storage.
-`public  `[`writeDoubleLE`](#d0/d11/classBuffer_1adf45fe19c68fd9a58f8138a2ef509e77)`(Number value,Integer offset,Boolean noAssert)` | Write a double into the buffer and use the little-endian format for storage.
-`public  `[`writeDoubleBE`](#d0/d11/classBuffer_1aa0699049d7c5631acd3f5f0213a7b9d2)`(Number value,Integer offset,Boolean noAssert)` | Write a double into the buffer and use the big-endian format for storage.
-`public `[`Buffer`](#d0/d11/classBuffer)` `[`slice`](#d0/d11/classBuffer_1aaf00c6b9382f73a2c1c23b0444775252)`(Integer start,Integer end)` | return a new buffer that contains data in the specified range. If the data is out of range of the buffer, return the available part of the data.
-`public String `[`hex`](#d0/d11/classBuffer_1ae792f93a92ad21c0c28e4953e91032cb)`()` | Store the data in the buffer with hexadecimal encoding?
-`public String `[`base64`](#d0/d11/classBuffer_1a36df68fd3011d583c237346289fe22d3)`()` | Store the data in the buffer with [base64](#d5/d37/namespacebase64) encoding?
-`public String `[`toString`](#d0/d11/classBuffer_1ac53cf114c773e7246fc35933cf393d62)`(String codec,Integer offset,Integer end)` | return the encoded string of the binary data
-`public String `[`toString`](#d0/d11/classBuffer_1a704ee70a5949e3ce5e3ed9efffbfd054)`()` | return the utf8-encoded string of the binary data
-`public  `[`dispose`](#db/d38/interfaceobject_1a6b88dbc459449d2280338e5b702a68b4)`()` | Force dispose object immediately.
-`public Value `[`toJSON`](#db/d38/interfaceobject_1ad66be13eb5b7c5f560fd8511565138c4)`(String key)` | Return JSON representation of object, normally is readable attributes collection.
-`public Value `[`valueOf`](#db/d38/interfaceobject_1ab9261a7662bc8bb4a898bc15dc16f206)`()` | Return JSON representation of object.
+| Method and Description
+|---------------------------------------------
+| `Buffer(Array datas)`<p>缓存对象构造函数</p>
+| `Buffer(ArrayBuffer datas)`<p>缓存对象构造函数</p>
+| `Buffer(TypedArray datas)`<p>缓存对象构造函数</p>
+| `Buffer(Buffer buffer)`<p>缓存对象构造函数</p>
+| `Buffer(String str,String codec)`<p>缓存对象构造函数</p>
+| `Buffer(Integer size)`<p>缓存对象构造函数</p>
 
-## Members
+## Field Summary
 
-#### `public Integer `[`operator[]`](#d0/d11/classBuffer_1ab9877007db2fad366b7fb0fae861243a) 
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+Integer            | `public Integer operator[]`[`operator[]`](#d0/d11/classBuffer_1ab9877007db2fad366b7fb0fae861243a)`operator[]`<p>缓存对象可使用下标直接访问二进制数据</p>
+readonly Integer            | `public readonly Integer length`[`length`](#d0/d11/classBuffer_1a31eae850157fbe1e15cf7e333c795793)`length`<p>获取缓存对象的尺寸</p>
 
-The binary data in the buffer can be accessed by using subscript.
+## Method Summary
 
-#### `public readonly Integer `[`length`](#d0/d11/classBuffer_1a31eae850157fbe1e15cf7e333c795793) 
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+void            | `resize(Integer sz)`<p>修改缓存对象尺寸</p>
+void            | `append(Array datas)`<p>在缓存对象尾部写入一组数据</p>
+void            | `append(TypedArray datas)`<p>在缓存对象尾部写入一组数据</p>
+void            | `append(ArrayBuffer datas)`<p>在缓存对象尾部写入一组数据</p>
+void            | `append(Buffer data)`<p>在缓存对象尾部写入一组二进制数据</p>
+void            | `append(String str,String codec)`<p>在缓存对象尾部写入字符串，字符串将以 utf-8 格式写入</p>
+Integer            | `write(String str,Integer offset,Integer length,String codec)`<p>向缓存对象写入指定字符串，字符串默认为utf-8，越界时只写入部分数据</p>
+Integer            | `write(String str,Integer offset,String codec)`<p>向缓存对象写入指定字符串，字符串默认为utf-8，越界时只写入部分数据</p>
+Integer            | `write(String str,String codec)`<p>向缓存对象写入指定字符串，字符串默认为utf-8，越界时只写入部分数据</p>
+Buffer            | `fill(Integer v,Integer offset,Integer end)`<p>为Buffer对象填充指定内容数据</p>
+Buffer            | `fill(Buffer v,Integer offset,Integer end)`<p>为Buffer对象填充指定内容数据</p>
+Buffer            | `fill(String v,Integer offset,Integer end)`<p>为Buffer对象填充指定内容数据</p>
+Integer            | `indexOf(Integer v,Integer offset)`<p>返回某个指定数据在Buffer中首次出现的位置</p>
+Integer            | `indexOf(Buffer v,Integer offset)`<p>返回某个指定数据在Buffer中首次出现的位置</p>
+Integer            | `indexOf(String v,Integer offset)`<p>返回某个指定数据在Buffer中首次出现的位置</p>
+Integer            | `compare(Buffer buf)`<p>比较缓存区的内容</p>
+Integer            | `copy(Buffer targetBuffer,Integer targetStart,Integer sourceStart,Integer sourceEnd)`<p>从源缓存对象区域拷贝数据到目标缓存对象区域</p>
+Integer            | `readUInt8(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个 8 位无符号整型数值</p>
+Integer            | `readUInt16LE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个 16 位无符号整型数值，以低字节序的存储方式</p>
+Integer            | `readUInt16BE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个 16 位无符号整型数值，以高字节序的存储方式</p>
+Long            | `readUInt32LE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个 32 位无符号整型数值，以低字节序的存储方式</p>
+Long            | `readUInt32BE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个 32 位无符号整型数值，以高字节序的存储方式</p>
+Long            | `readUIntLE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个无符号整型数值，最大支持 48 位，以低字节序的存储方式</p>
+Long            | `readUIntBE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个无符号整型数值，最大支持 48 位，以高字节序的存储方式</p>
+Integer            | `readInt8(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个 8 位整型数值</p>
+Integer            | `readInt16LE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个 16 位整型数值，以低字节序的存储方式</p>
+Integer            | `readInt16BE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个 16 位整型数值，以高字节序的存储方式</p>
+Integer            | `readInt32LE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个 32 位整型数值，以低字节序的存储方式</p>
+Integer            | `readInt32BE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个 32 位整型数值，以高字节序的存储方式</p>
+Long            | `readIntLE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个整型数值，最大支持 48 位，以低字节序的存储方式</p>
+Long            | `readIntBE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个整型数值，最大支持 48 位，以高字节序的存储方式</p>
+Int64            | `readInt64LE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个 64 位整型数值，以低字节序的存储方式</p>
+Int64            | `readInt64BE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个 64 位整型数值，以高字节序的存储方式</p>
+Number            | `readFloatLE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个浮点数，以低字节序的存储方式</p>
+Number            | `readFloatBE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个浮点数，以高字节序的存储方式</p>
+Number            | `readDoubleLE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个双精度浮点数，以低字节序的存储方式</p>
+Number            | `readDoubleBE(Integer offset,Boolean noAssert)`<p>从缓存对象读取一个双精度浮点数，以高字节序的存储方式</p>
+void            | `writeUInt8(Integer value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个 8 位无符号整型数值</p>
+void            | `writeUInt16LE(Integer value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个 16 位无符号整型数值，以低字节序的存储方式</p>
+void            | `writeUInt16BE(Integer value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个 16 位无符号整型数值，以高字节序的存储方式</p>
+void            | `writeUInt32LE(Long value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个 32 位无符号整型数值，以低字节序的存储方式</p>
+void            | `writeUInt32BE(Long value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个 32 位无符号整型数值，以高字节序的存储方式</p>
+void            | `writeUIntLE(Long value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个无符号整型数值，最大支持 48 位，以低字节序的存储方式</p>
+void            | `writeUIntBE(Long value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个无符号整型数值，最大支持 48 位，以高字节序的存储方式</p>
+void            | `writeInt8(Integer value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个 8 位整型数值</p>
+void            | `writeInt16LE(Integer value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个 16 位整型数值，以低字节序的存储方式</p>
+void            | `writeInt16BE(Integer value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个 16 位整型数值，以高字节序的存储方式</p>
+void            | `writeInt32LE(Integer value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个 32 位整型数值，以低字节序的存储方式</p>
+void            | `writeInt32BE(Integer value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个 32 位整型数值，以高字节序的存储方式</p>
+void            | `writeIntLE(Long value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个整型数值，最大支持 48 位，以低字节序的存储方式</p>
+void            | `writeIntBE(Long value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个整型数值，最大支持 48 位，以高字节序的存储方式</p>
+void            | `writeInt64LE(Int64 value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个 64 位整型数值，以低字节序的存储方式</p>
+void            | `writeInt64BE(Int64 value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个 64 位整型数值，以高字节序的存储方式</p>
+void            | `writeFloatLE(Number value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个浮点数，以低字节序的存储方式</p>
+void            | `writeFloatBE(Number value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个浮点数，以高字节序的存储方式</p>
+void            | `writeDoubleLE(Number value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个双精度浮点数，以低字节序的存储方式</p>
+void            | `writeDoubleBE(Number value,Integer offset,Boolean noAssert)`<p>向缓存对象写入一个双精度浮点数，以高字节序的存储方式</p>
+Buffer            | `slice(Integer start)`<p>返回一个新缓存对象，包含指定起始到缓存结尾的数据</p>
+Buffer            | `slice(Integer start,Integer end)`<p>返回一个新缓存对象，包含指定范围的数据，若范围超出缓存，则只返回有效部分数据</p>
+String            | `hex()`<p>使用 16 进制编码缓存对象内容</p>
+String            | `base64()`<p>使用 base64 编码缓存对象内容</p>
+Array            | `toArray()`<p>返回全部二进制数据的数组</p>
+String            | `toString(String codec,Integer offset,Integer end)`<p>返回二进制数据的编码字符串</p>
+String            | `toString()`<p>返回二进制数据的 utf8 编码字符串</p>
+void            | `dispose()`<p>强制回收对象，调用此方法后，对象资源将立即释放</p>
+Boolean            | `equals(object expected)`<p>比较当前对象与给定的对象是否相等</p>
+Value            | `toJSON(String key)`<p>返回对象的 JSON 格式表示，一般返回对象定义的可读属性集合</p>
+Value            | `valueOf()`<p>返回对象本身的数值</p>
+Boolean            | `isBuffer(Value v)`<p>检测给定的变量是否是 Buffer 对象</p>
+Buffer            | `concat(Array buflist,Integer cutLength)`<p>拼接多个缓存区中的数据</p>
 
-The buffer size.
+## Constructor Detail
 
-#### `public  `[`Buffer`](#d0/d11/classBuffer_1af19634a31b59ee8f2f4031715bf89952)`(Array datas)` 
+{{% panel theme="default" header="Buffer" %}}
+#### `Buffer(Array datas)`
 
-[Buffer](#d0/d11/classBuffer) constructor.
-
-#### Parameters
-* `datas` Initial data array
-
-#### `public  `[`Buffer`](#d0/d11/classBuffer_1ac16e65f2c0d120d046cb02cc1841c17d)`(`[`Buffer`](#d0/d11/classBuffer)` buffer)` 
-
-[Buffer](#d0/d11/classBuffer) constructor.
-
-#### Parameters
-* `buffer` otherBuffer
-
-#### `public  `[`Buffer`](#d0/d11/classBuffer_1ab9e33ff0da7a8dd5c812330c1ed08c17)`(String str,String codec)` 
-
-[Buffer](#d0/d11/classBuffer) constructor.
-
-#### Parameters
-* `str` Initial string encoded in UTF-8, by default it will create an empty object. 
-
-* `codec` The encode format, can be "hex", “base64”, "utf8" or any other character sets supported by the system.
-
-#### `public  `[`Buffer`](#d0/d11/classBuffer_1a09fe57b4916e313b00c53a215445e469)`(Integer size)` 
-
-[Buffer](#d0/d11/classBuffer) constructor.
-
-#### Parameters
-* `size` Initial cache size
-
-#### `public  `[`resize`](#d0/d11/classBuffer_1a551023131e4c63b198902143e5e5b274)`(Integer sz)` 
-
-Resize the buffer.
+缓存对象构造函数
 
 #### Parameters
-* `sz` New size
+* `datas` 初始化数据数组
+{{% /panel %}}
+{{% panel theme="default" header="Buffer" %}}
+#### `Buffer(ArrayBuffer datas)`
 
-#### `public  `[`append`](#d0/d11/classBuffer_1a64a2c7fc815862b7c1d7858873bb33b0)`(Array datas)` 
-
-Write an array into the buffer.
-
-#### Parameters
-* `datas` Initial data array
-
-#### `public  `[`append`](#d0/d11/classBuffer_1af5518d7092942ab80c07ab4829788ede)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
-
-Write a set of binary data into the buffer.
+缓存对象构造函数
 
 #### Parameters
-* `data` Initial binary data
+* `datas` 初始化数据数组
+{{% /panel %}}
+{{% panel theme="default" header="Buffer" %}}
+#### `Buffer(TypedArray datas)`
 
-#### `public  `[`append`](#d0/d11/classBuffer_1add739e82ae1d7a72104a6cf9030e0f8d)`(String str,String codec)` 
-
-Write a string encoded in utf-8 into buffer.
-
-#### Parameters
-* `str` String to write 
-
-* `codec` Coded format, can be "hex", “base64”, "utf8" or any other character sets supported by the system.
-
-#### `public Integer `[`write`](#d0/d11/classBuffer_1a366815494060d39ea7ba8d8e581dd233)`(String str,Integer offset,Integer length,String codec)` 
-
-Writes string to the buffer at offset using the given encoding.
+缓存对象构造函数
 
 #### Parameters
-* `str` String - data to be written to buffer 
+* `datas` 初始化数据数组
+{{% /panel %}}
+{{% panel theme="default" header="Buffer" %}}
+#### `Buffer(Buffer buffer)`
 
-* `offset` Number, Optional, Default 0 
+缓存对象构造函数
 
-* `length` Number, Optional, Default -1 
+#### Parameters
+* `buffer` 初始化Buffer对象
+{{% /panel %}}
+{{% panel theme="default" header="Buffer" %}}
+#### `Buffer(String str,String codec)`
 
-* `codec` Coded format, can be "hex", “base64”, "utf8" or any other character sets supported 
+缓存对象构造函数
+
+#### Parameters
+* `str` 初始化字符串，字符串将以 utf-8 格式写入，缺省则创建一个空对象 
+
+* `codec` 指定编码格式，允许值为："hex", "base64", "utf8", 或者系统支持的字符集
+{{% /panel %}}
+{{% panel theme="default" header="Buffer" %}}
+#### `Buffer(Integer size)`
+
+缓存对象构造函数
+
+#### Parameters
+* `size` 初始化缓冲区大小
+{{% /panel %}}
+
+## Field Detail
+
+{{% panel theme="default" header="operator[]" %}}
+#### **Integer** `public Integer operator[]`[`operator[]`](#d0/d11/classBuffer_1ab9877007db2fad366b7fb0fae861243a)`operator[]`
+
+缓存对象可使用下标直接访问二进制数据
+
+{{% /panel %}}
+{{% panel theme="default" header="length" %}}
+#### **readonly Integer** `public readonly Integer length`[`length`](#d0/d11/classBuffer_1a31eae850157fbe1e15cf7e333c795793)`length`
+
+获取缓存对象的尺寸
+
+{{% /panel %}}
+
+## Method Detail
+
+{{% panel theme="default" header="resize" %}}
+#### **void** `resize(Integer sz)`
+
+修改缓存对象尺寸
+
+#### Parameters
+* `sz` 指定新尺寸
+{{% /panel %}}
+{{% panel theme="default" header="append" %}}
+#### **void** `append(Array datas)`
+
+在缓存对象尾部写入一组数据
+
+#### Parameters
+* `datas` 初始化数据数组
+{{% /panel %}}
+{{% panel theme="default" header="append" %}}
+#### **void** `append(TypedArray datas)`
+
+在缓存对象尾部写入一组数据
+
+#### Parameters
+* `datas` 初始化数据数组
+{{% /panel %}}
+{{% panel theme="default" header="append" %}}
+#### **void** `append(ArrayBuffer datas)`
+
+在缓存对象尾部写入一组数据
+
+#### Parameters
+* `datas` 初始化数据数组
+{{% /panel %}}
+{{% panel theme="default" header="append" %}}
+#### **void** `append(Buffer data)`
+
+在缓存对象尾部写入一组二进制数据
+
+#### Parameters
+* `data` 初始化二进制数据
+{{% /panel %}}
+{{% panel theme="default" header="append" %}}
+#### **void** `append(String str,String codec)`
+
+在缓存对象尾部写入字符串，字符串将以 utf-8 格式写入
+
+#### Parameters
+* `str` 要写入的字符串 
+
+* `codec` 指定编码格式，允许值为："hex", "base64", "utf8", 或者系统支持的字符集
+{{% /panel %}}
+{{% panel theme="default" header="write" %}}
+#### **Integer** `write(String str,Integer offset,Integer length,String codec)`
+
+向缓存对象写入指定字符串，字符串默认为utf-8，越界时只写入部分数据
+
+#### Parameters
+* `str` 待写入的字符串 
+
+* `offset` 写入起始位置 
+
+* `length` 写入长度（单位字节，默认值-1），未指定时为待写入字符串的长度 
+
+* `codec` 指定编码格式，允许值为："hex", "base64", "utf8", 或者系统支持的字符集 
 
 #### Returns
-Returns number of octets written.
+写入的数据字节长度
+{{% /panel %}}
+{{% panel theme="default" header="write" %}}
+#### **Integer** `write(String str,Integer offset,String codec)`
 
-#### `public  `[`fill`](#d0/d11/classBuffer_1a73dff65a83fcdd9b45b04409159092e4)`(Integer v,Integer offset,Integer end)` 
-
-Fill the buffer with the specified objects.
-
-#### Parameters
-* `v` Data intend to be filled, and will fill the entire buffer when the offset and end is not specified. 
-
-* `offset` Number, Optional, Default 0 
-
-* `end` Number, Optional, Default -1
-
-#### `public  `[`fill`](#d0/d11/classBuffer_1a944242c8ef0838da5ad88824e4f2216c)`(`[`Buffer`](#d0/d11/classBuffer)` v,Integer offset,Integer end)` 
-
-Fill the buffer with the specified objects.
+向缓存对象写入指定字符串，字符串默认为utf-8，越界时只写入部分数据
 
 #### Parameters
-* `v` Data intend to be filled, and will fill the entire buffer when the offset and end is not specified. 
+* `str` 待写入的字符串 
 
-* `offset` Number, Optional, Default 0 
+* `offset` 写入起始位置 
 
-* `end` Number, Optional, Default -1
-
-#### `public  `[`fill`](#d0/d11/classBuffer_1ab6d72a8f9ba86a750b753c0875937f51)`(String v,Integer offset,Integer end)` 
-
-Fill the buffer with the specified objects.
-
-#### Parameters
-* `v` Data intend to be filled, and will fill the entire buffer when the offset and end is not specified. 
-
-* `offset` Number, Optional, Default 0 
-
-* `end` Number, Optional, Default -1
-
-#### `public Boolean `[`equals`](#d0/d11/classBuffer_1ab9dcbdb139e1fb0d2a4d5c7fa595edaa)`(`[`Buffer`](#d0/d11/classBuffer)` buf)` 
-
-Whether this and otherBuffer have the same bytes.
-
-#### Parameters
-* `buf` otherBuffer 
+* `codec` 指定编码格式，允许值为："hex", "base64", "utf8", 或者系统支持的字符集 
 
 #### Returns
-Returns a boolean of whether this and otherBuffer have the same bytes.
+写入的数据字节长度
+{{% /panel %}}
+{{% panel theme="default" header="write" %}}
+#### **Integer** `write(String str,String codec)`
 
-#### `public Integer `[`compare`](#d0/d11/classBuffer_1a75f1e644fc46657e3f6b6383da864e78)`(`[`Buffer`](#d0/d11/classBuffer)` buf)` 
-
-Compare the contents of the buffer.
+向缓存对象写入指定字符串，字符串默认为utf-8，越界时只写入部分数据
 
 #### Parameters
-* `buf` otherBuffer 
+* `str` 待写入的字符串 
+
+* `codec` 指定编码格式，允许值为："hex", "base64", "utf8", 或者系统支持的字符集 
 
 #### Returns
-Returns a number indicating whether this comes before or after or is the same as the otherBuffer in sort order.
+写入的数据字节长度
+{{% /panel %}}
+{{% panel theme="default" header="fill" %}}
+#### **Buffer** `fill(Integer v,Integer offset,Integer end)`
 
-#### `public Integer `[`copy`](#d0/d11/classBuffer_1a20c0b25cc08d40d7d988689808cd3553)`(`[`Buffer`](#d0/d11/classBuffer)` targetBuffer,Integer targetStart,Integer sourceStart,Integer sourceEnd)` 
-
-Copies data from a region of this buffer to a region in the target buffer even if the target memory region overlaps with the source. If undefined the targetStart and sourceStart parameters default to 0 while sourceEnd defaults to buffer.length.
+为Buffer对象填充指定内容数据
 
 #### Parameters
-* `targetBuffer` [Buffer](#d0/d11/classBuffer) object - [Buffer](#d0/d11/classBuffer) to copy into 
+* `v` 需要填充的数据，如果未指定offset和end，将填充满整个buffer 
 
-* `targetStart` Number, Optional, Default: 0 
+* `offset` 填充起始位置 
 
-* `sourceStart` Number, Optional, Default: 0 
-
-* `sourceEnd` Number, Optional, Default: -1, represent buffer.length 
+* `end` 填充终止位置 
 
 #### Returns
-Copied data byte length
+返回当前 Buffer 对象
+{{% /panel %}}
+{{% panel theme="default" header="fill" %}}
+#### **Buffer** `fill(Buffer v,Integer offset,Integer end)`
 
-#### `public Integer `[`readUInt8`](#d0/d11/classBuffer_1a31773d42f004ef4effdee037a2471038)`(Integer offset,Boolean noAssert)` 
-
-Read an unsigned 8-bit integer from the buffer.
+为Buffer对象填充指定内容数据
 
 #### Parameters
-* `offset` The beginning of the address to read 
+* `v` 需要填充的数据，如果未指定offset和end，将填充满整个buffer 
 
-* `noAssert` If true, then do not throw an error when overread. By default it's false. 
+* `offset` 填充起始位置 
+
+* `end` 填充终止位置 
 
 #### Returns
-The targeted integer
+返回当前 Buffer 对象
+{{% /panel %}}
+{{% panel theme="default" header="fill" %}}
+#### **Buffer** `fill(String v,Integer offset,Integer end)`
 
-#### `public Integer `[`readUInt16LE`](#d0/d11/classBuffer_1a67d1ffd55c172fa1e7fe7dd681408027)`(Integer offset,Boolean noAssert)` 
-
-Read an unsigned 16-bit integer from the buffer and use the little-endian format for storage.
+为Buffer对象填充指定内容数据
 
 #### Parameters
-* `offset` The beginning of the address to read 
+* `v` 需要填充的数据，如果未指定offset和end，将填充满整个buffer 
 
-* `noAssert` If true, then do not throw an error when overread. By default it's false. 
+* `offset` 填充起始位置 
+
+* `end` 填充终止位置 
 
 #### Returns
-The targeted integer
+返回当前 Buffer 对象
+{{% /panel %}}
+{{% panel theme="default" header="indexOf" %}}
+#### **Integer** `indexOf(Integer v,Integer offset)`
 
-#### `public Integer `[`readUInt16BE`](#d0/d11/classBuffer_1a2ed9c44da8519639a1d84ee50ddb5755)`(Integer offset,Boolean noAssert)` 
-
-Read an unsigned 16-bit integer from the buffer and use the big-endian format for storage.
+返回某个指定数据在Buffer中首次出现的位置
 
 #### Parameters
-* `offset` The beginning of the address to read 
+* `v` 待查找数据，如果未指定offset，默认从起始位开始 
 
-* `noAssert` If true, then do not throw an error when overread. By default it's false. 
+* `offset` 起始查找位置
+{{% /panel %}}
+{{% panel theme="default" header="indexOf" %}}
+#### **Integer** `indexOf(Buffer v,Integer offset)`
+
+返回某个指定数据在Buffer中首次出现的位置
+
+#### Parameters
+* `v` 待查找数据，如果未指定offset，默认从起始位开始 
+
+* `offset` 起始查找位置
+{{% /panel %}}
+{{% panel theme="default" header="indexOf" %}}
+#### **Integer** `indexOf(String v,Integer offset)`
+
+返回某个指定数据在Buffer中首次出现的位置
+
+#### Parameters
+* `v` 待查找数据，如果未指定offset，默认从起始位开始 
+
+* `offset` 起始查找位置
+{{% /panel %}}
+{{% panel theme="default" header="compare" %}}
+#### **Integer** `compare(Buffer buf)`
+
+比较缓存区的内容
+
+#### Parameters
+* `buf` 待比较缓存对象 
 
 #### Returns
-The targeted integer
+内容比较结果
+{{% /panel %}}
+{{% panel theme="default" header="copy" %}}
+#### **Integer** `copy(Buffer targetBuffer,Integer targetStart,Integer sourceStart,Integer sourceEnd)`
 
-#### `public Long `[`readUInt32LE`](#d0/d11/classBuffer_1a5f255361274039c12fbd58cea3a8972a)`(Integer offset,Boolean noAssert)` 
-
-Read an unsigned 32-bit integer from the buffer and use the little-endian format for storage.
+从源缓存对象区域拷贝数据到目标缓存对象区域
 
 #### Parameters
-* `offset` The beginning of the address to read 
+* `targetBuffer` 目标缓存对象 
 
-* `noAssert` If true, then do not throw an error when overread. By default it's false. 
+* `targetStart` 目标缓存对象开始拷贝字节位置，缺省为 0 
+
+* `sourceStart` 源缓存对象开始字节位置, 缺省为 0 
+
+* `sourceEnd` 源缓存对象结束字节位置, 缺省为 -1,表示源数据长度 
 
 #### Returns
-The targeted integer
+拷贝的数据字节长度
+{{% /panel %}}
+{{% panel theme="default" header="readUInt8" %}}
+#### **Integer** `readUInt8(Integer offset,Boolean noAssert)`
 
-#### `public Long `[`readUInt32BE`](#d0/d11/classBuffer_1a93a3f8f65710bc2ffdebd3d48338d521)`(Integer offset,Boolean noAssert)` 
-
-Read an unsigned 32-bit integer from the buffer and use the big-endian format for storage.
+从缓存对象读取一个 8 位无符号整型数值
 
 #### Parameters
-* `offset` The beginning of the address to read 
+* `offset` 指定读取的起始位置，缺省为 0 
 
-* `noAssert` If true, then do not throw an error when overread. By default it's false. 
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
 
 #### Returns
-The targeted integer
+返回读取的整型数值
+{{% /panel %}}
+{{% panel theme="default" header="readUInt16LE" %}}
+#### **Integer** `readUInt16LE(Integer offset,Boolean noAssert)`
 
-#### `public Integer `[`readInt8`](#d0/d11/classBuffer_1a01c6953280f5ed7df68813f93b4d31a5)`(Integer offset,Boolean noAssert)` 
-
-Read an 8-bit integer from the buffer.
+从缓存对象读取一个 16 位无符号整型数值，以低字节序的存储方式
 
 #### Parameters
-* `offset` The beginning of the address to read 
+* `offset` 指定读取的起始位置，缺省为 0 
 
-* `noAssert` If true, then do not throw an error when overread. By default it's false. 
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
 
 #### Returns
-The targeted integer
+返回读取的整型数值
+{{% /panel %}}
+{{% panel theme="default" header="readUInt16BE" %}}
+#### **Integer** `readUInt16BE(Integer offset,Boolean noAssert)`
 
-#### `public Integer `[`readInt16LE`](#d0/d11/classBuffer_1a83839ad4bc296d7fbdfeb91e6c1bcbf2)`(Integer offset,Boolean noAssert)` 
-
-Read an 16-bit integer from the buffer and use the little-endian format for storage.
+从缓存对象读取一个 16 位无符号整型数值，以高字节序的存储方式
 
 #### Parameters
-* `offset` The beginning of the address to read 
+* `offset` 指定读取的起始位置，缺省为 0 
 
-* `noAssert` If true, then do not throw an error when overread. By default it's false. 
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
 
 #### Returns
-The targeted integer
+返回读取的整型数值
+{{% /panel %}}
+{{% panel theme="default" header="readUInt32LE" %}}
+#### **Long** `readUInt32LE(Integer offset,Boolean noAssert)`
 
-#### `public Integer `[`readInt16BE`](#d0/d11/classBuffer_1ac2aaf87f746c6e86dff94fb8f144192a)`(Integer offset,Boolean noAssert)` 
-
-Read an 16-bit integer from the buffer and use the big-endian format for storage.
+从缓存对象读取一个 32 位无符号整型数值，以低字节序的存储方式
 
 #### Parameters
-* `offset` The beginning of the address to read 
+* `offset` 指定读取的起始位置，缺省为 0 
 
-* `noAssert` If true, then do not throw an error when overread. By default it's false. 
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
 
 #### Returns
-The targeted integer
+返回读取的整型数值
+{{% /panel %}}
+{{% panel theme="default" header="readUInt32BE" %}}
+#### **Long** `readUInt32BE(Integer offset,Boolean noAssert)`
 
-#### `public Integer `[`readInt32LE`](#d0/d11/classBuffer_1a237125974fd43b21ceb407882d6f36a7)`(Integer offset,Boolean noAssert)` 
-
-Read an 32-bit integer from the buffer and use the little-endian format for storage.
+从缓存对象读取一个 32 位无符号整型数值，以高字节序的存储方式
 
 #### Parameters
-* `offset` The beginning of the address to read 
+* `offset` 指定读取的起始位置，缺省为 0 
 
-* `noAssert` If true, then do not throw an error when overread. By default it's false. 
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
 
 #### Returns
-The targeted integer
+返回读取的整型数值
+{{% /panel %}}
+{{% panel theme="default" header="readUIntLE" %}}
+#### **Long** `readUIntLE(Integer offset,Boolean noAssert)`
 
-#### `public Integer `[`readInt32BE`](#d0/d11/classBuffer_1a07c4b7a5e0af4402ad257d0dfdd1904d)`(Integer offset,Boolean noAssert)` 
-
-Read an 32-bit integer from the buffer and use the big-endian format for storage.
+从缓存对象读取一个无符号整型数值，最大支持 48 位，以低字节序的存储方式
 
 #### Parameters
-* `offset` The beginning of the address to read 
+* `offset` 指定读取的起始位置，缺省为 0 
 
-* `noAssert` If true, then do not throw an error when overread. By default it's false. 
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
 
 #### Returns
-The targeted integer
+返回读取的整型数值
+{{% /panel %}}
+{{% panel theme="default" header="readUIntBE" %}}
+#### **Long** `readUIntBE(Integer offset,Boolean noAssert)`
 
-#### `public `[`Int64`](#df/dc1/interfaceInt64)` `[`readInt64LE`](#d0/d11/classBuffer_1a815bd9ece8bd366e812befaeabe837ef)`(Integer offset,Boolean noAssert)` 
-
-Read an 64-bit integer from the buffer and use the little-endian format for storage.
+从缓存对象读取一个无符号整型数值，最大支持 48 位，以高字节序的存储方式
 
 #### Parameters
-* `offset` The beginning of the address to read 
+* `offset` 指定读取的起始位置，缺省为 0 
 
-* `noAssert` If true, then do not throw an error when overread. By default it's false. 
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
 
 #### Returns
-The targeted integer
+返回读取的整型数值
+{{% /panel %}}
+{{% panel theme="default" header="readInt8" %}}
+#### **Integer** `readInt8(Integer offset,Boolean noAssert)`
 
-#### `public `[`Int64`](#df/dc1/interfaceInt64)` `[`readInt64BE`](#d0/d11/classBuffer_1ad42f80b9e720054bac2e9269e92afb1d)`(Integer offset,Boolean noAssert)` 
-
-Read an 64-bit integer from the buffer and use the big-endian format for storage.
+从缓存对象读取一个 8 位整型数值
 
 #### Parameters
-* `offset` The beginning of the address to read 
+* `offset` 指定读取的起始位置，缺省为 0 
 
-* `noAssert` If true, then do not throw an error when overread. By default it's false. 
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
 
 #### Returns
-The targeted integer
+返回读取的整型数值
+{{% /panel %}}
+{{% panel theme="default" header="readInt16LE" %}}
+#### **Integer** `readInt16LE(Integer offset,Boolean noAssert)`
 
-#### `public Number `[`readFloatLE`](#d0/d11/classBuffer_1a522729af2a77d8235a4d39eed45fcdbd)`(Integer offset,Boolean noAssert)` 
-
-Read a float from the buffer and use the little-endian format for storage.
+从缓存对象读取一个 16 位整型数值，以低字节序的存储方式
 
 #### Parameters
-* `offset` The beginning of the address to read 
+* `offset` 指定读取的起始位置，缺省为 0 
 
-* `noAssert` If true, then do not throw an error when overread. By default it's false. 
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
 
 #### Returns
-The targeted float
+返回读取的整型数值
+{{% /panel %}}
+{{% panel theme="default" header="readInt16BE" %}}
+#### **Integer** `readInt16BE(Integer offset,Boolean noAssert)`
 
-#### `public Number `[`readFloatBE`](#d0/d11/classBuffer_1ac264d4c959f984dd261e60402f12a49c)`(Integer offset,Boolean noAssert)` 
-
-Read a float from the buffer and use the big-endian format for storage.
+从缓存对象读取一个 16 位整型数值，以高字节序的存储方式
 
 #### Parameters
-* `offset` The beginning of the address to read 
+* `offset` 指定读取的起始位置，缺省为 0 
 
-* `noAssert` If true, then do not throw an error when overread. By default it's false. 
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
 
 #### Returns
-The targeted float
+返回读取的整型数值
+{{% /panel %}}
+{{% panel theme="default" header="readInt32LE" %}}
+#### **Integer** `readInt32LE(Integer offset,Boolean noAssert)`
 
-#### `public Number `[`readDoubleLE`](#d0/d11/classBuffer_1a2ec44f49809c3b79b67f1d1ab2e76ec1)`(Integer offset,Boolean noAssert)` 
-
-Read a double from the buffer and use the little-endian format for storage.
+从缓存对象读取一个 32 位整型数值，以低字节序的存储方式
 
 #### Parameters
-* `offset` The beginning of the address to read 
+* `offset` 指定读取的起始位置，缺省为 0 
 
-* `noAssert` If true, then do not throw an error when overread. By default it's false. 
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
 
 #### Returns
-The targeted double
+返回读取的整型数值
+{{% /panel %}}
+{{% panel theme="default" header="readInt32BE" %}}
+#### **Integer** `readInt32BE(Integer offset,Boolean noAssert)`
 
-#### `public Number `[`readDoubleBE`](#d0/d11/classBuffer_1a79c9e6fbbf0db3acc7fc1768af10b7b2)`(Integer offset,Boolean noAssert)` 
-
-Read a double from the buffer and use the big-endian format for storage.
+从缓存对象读取一个 32 位整型数值，以高字节序的存储方式
 
 #### Parameters
-* `offset` The beginning of the address to read 
+* `offset` 指定读取的起始位置，缺省为 0 
 
-* `noAssert` If true, then do not throw an error when overread. By default it's false. 
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
 
 #### Returns
-The targeted double
+返回读取的整型数值
+{{% /panel %}}
+{{% panel theme="default" header="readIntLE" %}}
+#### **Long** `readIntLE(Integer offset,Boolean noAssert)`
 
-#### `public  `[`writeUInt8`](#d0/d11/classBuffer_1a514f40b16e5df5477378ea5bcc6d330b)`(Integer value,Integer offset,Boolean noAssert)` 
-
-Write an unsigned 8-bit integer into the buffer.
-
-#### Parameters
-* `value` The value to write 
-
-* `offset` The beginning of the address to write 
-
-* `noAssert` If true, then do not throw an error when overwrite. By default it's false.
-
-#### `public  `[`writeUInt16LE`](#d0/d11/classBuffer_1ad3440f99e0ee40eb4020f6009258c913)`(Integer value,Integer offset,Boolean noAssert)` 
-
-Write an unsigned 16-bit integer into the buffer and use the little-endian format for storage.
+从缓存对象读取一个整型数值，最大支持 48 位，以低字节序的存储方式
 
 #### Parameters
-* `value` The value to write 
+* `offset` 指定读取的起始位置，缺省为 0 
 
-* `offset` The beginning of the address to write 
-
-* `noAssert` If true, then do not throw an error when overwrite. By default it's false.
-
-#### `public  `[`writeUInt16BE`](#d0/d11/classBuffer_1ab853658a8ccf049770a020d6ab3a0f40)`(Integer value,Integer offset,Boolean noAssert)` 
-
-Write an unsigned 16-bit integer into the buffer and use the big-endian format for storage.
-
-#### Parameters
-* `value` The value to write 
-
-* `offset` The beginning of the address to write 
-
-* `noAssert` If true, then do not throw an error when overwrite. By default it's false.
-
-#### `public  `[`writeUInt32LE`](#d0/d11/classBuffer_1a48da952960d8282fed63a3ffdee0f4bc)`(Long value,Integer offset,Boolean noAssert)` 
-
-Write an unsigned 32-bit integer into the buffer and use the little-endian format for storage.
-
-#### Parameters
-* `value` The value to write 
-
-* `offset` The beginning of the address to write 
-
-* `noAssert` If true, then do not throw an error when overwrite. By default it's false.
-
-#### `public  `[`writeUInt32BE`](#d0/d11/classBuffer_1af93834e211723ddd6caf1edc9ddb22cc)`(Long value,Integer offset,Boolean noAssert)` 
-
-Write an unsigned 32-bit integer into the buffer and use the big-endian format for storage.
-
-#### Parameters
-* `value` The value to write 
-
-* `offset` The beginning of the address to write 
-
-* `noAssert` If true, then do not throw an error when overwrite. By default it's false.
-
-#### `public  `[`writeInt8`](#d0/d11/classBuffer_1afad216b40b5a7f0c9980cadf63a9288d)`(Integer value,Integer offset,Boolean noAssert)` 
-
-Write an 8-bit integer into the buffer.
-
-#### Parameters
-* `value` The value to write 
-
-* `offset` The beginning of the address to write 
-
-* `noAssert` If true, then do not throw an error when overwrite. By default it's false.
-
-#### `public  `[`writeInt16LE`](#d0/d11/classBuffer_1af8a10eb6889789a38a8949c4526ad981)`(Integer value,Integer offset,Boolean noAssert)` 
-
-Write a 16-bit integer into the buffer and use the little-endian format for storage.
-
-#### Parameters
-* `value` The value to write 
-
-* `offset` The beginning of the address to write 
-
-* `noAssert` If true, then do not throw an error when overwrite. By default it's false.
-
-#### `public  `[`writeInt16BE`](#d0/d11/classBuffer_1a0500f514967f73ae1c58b40757da1a26)`(Integer value,Integer offset,Boolean noAssert)` 
-
-Write a 16-bit integer into the buffer and use the big-endian format for storage.
-
-#### Parameters
-* `value` The value to write 
-
-* `offset` The beginning of the address to write 
-
-* `noAssert` If true, then do not throw an error when overwrite. By default it's false.
-
-#### `public  `[`writeInt32LE`](#d0/d11/classBuffer_1a86121684507df1c289b08eadcc9bf573)`(Integer value,Integer offset,Boolean noAssert)` 
-
-Write a 32-bit integer into the buffer and use the little-endian format for storage.
-
-#### Parameters
-* `value` The value to write 
-
-* `offset` The beginning of the address to write 
-
-* `noAssert` If true, then do not throw an error when overwrite. By default it's false.
-
-#### `public  `[`writeInt32BE`](#d0/d11/classBuffer_1a2b4ed494d86af3b7b2b46b12c3ef5cd7)`(Integer value,Integer offset,Boolean noAssert)` 
-
-Write a 32-bit integer into the buffer and use the big-endian format for storage.
-
-#### Parameters
-* `value` The value to write 
-
-* `offset` The beginning of the address to write 
-
-* `noAssert` If true, then do not throw an error when overwrite. By default it's false.
-
-#### `public  `[`writeInt64LE`](#d0/d11/classBuffer_1a1476421a3d84a0d27b02a44a7f38d680)`(`[`Int64`](#df/dc1/interfaceInt64)` value,Integer offset,Boolean noAssert)` 
-
-Write a 64-bit integer into the buffer and use the little-endian format for storage.
-
-#### Parameters
-* `value` The value to write 
-
-* `offset` The beginning of the address to write 
-
-* `noAssert` If true, then do not throw an error when overwrite. By default it's false.
-
-#### `public  `[`writeInt64BE`](#d0/d11/classBuffer_1a81e7bbb73392e704ca83b6fe9d48bf5a)`(`[`Int64`](#df/dc1/interfaceInt64)` value,Integer offset,Boolean noAssert)` 
-
-Write a 64-bit integer into the buffer and use the big-endian format for storage.
-
-#### Parameters
-* `value` The value to write 
-
-* `offset` The beginning of the address to write 
-
-* `noAssert` If true, then do not throw an error when overwrite. By default it's false.
-
-#### `public  `[`writeFloatLE`](#d0/d11/classBuffer_1af0da2db736bab85c79464a57ab05df54)`(Number value,Integer offset,Boolean noAssert)` 
-
-Write a float into the buffer and use the little-endian format for storage.
-
-#### Parameters
-* `value` The value to write 
-
-* `offset` The beginning of the address to write 
-
-* `noAssert` If true, then do not throw an error when overwrite. By default it's false.
-
-#### `public  `[`writeFloatBE`](#d0/d11/classBuffer_1ab81698ec4b2b292809b43bbba9a12c98)`(Number value,Integer offset,Boolean noAssert)` 
-
-Write a float into the buffer and use the big-endian format for storage.
-
-#### Parameters
-* `value` The value to write 
-
-* `offset` The beginning of the address to write 
-
-* `noAssert` If true, then do not throw an error when overwrite. By default it's false.
-
-#### `public  `[`writeDoubleLE`](#d0/d11/classBuffer_1adf45fe19c68fd9a58f8138a2ef509e77)`(Number value,Integer offset,Boolean noAssert)` 
-
-Write a double into the buffer and use the little-endian format for storage.
-
-#### Parameters
-* `value` The value to write 
-
-* `offset` The beginning of the address to write 
-
-* `noAssert` If true, then do not throw an error when overwrite. By default it's false.
-
-#### `public  `[`writeDoubleBE`](#d0/d11/classBuffer_1aa0699049d7c5631acd3f5f0213a7b9d2)`(Number value,Integer offset,Boolean noAssert)` 
-
-Write a double into the buffer and use the big-endian format for storage.
-
-#### Parameters
-* `value` The value to write 
-
-* `offset` The beginning of the address to write 
-
-* `noAssert` If true, then do not throw an error when overwrite. By default it's false.
-
-#### `public `[`Buffer`](#d0/d11/classBuffer)` `[`slice`](#d0/d11/classBuffer_1aaf00c6b9382f73a2c1c23b0444775252)`(Integer start,Integer end)` 
-
-return a new buffer that contains data in the specified range. If the data is out of range of the buffer, return the available part of the data.
-
-#### Parameters
-* `start` The start of the specified range, by default it's the beginning of the buffer 
-
-* `end` The end of the specified range, by default it's the end of the buffer
-
-#### `public String `[`hex`](#d0/d11/classBuffer_1ae792f93a92ad21c0c28e4953e91032cb)`()` 
-
-Store the data in the buffer with hexadecimal encoding?
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
 
 #### Returns
-The encoded string
+返回读取的整型数值
+{{% /panel %}}
+{{% panel theme="default" header="readIntBE" %}}
+#### **Long** `readIntBE(Integer offset,Boolean noAssert)`
 
-#### `public String `[`base64`](#d0/d11/classBuffer_1a36df68fd3011d583c237346289fe22d3)`()` 
-
-Store the data in the buffer with [base64](#d5/d37/namespacebase64) encoding?
-
-#### Returns
-The encoded string
-
-#### `public String `[`toString`](#d0/d11/classBuffer_1ac53cf114c773e7246fc35933cf393d62)`(String codec,Integer offset,Integer end)` 
-
-return the encoded string of the binary data
+从缓存对象读取一个整型数值，最大支持 48 位，以高字节序的存储方式
 
 #### Parameters
-* `codec` The encode format, can be "hex", “base64”, "utf8" or any other character sets supported by the system. 
+* `offset` 指定读取的起始位置，缺省为 0 
 
-* `offset` The start position of string, Default: 0 
-
-* `end` The end position of string, Default: -1 
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
 
 #### Returns
-The string representing the value of the buffer.
+返回读取的整型数值
+{{% /panel %}}
+{{% panel theme="default" header="readInt64LE" %}}
+#### **Int64** `readInt64LE(Integer offset,Boolean noAssert)`
 
-#### `public String `[`toString`](#d0/d11/classBuffer_1a704ee70a5949e3ce5e3ed9efffbfd054)`()` 
-
-return the utf8-encoded string of the binary data
-
-#### Returns
-The string representing the value of the buffer.
-
-#### `public  `[`dispose`](#db/d38/interfaceobject_1a6b88dbc459449d2280338e5b702a68b4)`()` 
-
-Force dispose object immediately.
-
-#### `public Value `[`toJSON`](#db/d38/interfaceobject_1ad66be13eb5b7c5f560fd8511565138c4)`(String key)` 
-
-Return JSON representation of object, normally is readable attributes collection.
+从缓存对象读取一个 64 位整型数值，以低字节序的存储方式
 
 #### Parameters
-* `key` Not used 
+* `offset` 指定读取的起始位置，缺省为 0 
+
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
 
 #### Returns
-Return JSON representation
+返回读取的整型数值
+{{% /panel %}}
+{{% panel theme="default" header="readInt64BE" %}}
+#### **Int64** `readInt64BE(Integer offset,Boolean noAssert)`
 
-#### `public Value `[`valueOf`](#db/d38/interfaceobject_1ab9261a7662bc8bb4a898bc15dc16f206)`()` 
+从缓存对象读取一个 64 位整型数值，以高字节序的存储方式
 
-Return JSON representation of object.
+#### Parameters
+* `offset` 指定读取的起始位置，缺省为 0 
+
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
 
 #### Returns
-Return JSON representation of object
+返回读取的整型数值
+{{% /panel %}}
+{{% panel theme="default" header="readFloatLE" %}}
+#### **Number** `readFloatLE(Integer offset,Boolean noAssert)`
 
+从缓存对象读取一个浮点数，以低字节序的存储方式
+
+#### Parameters
+* `offset` 指定读取的起始位置，缺省为 0 
+
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
+
+#### Returns
+返回读取的浮点数
+{{% /panel %}}
+{{% panel theme="default" header="readFloatBE" %}}
+#### **Number** `readFloatBE(Integer offset,Boolean noAssert)`
+
+从缓存对象读取一个浮点数，以高字节序的存储方式
+
+#### Parameters
+* `offset` 指定读取的起始位置，缺省为 0 
+
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
+
+#### Returns
+返回读取的浮点数
+{{% /panel %}}
+{{% panel theme="default" header="readDoubleLE" %}}
+#### **Number** `readDoubleLE(Integer offset,Boolean noAssert)`
+
+从缓存对象读取一个双精度浮点数，以低字节序的存储方式
+
+#### Parameters
+* `offset` 指定读取的起始位置，缺省为 0 
+
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
+
+#### Returns
+返回读取的双精度浮点数
+{{% /panel %}}
+{{% panel theme="default" header="readDoubleBE" %}}
+#### **Number** `readDoubleBE(Integer offset,Boolean noAssert)`
+
+从缓存对象读取一个双精度浮点数，以高字节序的存储方式
+
+#### Parameters
+* `offset` 指定读取的起始位置，缺省为 0 
+
+* `noAssert` 指定读取越界时不抛出错误，缺省为 flase，抛出 
+
+#### Returns
+返回读取的双精度浮点数
+{{% /panel %}}
+{{% panel theme="default" header="writeUInt8" %}}
+#### **void** `writeUInt8(Integer value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个 8 位无符号整型数值
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeUInt16LE" %}}
+#### **void** `writeUInt16LE(Integer value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个 16 位无符号整型数值，以低字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeUInt16BE" %}}
+#### **void** `writeUInt16BE(Integer value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个 16 位无符号整型数值，以高字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeUInt32LE" %}}
+#### **void** `writeUInt32LE(Long value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个 32 位无符号整型数值，以低字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeUInt32BE" %}}
+#### **void** `writeUInt32BE(Long value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个 32 位无符号整型数值，以高字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeUIntLE" %}}
+#### **void** `writeUIntLE(Long value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个无符号整型数值，最大支持 48 位，以低字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeUIntBE" %}}
+#### **void** `writeUIntBE(Long value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个无符号整型数值，最大支持 48 位，以高字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeInt8" %}}
+#### **void** `writeInt8(Integer value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个 8 位整型数值
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeInt16LE" %}}
+#### **void** `writeInt16LE(Integer value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个 16 位整型数值，以低字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeInt16BE" %}}
+#### **void** `writeInt16BE(Integer value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个 16 位整型数值，以高字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeInt32LE" %}}
+#### **void** `writeInt32LE(Integer value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个 32 位整型数值，以低字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeInt32BE" %}}
+#### **void** `writeInt32BE(Integer value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个 32 位整型数值，以高字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeIntLE" %}}
+#### **void** `writeIntLE(Long value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个整型数值，最大支持 48 位，以低字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeIntBE" %}}
+#### **void** `writeIntBE(Long value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个整型数值，最大支持 48 位，以高字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeInt64LE" %}}
+#### **void** `writeInt64LE(Int64 value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个 64 位整型数值，以低字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeInt64BE" %}}
+#### **void** `writeInt64BE(Int64 value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个 64 位整型数值，以高字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeFloatLE" %}}
+#### **void** `writeFloatLE(Number value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个浮点数，以低字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeFloatBE" %}}
+#### **void** `writeFloatBE(Number value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个浮点数，以高字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeDoubleLE" %}}
+#### **void** `writeDoubleLE(Number value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个双精度浮点数，以低字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="writeDoubleBE" %}}
+#### **void** `writeDoubleBE(Number value,Integer offset,Boolean noAssert)`
+
+向缓存对象写入一个双精度浮点数，以高字节序的存储方式
+
+#### Parameters
+* `value` 指定写入的数值 
+
+* `offset` 指定写入的起始位置 
+
+* `noAssert` 指定写入越界时不抛出错误，缺省为 flase，抛出
+{{% /panel %}}
+{{% panel theme="default" header="slice" %}}
+#### **Buffer** `slice(Integer start)`
+
+返回一个新缓存对象，包含指定起始到缓存结尾的数据
+
+#### Parameters
+* `start` 指定范围的起始，缺省从头开始 
+
+#### Returns
+返回新的缓存对象
+{{% /panel %}}
+{{% panel theme="default" header="slice" %}}
+#### **Buffer** `slice(Integer start,Integer end)`
+
+返回一个新缓存对象，包含指定范围的数据，若范围超出缓存，则只返回有效部分数据
+
+#### Parameters
+* `start` 指定范围的起始 
+
+* `end` 指定范围的结束 
+
+#### Returns
+返回新的缓存对象
+{{% /panel %}}
+{{% panel theme="default" header="hex" %}}
+#### **String** `hex()`
+
+使用 16 进制编码缓存对象内容
+
+#### Returns
+返回编码字符串
+{{% /panel %}}
+{{% panel theme="default" header="base64" %}}
+#### **String** `base64()`
+
+使用 base64 编码缓存对象内容
+
+#### Returns
+返回编码字符串
+{{% /panel %}}
+{{% panel theme="default" header="toArray" %}}
+#### **Array** `toArray()`
+
+返回全部二进制数据的数组
+
+#### Returns
+返回包含对象数据的数组
+{{% /panel %}}
+{{% panel theme="default" header="toString" %}}
+#### **String** `toString(String codec,Integer offset,Integer end)`
+
+返回二进制数据的编码字符串
+
+#### Parameters
+* `codec` 指定编码格式，允许值为："hex", "base64", "utf8", 或者系统支持的字符集 
+
+* `offset` 读取起始位置 
+
+* `end` 读取终止位置 
+
+#### Returns
+返回对象的字符串表示
+{{% /panel %}}
+{{% panel theme="default" header="toString" %}}
+#### **String** `toString()`
+
+返回二进制数据的 utf8 编码字符串
+
+#### Returns
+返回对象的字符串表示
+{{% /panel %}}
+{{% panel theme="default" header="dispose" %}}
+#### **void** `dispose()`
+
+强制回收对象，调用此方法后，对象资源将立即释放
+
+{{% /panel %}}
+{{% panel theme="default" header="equals" %}}
+#### **Boolean** `equals(object expected)`
+
+比较当前对象与给定的对象是否相等
+
+#### Parameters
+* `expected` 制定比较的目标对象 
+
+#### Returns
+返回对象比较的结果
+{{% /panel %}}
+{{% panel theme="default" header="toJSON" %}}
+#### **Value** `toJSON(String key)`
+
+返回对象的 JSON 格式表示，一般返回对象定义的可读属性集合
+
+#### Parameters
+* `key` 未使用 
+
+#### Returns
+返回包含可 JSON 序列化的值
+{{% /panel %}}
+{{% panel theme="default" header="valueOf" %}}
+#### **Value** `valueOf()`
+
+返回对象本身的数值
+
+#### Returns
+返回对象本身的数值
+{{% /panel %}}
+{{% panel theme="default" header="isBuffer" %}}
+#### **Boolean** `isBuffer(Value v)`
+
+检测给定的变量是否是 Buffer 对象
+
+#### Parameters
+* `v` 给定需要检测的变量 
+
+#### Returns
+传入对象是否 Buffer 对象
+{{% /panel %}}
+{{% panel theme="default" header="concat" %}}
+#### **Buffer** `concat(Array buflist,Integer cutLength)`
+
+拼接多个缓存区中的数据
+
+#### Parameters
+* `buflist` 待拼接的Buffer数组 
+
+* `cutLength` 截取多少个Buffer对象 
+
+#### Returns
+拼接后产生的新 Buffer 对象
+{{% /panel %}}
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

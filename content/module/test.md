@@ -1,127 +1,180 @@
 +++
 draft = false
 title = "test"
-description = "Test Suite module that defines the test suite management."
+description = "测试套件模块，用以定义管理测试套件"
 [menu.main]
 parent = "modules"
 identifier = "test"
 +++
 
-Test Suite module that defines the test suite management.
+测试套件模块，用以定义管理测试套件
 
-To use it: 
-```cpp
+引用方法： 
+```js
 var test = require('test');
 ```
 
-## Summary
+## Field Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static static `[`describe`](#df/d04/namespacetest_1a28c68bd81db526a96da4da2313a3a921)`(String name,Function block)`            | The definition of a test module and can be nested definition.
-`public static static `[`xdescribe`](#df/d04/namespacetest_1a8f7ec245553178944e267569115afbe2)`(String name,Function block)`            | The definition of a test module to be stopped.
-`public static static `[`it`](#df/d04/namespacetest_1ada0940ce267ec02e7a502ee402a693bd)`(String name,Function block)`            | Define a test project.
-`public static static `[`xit`](#df/d04/namespacetest_1a37c8a63824fc3fa3f17b734daf2e782f)`(String name,Function block)`            | Prohibit test project definition.
-`public static static `[`before`](#df/d04/namespacetest_1af0cd25d326c6fbed1eca286abb4df915)`(Function func)`            | Define the incident event for current test module.
-`public static static `[`after`](#df/d04/namespacetest_1a227f44f6942de86a78a0cef531de0bd2)`(Function func)`            | Define the exit event for current test module.
-`public static static `[`beforeEach`](#df/d04/namespacetest_1a934439b75ffe6517612b37f8f64a7d0e)`(Function func)`            | Define the incident event for current test project.
-`public static static `[`afterEach`](#df/d04/namespacetest_1a5e2d4ee95a3dfbcc80378c677728114d)`(Function func)`            | Define the exit event for current test project.
-`public static Integer `[`run`](#df/d04/namespacetest_1a8e9c3ee5b129b4f584ffc95ccae6bacb)`(Integer loglevel)`            | Module to start executing definition.
-`public static `[`Expect`](#d0/df6/interfaceExpect)` `[`expect`](#df/d04/namespacetest_1a278434a7f57c827da6585fc0f23499ea)`(Value actual,String msg)`            | expect Grammar test engine
-`public static static `[`setup`](#df/d04/namespacetest_1a38550424e855b291100020778b09064a)`(Integer mode)`            | The current test environment initialization script, the test module method to copy a global variable for the current script.
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+const            | `public const BDD`[`BDD`](#df/d04/namespacetest_1ae7fde33ef252f535d81d8ecef132e1d4)`BDD`<p>定义 BDD(Behavior Drive Development) 测试环境，支持 describe, xdescribe, it, xit, before, after, beforeEach 和 afterEach，同时初始化 assert 和expect</p>
+const            | `public const TDD`[`TDD`](#df/d04/namespacetest_1a6ed0e472953388d47f141b5419e76174)`TDD`<p>定义 TDD(Test Drive Development) 测试环境，支持 suite, xsuite, test, xtest, setup, teardown, suiteSetup 和 suiteTeardown，同时初始化 assert 和expect</p>
+void            | `public static static assert`[`assert`](#df/d04/namespacetest_1a493023a30a7d385db92bbc7b81cb8aec)`assert`<p>断言测试模块，如果测试值为假，则报错，报错行为可设定继续运行或者错误抛出</p>
+Integer            | `public static Integer slow`[`slow`](#df/d04/namespacetest_1a09913ac8583af372187ee252951103c4)`slow`<p>设置和查询慢速测试警告阀值，以 ms 为单位，缺省为 75</p>
 
-## Members
+## Method Summary
 
-#### `public static static `[`describe`](#df/d04/namespacetest_1a28c68bd81db526a96da4da2313a3a921)`(String name,Function block)` 
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+void            | `describe(String name,Function block)`<p>定义一个测试模块，可嵌套定义</p>
+void            | `xdescribe(String name,Function block)`<p>停止测试的模块定义</p>
+void            | `it(String name,Function block)`<p>定义一个测试项目</p>
+void            | `xit(String name,Function block)`<p>禁止测试的项目定义</p>
+void            | `before(Function func)`<p>定义当前测试模块进入事件</p>
+void            | `after(Function func)`<p>定义当前测试模块退出事件</p>
+void            | `beforeEach(Function func)`<p>定义当前测试模块测试项目进入事件</p>
+void            | `afterEach(Function func)`<p>定义当前测试模块测试项目退出事件</p>
+Integer            | `run(Integer loglevel)`<p>开始执行定义的测试模块</p>
+Expect            | `expect(Value actual,String msg)`<p>expect 语法测试引擎</p>
+void            | `setup(Integer mode)`<p>初始化当前脚本的测试环境，将 test 模块方法复制为当前脚本全局变量</p>
 
-The definition of a test module and can be nested definition.
+## Field Detail
 
-#### Parameters
-* `name` Module name 
+{{% panel theme="default" header="BDD" %}}
+#### **const** `public const BDD`[`BDD`](#df/d04/namespacetest_1ae7fde33ef252f535d81d8ecef132e1d4)`BDD`
 
-* `block` Initial code
+定义 BDD(Behavior Drive Development) 测试环境，支持 describe, xdescribe, it, xit, before, after, beforeEach 和 afterEach，同时初始化 assert 和expect
 
-#### `public static static `[`xdescribe`](#df/d04/namespacetest_1a8f7ec245553178944e267569115afbe2)`(String name,Function block)` 
+{{% /panel %}}
+{{% panel theme="default" header="TDD" %}}
+#### **const** `public const TDD`[`TDD`](#df/d04/namespacetest_1a6ed0e472953388d47f141b5419e76174)`TDD`
 
-The definition of a test module to be stopped.
+定义 TDD(Test Drive Development) 测试环境，支持 suite, xsuite, test, xtest, setup, teardown, suiteSetup 和 suiteTeardown，同时初始化 assert 和expect
 
-#### Parameters
-* `name` Module name 
+{{% /panel %}}
+{{% panel theme="default" header="assert" %}}
+#### **void** `public static static assert`[`assert`](#df/d04/namespacetest_1a493023a30a7d385db92bbc7b81cb8aec)`assert`
 
-* `block` Initial code
+断言测试模块，如果测试值为假，则报错，报错行为可设定继续运行或者错误抛出
 
-#### `public static static `[`it`](#df/d04/namespacetest_1ada0940ce267ec02e7a502ee402a693bd)`(String name,Function block)` 
+{{% /panel %}}
+{{% panel theme="default" header="slow" %}}
+#### **Integer** `public static Integer slow`[`slow`](#df/d04/namespacetest_1a09913ac8583af372187ee252951103c4)`slow`
 
-Define a test project.
+设置和查询慢速测试警告阀值，以 ms 为单位，缺省为 75
 
-#### Parameters
-* `name` Project name 
+{{% /panel %}}
 
-* `block` Test block
+## Method Detail
 
-#### `public static static `[`xit`](#df/d04/namespacetest_1a37c8a63824fc3fa3f17b734daf2e782f)`(String name,Function block)` 
+{{% panel theme="default" header="describe" %}}
+#### **void** `describe(String name,Function block)`
 
-Prohibit test project definition.
-
-#### Parameters
-* `name` Project name 
-
-* `block` Test block
-
-#### `public static static `[`before`](#df/d04/namespacetest_1af0cd25d326c6fbed1eca286abb4df915)`(Function func)` 
-
-Define the incident event for current test module.
-
-#### Parameters
-* `func` [Event](#d7/ddf/interfaceEvent) handler
-
-#### `public static static `[`after`](#df/d04/namespacetest_1a227f44f6942de86a78a0cef531de0bd2)`(Function func)` 
-
-Define the exit event for current test module.
+定义一个测试模块，可嵌套定义
 
 #### Parameters
-* `func` [Event](#d7/ddf/interfaceEvent) handler
+* `name` 定义模块名称 
 
-#### `public static static `[`beforeEach`](#df/d04/namespacetest_1a934439b75ffe6517612b37f8f64a7d0e)`(Function func)` 
+* `block` 模块初始化代码
+{{% /panel %}}
+{{% panel theme="default" header="xdescribe" %}}
+#### **void** `xdescribe(String name,Function block)`
 
-Define the incident event for current test project.
-
-#### Parameters
-* `func` [Event](#d7/ddf/interfaceEvent) handler
-
-#### `public static static `[`afterEach`](#df/d04/namespacetest_1a5e2d4ee95a3dfbcc80378c677728114d)`(Function func)` 
-
-Define the exit event for current test project.
+停止测试的模块定义
 
 #### Parameters
-* `func` [Event](#d7/ddf/interfaceEvent) handler
+* `name` 定义模块名称 
 
-#### `public static Integer `[`run`](#df/d04/namespacetest_1a8e9c3ee5b129b4f584ffc95ccae6bacb)`(Integer loglevel)` 
+* `block` 模块初始化代码
+{{% /panel %}}
+{{% panel theme="default" header="it" %}}
+#### **void** `it(String name,Function block)`
 
-Module to start executing definition.
+定义一个测试项目
 
 #### Parameters
-* `loglevel` Log output level is specified when tested, ERROR, the project focused on the report the error message is displayed, below ERROR, output information displayed at any time, while higher than ERROR, display only reports 
+* `name` 定义项目名称 
+
+* `block` 测试内容
+{{% /panel %}}
+{{% panel theme="default" header="xit" %}}
+#### **void** `xit(String name,Function block)`
+
+禁止测试的项目定义
+
+#### Parameters
+* `name` 定义项目名称 
+
+* `block` 测试内容
+{{% /panel %}}
+{{% panel theme="default" header="before" %}}
+#### **void** `before(Function func)`
+
+定义当前测试模块进入事件
+
+#### Parameters
+* `func` 事件函数
+{{% /panel %}}
+{{% panel theme="default" header="after" %}}
+#### **void** `after(Function func)`
+
+定义当前测试模块退出事件
+
+#### Parameters
+* `func` 事件函数
+{{% /panel %}}
+{{% panel theme="default" header="beforeEach" %}}
+#### **void** `beforeEach(Function func)`
+
+定义当前测试模块测试项目进入事件
+
+#### Parameters
+* `func` 事件函数
+{{% /panel %}}
+{{% panel theme="default" header="afterEach" %}}
+#### **void** `afterEach(Function func)`
+
+定义当前测试模块测试项目退出事件
+
+#### Parameters
+* `func` 事件函数
+{{% /panel %}}
+{{% panel theme="default" header="run" %}}
+#### **Integer** `run(Integer loglevel)`
+
+开始执行定义的测试模块
+
+#### Parameters
+* `loglevel` 指定进行测试时的日志输出级别，ERROR 时，项目报错信息集中在报告后显示，低于 ERROR 时，输出信息随时显示，高于 ERROR 时，只显示报告 
 
 #### Returns
-Return the statistical result of test case, return 0 when meet no error, return the error number of errors.
+返回测试用例统计结果，正确则返回 0，错误则返回错误个数
+{{% /panel %}}
+{{% panel theme="default" header="expect" %}}
+#### **Expect** `expect(Value actual,String msg)`
 
-#### `public static `[`Expect`](#d0/df6/interfaceExpect)` `[`expect`](#df/d04/namespacetest_1a278434a7f57c827da6585fc0f23499ea)`(Value actual,String msg)` 
-
-expect Grammar test engine
+expect 语法测试引擎
 
 #### Parameters
-* `actual` Value to test 
+* `actual` 指定要测试的数值 
 
-* `msg` [Message](#d6/db7/interfaceMessage) when error occurs 
+* `msg` 断言失败时的提示信息 
 
 #### Returns
-Return [Expect](#d0/df6/interfaceExpect) for chain operations
+返回 Expect 对象用以链式调用
+{{% /panel %}}
+{{% panel theme="default" header="setup" %}}
+#### **void** `setup(Integer mode)`
 
-#### `public static static `[`setup`](#df/d04/namespacetest_1a38550424e855b291100020778b09064a)`(Integer mode)` 
-
-The current test environment initialization script, the test module method to copy a global variable for the current script.
+初始化当前脚本的测试环境，将 test 模块方法复制为当前脚本全局变量
 
 #### Parameters
-* `mode` Indicates initial mode, default is BDD
+* `mode` 指定初始化的模式，缺省为 BDD
+{{% /panel %}}
 
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

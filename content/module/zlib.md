@@ -1,221 +1,281 @@
 +++
 draft = false
 title = "zlib"
-description = "zlib compression and decompression module"
+description = "zlib 压缩解压模块"
 [menu.main]
 parent = "modules"
 identifier = "zlib"
 +++
 
-zlib compression and decompression module
+zlib 压缩解压模块
 
-To use it: 
-```cpp
+使用方法： 
+```js
 var zlib = require('zlib');
 ```
 
-## Summary
+## Field Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static `[`Buffer`](#d0/d11/classBuffer)` `[`deflate`](#d9/d3e/namespacezlib_1a4bbb2133b9a39ea72db80e845a6ad0aa)`(`[`Buffer`](#d0/d11/classBuffer)` data,Integer level)`            | Use deflate to compress data (zlib format)
-`public static static `[`deflateTo`](#d9/d3e/namespacezlib_1aa6b8b6d518e950dbaca2b18ab4330fbe)`(`[`Buffer`](#d0/d11/classBuffer)` data,`[`Stream`](#d4/dc7/interfaceStream)` stm,Integer level)`            | Use deflate to compress data to stream (zlib format)
-`public static static `[`deflateTo`](#d9/d3e/namespacezlib_1a26b0d322158d30cfb60c774ee212f8d1)`(`[`Stream`](#d4/dc7/interfaceStream)` src,`[`Stream`](#d4/dc7/interfaceStream)` stm,Integer level)`            | Use deflate to compress a stream data to another (zlib format)
-`public static `[`Buffer`](#d0/d11/classBuffer)` `[`inflate`](#d9/d3e/namespacezlib_1aafe7acf37cd4edfe4355ddca34cdd123)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Use deflate to decompress data (zlib format)
-`public static static `[`inflateTo`](#d9/d3e/namespacezlib_1a1a585f4bb4ce9146953c29af284ba62f)`(`[`Buffer`](#d0/d11/classBuffer)` data,`[`Stream`](#d4/dc7/interfaceStream)` stm)`            | Use deflate to decompress data to stream (zlib format)
-`public static static `[`inflateTo`](#d9/d3e/namespacezlib_1a2f4fbd12a75605838e9aafdcc2813c10)`(`[`Stream`](#d4/dc7/interfaceStream)` src,`[`Stream`](#d4/dc7/interfaceStream)` stm)`            | Use deflate to decompress a stream data to another (zlib format)
-`public static `[`Buffer`](#d0/d11/classBuffer)` `[`gzip`](#d9/d3e/namespacezlib_1a3a522ddbc8cde00ea8d9021c330c0ad5)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Use gzip to compress data.
-`public static static `[`gzipTo`](#d9/d3e/namespacezlib_1aaa9064c2afae1452123bbf6759e0d01a)`(`[`Buffer`](#d0/d11/classBuffer)` data,`[`Stream`](#d4/dc7/interfaceStream)` stm)`            | Use gzip to compress data to stream.
-`public static static `[`gzipTo`](#d9/d3e/namespacezlib_1ac5f35bb15047380a3f30da60474557c0)`(`[`Stream`](#d4/dc7/interfaceStream)` src,`[`Stream`](#d4/dc7/interfaceStream)` stm)`            | Use gzip to compress a stream data to another.
-`public static `[`Buffer`](#d0/d11/classBuffer)` `[`gunzip`](#d9/d3e/namespacezlib_1a165562467d193e958c2349445dc3f90c)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Use gzip to decompress data.
-`public static static `[`gunzipTo`](#d9/d3e/namespacezlib_1ad2fdcb8ce8aac7124267a9e621766638)`(`[`Buffer`](#d0/d11/classBuffer)` data,`[`Stream`](#d4/dc7/interfaceStream)` stm)`            | Use gzip to decompress data to stream.
-`public static static `[`gunzipTo`](#d9/d3e/namespacezlib_1ad754fb667c7bffa4aa237ddad1109dab)`(`[`Stream`](#d4/dc7/interfaceStream)` src,`[`Stream`](#d4/dc7/interfaceStream)` stm)`            | Use gzip to decompress a stream data to another.
-`public static `[`Buffer`](#d0/d11/classBuffer)` `[`deflateRaw`](#d9/d3e/namespacezlib_1a7a09dd4d3921bf70f09f2dc29672ccaa)`(`[`Buffer`](#d0/d11/classBuffer)` data,Integer level)`            | Use deflate to compress data (deflateRaw)
-`public static static `[`deflateRawTo`](#d9/d3e/namespacezlib_1a8b171e4ac0cedfdcfe0b042bd8f2f07d)`(`[`Buffer`](#d0/d11/classBuffer)` data,`[`Stream`](#d4/dc7/interfaceStream)` stm,Integer level)`            | Use deflate to compress data to stream (deflateRaw)
-`public static static `[`deflateRawTo`](#d9/d3e/namespacezlib_1a82dedb02bcde6653fc8f94c3d95b2f28)`(`[`Stream`](#d4/dc7/interfaceStream)` src,`[`Stream`](#d4/dc7/interfaceStream)` stm,Integer level)`            | Use deflate to compress a stream data to another (deflateRaw)
-`public static `[`Buffer`](#d0/d11/classBuffer)` `[`inflateRaw`](#d9/d3e/namespacezlib_1ae1d8e31d0220c80eda00e50a1b466932)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Use deflate to decompress data (deflateRaw)
-`public static static `[`inflateRawTo`](#d9/d3e/namespacezlib_1af15999662fec5f069ee6f25e3821bf43)`(`[`Buffer`](#d0/d11/classBuffer)` data,`[`Stream`](#d4/dc7/interfaceStream)` stm)`            | Use deflate to decompress data to stream (deflateRaw)
-`public static static `[`inflateRawTo`](#d9/d3e/namespacezlib_1aa3e4997d8d6449b0a43fba7660c20298)`(`[`Stream`](#d4/dc7/interfaceStream)` src,`[`Stream`](#d4/dc7/interfaceStream)` stm)`            | Use deflate to decompress a stream data to another (deflateRaw)
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+const            | `public const NO_COMPRESSION`[`NO_COMPRESSION`](#d9/d3e/namespacezlib_1aa97dca5a1b2574d9b2c5a675a585c15c)`NO_COMPRESSION`<p>deflate 压缩级别，设定不压缩</p>
+const            | `public const BEST_SPEED`[`BEST_SPEED`](#d9/d3e/namespacezlib_1acef162e62929d79fc28c29dd19e233f3)`BEST_SPEED`<p>deflate 压缩级别，设定最快压缩</p>
+const            | `public const BEST_COMPRESSION`[`BEST_COMPRESSION`](#d9/d3e/namespacezlib_1a090b26bf155fd859256b03d502276296)`BEST_COMPRESSION`<p>deflate 压缩级别，设定最高压缩</p>
+const            | `public const DEFAULT_COMPRESSION`[`DEFAULT_COMPRESSION`](#d9/d3e/namespacezlib_1a8fe9b1e484d3157ecd98578416e24d72)`DEFAULT_COMPRESSION`<p>deflate 压缩级别，设定缺省设置</p>
 
-## Members
+## Method Summary
 
-#### `public static `[`Buffer`](#d0/d11/classBuffer)` `[`deflate`](#d9/d3e/namespacezlib_1a4bbb2133b9a39ea72db80e845a6ad0aa)`(`[`Buffer`](#d0/d11/classBuffer)` data,Integer level)` 
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+Buffer            | `deflate(Buffer data,Integer level)`<p>使用 deflate 算法压缩数据(zlib格式)</p>
+void            | `deflateTo(Buffer data,Stream stm,Integer level)`<p>使用 deflate 算法压缩数据到流对象中(zlib格式)</p>
+void            | `deflateTo(Stream src,Stream stm,Integer level)`<p>使用 deflate 算法压缩源流中的数据到流对象中(zlib格式)</p>
+Buffer            | `inflate(Buffer data)`<p>解压缩 deflate 算法压缩的数据(zlib格式)</p>
+void            | `inflateTo(Buffer data,Stream stm)`<p>解压缩 deflate 算法压缩的数据到流对象中(zlib格式)</p>
+void            | `inflateTo(Stream src,Stream stm)`<p>解压缩源流中 deflate 算法压缩的数据到流对象中(zlib格式)</p>
+Buffer            | `gzip(Buffer data)`<p>使用 gzip 算法压缩数据</p>
+void            | `gzipTo(Buffer data,Stream stm)`<p>使用 gzip 算法压缩数据到流对象中</p>
+void            | `gzipTo(Stream src,Stream stm)`<p>使用 gzip 算法压缩源流中的数据到流对象中</p>
+Buffer            | `gunzip(Buffer data)`<p>解压缩 gzip 算法压缩的数据</p>
+void            | `gunzipTo(Buffer data,Stream stm)`<p>解压缩 gzip 算法压缩的数据到流对象中</p>
+void            | `gunzipTo(Stream src,Stream stm)`<p>解压缩源流中 gzip 算法压缩的数据到流对象中</p>
+Buffer            | `deflateRaw(Buffer data,Integer level)`<p>使用 deflate 算法压缩数据(deflateRaw)</p>
+void            | `deflateRawTo(Buffer data,Stream stm,Integer level)`<p>使用 deflate 算法压缩数据到流对象中(deflateRaw)</p>
+void            | `deflateRawTo(Stream src,Stream stm,Integer level)`<p>使用 deflate 算法压缩源流中的数据到流对象中(deflateRaw)</p>
+Buffer            | `inflateRaw(Buffer data)`<p>解压缩 deflate 算法压缩的数据(inflateRaw)</p>
+void            | `inflateRawTo(Buffer data,Stream stm)`<p>解压缩 deflate 算法压缩的数据到流对象中(inflateRaw)</p>
+void            | `inflateRawTo(Stream src,Stream stm)`<p>解压缩源流中 deflate 算法压缩的数据到流对象中(inflateRaw)</p>
 
-Use deflate to compress data (zlib format)
+## Field Detail
+
+{{% panel theme="default" header="NO_COMPRESSION" %}}
+#### **const** `public const NO_COMPRESSION`[`NO_COMPRESSION`](#d9/d3e/namespacezlib_1aa97dca5a1b2574d9b2c5a675a585c15c)`NO_COMPRESSION`
+
+deflate 压缩级别，设定不压缩
+
+{{% /panel %}}
+{{% panel theme="default" header="BEST_SPEED" %}}
+#### **const** `public const BEST_SPEED`[`BEST_SPEED`](#d9/d3e/namespacezlib_1acef162e62929d79fc28c29dd19e233f3)`BEST_SPEED`
+
+deflate 压缩级别，设定最快压缩
+
+{{% /panel %}}
+{{% panel theme="default" header="BEST_COMPRESSION" %}}
+#### **const** `public const BEST_COMPRESSION`[`BEST_COMPRESSION`](#d9/d3e/namespacezlib_1a090b26bf155fd859256b03d502276296)`BEST_COMPRESSION`
+
+deflate 压缩级别，设定最高压缩
+
+{{% /panel %}}
+{{% panel theme="default" header="DEFAULT_COMPRESSION" %}}
+#### **const** `public const DEFAULT_COMPRESSION`[`DEFAULT_COMPRESSION`](#d9/d3e/namespacezlib_1a8fe9b1e484d3157ecd98578416e24d72)`DEFAULT_COMPRESSION`
+
+deflate 压缩级别，设定缺省设置
+
+{{% /panel %}}
+
+## Method Detail
+
+{{% panel theme="default" header="deflate" %}}
+#### **Buffer** `deflate(Buffer data,Integer level)`
+
+使用 deflate 算法压缩数据(zlib格式)
 
 #### Parameters
-* `data` Raw data 
+* `data` 给定要压缩的数据 
 
-* `level` Indicate compression level, default is DEFAULT_COMPRESSION 
+* `level` 指定压缩级别，缺省为 DEFAULT_COMPRESSION 
 
 #### Returns
-Return compressed binary
+返回压缩后的二进制数据
+{{% /panel %}}
+{{% panel theme="default" header="deflateTo" %}}
+#### **void** `deflateTo(Buffer data,Stream stm,Integer level)`
 
-#### `public static static `[`deflateTo`](#d9/d3e/namespacezlib_1aa6b8b6d518e950dbaca2b18ab4330fbe)`(`[`Buffer`](#d0/d11/classBuffer)` data,`[`Stream`](#d4/dc7/interfaceStream)` stm,Integer level)` 
-
-Use deflate to compress data to stream (zlib format)
-
-#### Parameters
-* `data` Raw data 
-
-* `stm` [Stream](#d4/dc7/interfaceStream) to write compressed data 
-
-* `level` Indicate compression level, default is DEFAULT_COMPRESSION
-
-#### `public static static `[`deflateTo`](#d9/d3e/namespacezlib_1a26b0d322158d30cfb60c774ee212f8d1)`(`[`Stream`](#d4/dc7/interfaceStream)` src,`[`Stream`](#d4/dc7/interfaceStream)` stm,Integer level)` 
-
-Use deflate to compress a stream data to another (zlib format)
+使用 deflate 算法压缩数据到流对象中(zlib格式)
 
 #### Parameters
-* `src` Original stream 
+* `data` 给定要压缩的数据 
 
-* `stm` Target stream to write compressed data 
+* `stm` 指定存储压缩数据的流 
 
-* `level` Indicate compression level, default is DEFAULT_COMPRESSION
+* `level` 指定压缩级别，缺省为 DEFAULT_COMPRESSION
+{{% /panel %}}
+{{% panel theme="default" header="deflateTo" %}}
+#### **void** `deflateTo(Stream src,Stream stm,Integer level)`
 
-#### `public static `[`Buffer`](#d0/d11/classBuffer)` `[`inflate`](#d9/d3e/namespacezlib_1aafe7acf37cd4edfe4355ddca34cdd123)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
-
-Use deflate to decompress data (zlib format)
+使用 deflate 算法压缩源流中的数据到流对象中(zlib格式)
 
 #### Parameters
-* `data` Compressed data 
+* `src` 给定要压缩的数据所在的流 
+
+* `stm` 指定存储压缩数据的流 
+
+* `level` 指定压缩级别，缺省为 DEFAULT_COMPRESSION
+{{% /panel %}}
+{{% panel theme="default" header="inflate" %}}
+#### **Buffer** `inflate(Buffer data)`
+
+解压缩 deflate 算法压缩的数据(zlib格式)
+
+#### Parameters
+* `data` 给定压缩后的数据 
 
 #### Returns
-Return decompressed binary
+返回解压缩后的二进制数据
+{{% /panel %}}
+{{% panel theme="default" header="inflateTo" %}}
+#### **void** `inflateTo(Buffer data,Stream stm)`
 
-#### `public static static `[`inflateTo`](#d9/d3e/namespacezlib_1a1a585f4bb4ce9146953c29af284ba62f)`(`[`Buffer`](#d0/d11/classBuffer)` data,`[`Stream`](#d4/dc7/interfaceStream)` stm)` 
-
-Use deflate to decompress data to stream (zlib format)
-
-#### Parameters
-* `data` Compressed data 
-
-* `stm` [Stream](#d4/dc7/interfaceStream) to write decompressed data
-
-#### `public static static `[`inflateTo`](#d9/d3e/namespacezlib_1a2f4fbd12a75605838e9aafdcc2813c10)`(`[`Stream`](#d4/dc7/interfaceStream)` src,`[`Stream`](#d4/dc7/interfaceStream)` stm)` 
-
-Use deflate to decompress a stream data to another (zlib format)
+解压缩 deflate 算法压缩的数据到流对象中(zlib格式)
 
 #### Parameters
-* `src` Original stream 
+* `data` 给定要解压缩的数据 
 
-* `stm` Target stream to write decompressed data
+* `stm` 指定存储解压缩数据的流
+{{% /panel %}}
+{{% panel theme="default" header="inflateTo" %}}
+#### **void** `inflateTo(Stream src,Stream stm)`
 
-#### `public static `[`Buffer`](#d0/d11/classBuffer)` `[`gzip`](#d9/d3e/namespacezlib_1a3a522ddbc8cde00ea8d9021c330c0ad5)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
-
-Use gzip to compress data.
+解压缩源流中 deflate 算法压缩的数据到流对象中(zlib格式)
 
 #### Parameters
-* `data` Raw data 
+* `src` 给定要解压缩的数据所在的流 
+
+* `stm` 指定存储解压缩数据的流
+{{% /panel %}}
+{{% panel theme="default" header="gzip" %}}
+#### **Buffer** `gzip(Buffer data)`
+
+使用 gzip 算法压缩数据
+
+#### Parameters
+* `data` 给定要压缩的数据 
 
 #### Returns
-Return compressed binary
+返回压缩后的二进制数据
+{{% /panel %}}
+{{% panel theme="default" header="gzipTo" %}}
+#### **void** `gzipTo(Buffer data,Stream stm)`
 
-#### `public static static `[`gzipTo`](#d9/d3e/namespacezlib_1aaa9064c2afae1452123bbf6759e0d01a)`(`[`Buffer`](#d0/d11/classBuffer)` data,`[`Stream`](#d4/dc7/interfaceStream)` stm)` 
-
-Use gzip to compress data to stream.
-
-#### Parameters
-* `data` Raw data 
-
-* `stm` [Stream](#d4/dc7/interfaceStream) to write compressed data
-
-#### `public static static `[`gzipTo`](#d9/d3e/namespacezlib_1ac5f35bb15047380a3f30da60474557c0)`(`[`Stream`](#d4/dc7/interfaceStream)` src,`[`Stream`](#d4/dc7/interfaceStream)` stm)` 
-
-Use gzip to compress a stream data to another.
+使用 gzip 算法压缩数据到流对象中
 
 #### Parameters
-* `src` Original stream 
+* `data` 给定要压缩的数据 
 
-* `stm` Target stream to write compressed data
+* `stm` 指定存储压缩数据的流
+{{% /panel %}}
+{{% panel theme="default" header="gzipTo" %}}
+#### **void** `gzipTo(Stream src,Stream stm)`
 
-#### `public static `[`Buffer`](#d0/d11/classBuffer)` `[`gunzip`](#d9/d3e/namespacezlib_1a165562467d193e958c2349445dc3f90c)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
-
-Use gzip to decompress data.
+使用 gzip 算法压缩源流中的数据到流对象中
 
 #### Parameters
-* `data` Compressed data 
+* `src` 给定要压缩的数据所在的流 
+
+* `stm` 指定存储压缩数据的流
+{{% /panel %}}
+{{% panel theme="default" header="gunzip" %}}
+#### **Buffer** `gunzip(Buffer data)`
+
+解压缩 gzip 算法压缩的数据
+
+#### Parameters
+* `data` 给定压缩后的数据 
 
 #### Returns
-Return decompressed binary
+返回解压缩后的二进制数据
+{{% /panel %}}
+{{% panel theme="default" header="gunzipTo" %}}
+#### **void** `gunzipTo(Buffer data,Stream stm)`
 
-#### `public static static `[`gunzipTo`](#d9/d3e/namespacezlib_1ad2fdcb8ce8aac7124267a9e621766638)`(`[`Buffer`](#d0/d11/classBuffer)` data,`[`Stream`](#d4/dc7/interfaceStream)` stm)` 
-
-Use gzip to decompress data to stream.
-
-#### Parameters
-* `data` Compressed data 
-
-* `stm` [Stream](#d4/dc7/interfaceStream) to write decompressed data
-
-#### `public static static `[`gunzipTo`](#d9/d3e/namespacezlib_1ad754fb667c7bffa4aa237ddad1109dab)`(`[`Stream`](#d4/dc7/interfaceStream)` src,`[`Stream`](#d4/dc7/interfaceStream)` stm)` 
-
-Use gzip to decompress a stream data to another.
+解压缩 gzip 算法压缩的数据到流对象中
 
 #### Parameters
-* `src` Original stream 
+* `data` 给定要解压缩的数据 
 
-* `stm` Target stream to write decompressed data
+* `stm` 指定存储解压缩数据的流
+{{% /panel %}}
+{{% panel theme="default" header="gunzipTo" %}}
+#### **void** `gunzipTo(Stream src,Stream stm)`
 
-#### `public static `[`Buffer`](#d0/d11/classBuffer)` `[`deflateRaw`](#d9/d3e/namespacezlib_1a7a09dd4d3921bf70f09f2dc29672ccaa)`(`[`Buffer`](#d0/d11/classBuffer)` data,Integer level)` 
-
-Use deflate to compress data (deflateRaw)
+解压缩源流中 gzip 算法压缩的数据到流对象中
 
 #### Parameters
-* `data` Raw data 
+* `src` 给定要解压缩的数据所在的流 
 
-* `level` Indicate compression level, default is DEFAULT_COMPRESSION 
+* `stm` 指定存储解压缩数据的流
+{{% /panel %}}
+{{% panel theme="default" header="deflateRaw" %}}
+#### **Buffer** `deflateRaw(Buffer data,Integer level)`
+
+使用 deflate 算法压缩数据(deflateRaw)
+
+#### Parameters
+* `data` 给定要压缩的数据 
+
+* `level` 指定压缩级别，缺省为 DEFAULT_COMPRESSION 
 
 #### Returns
-Return compressed binary
+返回压缩后的二进制数据
+{{% /panel %}}
+{{% panel theme="default" header="deflateRawTo" %}}
+#### **void** `deflateRawTo(Buffer data,Stream stm,Integer level)`
 
-#### `public static static `[`deflateRawTo`](#d9/d3e/namespacezlib_1a8b171e4ac0cedfdcfe0b042bd8f2f07d)`(`[`Buffer`](#d0/d11/classBuffer)` data,`[`Stream`](#d4/dc7/interfaceStream)` stm,Integer level)` 
-
-Use deflate to compress data to stream (deflateRaw)
-
-#### Parameters
-* `data` Raw data 
-
-* `stm` [Stream](#d4/dc7/interfaceStream) to write compressed data 
-
-* `level` Indicate compression level, default is DEFAULT_COMPRESSION
-
-#### `public static static `[`deflateRawTo`](#d9/d3e/namespacezlib_1a82dedb02bcde6653fc8f94c3d95b2f28)`(`[`Stream`](#d4/dc7/interfaceStream)` src,`[`Stream`](#d4/dc7/interfaceStream)` stm,Integer level)` 
-
-Use deflate to compress a stream data to another (deflateRaw)
+使用 deflate 算法压缩数据到流对象中(deflateRaw)
 
 #### Parameters
-* `src` Original stream 
+* `data` 给定要压缩的数据 
 
-* `stm` Target stream to write compressed data 
+* `stm` 指定存储压缩数据的流 
 
-* `level` Indicate compression level, default is DEFAULT_COMPRESSION
+* `level` 指定压缩级别，缺省为 DEFAULT_COMPRESSION
+{{% /panel %}}
+{{% panel theme="default" header="deflateRawTo" %}}
+#### **void** `deflateRawTo(Stream src,Stream stm,Integer level)`
 
-#### `public static `[`Buffer`](#d0/d11/classBuffer)` `[`inflateRaw`](#d9/d3e/namespacezlib_1ae1d8e31d0220c80eda00e50a1b466932)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
-
-Use deflate to decompress data (deflateRaw)
+使用 deflate 算法压缩源流中的数据到流对象中(deflateRaw)
 
 #### Parameters
-* `data` Compressed data 
+* `src` 给定要压缩的数据所在的流 
+
+* `stm` 指定存储压缩数据的流 
+
+* `level` 指定压缩级别，缺省为 DEFAULT_COMPRESSION
+{{% /panel %}}
+{{% panel theme="default" header="inflateRaw" %}}
+#### **Buffer** `inflateRaw(Buffer data)`
+
+解压缩 deflate 算法压缩的数据(inflateRaw)
+
+#### Parameters
+* `data` 给定压缩后的数据 
 
 #### Returns
-Return decompressed binary
+返回解压缩后的二进制数据
+{{% /panel %}}
+{{% panel theme="default" header="inflateRawTo" %}}
+#### **void** `inflateRawTo(Buffer data,Stream stm)`
 
-#### `public static static `[`inflateRawTo`](#d9/d3e/namespacezlib_1af15999662fec5f069ee6f25e3821bf43)`(`[`Buffer`](#d0/d11/classBuffer)` data,`[`Stream`](#d4/dc7/interfaceStream)` stm)` 
-
-Use deflate to decompress data to stream (deflateRaw)
-
-#### Parameters
-* `data` Compressed data 
-
-* `stm` [Stream](#d4/dc7/interfaceStream) to write decompressed data
-
-#### `public static static `[`inflateRawTo`](#d9/d3e/namespacezlib_1aa3e4997d8d6449b0a43fba7660c20298)`(`[`Stream`](#d4/dc7/interfaceStream)` src,`[`Stream`](#d4/dc7/interfaceStream)` stm)` 
-
-Use deflate to decompress a stream data to another (deflateRaw)
+解压缩 deflate 算法压缩的数据到流对象中(inflateRaw)
 
 #### Parameters
-* `src` Original stream 
+* `data` 给定要解压缩的数据 
 
-* `stm` Target stream to write decompressed data
+* `stm` 指定存储解压缩数据的流
+{{% /panel %}}
+{{% panel theme="default" header="inflateRawTo" %}}
+#### **void** `inflateRawTo(Stream src,Stream stm)`
 
+解压缩源流中 deflate 算法压缩的数据到流对象中(inflateRaw)
+
+#### Parameters
+* `src` 给定要解压缩的数据所在的流 
+
+* `stm` 指定存储解压缩数据的流
+{{% /panel %}}
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

@@ -1,66 +1,221 @@
 +++
 draft = false
 title = "global"
-description = "Global object, which can be accessed by all scripts."
+description = "全局对象，所有脚本均可以访问的基础对象"
 [menu.main]
 parent = "modules"
 identifier = "global"
 +++
 
-Global object, which can be accessed by all scripts.
+全局对象，所有脚本均可以访问的基础对象
 
-## Summary
+## Field Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static static `[`run`](#d4/dfd/namespaceglobal_1a9d3c7d79f836d3d5785a6b8f9ab4581c)`(String fname,Array argv)`            | Run a script.
-`public static Value `[`require`](#d4/dfd/namespaceglobal_1a9b11defd1000737a5b70b50edfcc8156)`(String id)`            | Load a module and return module object, reference [Module Management](#d0/db5/module).
-`public static static `[`GC`](#d4/dfd/namespaceglobal_1a02a28758a633a7b1493471415c8949ba)`()`            | Mandatory for garbage collection.
-`public static static `[`repl`](#d4/dfd/namespaceglobal_1abae4e926703798996fa53e61c30cd710)`(Array cmds)`            | Enter the interactive mode, you can interactively execute the internal commands and code which can only be referenced when js start.
-`public static static `[`repl`](#d4/dfd/namespaceglobal_1ac297812b42a1bfd1d9211b8ca07686e0)`(`[`Stream`](#d4/dc7/interfaceStream)` out,Array cmds)`            | Enter the interactive mode, you can interactively execute the internal commands and code which can only be referenced when js start.
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+void            | `public static static Buffer`[`Buffer`](#d4/dfd/namespaceglobal_1abe961e24f94e940799497f08f5704916)`Buffer`<p>二进制数据缓存对象，用于 io 读写的数据处理，参见 Buffer 对象。</p>
+void            | `public static static Int64`[`Int64`](#d4/dfd/namespaceglobal_1a45adb6a5d19452e78ecd07f0036cfdf9)`Int64`<p>64位整数对象，参见 Int64 对象。</p>
+void            | `public static static console`[`console`](#d4/dfd/namespaceglobal_1ac56f4cb08af5e4988ff5e4bdd8afb700)`console`<p>控制台访问对象</p>
+void            | `public static static process`[`process`](#d4/dfd/namespaceglobal_1ad468089ebe56b9e9dfdba90e2eb596bb)`process`<p>控制台访问对象</p>
+readonly Worker            | `public static readonly Worker Master`[`Master`](#d4/dfd/namespaceglobal_1a7cc1aadc227bcaf2498e158bfb4a0c49)`Master`<p>Worker 宿主对象，仅在 Worker 入口脚本有效</p>
+readonly Object            | `public static readonly Object global`[`global`](#d4/dfd/namespaceglobal_1a5cd5ee85c6c24c7ac98735978622d50b)`global`<p>全局对象</p>
+readonly Array            | `public static readonly Array argv`[`argv`](#d4/dfd/namespaceglobal_1aef70d33af0f202e79eeac3e23c02e718)`argv`<p>获取当前脚本的运行参数，启动 js 获取进程启动参数，run 执行的脚本获取传递的参数</p>
+readonly String            | `public static readonly String __filename`[`__filename`](#d4/dfd/namespaceglobal_1a1049f353b94134e148620d95d135af4d)`__filename`<p>当前脚本文件名</p>
+readonly String            | `public static readonly String __dirname`[`__dirname`](#d4/dfd/namespaceglobal_1aa641d007198e87ea4b18255edde8fbf1)`__dirname`<p>当前脚本所在目录</p>
 
-## Members
+## Method Summary
 
-#### `public static static `[`run`](#d4/dfd/namespaceglobal_1a9d3c7d79f836d3d5785a6b8f9ab4581c)`(String fname,Array argv)` 
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+void            | `run(String fname,Array argv)`<p>运行一个脚本</p>
+void            | `clearInterval(Timer t)`<p>清除指定的定时器</p>
+void            | `clearTimeout(Timer t)`<p>清除指定的定时器</p>
+void            | `clearImmediate(Timer t)`<p>清除指定的定时器</p>
+Timer            | `setInterval(Function callback,Integer timeout)`<p>每间隔指定的时间后调用函数</p>
+Timer            | `setTimeout(Function callback,Integer timeout)`<p>在指定的时间后调用函数</p>
+Timer            | `setImmediate(Function callback)`<p>下一个空闲时间立即执行回调函数</p>
+Value            | `require(String id)`<p>加载一个模块并返回模块对象，更多信息参阅 模块管理</p>
+void            | `GC()`<p>强制要求进行垃圾回收</p>
+Function            | `sync(Function func)`<p>包裹 callback 方法为同步调用</p>
+void            | `repl(Array cmds)`<p>进入交互模式，可以交互执行内部命令和代码，仅在启动 js 可以引用</p>
+void            | `repl(Stream out,Array cmds)`<p>进入交互模式，可以交互执行内部命令和代码，仅在启动 js 可以引用</p>
 
-Run a script.
+## Field Detail
+
+{{% panel theme="default" header="Buffer" %}}
+#### **void** `public static static Buffer`[`Buffer`](#d4/dfd/namespaceglobal_1abe961e24f94e940799497f08f5704916)`Buffer`
+
+二进制数据缓存对象，用于 io 读写的数据处理，参见 Buffer 对象。
+
+{{% /panel %}}
+{{% panel theme="default" header="Int64" %}}
+#### **void** `public static static Int64`[`Int64`](#d4/dfd/namespaceglobal_1a45adb6a5d19452e78ecd07f0036cfdf9)`Int64`
+
+64位整数对象，参见 Int64 对象。
+
+{{% /panel %}}
+{{% panel theme="default" header="console" %}}
+#### **void** `public static static console`[`console`](#d4/dfd/namespaceglobal_1ac56f4cb08af5e4988ff5e4bdd8afb700)`console`
+
+控制台访问对象
+
+{{% /panel %}}
+{{% panel theme="default" header="process" %}}
+#### **void** `public static static process`[`process`](#d4/dfd/namespaceglobal_1ad468089ebe56b9e9dfdba90e2eb596bb)`process`
+
+控制台访问对象
+
+{{% /panel %}}
+{{% panel theme="default" header="Master" %}}
+#### **readonly Worker** `public static readonly Worker Master`[`Master`](#d4/dfd/namespaceglobal_1a7cc1aadc227bcaf2498e158bfb4a0c49)`Master`
+
+Worker 宿主对象，仅在 Worker 入口脚本有效
+
+{{% /panel %}}
+{{% panel theme="default" header="global" %}}
+#### **readonly Object** `public static readonly Object global`[`global`](#d4/dfd/namespaceglobal_1a5cd5ee85c6c24c7ac98735978622d50b)`global`
+
+全局对象
+
+{{% /panel %}}
+{{% panel theme="default" header="argv" %}}
+#### **readonly Array** `public static readonly Array argv`[`argv`](#d4/dfd/namespaceglobal_1aef70d33af0f202e79eeac3e23c02e718)`argv`
+
+获取当前脚本的运行参数，启动 js 获取进程启动参数，run 执行的脚本获取传递的参数
+
+{{% /panel %}}
+{{% panel theme="default" header="__filename" %}}
+#### **readonly String** `public static readonly String __filename`[`__filename`](#d4/dfd/namespaceglobal_1a1049f353b94134e148620d95d135af4d)`__filename`
+
+当前脚本文件名
+
+{{% /panel %}}
+{{% panel theme="default" header="__dirname" %}}
+#### **readonly String** `public static readonly String __dirname`[`__dirname`](#d4/dfd/namespaceglobal_1aa641d007198e87ea4b18255edde8fbf1)`__dirname`
+
+当前脚本所在目录
+
+{{% /panel %}}
+
+## Method Detail
+
+{{% panel theme="default" header="run" %}}
+#### **void** `run(String fname,Array argv)`
+
+运行一个脚本
 
 #### Parameters
-* `fname` Specifies the running path for script 
+* `fname` 指定要运行的脚本路径 
 
-* `argv` Specify the run parameters, which can be caught in script by argv.
+* `argv` 指定要运行的参数，此参数可在脚本内使用 argv 获取
+{{% /panel %}}
+{{% panel theme="default" header="clearInterval" %}}
+#### **void** `clearInterval(Timer t)`
 
-#### `public static Value `[`require`](#d4/dfd/namespaceglobal_1a9b11defd1000737a5b70b50edfcc8156)`(String id)` 
-
-Load a module and return module object, reference [Module Management](#d0/db5/module).
-
-require can be used to load the base module, such as file module.
-
-Base module is initializing when the sandbox created, only need pass the id when referencing, e.g: require("net")。
-
-[File](#d3/d3a/interfaceFile) module is user-defined modules which required by the relative path beginning with './' or '../'. [File](#d3/d3a/interfaceFile) module supports .js and .json file.
-
-[File](#d3/d3a/interfaceFile) module also supports the format package.json, system will first require the main in package.json when the module is a directory, then will try to load index.js or index.json in the path if failed.
-
-If the path is not a reference beginning with ./ or ../, and the module is not non-base module, system will first require the match one in startup path, and then look for the .modules in current path, then try the parent directory.
+清除指定的定时器
 
 #### Parameters
-* `id` Specifies the name of module to load 
+* `t` 指定要清除的定时器
+{{% /panel %}}
+{{% panel theme="default" header="clearTimeout" %}}
+#### **void** `clearTimeout(Timer t)`
+
+清除指定的定时器
+
+#### Parameters
+* `t` 指定要清除的定时器
+{{% /panel %}}
+{{% panel theme="default" header="clearImmediate" %}}
+#### **void** `clearImmediate(Timer t)`
+
+清除指定的定时器
+
+#### Parameters
+* `t` 指定要清除的定时器
+{{% /panel %}}
+{{% panel theme="default" header="setInterval" %}}
+#### **Timer** `setInterval(Function callback,Integer timeout)`
+
+每间隔指定的时间后调用函数
+
+#### Parameters
+* `callback` 指定回调函数 
+
+* `timeout` 指定间隔的时间，以毫秒为单位 
 
 #### Returns
-Returns the derivation of the load module
+返回定时器对象
+{{% /panel %}}
+{{% panel theme="default" header="setTimeout" %}}
+#### **Timer** `setTimeout(Function callback,Integer timeout)`
 
-#### `public static static `[`GC`](#d4/dfd/namespaceglobal_1a02a28758a633a7b1493471415c8949ba)`()` 
-
-Mandatory for garbage collection.
-
-#### `public static static `[`repl`](#d4/dfd/namespaceglobal_1abae4e926703798996fa53e61c30cd710)`(Array cmds)` 
-
-Enter the interactive mode, you can interactively execute the internal commands and code which can only be referenced when js start.
+在指定的时间后调用函数
 
 #### Parameters
-* `cmds` Add commands in the following format: 
-```cpp
+* `callback` 指定回调函数 
+
+* `timeout` 指定延时的时间，以毫秒为单位 
+
+#### Returns
+返回定时器对象
+{{% /panel %}}
+{{% panel theme="default" header="setImmediate" %}}
+#### **Timer** `setImmediate(Function callback)`
+
+下一个空闲时间立即执行回调函数
+
+#### Parameters
+* `callback` 指定回调函数 
+
+#### Returns
+返回定时器对象
+{{% /panel %}}
+{{% panel theme="default" header="require" %}}
+#### **Value** `require(String id)`
+
+加载一个模块并返回模块对象，更多信息参阅 模块管理
+
+require 可用于加载基础模块，文件模块。
+
+基础模块是沙箱创建时初始化的模块，引用时只需传递相应的 id，比如 require("net")。
+
+文件模块是用户自定义模块，引用时需传递以 ./ 或 ../ 开头的相对路径。文件模块支持 .js 和 .json 文件。
+
+文件模块也支持 package.json 格式，当模块为目录结构时，require 会先查询 package.json 中的 main，未发现则尝试加载路径下的 index.js 或 index.json。
+
+若引用路径不是 ./ 或 ../ 开头，并且非基础模块，require 则先在启动路径查找，然后从当前模块所在路径下的 .modules 查找，并上级目录递归。
+
+#### Parameters
+* `id` 指定要加载的模块名称 
+
+#### Returns
+返回加载模块的引出对象
+{{% /panel %}}
+{{% panel theme="default" header="GC" %}}
+#### **void** `GC()`
+
+强制要求进行垃圾回收
+
+{{% /panel %}}
+{{% panel theme="default" header="sync" %}}
+#### **Function** `sync(Function func)`
+
+包裹 callback 方法为同步调用
+
+#### Parameters
+* `func` 给定需要包裹的方法 
+
+#### Returns
+返回同步运行的方法
+{{% /panel %}}
+{{% panel theme="default" header="repl" %}}
+#### **void** `repl(Array cmds)`
+
+进入交互模式，可以交互执行内部命令和代码，仅在启动 js 可以引用
+
+#### Parameters
+* `cmds` 补充命令，格式如下： 
+```js
 [
     {
         cmd: ".test",
@@ -78,17 +233,18 @@ Enter the interactive mode, you can interactively execute the internal commands 
     }
 ]
 ```
+{{% /panel %}}
+{{% panel theme="default" header="repl" %}}
+#### **void** `repl(Stream out,Array cmds)`
 
-#### `public static static `[`repl`](#d4/dfd/namespaceglobal_1ac297812b42a1bfd1d9211b8ca07686e0)`(`[`Stream`](#d4/dc7/interfaceStream)` out,Array cmds)` 
+进入交互模式，可以交互执行内部命令和代码，仅在启动 js 可以引用
 
-Enter the interactive mode, you can interactively execute the internal commands and code which can only be referenced when js start.
-
-At the same time allowed only a [Stream](#d4/dc7/interfaceStream) repl, close the previous one when create a new [Stream](#d4/dc7/interfaceStream) repl. 
+同一时刻只允许一个 Stream repl，新建一个 Stream repl 时，前一个 repl 将被关闭。 
 #### Parameters
-* `out` Input/output stream object, usually for a network connection 
+* `out` 输入输出流对象，通常为网络连接 
 
-* `cmds` Add commands in the following format: 
-```cpp
+* `cmds` 补充命令，格式如下： 
+```js
 [
     {
         cmd: ".test",
@@ -106,4 +262,10 @@ At the same time allowed only a [Stream](#d4/dc7/interfaceStream) repl, close th
     }
 ]
 ```
+{{% /panel %}}
 
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

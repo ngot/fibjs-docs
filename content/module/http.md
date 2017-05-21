@@ -1,187 +1,382 @@
 +++
 draft = false
 title = "http"
-description = "HTTP transfer protocol module, handels http protocol."
+description = "超文本传输协议模块，用以支持 http 协议处理"
 [menu.main]
 parent = "modules"
 identifier = "http"
 +++
 
-HTTP transfer protocol module, handels http protocol.
+超文本传输协议模块，用以支持 http 协议处理
 
-## Summary
+## Field Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static `[`HttpRequest`](#d4/dfa/interfaceHttpRequest)` new `[`Request`](#d3/d69/namespacehttp_1af42dded35bbc45313730fc90e9eb8f83)`()`            | create a http request object，reference [HttpRequest](#d4/dfa/interfaceHttpRequest)
-`public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` new `[`Response`](#d3/d69/namespacehttp_1a70902187780a1f3b2927b2a2f50213b5)`()`            | create a http response object，reference [HttpResponse](#d9/d71/interfaceHttpResponse)
-`public static `[`HttpCookie`](#d3/dea/interfaceHttpCookie)` new `[`Cookie`](#d3/d69/namespacehttp_1a8f3b344e2e2e196a92de9602d2203d61)`()`            | create a http cookie object，reference [HttpCookie](#d3/dea/interfaceHttpCookie)
-`public static `[`HttpServer`](#d4/d79/interfaceHttpServer)` new `[`Server`](#d3/d69/namespacehttp_1ad4fe0324266eb7ca3209352741b33f84)`()`            | create a http server，reference [HttpServer](#d4/d79/interfaceHttpServer)
-`public static `[`HttpsServer`](#d7/d42/interfaceHttpsServer)` new `[`HttpsServer`](#d3/d69/namespacehttp_1a5b21533b4e601a05f64dc3c814ba7b87)`()`            | create a https server, reference [HttpsServer](#d7/d42/interfaceHttpsServer)
-`public static `[`HttpHandler`](#d6/d18/interfaceHttpHandler)` new `[`Handler`](#d3/d69/namespacehttp_1aeb7ec4214a199d4df745d067aaf71a3d)`()`            | create a http protocol handler，reference [HttpHandler](#d6/d18/interfaceHttpHandler)
-`public static `[`Handler`](#da/d85/interfaceHandler)` `[`fileHandler`](#d3/d69/namespacehttp_1a134a01399b1794974c1c969c07af8e5f)`(String root,Object mimes)`            | create a http static file processor, in case of using static file to respond http request
-`public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` `[`request`](#d3/d69/namespacehttp_1a43fb75f3d1ff80ac16e4929245b13d1a)`(`[`Stream`](#d4/dc7/interfaceStream)` conn,`[`HttpRequest`](#d4/dfa/interfaceHttpRequest)` req)`            | send http request to connection object，return response
-`public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` `[`request`](#d3/d69/namespacehttp_1a8633e20a8ce55d009060a4849a91c6b7)`(String method,String url,Object headers)`            | assign requested url, and return
-`public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` `[`request`](#d3/d69/namespacehttp_1a18e9a81f160921e0788994d503a101d1)`(String method,String url,`[`SeekableStream`](#d6/d9c/interfaceSeekableStream)` body,Object headers)`            | Request the specified url, and get the response.
-`public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` `[`request`](#d3/d69/namespacehttp_1ad8e25f0f0cdf12b4e3b8f43ceb6676e8)`(String method,String url,`[`SeekableStream`](#d6/d9c/interfaceSeekableStream)` body,`[`Map`](#d2/dc1/interfaceMap)` headers)`            | Request the specified url, and get the response.
-`public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` `[`request`](#d3/d69/namespacehttp_1a6f93d3122d804f48b97c1506246fc0f3)`(String method,String url,`[`Buffer`](#d0/d11/classBuffer)` body,Object headers)`            | Request the specified url, and get the response.
-`public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` `[`get`](#d3/d69/namespacehttp_1af455f3026af00e563cdeddae18a7beea)`(String url,Object headers)`            | reuqest url with GET method，and return response，same as request("GET", ...)
-`public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` `[`post`](#d3/d69/namespacehttp_1aa08e3830d32a214ccc4f586f117b1da2)`(String url,`[`SeekableStream`](#d6/d9c/interfaceSeekableStream)` body,Object headers)`            | reuqest url with POST method，and return response，same as request("POST", ...)
-`public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` `[`post`](#d3/d69/namespacehttp_1a10ad303eed6fdb7a0a37d5ef8b735919)`(String url,`[`Buffer`](#d0/d11/classBuffer)` body,Object headers)`            | reuqest url with POST method，and return response，same as request("POST", ...)
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+readonly List            | `public static readonly List cookies`[`cookies`](#d3/d69/namespacehttp_1af4f4d8ac3708d3d8d3b3ddcf8b2f65be)`cookies`<p>返回http客户端的 HttpCookie 对象列表</p>
+Integer            | `public static Integer timeout`[`timeout`](#d3/d69/namespacehttp_1ae1a1f798ae94ad2c33f690458cf3bae1)`timeout`<p>查询和设置超时时间</p>
+Boolean            | `public static Boolean enableCookie`[`enableCookie`](#d3/d69/namespacehttp_1ad63225275dd098971f669a6ebf034330)`enableCookie`<p>cookie功能开关，默认开启</p>
+Boolean            | `public static Boolean autoRedirect`[`autoRedirect`](#d3/d69/namespacehttp_1ac0f150a1864b7eec388501ed97228f6e)`autoRedirect`<p>自动redirect功能开关，默认开启</p>
+String            | `public static String userAgent`[`userAgent`](#d3/d69/namespacehttp_1ab2c77b1e9c3d364e79138357ca41530d)`userAgent`<p>查询和设置 http 请求中的浏览器标识</p>
 
-## Members
+## Method Summary
 
-#### `public static `[`HttpRequest`](#d4/dfa/interfaceHttpRequest)` new `[`Request`](#d3/d69/namespacehttp_1af42dded35bbc45313730fc90e9eb8f83)`()` 
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+HttpRequest new            | `Request()`<p>创建一个 http 请求对象，参见 HttpRequest</p>
+HttpResponse new            | `Response()`<p>创建一个 http 响应对象，参见 HttpResponse</p>
+HttpCookie new            | `Cookie()`<p>创建一个 http cookie 对象，参见 HttpCookie</p>
+HttpServer new            | `Server()`<p>创建一个 http 服务器，参见 HttpServer</p>
+HttpClient new            | `Client()`<p>创建一个 http 客户端，参见 HttpClient</p>
+HttpsServer new            | `HttpsServer()`<p>创建一个 https 服务器，参见 HttpsServer</p>
+HttpHandler new            | `Handler()`<p>创建一个 http 协议处理器对象，参见 HttpHandler</p>
+Handler            | `fileHandler(String root,Object mimes)`<p>创建一个 http 静态文件处理器，用以用静态文件响应 http 消息</p>
+HttpResponse            | `request(Stream conn,HttpRequest req)`<p>发送 http 请求到指定的流对象，并返回结果</p>
+HttpResponse            | `request(String method,String url,Object headers)`<p>请求指定的 url，并返回结果</p>
+HttpResponse            | `request(String method,String url,SeekableStream body,Map headers)`<p>请求指定的 url，并返回结果</p>
+HttpResponse            | `request(String method,String url,SeekableStream body,Object headers)`<p>请求指定的 url，并返回结果</p>
+HttpResponse            | `request(String method,String url,Buffer body,Object headers)`<p>请求指定的 url，并返回结果</p>
+HttpResponse            | `get(String url,Object headers)`<p>用 GET 方法请求指定的 url，并返回结果，等同于 request("GET", ...)</p>
+HttpResponse            | `post(String url,SeekableStream body,Object headers)`<p>用 POST 方法请求指定的 url，并返回结果，等同于 request("POST", ...)</p>
+HttpResponse            | `post(String url,Buffer body,Object headers)`<p>用 POST 方法请求指定的 url，并返回结果，等同于 request("POST", ...)</p>
+HttpResponse            | `post(String url,Object headers)`<p>用 POST 方法请求指定的 url，并返回结果，等同于 request("POST", ...)</p>
+HttpResponse            | `del(String url,Object headers)`<p>用 DELETE 方法请求指定的 url，并返回结果，等同于 request("DELETE", ...)</p>
+HttpResponse            | `put(String url,SeekableStream body,Object headers)`<p>用 PUT 方法请求指定的 url，并返回结果，等同于 request("PUT", ...)</p>
+HttpResponse            | `put(String url,Buffer body,Object headers)`<p>用 PUT 方法请求指定的 url，并返回结果，等同于 request("PUT", ...)</p>
+HttpResponse            | `put(String url,Object headers)`<p>用 PUT 方法请求指定的 url，并返回结果，等同于 request("PUT", ...)</p>
+HttpResponse            | `patch(String url,SeekableStream body,Object headers)`<p>用 PATCH 方法请求指定的 url，并返回结果，等同于 request("PATCH", ...)</p>
+HttpResponse            | `patch(String url,Buffer body,Object headers)`<p>用 PATCH 方法请求指定的 url，并返回结果，等同于 request("PATCH", ...)</p>
+HttpResponse            | `patch(String url,Object headers)`<p>用 PATCH 方法请求指定的 url，并返回结果，等同于 request("PATCH", ...)</p>
 
-create a http request object，reference [HttpRequest](#d4/dfa/interfaceHttpRequest)
+## Field Detail
 
-#### `public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` new `[`Response`](#d3/d69/namespacehttp_1a70902187780a1f3b2927b2a2f50213b5)`()` 
+{{% panel theme="default" header="cookies" %}}
+#### **readonly List** `public static readonly List cookies`[`cookies`](#d3/d69/namespacehttp_1af4f4d8ac3708d3d8d3b3ddcf8b2f65be)`cookies`
 
-create a http response object，reference [HttpResponse](#d9/d71/interfaceHttpResponse)
+返回http客户端的 HttpCookie 对象列表
 
-#### `public static `[`HttpCookie`](#d3/dea/interfaceHttpCookie)` new `[`Cookie`](#d3/d69/namespacehttp_1a8f3b344e2e2e196a92de9602d2203d61)`()` 
+{{% /panel %}}
+{{% panel theme="default" header="timeout" %}}
+#### **Integer** `public static Integer timeout`[`timeout`](#d3/d69/namespacehttp_1ae1a1f798ae94ad2c33f690458cf3bae1)`timeout`
 
-create a http cookie object，reference [HttpCookie](#d3/dea/interfaceHttpCookie)
+查询和设置超时时间
 
-#### `public static `[`HttpServer`](#d4/d79/interfaceHttpServer)` new `[`Server`](#d3/d69/namespacehttp_1ad4fe0324266eb7ca3209352741b33f84)`()` 
+{{% /panel %}}
+{{% panel theme="default" header="enableCookie" %}}
+#### **Boolean** `public static Boolean enableCookie`[`enableCookie`](#d3/d69/namespacehttp_1ad63225275dd098971f669a6ebf034330)`enableCookie`
 
-create a http server，reference [HttpServer](#d4/d79/interfaceHttpServer)
+cookie功能开关，默认开启
 
-#### `public static `[`HttpsServer`](#d7/d42/interfaceHttpsServer)` new `[`HttpsServer`](#d3/d69/namespacehttp_1a5b21533b4e601a05f64dc3c814ba7b87)`()` 
+{{% /panel %}}
+{{% panel theme="default" header="autoRedirect" %}}
+#### **Boolean** `public static Boolean autoRedirect`[`autoRedirect`](#d3/d69/namespacehttp_1ac0f150a1864b7eec388501ed97228f6e)`autoRedirect`
 
-create a https server, reference [HttpsServer](#d7/d42/interfaceHttpsServer)
+自动redirect功能开关，默认开启
 
-#### `public static `[`HttpHandler`](#d6/d18/interfaceHttpHandler)` new `[`Handler`](#d3/d69/namespacehttp_1aeb7ec4214a199d4df745d067aaf71a3d)`()` 
+{{% /panel %}}
+{{% panel theme="default" header="userAgent" %}}
+#### **String** `public static String userAgent`[`userAgent`](#d3/d69/namespacehttp_1ab2c77b1e9c3d364e79138357ca41530d)`userAgent`
 
-create a http protocol handler，reference [HttpHandler](#d6/d18/interfaceHttpHandler)
+查询和设置 http 请求中的浏览器标识
 
-#### `public static `[`Handler`](#da/d85/interfaceHandler)` `[`fileHandler`](#d3/d69/namespacehttp_1a134a01399b1794974c1c969c07af8e5f)`(String root,Object mimes)` 
+{{% /panel %}}
 
-create a http static file processor, in case of using static file to respond http request
+## Method Detail
 
-#### Parameters
-* `root` file root folder 
+{{% panel theme="default" header="Request" %}}
+#### **HttpRequest new** `Request()`
 
-* `mimes` extends mime settings 
+创建一个 http 请求对象，参见 HttpRequest
 
-* `mimes` extedns mime settings 
+{{% /panel %}}
+{{% panel theme="default" header="Response" %}}
+#### **HttpResponse new** `Response()`
 
-#### Returns
-return a static file processor to handle http request
+创建一个 http 响应对象，参见 HttpResponse
 
-fileHandler support gzip pre-compression，when accept gzip in content-typeand filename.ext.gz exists under same root，then return the file directly， to avoid extra load on server.
+{{% /panel %}}
+{{% panel theme="default" header="Cookie" %}}
+#### **HttpCookie new** `Cookie()`
 
-#### `public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` `[`request`](#d3/d69/namespacehttp_1a43fb75f3d1ff80ac16e4929245b13d1a)`(`[`Stream`](#d4/dc7/interfaceStream)` conn,`[`HttpRequest`](#d4/dfa/interfaceHttpRequest)` req)` 
+创建一个 http cookie 对象，参见 HttpCookie
 
-send http request to connection object，return response
+{{% /panel %}}
+{{% panel theme="default" header="Server" %}}
+#### **HttpServer new** `Server()`
 
-#### Parameters
-* `conn` assign requested connection object 
+创建一个 http 服务器，参见 HttpServer
 
-* `req` the [HttpRequest](#d4/dfa/interfaceHttpRequest) obejct need to be sent 
+{{% /panel %}}
+{{% panel theme="default" header="Client" %}}
+#### **HttpClient new** `Client()`
 
-#### Returns
-return server response
+创建一个 http 客户端，参见 HttpClient
 
-#### `public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` `[`request`](#d3/d69/namespacehttp_1a8633e20a8ce55d009060a4849a91c6b7)`(String method,String url,Object headers)` 
+{{% /panel %}}
+{{% panel theme="default" header="HttpsServer" %}}
+#### **HttpsServer new** `HttpsServer()`
 
-assign requested url, and return
+创建一个 https 服务器，参见 HttpsServer
 
-#### Parameters
-* `method` define http request method, such as: GET, POST 
+{{% /panel %}}
+{{% panel theme="default" header="Handler" %}}
+#### **HttpHandler new** `Handler()`
 
-* `url` assigned url，has to be full url with root path 
+创建一个 http 协议处理器对象，参见 HttpHandler
 
-* `headers` define http request header，default is None 
+{{% /panel %}}
+{{% panel theme="default" header="fileHandler" %}}
+#### **Handler** `fileHandler(String root,Object mimes)`
 
-#### Returns
-reutrn server response
-
-#### `public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` `[`request`](#d3/d69/namespacehttp_1a18e9a81f160921e0788994d503a101d1)`(String method,String url,`[`SeekableStream`](#d6/d9c/interfaceSeekableStream)` body,Object headers)` 
-
-Request the specified url, and get the response.
-
-#### Parameters
-* `method` define http method, such as: GET, POST 
-
-* `url` assigned url，has to be full url with root path 
-
-* `body` define http body content 
-
-* `headers` define http request header，default is None 
-
-#### Returns
-reutrn server response
-
-#### `public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` `[`request`](#d3/d69/namespacehttp_1ad8e25f0f0cdf12b4e3b8f43ceb6676e8)`(String method,String url,`[`SeekableStream`](#d6/d9c/interfaceSeekableStream)` body,`[`Map`](#d2/dc1/interfaceMap)` headers)` 
-
-Request the specified url, and get the response.
-
-#### Parameters
-* `method` define http method, such as: GET, POST 
-
-* `url` assigned url，has to be full url with root path 
-
-* `body` define http body content 
-
-* `headers` define http request header, default is None 
-
-#### Returns
-reutrn server response
-
-#### `public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` `[`request`](#d3/d69/namespacehttp_1a6f93d3122d804f48b97c1506246fc0f3)`(String method,String url,`[`Buffer`](#d0/d11/classBuffer)` body,Object headers)` 
-
-Request the specified url, and get the response.
+创建一个 http 静态文件处理器，用以用静态文件响应 http 消息
 
 #### Parameters
-* `method` define http method, such as: GET, POST 
+* `root` 文件根路径 
 
-* `url` assigned url，has to be full url with root path 
-
-* `body` define http body content 
-
-* `headers` define http request header, default is None 
+* `mimes` 扩展 mime 设置 
 
 #### Returns
-reutrn server response
+返回一个静态文件处理器用于处理 http 消息
 
-#### `public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` `[`get`](#d3/d69/namespacehttp_1af455f3026af00e563cdeddae18a7beea)`(String url,Object headers)` 
+fileHandler 支持 gzip 预压缩，当请求接受 gzip 编码，且相同路径下 filename.ext.gz 文件存在时，将直接返回此文件， 从而避免重复压缩带来服务器负载。
+{{% /panel %}}
+{{% panel theme="default" header="request" %}}
+#### **HttpResponse** `request(Stream conn,HttpRequest req)`
 
-reuqest url with GET method，and return response，same as request("GET", ...)
+发送 http 请求到指定的流对象，并返回结果
 
 #### Parameters
-* `url` assigned url，has to be full url with root path 
+* `conn` 指定处理请求的流对象 
 
-* `headers` define http request header，default is None 
+* `req` 要发送的 HttpRequest 对象 
 
 #### Returns
-reutrn server response
+返回服务器响应
+{{% /panel %}}
+{{% panel theme="default" header="request" %}}
+#### **HttpResponse** `request(String method,String url,Object headers)`
 
-#### `public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` `[`post`](#d3/d69/namespacehttp_1aa08e3830d32a214ccc4f586f117b1da2)`(String url,`[`SeekableStream`](#d6/d9c/interfaceSeekableStream)` body,Object headers)` 
-
-reuqest url with POST method，and return response，same as request("POST", ...)
+请求指定的 url，并返回结果
 
 #### Parameters
-* `url` assigned url，has to be full url with root path 
+* `method` 指定 http 请求方法：GET, POST 等 
 
-* `body` define http body content 
+* `url` 指定 url，必须是包含主机的完整 url 
 
-* `headers` define http request header，default is None 
+* `headers` 指定附加的 http 头，缺省无附加头 
 
 #### Returns
-reutrn server response
+返回服务器响应
+{{% /panel %}}
+{{% panel theme="default" header="request" %}}
+#### **HttpResponse** `request(String method,String url,SeekableStream body,Map headers)`
 
-#### `public static `[`HttpResponse`](#d9/d71/interfaceHttpResponse)` `[`post`](#d3/d69/namespacehttp_1a10ad303eed6fdb7a0a37d5ef8b735919)`(String url,`[`Buffer`](#d0/d11/classBuffer)` body,Object headers)` 
-
-reuqest url with POST method，and return response，same as request("POST", ...)
+请求指定的 url，并返回结果
 
 #### Parameters
-* `url` assigned url，has to be full url with root path 
+* `method` 指定 http 请求方法：GET, POST 等 
 
-* `body` define http body content 
+* `url` 指定 url，必须是包含主机的完整 url 
 
-* `headers` define http request header，default is None 
+* `body` 指定发送的 body 内容 
+
+* `headers` 指定附加的 http 头 
 
 #### Returns
-reutrn server response
+返回服务器响应
+{{% /panel %}}
+{{% panel theme="default" header="request" %}}
+#### **HttpResponse** `request(String method,String url,SeekableStream body,Object headers)`
 
+请求指定的 url，并返回结果
+
+#### Parameters
+* `method` 指定 http 请求方法：GET, POST 等 
+
+* `url` 指定 url，必须是包含主机的完整 url 
+
+* `body` 指定发送的 body 内容 
+
+* `headers` 指定附加的 http 头，缺省无附加头 
+
+#### Returns
+返回服务器响应
+{{% /panel %}}
+{{% panel theme="default" header="request" %}}
+#### **HttpResponse** `request(String method,String url,Buffer body,Object headers)`
+
+请求指定的 url，并返回结果
+
+#### Parameters
+* `method` 指定 http 请求方法：GET, POST 等 
+
+* `url` 指定 url，必须是包含主机的完整 url 
+
+* `body` 指定发送的 body 内容 
+
+* `headers` 指定附加的 http 头，缺省无附加头 
+
+#### Returns
+返回服务器响应
+{{% /panel %}}
+{{% panel theme="default" header="get" %}}
+#### **HttpResponse** `get(String url,Object headers)`
+
+用 GET 方法请求指定的 url，并返回结果，等同于 request("GET", ...)
+
+#### Parameters
+* `url` 指定 url，必须是包含主机的完整 url 
+
+* `headers` 指定附加的 http 头，缺省无附加头 
+
+#### Returns
+返回服务器响应
+{{% /panel %}}
+{{% panel theme="default" header="post" %}}
+#### **HttpResponse** `post(String url,SeekableStream body,Object headers)`
+
+用 POST 方法请求指定的 url，并返回结果，等同于 request("POST", ...)
+
+#### Parameters
+* `url` 指定 url，必须是包含主机的完整 url 
+
+* `body` 指定发送的 body 内容 
+
+* `headers` 指定附加的 http 头，缺省无附加头 
+
+#### Returns
+返回服务器响应
+{{% /panel %}}
+{{% panel theme="default" header="post" %}}
+#### **HttpResponse** `post(String url,Buffer body,Object headers)`
+
+用 POST 方法请求指定的 url，并返回结果，等同于 request("POST", ...)
+
+#### Parameters
+* `url` 指定 url，必须是包含主机的完整 url 
+
+* `body` 指定发送的 body 内容 
+
+* `headers` 指定附加的 http 头，缺省无附加头 
+
+#### Returns
+返回服务器响应
+{{% /panel %}}
+{{% panel theme="default" header="post" %}}
+#### **HttpResponse** `post(String url,Object headers)`
+
+用 POST 方法请求指定的 url，并返回结果，等同于 request("POST", ...)
+
+#### Parameters
+* `url` 指定 url，必须是包含主机的完整 url 
+
+* `headers` 指定附加的 http 头，缺省无附加头 
+
+#### Returns
+返回服务器响应
+{{% /panel %}}
+{{% panel theme="default" header="del" %}}
+#### **HttpResponse** `del(String url,Object headers)`
+
+用 DELETE 方法请求指定的 url，并返回结果，等同于 request("DELETE", ...)
+
+#### Parameters
+* `url` 指定 url，必须是包含主机的完整 url 
+
+* `headers` 指定附加的 http 头，缺省无附加头 
+
+#### Returns
+返回服务器响应
+{{% /panel %}}
+{{% panel theme="default" header="put" %}}
+#### **HttpResponse** `put(String url,SeekableStream body,Object headers)`
+
+用 PUT 方法请求指定的 url，并返回结果，等同于 request("PUT", ...)
+
+#### Parameters
+* `url` 指定 url，必须是包含主机的完整 url 
+
+* `body` 指定发送的 body 内容 
+
+* `headers` 指定附加的 http 头，缺省无附加头 
+
+#### Returns
+返回服务器响应
+{{% /panel %}}
+{{% panel theme="default" header="put" %}}
+#### **HttpResponse** `put(String url,Buffer body,Object headers)`
+
+用 PUT 方法请求指定的 url，并返回结果，等同于 request("PUT", ...)
+
+#### Parameters
+* `url` 指定 url，必须是包含主机的完整 url 
+
+* `body` 指定发送的 body 内容 
+
+* `headers` 指定附加的 http 头，缺省无附加头 
+
+#### Returns
+返回服务器响应
+{{% /panel %}}
+{{% panel theme="default" header="put" %}}
+#### **HttpResponse** `put(String url,Object headers)`
+
+用 PUT 方法请求指定的 url，并返回结果，等同于 request("PUT", ...)
+
+#### Parameters
+* `url` 指定 url，必须是包含主机的完整 url 
+
+* `headers` 指定附加的 http 头，缺省无附加头 
+
+#### Returns
+返回服务器响应
+{{% /panel %}}
+{{% panel theme="default" header="patch" %}}
+#### **HttpResponse** `patch(String url,SeekableStream body,Object headers)`
+
+用 PATCH 方法请求指定的 url，并返回结果，等同于 request("PATCH", ...)
+
+#### Parameters
+* `url` 指定 url，必须是包含主机的完整 url 
+
+* `body` 指定发送的 body 内容 
+
+* `headers` 指定附加的 http 头，缺省无附加头 
+
+#### Returns
+返回服务器响应
+{{% /panel %}}
+{{% panel theme="default" header="patch" %}}
+#### **HttpResponse** `patch(String url,Buffer body,Object headers)`
+
+用 PATCH 方法请求指定的 url，并返回结果，等同于 request("PATCH", ...)
+
+#### Parameters
+* `url` 指定 url，必须是包含主机的完整 url 
+
+* `body` 指定发送的 body 内容 
+
+* `headers` 指定附加的 http 头，缺省无附加头 
+
+#### Returns
+返回服务器响应
+{{% /panel %}}
+{{% panel theme="default" header="patch" %}}
+#### **HttpResponse** `patch(String url,Object headers)`
+
+用 PATCH 方法请求指定的 url，并返回结果，等同于 request("PATCH", ...)
+
+#### Parameters
+* `url` 指定 url，必须是包含主机的完整 url 
+
+* `headers` 指定附加的 http 头，缺省无附加头 
+
+#### Returns
+返回服务器响应
+{{% /panel %}}
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

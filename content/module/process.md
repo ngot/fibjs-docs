@@ -1,239 +1,317 @@
 +++
 draft = false
 title = "process"
-description = "Process handle module, to manage current process resources."
+description = "进程处理模块，用以管理当前进程的资源"
 [menu.main]
 parent = "modules"
 identifier = "process"
 +++
 
-Process handle module, to manage current process resources.
+进程处理模块，用以管理当前进程的资源
 
-To use it: 
-```cpp
+引用方法： 
+```js
 var process = require('process');
 ```
 
-## Summary
+## Field Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static Integer `[`umask`](#d8/d25/namespaceprocess_1a51e18d137c98fd88756d714f2022aa71)`(Integer mask)`            | change the current umask，Windows does't support this.
-`public static Integer `[`umask`](#d8/d25/namespaceprocess_1aaf9d2a4e35aed285f9826e28419e930f)`(String mask)`            | change the current umask，Windows does't support this.
-`public static Integer `[`umask`](#d8/d25/namespaceprocess_1a7d39fd6d6085358f1fd9dd9e44777555)`()`            | return the current umask，Windows does't support this.
-`public static static `[`exit`](#d8/d25/namespaceprocess_1a219dc13763dff453b237901c89bc6add)`(Integer code)`            | Exit current process, and return result.
-`public static String `[`cwd`](#d8/d25/namespaceprocess_1a59492653e6cf45081a9c8a348c57af16)`()`            | Return current work path of the operating system.
-`public static static `[`chdir`](#d8/d25/namespaceprocess_1a8561579fcdf7f34e795e6937829a39ff)`(String directory)`            | Change the current work path of operating system.
-`public static Number `[`uptime`](#d8/d25/namespaceprocess_1a37ac67356e04ce3c54b6a707f0e2783e)`()`            | returns the system uptime in number of seconds.
-`public static Object `[`memoryUsage`](#d8/d25/namespaceprocess_1a30bf3a01655c4e12298c063786156d2b)`()`            | Get report of memory the current process consumpt.
-`public static static `[`nextTick`](#d8/d25/namespaceprocess_1a5f1a7165f38798666a6fe0ed55b4404b)`(Function func,...)`            | start a fiber
-`public static `[`SubProcess`](#d8/d10/interfaceSubProcess)` `[`open`](#d8/d25/namespaceprocess_1aae5284cd12d7829a4892eb43450b6e0b)`(String command,Array args,Object opts)`            | Create chlid process taking charge of stdin and stdout and run bash command.
-`public static `[`SubProcess`](#d8/d10/interfaceSubProcess)` `[`open`](#d8/d25/namespaceprocess_1a8705d424d2621e41adc98d6755c176ab)`(String command,Object opts)`            | Create chlid process taking charge of stdin and stdout and run bash command.
-`public static `[`SubProcess`](#d8/d10/interfaceSubProcess)` `[`start`](#d8/d25/namespaceprocess_1aa2569c7583e8dd1c3b92086002c6e741)`(String command,Array args,Object opts)`            | Create chlid process and run bash command.
-`public static `[`SubProcess`](#d8/d10/interfaceSubProcess)` `[`start`](#d8/d25/namespaceprocess_1a930139c20bcdedef5d5fbd9ec22ed7ef)`(String command,Object opts)`            | Create chlid process and run bash command.
-`public static Integer `[`run`](#d8/d25/namespaceprocess_1add057f3b20e86373a9b1ba9e1757504c)`(String command,Array args,Object opts)`            | Run bash command and return result code.
-`public static Integer `[`run`](#d8/d25/namespaceprocess_1ada594bfe0c7da5d9346cb074292bb13d)`(String command,Object opts)`            | Run bash command and return result code.
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+readonly Array            | `public static readonly Array argv`[`argv`](#d8/d25/namespaceprocess_1a2c1a6c800a4d1b0fdd5f9f405c5475d5)`argv`<p>返回当前进程的命令行参数</p>
+readonly Array            | `public static readonly Array execArgv`[`execArgv`](#d8/d25/namespaceprocess_1a12522010d9ba6e2d19f1aae35d09cc03)`execArgv`<p>返回当前进程的特殊命令行参数，这些参数被 fibjs 用于设置运行环境</p>
+readonly String            | `public static readonly String version`[`version`](#d8/d25/namespaceprocess_1aff2687419abe092406c7db42dbbf9ed3)`version`<p>返回fibjs版本字符串</p>
+readonly String            | `public static readonly String execPath`[`execPath`](#d8/d25/namespaceprocess_1ade6cd663e8d8b831023dcfe0b34a9bed)`execPath`<p>查询当前运行执行文件完整路径</p>
+readonly Object            | `public static readonly Object env`[`env`](#d8/d25/namespaceprocess_1a5452c47f4dfe56944cb47893c53d1476)`env`<p>查询当前进程的环境变量</p>
+readonly String            | `public static readonly String arch`[`arch`](#d8/d25/namespaceprocess_1af8e7dc24026c4ba4676707979dbe308f)`arch`<p>查询当前 cpu 环境，可能的结果为 'amd64', 'arm', 'arm64', 'ia32'</p>
+readonly String            | `public static readonly String platform`[`platform`](#d8/d25/namespaceprocess_1af6d11f7f0f3d0ad46e9a7e701a6f78b8)`platform`<p>查询当前平台名称，可能的结果为 'darwin', 'freebsd', 'linux', 或 'win32'</p>
 
-## Members
+## Method Summary
 
-#### `public static Integer `[`umask`](#d8/d25/namespaceprocess_1a51e18d137c98fd88756d714f2022aa71)`(Integer mask)` 
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+Integer            | `umask(Integer mask)`<p>改变当前的 umask，Windows 不支持此方法</p>
+Integer            | `umask(String mask)`<p>改变当前的 umask，Windows 不支持此方法</p>
+Integer            | `umask()`<p>返回当前的 umask，Windows 不支持此方法</p>
+void            | `exit(Integer code)`<p>退出当前进程，并返回结果</p>
+String            | `cwd()`<p>返回操作系统当前工作路径</p>
+void            | `chdir(String directory)`<p>修改操作系统当前工作路径</p>
+Number            | `uptime()`<p>查询运行环境运行时间，以秒为单位</p>
+Object            | `memoryUsage()`<p>查询当前进程内存使用报告</p>
+void            | `nextTick(Function func,...)`<p>启动一个纤程</p>
+SubProcess            | `open(String command,Array args,Object opts)`<p>运行指定的命令行，接管进程输入输出流，并返回进程对象</p>
+SubProcess            | `open(String command,Object opts)`<p>运行指定的命令行，接管进程输入输出流，并返回进程对象</p>
+SubProcess            | `start(String command,Array args,Object opts)`<p>运行指定的命令行，并返回进程对象</p>
+SubProcess            | `start(String command,Object opts)`<p>运行指定的命令行，并返回进程对象</p>
+Integer            | `run(String command,Array args,Object opts)`<p>运行指定的命令行，并返回进程的结束代码</p>
+Integer            | `run(String command,Object opts)`<p>运行指定的命令行，并返回进程的结束代码</p>
 
-change the current umask，Windows does't support this.
+## Field Detail
+
+{{% panel theme="default" header="argv" %}}
+#### **readonly Array** `public static readonly Array argv`[`argv`](#d8/d25/namespaceprocess_1a2c1a6c800a4d1b0fdd5f9f405c5475d5)`argv`
+
+返回当前进程的命令行参数
+
+{{% /panel %}}
+{{% panel theme="default" header="execArgv" %}}
+#### **readonly Array** `public static readonly Array execArgv`[`execArgv`](#d8/d25/namespaceprocess_1a12522010d9ba6e2d19f1aae35d09cc03)`execArgv`
+
+返回当前进程的特殊命令行参数，这些参数被 fibjs 用于设置运行环境
+
+{{% /panel %}}
+{{% panel theme="default" header="version" %}}
+#### **readonly String** `public static readonly String version`[`version`](#d8/d25/namespaceprocess_1aff2687419abe092406c7db42dbbf9ed3)`version`
+
+返回fibjs版本字符串
+
+{{% /panel %}}
+{{% panel theme="default" header="execPath" %}}
+#### **readonly String** `public static readonly String execPath`[`execPath`](#d8/d25/namespaceprocess_1ade6cd663e8d8b831023dcfe0b34a9bed)`execPath`
+
+查询当前运行执行文件完整路径
+
+{{% /panel %}}
+{{% panel theme="default" header="env" %}}
+#### **readonly Object** `public static readonly Object env`[`env`](#d8/d25/namespaceprocess_1a5452c47f4dfe56944cb47893c53d1476)`env`
+
+查询当前进程的环境变量
+
+{{% /panel %}}
+{{% panel theme="default" header="arch" %}}
+#### **readonly String** `public static readonly String arch`[`arch`](#d8/d25/namespaceprocess_1af8e7dc24026c4ba4676707979dbe308f)`arch`
+
+查询当前 cpu 环境，可能的结果为 'amd64', 'arm', 'arm64', 'ia32'
+
+{{% /panel %}}
+{{% panel theme="default" header="platform" %}}
+#### **readonly String** `public static readonly String platform`[`platform`](#d8/d25/namespaceprocess_1af6d11f7f0f3d0ad46e9a7e701a6f78b8)`platform`
+
+查询当前平台名称，可能的结果为 'darwin', 'freebsd', 'linux', 或 'win32'
+
+{{% /panel %}}
+
+## Method Detail
+
+{{% panel theme="default" header="umask" %}}
+#### **Integer** `umask(Integer mask)`
+
+改变当前的 umask，Windows 不支持此方法
 
 #### Parameters
-* `mask` the mask to set 
+* `mask` 指定新的掩码 
 
 #### Returns
-the previous mask
+返回之前的 mask
+{{% /panel %}}
+{{% panel theme="default" header="umask" %}}
+#### **Integer** `umask(String mask)`
 
-#### `public static Integer `[`umask`](#d8/d25/namespaceprocess_1aaf9d2a4e35aed285f9826e28419e930f)`(String mask)` 
-
-change the current umask，Windows does't support this.
+改变当前的 umask，Windows 不支持此方法
 
 #### Parameters
-* `mask` octonary string(e.g: "0664") 
+* `mask` 指定新的掩码， 字符串类型八进制(e.g: "0664") 
 
 #### Returns
-the previous mask
+返回之前的 mask
+{{% /panel %}}
+{{% panel theme="default" header="umask" %}}
+#### **Integer** `umask()`
 
-#### `public static Integer `[`umask`](#d8/d25/namespaceprocess_1a7d39fd6d6085358f1fd9dd9e44777555)`()` 
-
-return the current umask，Windows does't support this.
+返回当前的 umask，Windows 不支持此方法
 
 #### Returns
-the current mask
+返回当前的 mask 值
+{{% /panel %}}
+{{% panel theme="default" header="exit" %}}
+#### **void** `exit(Integer code)`
 
-#### `public static static `[`exit`](#d8/d25/namespaceprocess_1a219dc13763dff453b237901c89bc6add)`(Integer code)` 
-
-Exit current process, and return result.
+退出当前进程，并返回结果
 
 #### Parameters
-* `code` result of process.
+* `code` 返回进程结果
+{{% /panel %}}
+{{% panel theme="default" header="cwd" %}}
+#### **String** `cwd()`
 
-#### `public static String `[`cwd`](#d8/d25/namespaceprocess_1a59492653e6cf45081a9c8a348c57af16)`()` 
-
-Return current work path of the operating system.
+返回操作系统当前工作路径
 
 #### Returns
-Work path.
+返回当前系统路径
+{{% /panel %}}
+{{% panel theme="default" header="chdir" %}}
+#### **void** `chdir(String directory)`
 
-#### `public static static `[`chdir`](#d8/d25/namespaceprocess_1a8561579fcdf7f34e795e6937829a39ff)`(String directory)` 
-
-Change the current work path of operating system.
+修改操作系统当前工作路径
 
 #### Parameters
-* `directory` The new work path.
+* `directory` 指定设定的新路径
+{{% /panel %}}
+{{% panel theme="default" header="uptime" %}}
+#### **Number** `uptime()`
 
-#### `public static Number `[`uptime`](#d8/d25/namespaceprocess_1a37ac67356e04ce3c54b6a707f0e2783e)`()` 
-
-returns the system uptime in number of seconds.
-
-#### Returns
-seconds
-
-#### `public static Object `[`memoryUsage`](#d8/d25/namespaceprocess_1a30bf3a01655c4e12298c063786156d2b)`()` 
-
-Get report of memory the current process consumpt.
+查询运行环境运行时间，以秒为单位
 
 #### Returns
-Memory report object.
+返回表示时间的数值
+{{% /panel %}}
+{{% panel theme="default" header="memoryUsage" %}}
+#### **Object** `memoryUsage()`
 
-Memory report like this: 
-```cpp
+查询当前进程内存使用报告
+
+#### Returns
+返回包含内存报告
+
+内存报告生成类似以下结果： 
+```js
 {
   "rss": 8622080,
   "heapTotal": 4083456,
   "heapUsed": 1621800
 }
 ```
- among the report：
+ 其中：
 
-* rss Occupation of physical memory.
+* rss 返回进程当前占用物理内存大小
 
-* heapTotal Total heap memory of v8.
+* heapTotal 返回 v8 引擎堆内存大小
 
-* heapUsed Heap memory occupied by v8.
+* heapUsed 返回 v8 引擎正在使用堆内存大小
+{{% /panel %}}
+{{% panel theme="default" header="nextTick" %}}
+#### **void** `nextTick(Function func,...)`
 
-#### `public static static `[`nextTick`](#d8/d25/namespaceprocess_1a5f1a7165f38798666a6fe0ed55b4404b)`(Function func,...)` 
-
-start a fiber
-
-#### Parameters
-* `func` function to be executed in the new fiber. 
-
-* `...` params which will be passed to the func.
-
-#### `public static `[`SubProcess`](#d8/d10/interfaceSubProcess)` `[`open`](#d8/d25/namespaceprocess_1aae5284cd12d7829a4892eb43450b6e0b)`(String command,Array args,Object opts)` 
-
-Create chlid process taking charge of stdin and stdout and run bash command.
+启动一个纤程
 
 #### Parameters
-* `command` Bash command to be executed. 
+* `func` 制定纤程执行的函数 
 
-* `args` Arguments for bash command. 
+* `...` 可变参数序列，此序列会在纤程内传递给函数
+{{% /panel %}}
+{{% panel theme="default" header="open" %}}
+#### **SubProcess** `open(String command,Array args,Object opts)`
 
-* `opts` Option of child process, such as: 
-```cpp
+运行指定的命令行，接管进程输入输出流，并返回进程对象
+
+#### Parameters
+* `command` 指定运行的命令行 
+
+* `args` 指定运行的参数列表 
+
+* `opts` 指定运行的选项，支持的选项如下： 
+```js
 {
-    "timeout": 100, // unit ms
-    "envs": [] // Enviroment variable of child process.
+    "timeout": 100, // 单位为 ms
+    "envs": [] // 进程环境变量
 }
 ```
 
 #### Returns
-Child process object containing result of command.
+返回包含运行结果的进程对象
+{{% /panel %}}
+{{% panel theme="default" header="open" %}}
+#### **SubProcess** `open(String command,Object opts)`
 
-#### `public static `[`SubProcess`](#d8/d10/interfaceSubProcess)` `[`open`](#d8/d25/namespaceprocess_1a8705d424d2621e41adc98d6755c176ab)`(String command,Object opts)` 
-
-Create chlid process taking charge of stdin and stdout and run bash command.
+运行指定的命令行，接管进程输入输出流，并返回进程对象
 
 #### Parameters
-* `command` Bash command. 
+* `command` 指定运行的命令行 
 
-* `opts` Option of child process, such as: 
-```cpp
+* `opts` 指定运行的选项，支持的选项如下： 
+```js
 {
-    "timeout": 100, // unit ms
-    "envs": [] // Environment variable of child process.
+    "timeout": 100, // 单位为 ms
+    "envs": [] // 进程环境变量
 }
 ```
 
 #### Returns
-Child process object containing result of command.
+返回包含运行结果的进程对象
+{{% /panel %}}
+{{% panel theme="default" header="start" %}}
+#### **SubProcess** `start(String command,Array args,Object opts)`
 
-#### `public static `[`SubProcess`](#d8/d10/interfaceSubProcess)` `[`start`](#d8/d25/namespaceprocess_1aa2569c7583e8dd1c3b92086002c6e741)`(String command,Array args,Object opts)` 
-
-Create chlid process and run bash command.
+运行指定的命令行，并返回进程对象
 
 #### Parameters
-* `command` Bash command. 
+* `command` 指定运行的命令行 
 
-* `args` Arguments of bash command. 
+* `args` 指定运行的参数列表 
 
-* `opts` Option of child process, such as: 
-```cpp
+* `opts` 指定运行的选项，支持的选项如下： 
+```js
 {
-    "timeout": 100, // unit ms
-    "envs": [] // Environment variable of child process.
+    "timeout": 100, // 单位为 ms
+    "envs": [] // 进程环境变量
 }
 ```
 
 #### Returns
-Child process object containing result of the command.
+返回包含运行结果的进程对象
+{{% /panel %}}
+{{% panel theme="default" header="start" %}}
+#### **SubProcess** `start(String command,Object opts)`
 
-#### `public static `[`SubProcess`](#d8/d10/interfaceSubProcess)` `[`start`](#d8/d25/namespaceprocess_1a930139c20bcdedef5d5fbd9ec22ed7ef)`(String command,Object opts)` 
-
-Create chlid process and run bash command.
+运行指定的命令行，并返回进程对象
 
 #### Parameters
-* `command` Bash command. 
+* `command` 指定运行的命令行 
 
-* `opts` Option of child process, such as: 
-```cpp
+* `opts` 指定运行的选项，支持的选项如下： 
+```js
 {
-    "timeout": 100, // unit ms
-    "envs": [] // Environment variable of child process.
+    "timeout": 100, // 单位为 ms
+    "envs": [] // 进程环境变量
 }
 ```
 
 #### Returns
-Child process object containing result of the command.
+返回包含运行结果的进程对象
+{{% /panel %}}
+{{% panel theme="default" header="run" %}}
+#### **Integer** `run(String command,Array args,Object opts)`
 
-#### `public static Integer `[`run`](#d8/d25/namespaceprocess_1add057f3b20e86373a9b1ba9e1757504c)`(String command,Array args,Object opts)` 
-
-Run bash command and return result code.
+运行指定的命令行，并返回进程的结束代码
 
 #### Parameters
-* `command` Bash command. 
+* `command` 指定运行的命令行 
 
-* `args` Arguments of bash command. 
+* `args` 指定运行的参数列表 
 
-* `opts` Option of child process, such as: 
-```cpp
+* `opts` 指定运行的选项，支持的选项如下： 
+```js
 {
-    "timeout": 100, // unit ms
-    "envs": [] // Environment variable of child process.
+    "timeout": 100, // 单位为 ms
+    "envs": [] // 进程环境变量
 }
 ```
 
 #### Returns
-Result code of bash command.
+返回命令的运行结果
+{{% /panel %}}
+{{% panel theme="default" header="run" %}}
+#### **Integer** `run(String command,Object opts)`
 
-#### `public static Integer `[`run`](#d8/d25/namespaceprocess_1ada594bfe0c7da5d9346cb074292bb13d)`(String command,Object opts)` 
-
-Run bash command and return result code.
+运行指定的命令行，并返回进程的结束代码
 
 #### Parameters
-* `command` Bash command. 
+* `command` 指定运行的命令行 
 
-* `opts` Option of child process, such as: 
-```cpp
+* `opts` 指定运行的选项，支持的选项如下： 
+```js
 {
-    "timeout": 100, // unit ms
-    "envs": [] // Environment variable of child process.
+    "timeout": 100, // 单位为 ms
+    "envs": [] // 进程环境变量
 }
 ```
 
 #### Returns
-Result code of bash command.
+返回命令的运行结果
+{{% /panel %}}
 
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

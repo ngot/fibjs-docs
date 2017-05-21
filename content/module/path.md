@@ -1,102 +1,137 @@
 +++
 draft = false
 title = "path"
-description = "File path module."
+description = "文件路径处理模块"
 [menu.main]
 parent = "modules"
 identifier = "path"
 +++
 
-[File](#d3/d3a/interfaceFile) path module.
+文件路径处理模块
 
-To use it: 
-```cpp
+引用方法： 
+```js
 var path = require('path');
 ```
 
-## Summary
+## Field Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static String `[`normalize`](#d0/d43/namespacepath_1ab5940f0638ae1ecf73788c7c6e5da56c)`(String path)`            | Normalize path.
-`public static String `[`basename`](#d0/d43/namespacepath_1a82751cb3c3cda3cbd756667343737f4d)`(String path,String ext)`            | Get file name in path, ignore extension with file has it.
-`public static String `[`extname`](#d0/d43/namespacepath_1aea5f6966a2f57a23cb34dd2700f8ffe5)`(String path)`            | Get file extension.
-`public static String `[`dirname`](#d0/d43/namespacepath_1aeb69e3ac13503ae13ec20bd954f8d5e7)`(String path)`            | Get directory in path.
-`public static String `[`fullpath`](#d0/d43/namespacepath_1a39317bd9f009a2295d12865393d2d8d8)`(String path)`            | Get full path.
-`public static String `[`join`](#d0/d43/namespacepath_1ac551d9bf9f00720470cac3fdc098a8b3)`(...)`            | Merge multiple paths to a single relative path.
-`public static String `[`resolve`](#d0/d43/namespacepath_1ad7a5c3dcc290cdf508621d865e52d1d8)`(...)`            | Merge multiple paths to a single absolute path.
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+readonly String            | `public static readonly String sep`[`sep`](#d0/d43/namespacepath_1afa7870c20e6c51ddda12e9d84873e616)`sep`<p>查询当前操作系统的路径分割字符，posix 返回 '/', windows 返回 '\'</p>
+readonly String            | `public static readonly String delimiter`[`delimiter`](#d0/d43/namespacepath_1a3036db6751ec95465b014989251b2946)`delimiter`<p>查询当前操作系统的多路径组合字符，posix 返回 ':', windows 返回 ';'</p>
 
-## Members
+## Method Summary
 
-#### `public static String `[`normalize`](#d0/d43/namespacepath_1ab5940f0638ae1ecf73788c7c6e5da56c)`(String path)` 
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+String            | `normalize(String path)`<p>标准化路径，处理路径中父目录等信息</p>
+String            | `basename(String path,String ext)`<p>查询路径中的文件名称，若指定扩展名，则自动取消匹配的扩展名</p>
+String            | `extname(String path)`<p>查询路径中的文件扩展名</p>
+String            | `dirname(String path)`<p>查询路径中的目录路径</p>
+String            | `fullpath(String path)`<p>转换给定路径为全路径</p>
+String            | `join(...)`<p>合并一系列路径成为一个单一路径</p>
+String            | `resolve(...)`<p>合并一系列路径成为一个绝对路径</p>
 
-Normalize path.
+## Field Detail
 
-#### Parameters
-* `path` Original path 
+{{% panel theme="default" header="sep" %}}
+#### **readonly String** `public static readonly String sep`[`sep`](#d0/d43/namespacepath_1afa7870c20e6c51ddda12e9d84873e616)`sep`
 
-#### Returns
-Return normalized path
+查询当前操作系统的路径分割字符，posix 返回 '/', windows 返回 '\'
 
-#### `public static String `[`basename`](#d0/d43/namespacepath_1a82751cb3c3cda3cbd756667343737f4d)`(String path,String ext)` 
+{{% /panel %}}
+{{% panel theme="default" header="delimiter" %}}
+#### **readonly String** `public static readonly String delimiter`[`delimiter`](#d0/d43/namespacepath_1a3036db6751ec95465b014989251b2946)`delimiter`
 
-Get file name in path, ignore extension with file has it.
+查询当前操作系统的多路径组合字符，posix 返回 ':', windows 返回 ';'
 
-#### Parameters
-* `path` Original path 
+{{% /panel %}}
 
-* `ext` Given extension 
+## Method Detail
 
-#### Returns
-Return file name
+{{% panel theme="default" header="normalize" %}}
+#### **String** `normalize(String path)`
 
-#### `public static String `[`extname`](#d0/d43/namespacepath_1aea5f6966a2f57a23cb34dd2700f8ffe5)`(String path)` 
-
-Get file extension.
-
-#### Parameters
-* `path` Original path 
-
-#### Returns
-Return file extension
-
-#### `public static String `[`dirname`](#d0/d43/namespacepath_1aeb69e3ac13503ae13ec20bd954f8d5e7)`(String path)` 
-
-Get directory in path.
+标准化路径，处理路径中父目录等信息
 
 #### Parameters
-* `path` Original path 
+* `path` 给定的未处理的路径 
 
 #### Returns
-Return directory
+返回经过处理的路径
+{{% /panel %}}
+{{% panel theme="default" header="basename" %}}
+#### **String** `basename(String path,String ext)`
 
-#### `public static String `[`fullpath`](#d0/d43/namespacepath_1a39317bd9f009a2295d12865393d2d8d8)`(String path)` 
-
-Get full path.
+查询路径中的文件名称，若指定扩展名，则自动取消匹配的扩展名
 
 #### Parameters
-* `path` Original path 
+* `path` 给定查询的路径 
+
+* `ext` 指定扩展名，若文件名中有符合条件的扩展名，将自动取消 
 
 #### Returns
-Return full path
+返回文件名称
+{{% /panel %}}
+{{% panel theme="default" header="extname" %}}
+#### **String** `extname(String path)`
 
-#### `public static String `[`join`](#d0/d43/namespacepath_1ac551d9bf9f00720470cac3fdc098a8b3)`(...)` 
-
-Merge multiple paths to a single relative path.
+查询路径中的文件扩展名
 
 #### Parameters
-* `...` One or more relative paths 
+* `path` 给定查询的路径 
 
 #### Returns
-Return new relative path
+返回得到的扩展名
+{{% /panel %}}
+{{% panel theme="default" header="dirname" %}}
+#### **String** `dirname(String path)`
 
-#### `public static String `[`resolve`](#d0/d43/namespacepath_1ad7a5c3dcc290cdf508621d865e52d1d8)`(...)` 
-
-Merge multiple paths to a single absolute path.
+查询路径中的目录路径
 
 #### Parameters
-* `...` One or more relative paths 
+* `path` 给定查询的路径 
 
 #### Returns
-Return new absolute path
+返回得到的目录的路径
+{{% /panel %}}
+{{% panel theme="default" header="fullpath" %}}
+#### **String** `fullpath(String path)`
 
+转换给定路径为全路径
+
+#### Parameters
+* `path` 给定转换的路径 
+
+#### Returns
+返回转换的全路径
+{{% /panel %}}
+{{% panel theme="default" header="join" %}}
+#### **String** `join(...)`
+
+合并一系列路径成为一个单一路径
+
+#### Parameters
+* `...` 一个或多个相关的路径 
+
+#### Returns
+返回得到的新路径
+{{% /panel %}}
+{{% panel theme="default" header="resolve" %}}
+#### **String** `resolve(...)`
+
+合并一系列路径成为一个绝对路径
+
+#### Parameters
+* `...` 一个或多个相关的路径 
+
+#### Returns
+返回得到的新路径
+{{% /panel %}}
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

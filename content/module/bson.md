@@ -1,49 +1,57 @@
 +++
 draft = false
 title = "bson"
-description = "bson module with encode and decode operations."
+description = "bson 编码与解码模块 引用方式："
 [menu.main]
 parent = "modules"
 identifier = "bson"
 +++
 
-bson module with encode and decode operations. to use:
+bson 编码与解码模块 引用方式：
 
-```cpp
+```js
 var encoding = require('encoding');
 var bson = encoding.bson;
 ```
- or: 
-```cpp
+ 或者 
+```js
 var bson = require('bson');
 ```
 
-## Summary
+## Method Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static `[`Buffer`](#d0/d11/classBuffer)` `[`encode`](#d7/d28/namespacebson_1a595936db3cfd3c57b2711f8eb1812672)`(Object data)`            | Encode object to binary data with bson format.
-`public static Object `[`decode`](#d7/d28/namespacebson_1ab8c2313bc8936afd251368a04029b2a6)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Decode binary data to object with bson format.
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+Buffer            | `encode(Object data)`<p>以 bson 格式编码变量</p>
+Object            | `decode(Buffer data)`<p>以 bson 方式解码字符串为一个变量</p>
 
-## Members
+## Method Detail
 
-#### `public static `[`Buffer`](#d0/d11/classBuffer)` `[`encode`](#d7/d28/namespacebson_1a595936db3cfd3c57b2711f8eb1812672)`(Object data)` 
+{{% panel theme="default" header="encode" %}}
+#### **Buffer** `encode(Object data)`
 
-Encode object to binary data with bson format.
-
-#### Parameters
-* `data` Object to be encoded. 
-
-#### Returns
-The encoded result binary data.
-
-#### `public static Object `[`decode`](#d7/d28/namespacebson_1ab8c2313bc8936afd251368a04029b2a6)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
-
-Decode binary data to object with bson format.
+以 bson 格式编码变量
 
 #### Parameters
-* `data` Binary data to be decoded. 
+* `data` 要编码的变量 
 
 #### Returns
-The decoded result object.
+返回编码的二进制数据
+{{% /panel %}}
+{{% panel theme="default" header="decode" %}}
+#### **Object** `decode(Buffer data)`
 
+以 bson 方式解码字符串为一个变量
+
+#### Parameters
+* `data` 要解码的二进制数据 
+
+#### Returns
+返回解码的变量
+{{% /panel %}}
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

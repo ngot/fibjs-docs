@@ -8,7 +8,6 @@ date = "2017-04-24T18:36:24+02:00"
 parent = ""
 identifier = "modules"
 weight = 30
-
 +++
 
 A bunch of Modules are available with this theme :

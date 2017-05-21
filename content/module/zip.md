@@ -1,79 +1,111 @@
 +++
 draft = false
 title = "zip"
-description = "Zip file processing module."
+description = "zip 格式文件压缩解压模块"
 [menu.main]
 parent = "modules"
 identifier = "zip"
 +++
 
-Zip file processing module.
+zip 格式文件压缩解压模块
 
-It can be used to compress and decompress file into or from zip file. The way to use： 
-```cpp
+使用方法： 
+```js
 var zip = require('zip');
 ```
 
-## Summary
+## Field Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static Boolean `[`isZipFile`](#d7/def/namespacezip_1a78a618601555d349854b60afe4255c3c)`(String filename)`            | Judge if the file is zip file.
-`public static `[`ZipFile`](#d9/d03/interfaceZipFile)` `[`open`](#d7/def/namespacezip_1a84ae51f632fd4caa5aa3a7a703479a9e)`(String path,String mod,Integer compress_type)`            | Open a zip file.
-`public static `[`ZipFile`](#d9/d03/interfaceZipFile)` `[`open`](#d7/def/namespacezip_1ac95599ce45c4bdcc4ff0970db1589c67)`(`[`Buffer`](#d0/d11/classBuffer)` data,String mod,Integer compress_type)`            | Open buffer of zip file data.
-`public static `[`ZipFile`](#d9/d03/interfaceZipFile)` `[`open`](#d7/def/namespacezip_1a934af06bffb9271330696b1702aad5d3)`(`[`SeekableStream`](#d6/d9c/interfaceSeekableStream)` strm,String mod,Integer compress_type)`            | Open stream of zip file data.
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+const            | `public const ZIP_STORED`[`ZIP_STORED`](#d7/def/namespacezip_1abcdf3f59541e1cb36afb83bec54cc2c1)`ZIP_STORED`<p>压缩类型常量, 不压缩, 仅存储</p>
+const            | `public const ZIP_DEFLATED`[`ZIP_DEFLATED`](#d7/def/namespacezip_1a3333064a8f5e83b9ba7ddd0d63b5efbe)`ZIP_DEFLATED`<p>压缩类型常量, 需要依赖zlib库进行压缩</p>
 
-## Members
+## Method Summary
 
-#### `public static Boolean `[`isZipFile`](#d7/def/namespacezip_1a78a618601555d349854b60afe4255c3c)`(String filename)` 
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+Boolean            | `isZipFile(String filename)`<p>判断文件是否是zip格式</p>
+ZipFile            | `open(String path,String mod,Integer compress_type)`<p>打开一个zip文件</p>
+ZipFile            | `open(Buffer data,String mod,Integer compress_type)`<p>打开一个zip文件</p>
+ZipFile            | `open(SeekableStream strm,String mod,Integer compress_type)`<p>打开一个zip文件</p>
 
-Judge if the file is zip file.
+## Field Detail
 
-#### Parameters
-* `filename` to be judged. 
+{{% panel theme="default" header="ZIP_STORED" %}}
+#### **const** `public const ZIP_STORED`[`ZIP_STORED`](#d7/def/namespacezip_1abcdf3f59541e1cb36afb83bec54cc2c1)`ZIP_STORED`
 
-#### Returns
-Judge result, true means yes.
+压缩类型常量, 不压缩, 仅存储
 
-#### `public static `[`ZipFile`](#d9/d03/interfaceZipFile)` `[`open`](#d7/def/namespacezip_1a84ae51f632fd4caa5aa3a7a703479a9e)`(String path,String mod,Integer compress_type)` 
+{{% /panel %}}
+{{% panel theme="default" header="ZIP_DEFLATED" %}}
+#### **const** `public const ZIP_DEFLATED`[`ZIP_DEFLATED`](#d7/def/namespacezip_1a3333064a8f5e83b9ba7ddd0d63b5efbe)`ZIP_DEFLATED`
 
-Open a zip file.
+压缩类型常量, 需要依赖zlib库进行压缩
 
-#### Parameters
-* `path` The path of file to be opened. 
+{{% /panel %}}
 
-* `mod` [File](#d3/d3a/interfaceFile) open mode, "r" means read only, "w" means create and overwrite if the file exists, "a" means append after the zip file. 
+## Method Detail
 
-* `compress_type` Compress type, ZIP_STORED means no compress and for storage only. The default parameter is ZIP_DEFLATED, it depends on library zlib in compressing. 
+{{% panel theme="default" header="isZipFile" %}}
+#### **Boolean** `isZipFile(String filename)`
 
-#### Returns
-The zip file object.
-
-#### `public static `[`ZipFile`](#d9/d03/interfaceZipFile)` `[`open`](#d7/def/namespacezip_1ac95599ce45c4bdcc4ff0970db1589c67)`(`[`Buffer`](#d0/d11/classBuffer)` data,String mod,Integer compress_type)` 
-
-Open buffer of zip file data.
-
-#### Parameters
-* `data` [Buffer](#d0/d11/classBuffer) of zip file data. 
-
-* `mod` [File](#d3/d3a/interfaceFile) open mode, "r" means read only, "w" means create and overwrite if the file exists, "a" means append after the zip file. 
-
-* `compress_type` Compress type, ZIP_STORED means no compress and for storage only. The default parameter is ZIP_DEFLATED, it depends on library zlib in compressing. 
-
-#### Returns
-The zip file object.
-
-#### `public static `[`ZipFile`](#d9/d03/interfaceZipFile)` `[`open`](#d7/def/namespacezip_1a934af06bffb9271330696b1702aad5d3)`(`[`SeekableStream`](#d6/d9c/interfaceSeekableStream)` strm,String mod,Integer compress_type)` 
-
-Open stream of zip file data.
+判断文件是否是zip格式
 
 #### Parameters
-* `strm` [Stream](#d4/dc7/interfaceStream) of zip file data. 
-
-* `mod` [File](#d3/d3a/interfaceFile) open mode, "r" means read only, "w" means create and overwrite if the file exists, "a" means append after the zip file. 
-
-* `compress_type` Compress type, ZIP_STORED means no compress and for storage only. The default parameter is ZIP_DEFLATED, it depends on library zlib in compressing. 
+* `filename` 文件名 
 
 #### Returns
-The zip file object.
+返回true代表文件是zip文件
+{{% /panel %}}
+{{% panel theme="default" header="open" %}}
+#### **ZipFile** `open(String path,String mod,Integer compress_type)`
 
+打开一个zip文件
+
+#### Parameters
+* `path` 文件路径 
+
+* `mod` 打开文件模式, "r"代表读取, "w"代表创建, "a"代表在zip文件后追加 
+
+* `compress_type` 压缩类型, ZIP_STORED 代表不压缩, 仅存储。 默认使用ZIP_DEFLATED 代表使用zlib库进行压缩。 
+
+#### Returns
+返回zip文件对象
+{{% /panel %}}
+{{% panel theme="default" header="open" %}}
+#### **ZipFile** `open(Buffer data,String mod,Integer compress_type)`
+
+打开一个zip文件
+
+#### Parameters
+* `data` zip文件数据 
+
+* `mod` 打开文件模式, "r"代表读取, "w"代表创建, "a"代表在zip文件后追加 
+
+* `compress_type` 压缩类型, ZIP_STORED 代表不压缩, 仅存储。 默认使用ZIP_DEFLATED 代表使用zlib库进行压缩。 
+
+#### Returns
+返回zip文件对象
+{{% /panel %}}
+{{% panel theme="default" header="open" %}}
+#### **ZipFile** `open(SeekableStream strm,String mod,Integer compress_type)`
+
+打开一个zip文件
+
+#### Parameters
+* `strm` zip文件流 
+
+* `mod` 打开文件模式, "r"代表读取, "w"代表创建, "a"代表在zip文件后追加 
+
+* `compress_type` 压缩类型, ZIP_STORED 代表不压缩, 仅存储。 默认使用ZIP_DEFLATED 代表使用zlib库进行压缩。 
+
+#### Returns
+返回zip文件对象
+{{% /panel %}}
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

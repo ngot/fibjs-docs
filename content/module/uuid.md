@@ -1,87 +1,127 @@
 +++
 draft = false
 title = "uuid"
-description = "uuid unique id module."
+description = "uuid 唯一 id 模块"
 [menu.main]
 parent = "modules"
 identifier = "uuid"
 +++
 
-uuid unique id module
+uuid 唯一 id 模块
 
-Fundamental module, used for create uuid 
-```cpp
+基础模块。提供唯一 id 的创建于操作 
+```js
 var uuid = require('uuid');
 ```
 
-## Summary
+## Field Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static `[`uuidValue`](#d6/de7/interfaceuuidValue)` `[`uuid`](#d1/dd6/namespaceuuid_1a5fdc6d7f478a448083de3d30305d9d79)`(String s)`            | Generate uuid by given string.
-`public static `[`uuidValue`](#d6/de7/interfaceuuidValue)` `[`uuid`](#d1/dd6/namespaceuuid_1a61e618bfdc2d1146b05c0a73b7dbfe25)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Generate uuid by given binary data.
-`public static `[`uuidValue`](#d6/de7/interfaceuuidValue)` `[`node`](#d1/dd6/namespaceuuid_1a3be72ef23f930db13335c4ea41b4a8b1)`()`            | Generate uuid by time and host name.
-`public static `[`uuidValue`](#d6/de7/interfaceuuidValue)` `[`md5`](#d1/dd6/namespaceuuid_1a9e4a2d86e856c10c436302a7a3983a83)`(Integer ns,String name)`            | Generate uuid by given md5.
-`public static `[`uuidValue`](#d6/de7/interfaceuuidValue)` `[`random`](#d1/dd6/namespaceuuid_1a98decc8402d7cdb847a5b8905826b4de)`()`            | Generate uuid randomly.
-`public static `[`uuidValue`](#d6/de7/interfaceuuidValue)` `[`sha1`](#d1/dd6/namespaceuuid_1ac63af48b29552ad4d0b1ad5d59a21a52)`(Integer ns,String name)`            | Generate uuid by given sha1.
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+const            | `public const DNS`[`DNS`](#d1/dd6/namespaceuuid_1ab876ea9b57cb05af8f52ca4ea920ef5f)`DNS`<p>md5 与 sha1 创建 uuid 时指定 name 命名为域名</p>
+const            | `public const URL`[`URL`](#d1/dd6/namespaceuuid_1a777611efce7d88f7529d948acdde8da4)`URL`<p>md5 与 sha1 创建 uuid 时指定 name 命名为 url 地址</p>
+const            | `public const OID`[`OID`](#d1/dd6/namespaceuuid_1a4e2d87268f1d0042f6844b1dfb66b555)`OID`<p>md5 与 sha1 创建 uuid 时指定 name 命名为 ISO OID</p>
+const            | `public const X509`[`X509`](#d1/dd6/namespaceuuid_1a53f0cdbadd055279bc7eded66eeb8af7)`X509`<p>md5 与 sha1 创建 uuid 时指定 name 命名为 X.500 DN</p>
+Integer            | `public static Integer hostID`[`hostID`](#d1/dd6/namespaceuuid_1a6b4bcf3627071cbf4684d9dfa4327bf9)`hostID`<p>查询和修改 Snowflake 算法的主机 id</p>
 
-## Members
+## Method Summary
 
-#### `public static `[`uuidValue`](#d6/de7/interfaceuuidValue)` `[`uuid`](#d1/dd6/namespaceuuid_1a5fdc6d7f478a448083de3d30305d9d79)`(String s)` 
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+Buffer            | `node()`<p>使用时间和主机名创建 uuid</p>
+Buffer            | `md5(Integer ns,String name)`<p>使用特定命名的 md5 创建 uuid</p>
+Buffer            | `random()`<p>使用随机数创建 uuid</p>
+Buffer            | `sha1(Integer ns,String name)`<p>使用特定命名的 sha1 创建 uuid</p>
+Buffer            | `snowflake()`<p>使用 Snowflake 算法创建 uuid</p>
 
-Generate uuid by given string.
+## Field Detail
+
+{{% panel theme="default" header="DNS" %}}
+#### **const** `public const DNS`[`DNS`](#d1/dd6/namespaceuuid_1ab876ea9b57cb05af8f52ca4ea920ef5f)`DNS`
+
+md5 与 sha1 创建 uuid 时指定 name 命名为域名
+
+{{% /panel %}}
+{{% panel theme="default" header="URL" %}}
+#### **const** `public const URL`[`URL`](#d1/dd6/namespaceuuid_1a777611efce7d88f7529d948acdde8da4)`URL`
+
+md5 与 sha1 创建 uuid 时指定 name 命名为 url 地址
+
+{{% /panel %}}
+{{% panel theme="default" header="OID" %}}
+#### **const** `public const OID`[`OID`](#d1/dd6/namespaceuuid_1a4e2d87268f1d0042f6844b1dfb66b555)`OID`
+
+md5 与 sha1 创建 uuid 时指定 name 命名为 ISO OID
+
+{{% /panel %}}
+{{% panel theme="default" header="X509" %}}
+#### **const** `public const X509`[`X509`](#d1/dd6/namespaceuuid_1a53f0cdbadd055279bc7eded66eeb8af7)`X509`
+
+md5 与 sha1 创建 uuid 时指定 name 命名为 X.500 DN
+
+{{% /panel %}}
+{{% panel theme="default" header="hostID" %}}
+#### **Integer** `public static Integer hostID`[`hostID`](#d1/dd6/namespaceuuid_1a6b4bcf3627071cbf4684d9dfa4327bf9)`hostID`
+
+查询和修改 Snowflake 算法的主机 id
+
+{{% /panel %}}
+
+## Method Detail
+
+{{% panel theme="default" header="node" %}}
+#### **Buffer** `node()`
+
+使用时间和主机名创建 uuid
+
+#### Returns
+返回一个生成的二进制 id
+{{% /panel %}}
+{{% panel theme="default" header="md5" %}}
+#### **Buffer** `md5(Integer ns,String name)`
+
+使用特定命名的 md5 创建 uuid
 
 #### Parameters
-* `s` String to describe uuid 
+* `ns` 指定命名空间，可以为 uuid.DNS, uuid.URL, uuid.OID, uuid.X509
+
+* `name` 指定名称 
 
 #### Returns
-Return [uuidValue](#d6/de7/interfaceuuidValue) object
+返回一个生成的二进制 id
+{{% /panel %}}
+{{% panel theme="default" header="random" %}}
+#### **Buffer** `random()`
 
-#### `public static `[`uuidValue`](#d6/de7/interfaceuuidValue)` `[`uuid`](#d1/dd6/namespaceuuid_1a61e618bfdc2d1146b05c0a73b7dbfe25)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
+使用随机数创建 uuid
 
-Generate uuid by given binary data.
+#### Returns
+返回一个生成的二进制 id
+{{% /panel %}}
+{{% panel theme="default" header="sha1" %}}
+#### **Buffer** `sha1(Integer ns,String name)`
+
+使用特定命名的 sha1 创建 uuid
 
 #### Parameters
-* `data` Data to describe uuid 
+* `ns` 指定命名空间，可以为 uuid.DNS, uuid.URL, uuid.OID, uuid.X509
+
+* `name` 指定名称 
 
 #### Returns
-Return [uuidValue](#d6/de7/interfaceuuidValue) object
+返回一个生成的二进制 id
+{{% /panel %}}
+{{% panel theme="default" header="snowflake" %}}
+#### **Buffer** `snowflake()`
 
-#### `public static `[`uuidValue`](#d6/de7/interfaceuuidValue)` `[`node`](#d1/dd6/namespaceuuid_1a3be72ef23f930db13335c4ea41b4a8b1)`()` 
-
-Generate uuid by time and host name.
-
-#### Returns
-Return [uuidValue](#d6/de7/interfaceuuidValue) object
-
-#### `public static `[`uuidValue`](#d6/de7/interfaceuuidValue)` `[`md5`](#d1/dd6/namespaceuuid_1a9e4a2d86e856c10c436302a7a3983a83)`(Integer ns,String name)` 
-
-Generate uuid by given md5.
-
-#### Parameters
-* `ns` Namespace, can be [uuid.DNS](#d1/dd6/namespaceuuid_1a8a295ea729b6143bc51745b719c43599), [uuid.URL](#d1/dd6/namespaceuuid_1a83e49a96e6da072f08266ca23df3c62e), [uuid.OID](#d1/dd6/namespaceuuid_1acfba0d7f48a40567b37d923ac1ef6322), and [uuid.X509](#d1/dd6/namespaceuuid_1ab46bea7da7ac94230845ac6ab3909cd0)
-
-* `name` Name of uuid 
+使用 Snowflake 算法创建 uuid
 
 #### Returns
-Return [uuidValue](#d6/de7/interfaceuuidValue) object
+返回一个生成的二进制 id
+{{% /panel %}}
 
-#### `public static `[`uuidValue`](#d6/de7/interfaceuuidValue)` `[`random`](#d1/dd6/namespaceuuid_1a98decc8402d7cdb847a5b8905826b4de)`()` 
-
-Generate uuid randomly.
-
-#### Returns
-Return [uuidValue](#d6/de7/interfaceuuidValue) object
-
-#### `public static `[`uuidValue`](#d6/de7/interfaceuuidValue)` `[`sha1`](#d1/dd6/namespaceuuid_1ac63af48b29552ad4d0b1ad5d59a21a52)`(Integer ns,String name)` 
-
-Generate uuid by given sha1.
-
-#### Parameters
-* `ns` Namespace, can be [uuid.DNS](#d1/dd6/namespaceuuid_1a8a295ea729b6143bc51745b719c43599), [uuid.URL](#d1/dd6/namespaceuuid_1a83e49a96e6da072f08266ca23df3c62e), [uuid.OID](#d1/dd6/namespaceuuid_1acfba0d7f48a40567b37d923ac1ef6322), and [uuid.X509](#d1/dd6/namespaceuuid_1ab46bea7da7ac94230845ac6ab3909cd0)
-
-* `name` Name of uuid 
-
-#### Returns
-Return [uuidValue](#d6/de7/interfaceuuidValue) object
-
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

@@ -1,49 +1,57 @@
 +++
 draft = false
 title = "base64"
-description = "module with encode and decode operations."
+description = "base64 编码与解码模块 引用方式："
 [menu.main]
 parent = "modules"
 identifier = "base64"
 +++
 
-[base64](#d5/d37/namespacebase64) module with encode and decode operations. to use:
+base64 编码与解码模块 引用方式：
 
-```cpp
+```js
 var encoding = require('encoding');
 var base64 = encoding.base64;
 ```
- or: 
-```cpp
+ 或者 
+```js
 var base64 = require('base64');
 ```
 
-## Summary
+## Method Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static String `[`encode`](#d5/d37/namespacebase64_1a7d87dfe597e9e95be6e570ba4d4baf40)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Encode buffer data to string with [base64](#d5/d37/namespacebase64) format.
-`public static `[`Buffer`](#d0/d11/classBuffer)` `[`decode`](#d5/d37/namespacebase64_1a1b1708235f97fb7a2e36771b64abee44)`(String data)`            | Decode string to binary data with [base64](#d5/d37/namespacebase64) format.
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+String            | `encode(Buffer data)`<p>以 base64 方式编码数据</p>
+Buffer            | `decode(String data)`<p>以 base64 方式解码字符串为二进制数据</p>
 
-## Members
+## Method Detail
 
-#### `public static String `[`encode`](#d5/d37/namespacebase64_1a7d87dfe597e9e95be6e570ba4d4baf40)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
+{{% panel theme="default" header="encode" %}}
+#### **String** `encode(Buffer data)`
 
-Encode buffer data to string with [base64](#d5/d37/namespacebase64) format.
-
-#### Parameters
-* `data` [Buffer](#d0/d11/classBuffer) data to be encoded. 
-
-#### Returns
-The encoded result string.
-
-#### `public static `[`Buffer`](#d0/d11/classBuffer)` `[`decode`](#d5/d37/namespacebase64_1a1b1708235f97fb7a2e36771b64abee44)`(String data)` 
-
-Decode string to binary data with [base64](#d5/d37/namespacebase64) format.
+以 base64 方式编码数据
 
 #### Parameters
-* `data` String to be decoded. 
+* `data` 要编码的数据 
 
 #### Returns
-The decoded result binary data.
+返回编码的字符串
+{{% /panel %}}
+{{% panel theme="default" header="decode" %}}
+#### **Buffer** `decode(String data)`
 
+以 base64 方式解码字符串为二进制数据
+
+#### Parameters
+* `data` 要解码的字符串 
+
+#### Returns
+返回解码的二进制数据
+{{% /panel %}}
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

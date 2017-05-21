@@ -1,18 +1,18 @@
 +++
 draft = false
 title = "vm"
-description = "Safe SandBox module, to isolate runtime based on safety level."
+description = "安全沙箱模块，用于隔离不同安全等级的运行环境"
 [menu.main]
 parent = "modules"
 identifier = "vm"
 +++
 
-Safe [SandBox](#d5/dd4/interfaceSandBox) module, to isolate runtime based on safety level.
+安全沙箱模块，用于隔离不同安全等级的运行环境
 
-By establishing a safe [SandBox](#d5/dd4/interfaceSandBox), you can limit the accessible resources when the script runs, and isolate different script execution environment, also can be customized for different environments base module to ensure the safety of the overall operating environment.
+通过建立安全沙箱，可以限制脚本运行时可以接触的资源，隔离不同脚本执行环境，并可以为不同的环境定制基础模块，以保障整体运行环境的安全。
 
-Following example demonstrates a sandbox which is only allowed for accessing assert module, and add a and b as customized modules. 
-```cpp
+下面的示例创建一个沙箱，限制只允许访问全局基础模块中的 assert 模块，并添加 a 和 b 两个定制模块： 
+```js
 var vm = require('vm');
 var sbox = new vm.SandBox({
   a: 100,
@@ -23,15 +23,23 @@ var sbox = new vm.SandBox({
 var mod_in_sbox = sbox.require('./path/to/mod');
 ```
 
-## Summary
+## Method Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static `[`SandBox`](#d5/dd4/interfaceSandBox)` new `[`SandBox`](#d8/d89/namespacevm_1a8e842bfbf905fcd1ef830b1074f59a34)`()`            | Create a [SandBox](#d5/dd4/interfaceSandBox) object, see [SandBox](#d5/dd4/interfaceSandBox).
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+SandBox new            | `SandBox()`<p>创建一个 SandBox 对象，参见 SandBox</p>
 
-## Members
+## Method Detail
 
-#### `public static `[`SandBox`](#d5/dd4/interfaceSandBox)` new `[`SandBox`](#d8/d89/namespacevm_1a8e842bfbf905fcd1ef830b1074f59a34)`()` 
+{{% panel theme="default" header="SandBox" %}}
+#### **SandBox new** `SandBox()`
 
-Create a [SandBox](#d5/dd4/interfaceSandBox) object, see [SandBox](#d5/dd4/interfaceSandBox).
+创建一个 SandBox 对象，参见 SandBox
 
+{{% /panel %}}
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

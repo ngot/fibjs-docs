@@ -1,253 +1,351 @@
 +++
 draft = false
 title = "hash"
-description = "digest calculation module, can be used to calculate the message digest and summary Signature."
+description = "信息摘要计算模块，可用于计算信息摘要和摘要签名"
 [menu.main]
 parent = "modules"
 identifier = "hash"
 +++
 
-[Message](#d6/db7/interfaceMessage) digest calculation module, can be used to calculate the message digest and summary Signature.
+信息摘要计算模块，可用于计算信息摘要和摘要签名
 
-## Summary
+## Field Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`digest`](#de/de9/namespacehash_1a813b296a7ed5e852a7338087bdb95239)`(Integer algo,`[`Buffer`](#d0/d11/classBuffer)` data)`            | Create a message digest object with the specified algorithm.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`digest`](#de/de9/namespacehash_1a0198e943620fd6b63bd913d6a769bcae)`(Integer algo)`            | Create a message digest object with the specified algorithm.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`md2`](#de/de9/namespacehash_1a9910a7f0744d47299013d60592b53f22)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Create a MD2 message digest object.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`md4`](#de/de9/namespacehash_1ad5d8f14c8b31ae52b504d0da1450e26b)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Create a MD4 message digest object.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`md5`](#de/de9/namespacehash_1a2ce50ba7996a62ae9f19f77a156b78bc)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Create a MD5 message digest object.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`sha1`](#de/de9/namespacehash_1aeebd38030db2c9e6f51674759c74d050)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Create a SHA1 message digest object.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`sha224`](#de/de9/namespacehash_1aebaa45bb312a46a71194c9118dca1a08)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Create a SHA224 message digest object.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`sha256`](#de/de9/namespacehash_1aea552567d5fea762e5d8eedda0b0067a)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Create a SHA256 message digest object.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`sha384`](#de/de9/namespacehash_1a0e3112fca405da681a0d034e6dba4016)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Create a SHA384 message digest object.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`sha512`](#de/de9/namespacehash_1a93e3215efb856aa97da67966530387f7)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Create a SHA512 message digest object.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`ripemd160`](#de/de9/namespacehash_1a71a420a73d5a44d8d819bf3583cf58f2)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Create a RIPEMD160 message digest object.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac`](#de/de9/namespacehash_1a330e7a9e3d593264815d68aa495e7a7d)`(Integer algo,`[`Buffer`](#d0/d11/classBuffer)` key)`            | Create a message signature digest object with the specified algorithm.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_md2`](#de/de9/namespacehash_1a47a5101b6771678d571e473b687626b0)`(`[`Buffer`](#d0/d11/classBuffer)` key)`            | Create a MD2 message digest signature object.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_md4`](#de/de9/namespacehash_1a6155daca64fd722c38e7324586d0993d)`(`[`Buffer`](#d0/d11/classBuffer)` key)`            | Create a MD4 message digest signature object.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_md5`](#de/de9/namespacehash_1a7e754ac11d237d72b1b935cd67f4cc9f)`(`[`Buffer`](#d0/d11/classBuffer)` key)`            | Create a MD5 message digest signature object.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_sha1`](#de/de9/namespacehash_1aec4c9f56f93a0df54838af47b801f23e)`(`[`Buffer`](#d0/d11/classBuffer)` key)`            | Create a SHA1 message digest signature object.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_sha224`](#de/de9/namespacehash_1a2d1483e5cd139848cab5063c0889d826)`(`[`Buffer`](#d0/d11/classBuffer)` key)`            | Create a SHA224 message digest signature object.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_sha256`](#de/de9/namespacehash_1ac98cb2777ead9c4883e438d575bd625d)`(`[`Buffer`](#d0/d11/classBuffer)` key)`            | Create a SHA256 message digest signature object.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_sha384`](#de/de9/namespacehash_1a3bf61d946548a6c637bd07f61e9ef2e0)`(`[`Buffer`](#d0/d11/classBuffer)` key)`            | Create a SHA384 message digest signature object.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_sha512`](#de/de9/namespacehash_1a4de2d277d13b54cc16d433576a78abc7)`(`[`Buffer`](#d0/d11/classBuffer)` key)`            | Create a SHA512 message digest signature object.
-`public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_ripemd160`](#de/de9/namespacehash_1a4fa072e27d94ad8a84152863596869eb)`(`[`Buffer`](#d0/d11/classBuffer)` key)`            | Create a RIPEMD160 message digest signature object.
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+const            | `public const MD2`[`MD2`](#de/de9/namespacehash_1a689dd28b282304925e55c0db219344ac)`MD2`<p>MD2 信息摘要算法标识常量</p>
+const            | `public const MD4`[`MD4`](#de/de9/namespacehash_1aa1980ad091918ba71f499de363f62373)`MD4`<p>MD4 信息摘要算法标识常量</p>
+const            | `public const MD5`[`MD5`](#de/de9/namespacehash_1ab0e5d6a3bc753ca837d5e987c9cb32d5)`MD5`<p>MD5 信息摘要算法标识常量</p>
+const            | `public const SHA1`[`SHA1`](#de/de9/namespacehash_1ae6d6e5a2a8d662ca993fba1e1ea29b44)`SHA1`<p>SHA1 信息摘要算法标识常量</p>
+const            | `public const SHA224`[`SHA224`](#de/de9/namespacehash_1a34fdd3e887eceac4cb2abd916b409caa)`SHA224`<p>SHA224 信息摘要算法标识常量</p>
+const            | `public const SHA256`[`SHA256`](#de/de9/namespacehash_1af6eaa5c40117ecd45c53c2988cc1eff0)`SHA256`<p>SHA256 信息摘要算法标识常量</p>
+const            | `public const SHA384`[`SHA384`](#de/de9/namespacehash_1a2dff891b6426a50f09cd2d13fadf28e8)`SHA384`<p>SHA384 信息摘要算法标识常量</p>
+const            | `public const SHA512`[`SHA512`](#de/de9/namespacehash_1a362a5b2450a352638057768e66d6474c)`SHA512`<p>SHA512 信息摘要算法标识常量</p>
+const            | `public const RIPEMD160`[`RIPEMD160`](#de/de9/namespacehash_1ad0dca017211b72aebc3c7e28fc832051)`RIPEMD160`<p>RIPEMD160 信息摘要算法标识常量</p>
 
-## Members
+## Method Summary
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`digest`](#de/de9/namespacehash_1a813b296a7ed5e852a7338087bdb95239)`(Integer algo,`[`Buffer`](#d0/d11/classBuffer)` data)` 
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+Digest            | `digest(Integer algo,Buffer data)`<p>根据指定的算法标识创建一个信息摘要运算对象</p>
+Digest            | `digest(Integer algo)`<p>根据指定的算法标识创建一个信息摘要运算对象</p>
+Digest            | `md2(Buffer data)`<p>创建一个 MD2 信息摘要运算对象</p>
+Digest            | `md4(Buffer data)`<p>创建一个 MD4 信息摘要运算对象</p>
+Digest            | `md5(Buffer data)`<p>创建一个 MD5 信息摘要运算对象</p>
+Digest            | `sha1(Buffer data)`<p>创建一个 SHA1 信息摘要运算对象</p>
+Digest            | `sha224(Buffer data)`<p>创建一个 SHA224 信息摘要运算对象</p>
+Digest            | `sha256(Buffer data)`<p>创建一个 SHA256 信息摘要运算对象</p>
+Digest            | `sha384(Buffer data)`<p>创建一个 SHA384 信息摘要运算对象</p>
+Digest            | `sha512(Buffer data)`<p>创建一个 SHA512 信息摘要运算对象</p>
+Digest            | `ripemd160(Buffer data)`<p>创建一个 RIPEMD160 信息摘要运算对象</p>
+Digest            | `hmac(Integer algo,Buffer key)`<p>根据指定的算法标识创建一个信息摘要签名运算对象</p>
+Digest            | `hmac_md2(Buffer key)`<p>创建一个 MD2 信息摘要签名运算对象</p>
+Digest            | `hmac_md4(Buffer key)`<p>创建一个 MD4 信息摘要签名运算对象</p>
+Digest            | `hmac_md5(Buffer key)`<p>创建一个 MD5 信息摘要签名运算对象</p>
+Digest            | `hmac_sha1(Buffer key)`<p>创建一个 SHA1 信息摘要签名运算对象</p>
+Digest            | `hmac_sha224(Buffer key)`<p>创建一个 SHA224 信息摘要签名运算对象</p>
+Digest            | `hmac_sha256(Buffer key)`<p>创建一个 SHA256 信息摘要签名运算对象</p>
+Digest            | `hmac_sha384(Buffer key)`<p>创建一个 SHA384 信息摘要签名运算对象</p>
+Digest            | `hmac_sha512(Buffer key)`<p>创建一个 SHA512 信息摘要签名运算对象</p>
+Digest            | `hmac_ripemd160(Buffer key)`<p>创建一个 RIPEMD160 信息摘要签名运算对象</p>
 
-Create a message digest object with the specified algorithm.
+## Field Detail
 
-#### Parameters
-* `algo` Specifies the digest algorithm. 
+{{% panel theme="default" header="MD2" %}}
+#### **const** `public const MD2`[`MD2`](#de/de9/namespacehash_1a689dd28b282304925e55c0db219344ac)`MD2`
 
-* `data` Binary data needs to be updated. 
+MD2 信息摘要算法标识常量
 
-#### Returns
-Returns the message digest object.
+{{% /panel %}}
+{{% panel theme="default" header="MD4" %}}
+#### **const** `public const MD4`[`MD4`](#de/de9/namespacehash_1aa1980ad091918ba71f499de363f62373)`MD4`
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`digest`](#de/de9/namespacehash_1a0198e943620fd6b63bd913d6a769bcae)`(Integer algo)` 
+MD4 信息摘要算法标识常量
 
-Create a message digest object with the specified algorithm.
+{{% /panel %}}
+{{% panel theme="default" header="MD5" %}}
+#### **const** `public const MD5`[`MD5`](#de/de9/namespacehash_1ab0e5d6a3bc753ca837d5e987c9cb32d5)`MD5`
 
-#### Parameters
-* `algo` Specifies the digest algorithm. 
+MD5 信息摘要算法标识常量
 
-#### Returns
-Returns the message digest object.
+{{% /panel %}}
+{{% panel theme="default" header="SHA1" %}}
+#### **const** `public const SHA1`[`SHA1`](#de/de9/namespacehash_1ae6d6e5a2a8d662ca993fba1e1ea29b44)`SHA1`
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`md2`](#de/de9/namespacehash_1a9910a7f0744d47299013d60592b53f22)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
+SHA1 信息摘要算法标识常量
 
-Create a MD2 message digest object.
+{{% /panel %}}
+{{% panel theme="default" header="SHA224" %}}
+#### **const** `public const SHA224`[`SHA224`](#de/de9/namespacehash_1a34fdd3e887eceac4cb2abd916b409caa)`SHA224`
 
-#### Parameters
-* `data` Binary data needs to be updated. 
+SHA224 信息摘要算法标识常量
 
-#### Returns
-Returns the message digest object.
+{{% /panel %}}
+{{% panel theme="default" header="SHA256" %}}
+#### **const** `public const SHA256`[`SHA256`](#de/de9/namespacehash_1af6eaa5c40117ecd45c53c2988cc1eff0)`SHA256`
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`md4`](#de/de9/namespacehash_1ad5d8f14c8b31ae52b504d0da1450e26b)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
+SHA256 信息摘要算法标识常量
 
-Create a MD4 message digest object.
+{{% /panel %}}
+{{% panel theme="default" header="SHA384" %}}
+#### **const** `public const SHA384`[`SHA384`](#de/de9/namespacehash_1a2dff891b6426a50f09cd2d13fadf28e8)`SHA384`
 
-#### Parameters
-* `data` Binary data needs to be updated. 
+SHA384 信息摘要算法标识常量
 
-#### Returns
-Returns the message digest object.
+{{% /panel %}}
+{{% panel theme="default" header="SHA512" %}}
+#### **const** `public const SHA512`[`SHA512`](#de/de9/namespacehash_1a362a5b2450a352638057768e66d6474c)`SHA512`
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`md5`](#de/de9/namespacehash_1a2ce50ba7996a62ae9f19f77a156b78bc)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
+SHA512 信息摘要算法标识常量
 
-Create a MD5 message digest object.
+{{% /panel %}}
+{{% panel theme="default" header="RIPEMD160" %}}
+#### **const** `public const RIPEMD160`[`RIPEMD160`](#de/de9/namespacehash_1ad0dca017211b72aebc3c7e28fc832051)`RIPEMD160`
 
-#### Parameters
-* `data` Binary data needs to be updated. 
+RIPEMD160 信息摘要算法标识常量
 
-#### Returns
-Returns the message digest object.
+{{% /panel %}}
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`sha1`](#de/de9/namespacehash_1aeebd38030db2c9e6f51674759c74d050)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
+## Method Detail
 
-Create a SHA1 message digest object.
+{{% panel theme="default" header="digest" %}}
+#### **Digest** `digest(Integer algo,Buffer data)`
 
-#### Parameters
-* `data` Binary data needs to be updated. 
-
-#### Returns
-Returns the message digest object.
-
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`sha224`](#de/de9/namespacehash_1aebaa45bb312a46a71194c9118dca1a08)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
-
-Create a SHA224 message digest object.
-
-#### Parameters
-* `data` Binary data needs to be updated. 
-
-#### Returns
-Returns the message digest object.
-
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`sha256`](#de/de9/namespacehash_1aea552567d5fea762e5d8eedda0b0067a)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
-
-Create a SHA256 message digest object.
-
-#### Parameters
-* `data` Binary data needs to be updated. 
-
-#### Returns
-Returns the message digest object.
-
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`sha384`](#de/de9/namespacehash_1a0e3112fca405da681a0d034e6dba4016)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
-
-Create a SHA384 message digest object.
+根据指定的算法标识创建一个信息摘要运算对象
 
 #### Parameters
-* `data` Binary data needs to be updated. 
+* `algo` 指定摘要运算算法 
+
+* `data` 创建同时更新的二进制数据 
 
 #### Returns
-Returns the message digest object.
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="digest" %}}
+#### **Digest** `digest(Integer algo)`
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`sha512`](#de/de9/namespacehash_1a93e3215efb856aa97da67966530387f7)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
-
-Create a SHA512 message digest object.
+根据指定的算法标识创建一个信息摘要运算对象
 
 #### Parameters
-* `data` Binary data needs to be updated. 
+* `algo` 指定摘要运算算法 
 
 #### Returns
-Returns the message digest object.
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="md2" %}}
+#### **Digest** `md2(Buffer data)`
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`ripemd160`](#de/de9/namespacehash_1a71a420a73d5a44d8d819bf3583cf58f2)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
-
-Create a RIPEMD160 message digest object.
+创建一个 MD2 信息摘要运算对象
 
 #### Parameters
-* `data` Binary data needs to be updated. 
+* `data` 创建同时更新的二进制数据 
 
 #### Returns
-Returns the message digest object.
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="md4" %}}
+#### **Digest** `md4(Buffer data)`
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac`](#de/de9/namespacehash_1a330e7a9e3d593264815d68aa495e7a7d)`(Integer algo,`[`Buffer`](#d0/d11/classBuffer)` key)` 
-
-Create a message signature digest object with the specified algorithm.
+创建一个 MD4 信息摘要运算对象
 
 #### Parameters
-* `algo` Specifies the digest algorithm. 
-
-* `key` Binary signature key. 
+* `data` 创建同时更新的二进制数据 
 
 #### Returns
-Returns the message digest object.
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="md5" %}}
+#### **Digest** `md5(Buffer data)`
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_md2`](#de/de9/namespacehash_1a47a5101b6771678d571e473b687626b0)`(`[`Buffer`](#d0/d11/classBuffer)` key)` 
-
-Create a MD2 message digest signature object.
+创建一个 MD5 信息摘要运算对象
 
 #### Parameters
-* `key` Binary signature key. 
+* `data` 创建同时更新的二进制数据 
 
 #### Returns
-Returns the message digest object.
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="sha1" %}}
+#### **Digest** `sha1(Buffer data)`
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_md4`](#de/de9/namespacehash_1a6155daca64fd722c38e7324586d0993d)`(`[`Buffer`](#d0/d11/classBuffer)` key)` 
-
-Create a MD4 message digest signature object.
+创建一个 SHA1 信息摘要运算对象
 
 #### Parameters
-* `key` Binary signature key. 
+* `data` 创建同时更新的二进制数据 
 
 #### Returns
-Returns the message digest object.
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="sha224" %}}
+#### **Digest** `sha224(Buffer data)`
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_md5`](#de/de9/namespacehash_1a7e754ac11d237d72b1b935cd67f4cc9f)`(`[`Buffer`](#d0/d11/classBuffer)` key)` 
-
-Create a MD5 message digest signature object.
+创建一个 SHA224 信息摘要运算对象
 
 #### Parameters
-* `key` Binary signature key. 
+* `data` 创建同时更新的二进制数据 
 
 #### Returns
-Returns the message digest object.
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="sha256" %}}
+#### **Digest** `sha256(Buffer data)`
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_sha1`](#de/de9/namespacehash_1aec4c9f56f93a0df54838af47b801f23e)`(`[`Buffer`](#d0/d11/classBuffer)` key)` 
-
-Create a SHA1 message digest signature object.
+创建一个 SHA256 信息摘要运算对象
 
 #### Parameters
-* `key` Binary signature key. 
+* `data` 创建同时更新的二进制数据 
 
 #### Returns
-Returns the message digest object.
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="sha384" %}}
+#### **Digest** `sha384(Buffer data)`
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_sha224`](#de/de9/namespacehash_1a2d1483e5cd139848cab5063c0889d826)`(`[`Buffer`](#d0/d11/classBuffer)` key)` 
-
-Create a SHA224 message digest signature object.
+创建一个 SHA384 信息摘要运算对象
 
 #### Parameters
-* `key` Binary signature key. 
+* `data` 创建同时更新的二进制数据 
 
 #### Returns
-Returns the message digest object.
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="sha512" %}}
+#### **Digest** `sha512(Buffer data)`
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_sha256`](#de/de9/namespacehash_1ac98cb2777ead9c4883e438d575bd625d)`(`[`Buffer`](#d0/d11/classBuffer)` key)` 
-
-Create a SHA256 message digest signature object.
+创建一个 SHA512 信息摘要运算对象
 
 #### Parameters
-* `key` Binary signature key. 
+* `data` 创建同时更新的二进制数据 
 
 #### Returns
-Returns the message digest object.
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="ripemd160" %}}
+#### **Digest** `ripemd160(Buffer data)`
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_sha384`](#de/de9/namespacehash_1a3bf61d946548a6c637bd07f61e9ef2e0)`(`[`Buffer`](#d0/d11/classBuffer)` key)` 
-
-Create a SHA384 message digest signature object.
+创建一个 RIPEMD160 信息摘要运算对象
 
 #### Parameters
-* `key` Binary signature key. 
+* `data` 创建同时更新的二进制数据 
 
 #### Returns
-Returns the message digest object.
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="hmac" %}}
+#### **Digest** `hmac(Integer algo,Buffer key)`
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_sha512`](#de/de9/namespacehash_1a4de2d277d13b54cc16d433576a78abc7)`(`[`Buffer`](#d0/d11/classBuffer)` key)` 
-
-Create a SHA512 message digest signature object.
+根据指定的算法标识创建一个信息摘要签名运算对象
 
 #### Parameters
-* `key` Binary signature key. 
+* `algo` 指定摘要运算算法 
+
+* `key` 二进制签名密钥 
 
 #### Returns
-Returns the message digest object.
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="hmac_md2" %}}
+#### **Digest** `hmac_md2(Buffer key)`
 
-#### `public static `[`Digest`](#d3/d41/interfaceDigest)` `[`hmac_ripemd160`](#de/de9/namespacehash_1a4fa072e27d94ad8a84152863596869eb)`(`[`Buffer`](#d0/d11/classBuffer)` key)` 
-
-Create a RIPEMD160 message digest signature object.
+创建一个 MD2 信息摘要签名运算对象
 
 #### Parameters
-* `key` Binary signature key. 
+* `key` 二进制签名密钥 
 
 #### Returns
-Returns the message digest object.
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="hmac_md4" %}}
+#### **Digest** `hmac_md4(Buffer key)`
 
+创建一个 MD4 信息摘要签名运算对象
+
+#### Parameters
+* `key` 二进制签名密钥 
+
+#### Returns
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="hmac_md5" %}}
+#### **Digest** `hmac_md5(Buffer key)`
+
+创建一个 MD5 信息摘要签名运算对象
+
+#### Parameters
+* `key` 二进制签名密钥 
+
+#### Returns
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="hmac_sha1" %}}
+#### **Digest** `hmac_sha1(Buffer key)`
+
+创建一个 SHA1 信息摘要签名运算对象
+
+#### Parameters
+* `key` 二进制签名密钥 
+
+#### Returns
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="hmac_sha224" %}}
+#### **Digest** `hmac_sha224(Buffer key)`
+
+创建一个 SHA224 信息摘要签名运算对象
+
+#### Parameters
+* `key` 二进制签名密钥 
+
+#### Returns
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="hmac_sha256" %}}
+#### **Digest** `hmac_sha256(Buffer key)`
+
+创建一个 SHA256 信息摘要签名运算对象
+
+#### Parameters
+* `key` 二进制签名密钥 
+
+#### Returns
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="hmac_sha384" %}}
+#### **Digest** `hmac_sha384(Buffer key)`
+
+创建一个 SHA384 信息摘要签名运算对象
+
+#### Parameters
+* `key` 二进制签名密钥 
+
+#### Returns
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="hmac_sha512" %}}
+#### **Digest** `hmac_sha512(Buffer key)`
+
+创建一个 SHA512 信息摘要签名运算对象
+
+#### Parameters
+* `key` 二进制签名密钥 
+
+#### Returns
+返回构造的信息摘要对象
+{{% /panel %}}
+{{% panel theme="default" header="hmac_ripemd160" %}}
+#### **Digest** `hmac_ripemd160(Buffer key)`
+
+创建一个 RIPEMD160 信息摘要签名运算对象
+
+#### Parameters
+* `key` 二进制签名密钥 
+
+#### Returns
+返回构造的信息摘要对象
+{{% /panel %}}
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

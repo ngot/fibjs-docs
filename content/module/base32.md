@@ -1,49 +1,57 @@
 +++
 draft = false
 title = "base32"
-description = "module with encode and decode operations."
+description = "base32 编码与解码模块 引用方式："
 [menu.main]
 parent = "modules"
 identifier = "base32"
 +++
 
-[base32](#d4/dba/namespacebase32) module with encode and decode operations. to use:
+base32 编码与解码模块 引用方式：
 
-```cpp
+```js
 var encoding = require('encoding');
 var base32 = encoding.base32;
 ```
- or: 
-```cpp
+ 或者 
+```js
 var base32 = require('base32');
 ```
 
-## Summary
+## Method Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static String `[`encode`](#d4/dba/namespacebase32_1abcb8ee9ecac2cf5cc508cbe896cede6b)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Encode buffer data to string with [base32](#d4/dba/namespacebase32) format.
-`public static `[`Buffer`](#d0/d11/classBuffer)` `[`decode`](#d4/dba/namespacebase32_1afe529218e5132fc597aac4427ff969eb)`(String data)`            | Decode string to binary data with [base32](#d4/dba/namespacebase32) format.
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+String            | `encode(Buffer data)`<p>以 base32 方式编码数据</p>
+Buffer            | `decode(String data)`<p>以 base32 方式解码字符串为二进制数据</p>
 
-## Members
+## Method Detail
 
-#### `public static String `[`encode`](#d4/dba/namespacebase32_1abcb8ee9ecac2cf5cc508cbe896cede6b)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
+{{% panel theme="default" header="encode" %}}
+#### **String** `encode(Buffer data)`
 
-Encode buffer data to string with [base32](#d4/dba/namespacebase32) format.
-
-#### Parameters
-* `data` [Buffer](#d0/d11/classBuffer) data to be encoded. 
-
-#### Returns
-The encoded result string.
-
-#### `public static `[`Buffer`](#d0/d11/classBuffer)` `[`decode`](#d4/dba/namespacebase32_1afe529218e5132fc597aac4427ff969eb)`(String data)` 
-
-Decode string to binary data with [base32](#d4/dba/namespacebase32) format.
+以 base32 方式编码数据
 
 #### Parameters
-* `data` String to be decoded. 
+* `data` 要编码的数据 
 
 #### Returns
-The decoded result binary data.
+返回编码的字符串
+{{% /panel %}}
+{{% panel theme="default" header="decode" %}}
+#### **Buffer** `decode(String data)`
 
+以 base32 方式解码字符串为二进制数据
+
+#### Parameters
+* `data` 要解码的字符串 
+
+#### Returns
+返回解码的二进制数据
+{{% /panel %}}
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

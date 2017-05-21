@@ -1,342 +1,404 @@
 +++
 draft = false
 title = "fs"
-description = "file system module."
+description = "文件系统处理模块"
 [menu.main]
 parent = "modules"
 identifier = "fs"
 +++
 
-file system module
+文件系统处理模块
 
-how to use 
-```cpp
+使用方法： 
+```js
 var fs = require('fs');
 ```
 
-## Summary
+## Field Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static Boolean `[`exists`](#d5/d8f/namespacefs_1a4abe84709aae93e90cf3028c6c13db96)`(String path)`            | search if the file or directory exists
-`public static Boolean `[`existsSync`](#d5/d8f/namespacefs_1a828508b6b6a7baa69929e54f11bd0121)`(String path)`            | search if the file or directory exists. Sync version of [fs.exists()](#d5/d8f/namespacefs_1a4abe84709aae93e90cf3028c6c13db96).
-`public static static `[`unlink`](#d5/d8f/namespacefs_1ad9728d670aa8f486d76c4052f6c8acd5)`(String path)`            | the file you want to delete
-`public static static `[`unlinkSync`](#d5/d8f/namespacefs_1a4b15f3243d3c3c277b71522e49a60e16)`(String path)`            | the file you want to delete. Sync version of [fs.unlink()](#d5/d8f/namespacefs_1ad9728d670aa8f486d76c4052f6c8acd5).
-`public static static `[`mkdir`](#d5/d8f/namespacefs_1ad11bbef581ff87c5fc33e8b3d4b98dfb)`(String path,Integer mode)`            | create a directory
-`public static static `[`mkdirSync`](#d5/d8f/namespacefs_1a82c90f7692b9fbea8577fc99628320d9)`(String path,Integer mode)`            | create a directory. Sync version of [fs.mkdir()](#d5/d8f/namespacefs_1ad11bbef581ff87c5fc33e8b3d4b98dfb).
-`public static static `[`rmdir`](#d5/d8f/namespacefs_1ae63300a92680e28c3b2bd55046120049)`(String path)`            | delete a directory
-`public static static `[`rmdirSync`](#d5/d8f/namespacefs_1a20b380c23534d145eecead87d9b2cab8)`(String path)`            | delete a directory. Sync version of [fs.rmdir()](#d5/d8f/namespacefs_1ae63300a92680e28c3b2bd55046120049).
-`public static static `[`rename`](#d5/d8f/namespacefs_1a6cfec17da170f79ad860f37515990603)`(String from,String to)`            | rename a file
-`public static static `[`renameSync`](#d5/d8f/namespacefs_1a439bc947232694de63ae6b927d79e938)`(String from,String to)`            | rename a file
-`public static static `[`copy`](#d5/d8f/namespacefs_1aeff5066a3493122a9cecd8977cbd83d9)`(String from,String to)`            | copy file
-`public static static `[`chmod`](#d5/d8f/namespacefs_1a5b69648f9d4875d97bd01b007c095f94)`(String path,Integer mode)`            | check the permission of targeting file, Windows does not support this
-`public static static `[`chmodSync`](#d5/d8f/namespacefs_1a471a11730f2ab34cbe85287548ec6675)`(String path,Integer mode)`            | check the permission of targeting file, Windows does not support this. Sync version of [fs.chmod()](#d5/d8f/namespacefs_1a5b69648f9d4875d97bd01b007c095f94).
-`public static `[`Stat`](#dc/da9/interfaceStat)` `[`stat`](#d5/d8f/namespacefs_1a51eb9e7e0bebba7af47eeff6ddcb6425)`(String path)`            | check file basic infomation/stat
-`public static `[`Stat`](#dc/da9/interfaceStat)` `[`statSync`](#d5/d8f/namespacefs_1a73fcecc3120d7be9f3e9628e4354107f)`(String path)`            | check file basic infomation/stat. Sync version of [fs.stat()](#d5/d8f/namespacefs_1a51eb9e7e0bebba7af47eeff6ddcb6425).
-`public static `[`List`](#de/dd8/interfaceList)` `[`readdir`](#d5/d8f/namespacefs_1a598ef237aea287f4328743429f81ede1)`(String path)`            | read fileinfo inside target directory
-`public static `[`List`](#de/dd8/interfaceList)` `[`readdirSync`](#d5/d8f/namespacefs_1a8b687854a662b716a575b6c8b80963b4)`(String path)`            | read fileinfo inside target directory. Sync version of [fs.readdir()](#d5/d8f/namespacefs_1a598ef237aea287f4328743429f81ede1).
-`public static `[`SeekableStream`](#d6/d9c/interfaceSeekableStream)` `[`open`](#d5/d8f/namespacefs_1a9e774ee83e01eb9115e65c0c2c38e8b4)`(String fname,String flags)`            | open text file to read, write, or read and write
-`public static `[`SeekableStream`](#d6/d9c/interfaceSeekableStream)` `[`openSync`](#d5/d8f/namespacefs_1a405870e84dfb1e371e37dbfc84b91bb9)`(String fname,String flags)`            | open text file to read, write, or read and write. Sync version of [fs.open()](#d5/d8f/namespacefs_1a9e774ee83e01eb9115e65c0c2c38e8b4).
-`public static `[`BufferedStream`](#d0/d37/interfaceBufferedStream)` `[`openTextStream`](#d5/d8f/namespacefs_1aaf625a15d9268621cb10eacc4154db5e)`(String fname,String flags)`            | open text file to read, write, or read and write
-`public static String `[`readTextFile`](#d5/d8f/namespacefs_1a3c55a9cb42fc1d40decfd30bd2e739e1)`(String fname)`            | open file and read the conent.
-`public static String `[`readFile`](#d5/d8f/namespacefs_1a7e1ad1be495a3c5e986908fa56861acd)`(String fname)`            | open a file, read the content
-`public static `[`Buffer`](#d0/d11/classBuffer)` `[`readFileSync`](#d5/d8f/namespacefs_1af669e44c86fb17d611438696a9af0f18)`(String fname)`            | open a file, read the content. Sync version of [fs.readFile()](#d5/d8f/namespacefs_1a7e1ad1be495a3c5e986908fa56861acd).
-`public static Array `[`readLines`](#d5/d8f/namespacefs_1acb42968e4acb281d4633997321392ab1)`(String fname,Integer maxlines)`            | open file, ready each line of text content intot an array, end of line is recognized based on EOL definition, by default, posix system: "\n"; windows system: "\r\n"
-`public static static `[`writeTextFile`](#d5/d8f/namespacefs_1a7f608ea611628c8dc7aadc79f7056085)`(String fname,String txt)`            | create text file and write to file 创建文本文件，并写入内容
-`public static static `[`writeFile`](#d5/d8f/namespacefs_1a2b9fe79326ffd7bca6e432f1a667f306)`(String fname,String txt)`            | create file, and write new content
-`public static static `[`writeFileSync`](#d5/d8f/namespacefs_1a8a885a62f0e269f303cd59b00511eca0)`(String fname,`[`Buffer`](#d0/d11/classBuffer)` data)`            | create file, and write new content. Sync version of [fs.writeFile()](#d5/d8f/namespacefs_1a2b9fe79326ffd7bca6e432f1a667f306).
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+const            | `public const SEEK_SET`[`SEEK_SET`](#d5/d8f/namespacefs_1a0686184eea338b4a609bbd9f2cb3ec18)`SEEK_SET`<p>seek 方式常量，移动到绝对位置</p>
+const            | `public const SEEK_CUR`[`SEEK_CUR`](#d5/d8f/namespacefs_1a2f14f4f6475f3473f71c13cc4180f7f6)`SEEK_CUR`<p>seek 方式常量，移动到当前位置的相对位置</p>
+const            | `public const SEEK_END`[`SEEK_END`](#d5/d8f/namespacefs_1a58e403e48389bab859c0f418f1ebcea3)`SEEK_END`<p>seek 方式常量，移动到文件结尾的相对位置</p>
 
-## Members
+## Method Summary
 
-#### `public static Boolean `[`exists`](#d5/d8f/namespacefs_1a4abe84709aae93e90cf3028c6c13db96)`(String path)` 
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+Boolean            | `exists(String path)`<p>查询指定的文件或目录是否存在</p>
+Boolean            | `existsSync(String path)`<p>查询指定的文件或目录是否存在，是 exists 的同步版兼容接口</p>
+void            | `unlink(String path)`<p>删除指定的文件</p>
+void            | `unlinkSync(String path)`<p>删除指定的文件，是 unlink 的同步版兼容接口</p>
+void            | `mkdir(String path,Integer mode)`<p>创建一个目录</p>
+void            | `mkdirSync(String path,Integer mode)`<p>创建一个目录，是 mkdir 的同步版兼容接口</p>
+void            | `rmdir(String path)`<p>删除一个目录</p>
+void            | `rmdirSync(String path)`<p>删除一个目录，是 rmdir 的同步版兼容接口</p>
+void            | `rename(String from,String to)`<p>重新命名一个文件</p>
+void            | `renameSync(String from,String to)`<p>重新命名一个文件，是 rename 的同步版兼容接口</p>
+void            | `copy(String from,String to)`<p>复制一个文件</p>
+void            | `chmod(String path,Integer mode)`<p>设置指定文件的访问权限，Windows 不支持此方法</p>
+void            | `chmodSync(String path,Integer mode)`<p>设置指定文件的访问权限，是 chmod 的同步版兼容接口</p>
+Stat            | `stat(String path)`<p>查询指定文件的基础信息</p>
+Stat            | `statSync(String path)`<p>查询指定文件的基础信息，是 stat 的同步版兼容接口</p>
+List            | `readdir(String path)`<p>读取指定目录的文件信息</p>
+List            | `readdirSync(String path)`<p>读取指定目录的文件信息，是 readdir 的同步版兼容接口</p>
+SeekableStream            | `open(String fname,String flags)`<p>打开文件，用于读取，写入，或者同时读写</p>
+SeekableStream            | `openSync(String fname,String flags)`<p>打开文件，用于读取，写入，或者同时读写，是 open 的同步版兼容接口</p>
+BufferedStream            | `openTextStream(String fname,String flags)`<p>打开文本文件，用于读取，写入，或者同时读写</p>
+String            | `readTextFile(String fname)`<p>打开文本文件，并读取内容</p>
+Buffer            | `readFile(String fname)`<p>打开二进制文件，并读取内容</p>
+Buffer            | `readFileSync(String fname)`<p>打开二进制文件，并读取内容，是 readFile 的同步版兼容接口</p>
+Array            | `readLines(String fname,Integer maxlines)`<p>打开文件，以数组方式读取一组文本行，行结尾标识基于 EOL 属性的设置，缺省时，posix:"\n"；windows:"\r\n"</p>
+void            | `writeTextFile(String fname,String txt)`<p>创建文本文件，并写入内容</p>
+void            | `writeFile(String fname,Buffer data)`<p>创建二进制文件，并写入内容</p>
+void            | `writeFileSync(String fname,Buffer data)`<p>创建二进制文件，并写入内容，是 writeFile 的同步版兼容接口</p>
 
-search if the file or directory exists
+## Field Detail
+
+{{% panel theme="default" header="SEEK_SET" %}}
+#### **const** `public const SEEK_SET`[`SEEK_SET`](#d5/d8f/namespacefs_1a0686184eea338b4a609bbd9f2cb3ec18)`SEEK_SET`
+
+seek 方式常量，移动到绝对位置
+
+{{% /panel %}}
+{{% panel theme="default" header="SEEK_CUR" %}}
+#### **const** `public const SEEK_CUR`[`SEEK_CUR`](#d5/d8f/namespacefs_1a2f14f4f6475f3473f71c13cc4180f7f6)`SEEK_CUR`
+
+seek 方式常量，移动到当前位置的相对位置
+
+{{% /panel %}}
+{{% panel theme="default" header="SEEK_END" %}}
+#### **const** `public const SEEK_END`[`SEEK_END`](#d5/d8f/namespacefs_1a58e403e48389bab859c0f418f1ebcea3)`SEEK_END`
+
+seek 方式常量，移动到文件结尾的相对位置
+
+{{% /panel %}}
+
+## Method Detail
+
+{{% panel theme="default" header="exists" %}}
+#### **Boolean** `exists(String path)`
+
+查询指定的文件或目录是否存在
 
 #### Parameters
-* `path` assign the search path 
+* `path` 指定要查询的路径 
 
 #### Returns
-return True indicates the file or directory exists
+返回 True 表示文件或目录存在
+{{% /panel %}}
+{{% panel theme="default" header="existsSync" %}}
+#### **Boolean** `existsSync(String path)`
 
-#### `public static Boolean `[`existsSync`](#d5/d8f/namespacefs_1a828508b6b6a7baa69929e54f11bd0121)`(String path)` 
-
-search if the file or directory exists. Sync version of [fs.exists()](#d5/d8f/namespacefs_1a4abe84709aae93e90cf3028c6c13db96).
+查询指定的文件或目录是否存在，是 exists 的同步版兼容接口
 
 #### Parameters
-* `path` assign the search path 
+* `path` 指定要查询的路径 
 
 #### Returns
-return True indicates the file or directory exists
+返回 True 表示文件或目录存在
+{{% /panel %}}
+{{% panel theme="default" header="unlink" %}}
+#### **void** `unlink(String path)`
 
-#### `public static static `[`unlink`](#d5/d8f/namespacefs_1ad9728d670aa8f486d76c4052f6c8acd5)`(String path)` 
-
-the file you want to delete
-
-#### Parameters
-* `path` the path you want to delete
-
-#### `public static static `[`unlinkSync`](#d5/d8f/namespacefs_1a4b15f3243d3c3c277b71522e49a60e16)`(String path)` 
-
-the file you want to delete. Sync version of [fs.unlink()](#d5/d8f/namespacefs_1ad9728d670aa8f486d76c4052f6c8acd5).
+删除指定的文件
 
 #### Parameters
-* `path` the path you want to delete
+* `path` 指定要删除的路径
+{{% /panel %}}
+{{% panel theme="default" header="unlinkSync" %}}
+#### **void** `unlinkSync(String path)`
 
-#### `public static static `[`mkdir`](#d5/d8f/namespacefs_1ad11bbef581ff87c5fc33e8b3d4b98dfb)`(String path,Integer mode)` 
-
-create a directory
-
-#### Parameters
-* `path` assign the name of directory 
-
-* `mode` assign file ownership, Windows user ignore this
-
-#### `public static static `[`mkdirSync`](#d5/d8f/namespacefs_1a82c90f7692b9fbea8577fc99628320d9)`(String path,Integer mode)` 
-
-create a directory. Sync version of [fs.mkdir()](#d5/d8f/namespacefs_1ad11bbef581ff87c5fc33e8b3d4b98dfb).
+删除指定的文件，是 unlink 的同步版兼容接口
 
 #### Parameters
-* `path` assign the name of directory 
+* `path` 指定要删除的路径
+{{% /panel %}}
+{{% panel theme="default" header="mkdir" %}}
+#### **void** `mkdir(String path,Integer mode)`
 
-* `mode` assign file ownership, Windows user ignore this
-
-#### `public static static `[`rmdir`](#d5/d8f/namespacefs_1ae63300a92680e28c3b2bd55046120049)`(String path)` 
-
-delete a directory
-
-#### Parameters
-* `path` the name of targeting directory
-
-#### `public static static `[`rmdirSync`](#d5/d8f/namespacefs_1a20b380c23534d145eecead87d9b2cab8)`(String path)` 
-
-delete a directory. Sync version of [fs.rmdir()](#d5/d8f/namespacefs_1ae63300a92680e28c3b2bd55046120049).
+创建一个目录
 
 #### Parameters
-* `path` the name of targeting directory
+* `path` 指定要创建的目录名 
 
-#### `public static static `[`rename`](#d5/d8f/namespacefs_1a6cfec17da170f79ad860f37515990603)`(String from,String to)` 
+* `mode` 指定文件权限，Windows 忽略此参数
+{{% /panel %}}
+{{% panel theme="default" header="mkdirSync" %}}
+#### **void** `mkdirSync(String path,Integer mode)`
 
-rename a file
-
-#### Parameters
-* `from` the targeting file name 
-
-* `to` the name you want to change to
-
-#### `public static static `[`renameSync`](#d5/d8f/namespacefs_1a439bc947232694de63ae6b927d79e938)`(String from,String to)` 
-
-rename a file
+创建一个目录，是 mkdir 的同步版兼容接口
 
 #### Parameters
-* `from` the targeting file name. Sync version of [fs.rename()](#d5/d8f/namespacefs_1a6cfec17da170f79ad860f37515990603). 
+* `path` 指定要创建的目录名 
 
-* `to` the name you want to change to
+* `mode` 指定文件权限，Windows 忽略此参数
+{{% /panel %}}
+{{% panel theme="default" header="rmdir" %}}
+#### **void** `rmdir(String path)`
 
-#### `public static static `[`copy`](#d5/d8f/namespacefs_1aeff5066a3493122a9cecd8977cbd83d9)`(String from,String to)` 
-
-copy file
-
-#### Parameters
-* `from` file path 
-
-* `to` new file path
-
-#### `public static static `[`chmod`](#d5/d8f/namespacefs_1a5b69648f9d4875d97bd01b007c095f94)`(String path,Integer mode)` 
-
-check the permission of targeting file, Windows does not support this
+删除一个目录
 
 #### Parameters
-* `path` the path to the targeting file 
+* `path` 指定要删除的目录名
+{{% /panel %}}
+{{% panel theme="default" header="rmdirSync" %}}
+#### **void** `rmdirSync(String path)`
 
-* `mode` targeting file permission
-
-#### `public static static `[`chmodSync`](#d5/d8f/namespacefs_1a471a11730f2ab34cbe85287548ec6675)`(String path,Integer mode)` 
-
-check the permission of targeting file, Windows does not support this. Sync version of [fs.chmod()](#d5/d8f/namespacefs_1a5b69648f9d4875d97bd01b007c095f94).
-
-#### Parameters
-* `path` the path to the targeting file 
-
-* `mode` targeting file permission
-
-#### `public static `[`Stat`](#dc/da9/interfaceStat)` `[`stat`](#d5/d8f/namespacefs_1a51eb9e7e0bebba7af47eeff6ddcb6425)`(String path)` 
-
-check file basic infomation/stat
+删除一个目录，是 rmdir 的同步版兼容接口
 
 #### Parameters
-* `path` the path to the targeting file 
+* `path` 指定要删除的目录名
+{{% /panel %}}
+{{% panel theme="default" header="rename" %}}
+#### **void** `rename(String from,String to)`
+
+重新命名一个文件
+
+#### Parameters
+* `from` 指定更名的文件 
+
+* `to` 指定要修改的新文件名
+{{% /panel %}}
+{{% panel theme="default" header="renameSync" %}}
+#### **void** `renameSync(String from,String to)`
+
+重新命名一个文件，是 rename 的同步版兼容接口
+
+#### Parameters
+* `from` 指定更名的文件 
+
+* `to` 指定要修改的新文件名
+{{% /panel %}}
+{{% panel theme="default" header="copy" %}}
+#### **void** `copy(String from,String to)`
+
+复制一个文件
+
+#### Parameters
+* `from` 指定更名的文件 
+
+* `to` 指定要修改的新文件名
+{{% /panel %}}
+{{% panel theme="default" header="chmod" %}}
+#### **void** `chmod(String path,Integer mode)`
+
+设置指定文件的访问权限，Windows 不支持此方法
+
+#### Parameters
+* `path` 指定操作的文件 
+
+* `mode` 指定设定的访问权限
+{{% /panel %}}
+{{% panel theme="default" header="chmodSync" %}}
+#### **void** `chmodSync(String path,Integer mode)`
+
+设置指定文件的访问权限，是 chmod 的同步版兼容接口
+
+#### Parameters
+* `path` 指定操作的文件 
+
+* `mode` 指定设定的访问权限
+{{% /panel %}}
+{{% panel theme="default" header="stat" %}}
+#### **Stat** `stat(String path)`
+
+查询指定文件的基础信息
+
+#### Parameters
+* `path` 指定查询的文件 
 
 #### Returns
-return file basic infomation/stat
+返回文件的基础信息
+{{% /panel %}}
+{{% panel theme="default" header="statSync" %}}
+#### **Stat** `statSync(String path)`
 
-#### `public static `[`Stat`](#dc/da9/interfaceStat)` `[`statSync`](#d5/d8f/namespacefs_1a73fcecc3120d7be9f3e9628e4354107f)`(String path)` 
-
-check file basic infomation/stat. Sync version of [fs.stat()](#d5/d8f/namespacefs_1a51eb9e7e0bebba7af47eeff6ddcb6425).
+查询指定文件的基础信息，是 stat 的同步版兼容接口
 
 #### Parameters
-* `path` the path to the targeting file 
+* `path` 指定查询的文件 
 
 #### Returns
-return file basic infomation/stat
+返回文件的基础信息
+{{% /panel %}}
+{{% panel theme="default" header="readdir" %}}
+#### **List** `readdir(String path)`
 
-#### `public static `[`List`](#de/dd8/interfaceList)` `[`readdir`](#d5/d8f/namespacefs_1a598ef237aea287f4328743429f81ede1)`(String path)` 
-
-read fileinfo inside target directory
+读取指定目录的文件信息
 
 #### Parameters
-* `path` the path to the directory 
+* `path` 指定查询的目录 
 
 #### Returns
-return a array of files' info in target directory
+返回目录的文件信息数组
+{{% /panel %}}
+{{% panel theme="default" header="readdirSync" %}}
+#### **List** `readdirSync(String path)`
 
-#### `public static `[`List`](#de/dd8/interfaceList)` `[`readdirSync`](#d5/d8f/namespacefs_1a8b687854a662b716a575b6c8b80963b4)`(String path)` 
-
-read fileinfo inside target directory. Sync version of [fs.readdir()](#d5/d8f/namespacefs_1a598ef237aea287f4328743429f81ede1).
+读取指定目录的文件信息，是 readdir 的同步版兼容接口
 
 #### Parameters
-* `path` the path to the directory 
+* `path` 指定查询的目录 
 
 #### Returns
-return a array of files' info in target directory
+返回目录的文件信息数组
+{{% /panel %}}
+{{% panel theme="default" header="open" %}}
+#### **SeekableStream** `open(String fname,String flags)`
 
-#### `public static `[`SeekableStream`](#d6/d9c/interfaceSeekableStream)` `[`open`](#d5/d8f/namespacefs_1a9e774ee83e01eb9115e65c0c2c38e8b4)`(String fname,String flags)` 
-
-open text file to read, write, or read and write
+打开文件，用于读取，写入，或者同时读写
 
 #### Parameters
-* `fname` the name of file 
+* `fname` 指定文件名 
 
-* `flags` define the method for opening file, default is 'r', read only, other supported methods see below:
+* `flags` 指定文件打开方式，缺省为 "r"，只读方式。支持的方式如下：
 
-* 'r' ready only, throw excption if file dose not exists
+* 'r' 只读方式，文件不存在则抛出错误。
 
-* 'r+' read and write, throw excption if file dose not exists
+* 'r+' 读写方式，文件不存在则抛出错误。
 
-* 'w' write only, create new if file dose not exist, othewise overwrite
+* 'w' 只写方式，文件不存在则自动创建，存在则将被清空。
 
-* 'w+' ready and write, create new if file dose not exist, othewise overwrite
+* 'w+' 读写方式，文件不存在则自动创建。
 
-* 'a' write only add file, create new if file dose not exist, othewise overwrite
+* 'a' 只写添加方式，文件不存在则自动创建。
 
-* 'a+' read and write to add file, create new if file dose not exist, othewise overwrite 
+* 'a+' 读写添加方式，文件不存在则自动创建。 
 
 #### Returns
-return opened file object
+返回打开的文件对象
+{{% /panel %}}
+{{% panel theme="default" header="openSync" %}}
+#### **SeekableStream** `openSync(String fname,String flags)`
 
-#### `public static `[`SeekableStream`](#d6/d9c/interfaceSeekableStream)` `[`openSync`](#d5/d8f/namespacefs_1a405870e84dfb1e371e37dbfc84b91bb9)`(String fname,String flags)` 
-
-open text file to read, write, or read and write. Sync version of [fs.open()](#d5/d8f/namespacefs_1a9e774ee83e01eb9115e65c0c2c38e8b4).
+打开文件，用于读取，写入，或者同时读写，是 open 的同步版兼容接口
 
 #### Parameters
-* `fname` the name of file 
+* `fname` 指定文件名 
 
-* `flags` define the method for opening file, default is 'r', read only, other supported methods see below:
+* `flags` 指定文件打开方式，缺省为 "r"，只读方式。支持的方式如下：
 
-* 'r' ready only, throw excption if file dose not exists
+* 'r' 只读方式，文件不存在则抛出错误。
 
-* 'r+' read and write, throw excption if file dose not exists
+* 'r+' 读写方式，文件不存在则抛出错误。
 
-* 'w' write only, create new if file dose not exist, othewise overwrite
+* 'w' 只写方式，文件不存在则自动创建，存在则将被清空。
 
-* 'w+' ready and write, create new if file dose not exist, othewise overwrite
+* 'w+' 读写方式，文件不存在则自动创建。
 
-* 'a' write only add file, create new if file dose not exist, othewise overwrite
+* 'a' 只写添加方式，文件不存在则自动创建。
 
-* 'a+' read and write to add file, create new if file dose not exist, othewise overwrite 
+* 'a+' 读写添加方式，文件不存在则自动创建。 
 
 #### Returns
-return opened file object
+返回打开的文件对象
+{{% /panel %}}
+{{% panel theme="default" header="openTextStream" %}}
+#### **BufferedStream** `openTextStream(String fname,String flags)`
 
-#### `public static `[`BufferedStream`](#d0/d37/interfaceBufferedStream)` `[`openTextStream`](#d5/d8f/namespacefs_1aaf625a15d9268621cb10eacc4154db5e)`(String fname,String flags)` 
-
-open text file to read, write, or read and write
+打开文本文件，用于读取，写入，或者同时读写
 
 #### Parameters
-* `fname` the name of file 
+* `fname` 指定文件名 
 
-* `flags` define the method for opening file, default is 'r', read only, other supported methods see below:
+* `flags` 指定文件打开方式，缺省为 "r"，只读方式。支持的方式如下：
 
-* 'r' ready only, throw excption if file dose not exists
+* 'r' 只读方式，文件不存在则抛出错误。
 
-* 'r+' read and write, throw excption if file dose not exists
+* 'r+' 读写方式，文件不存在则抛出错误。
 
-* 'w' write only, create new if file dose not exist, othewise overwrite
+* 'w' 只写方式，文件不存在则自动创建，存在则将被清空。
 
-* 'w+' ready and write, create new if file dose not exist, othewise overwrite
+* 'w+' 读写方式，文件不存在则自动创建。
 
-* 'a' write only add file, create new if file dose not exist, othewise overwrite
+* 'a' 只写添加方式，文件不存在则自动创建。
 
-* 'a+' read and write to add file, create new if file dose not exist, othewise overwrite 
+* 'a+' 读写添加方式，文件不存在则自动创建。 
 
 #### Returns
-return opened file object
+返回打开的文件对象
+{{% /panel %}}
+{{% panel theme="default" header="readTextFile" %}}
+#### **String** `readTextFile(String fname)`
 
-#### `public static String `[`readTextFile`](#d5/d8f/namespacefs_1a3c55a9cb42fc1d40decfd30bd2e739e1)`(String fname)` 
-
-open file and read the conent.
+打开文本文件，并读取内容
 
 #### Parameters
-* `fname` the name of file 
+* `fname` 指定文件名 
 
 #### Returns
-file content
+返回文件文本内容
+{{% /panel %}}
+{{% panel theme="default" header="readFile" %}}
+#### **Buffer** `readFile(String fname)`
 
-#### `public static String `[`readFile`](#d5/d8f/namespacefs_1a7e1ad1be495a3c5e986908fa56861acd)`(String fname)` 
-
-open a file, read the content
+打开二进制文件，并读取内容
 
 #### Parameters
-* `fname` assign file name 
+* `fname` 指定文件名 
 
 #### Returns
-return content of opened file
+返回文件文本内容
+{{% /panel %}}
+{{% panel theme="default" header="readFileSync" %}}
+#### **Buffer** `readFileSync(String fname)`
 
-#### `public static `[`Buffer`](#d0/d11/classBuffer)` `[`readFileSync`](#d5/d8f/namespacefs_1af669e44c86fb17d611438696a9af0f18)`(String fname)` 
-
-open a file, read the content. Sync version of [fs.readFile()](#d5/d8f/namespacefs_1a7e1ad1be495a3c5e986908fa56861acd).
+打开二进制文件，并读取内容，是 readFile 的同步版兼容接口
 
 #### Parameters
-* `fname` assign file name 
+* `fname` 指定文件名 
 
 #### Returns
-return content of opened file
+返回文件文本内容
+{{% /panel %}}
+{{% panel theme="default" header="readLines" %}}
+#### **Array** `readLines(String fname,Integer maxlines)`
 
-#### `public static Array `[`readLines`](#d5/d8f/namespacefs_1acb42968e4acb281d4633997321392ab1)`(String fname,Integer maxlines)` 
-
-open file, ready each line of text content intot an array, end of line is recognized based on EOL definition, by default, posix system: "\n"; windows system: "\r\n"
+打开文件，以数组方式读取一组文本行，行结尾标识基于 EOL 属性的设置，缺省时，posix:"\n"；windows:"\r\n"
 
 #### Parameters
-* `fname` assign file name 
+* `fname` 指定文件名 
 
-* `maxlines` define the maximum number of line to read, read all lines by default 
+* `maxlines` 指定此次读取的最大行数，缺省读取全部文本行 
 
 #### Returns
-return the array containing every line of file content, if no content or connection is lost, then return an empty array
+返回读取的文本行数组，若无数据可读，或者连接中断，空数组
+{{% /panel %}}
+{{% panel theme="default" header="writeTextFile" %}}
+#### **void** `writeTextFile(String fname,String txt)`
 
-#### `public static static `[`writeTextFile`](#d5/d8f/namespacefs_1a7f608ea611628c8dc7aadc79f7056085)`(String fname,String txt)` 
-
-create text file and write to file 创建文本文件，并写入内容
-
-#### Parameters
-* `fname` assign file name 
-
-* `txt` sting to be written
-
-#### `public static static `[`writeFile`](#d5/d8f/namespacefs_1a2b9fe79326ffd7bca6e432f1a667f306)`(String fname,String txt)` 
-
-create file, and write new content
+创建文本文件，并写入内容
 
 #### Parameters
-* `fname` assign file name 
+* `fname` 指定文件名 
 
-* `txt` the content you are going to write into file
+* `txt` 指定要写入的字符串
+{{% /panel %}}
+{{% panel theme="default" header="writeFile" %}}
+#### **void** `writeFile(String fname,Buffer data)`
 
-#### `public static static `[`writeFileSync`](#d5/d8f/namespacefs_1a8a885a62f0e269f303cd59b00511eca0)`(String fname,`[`Buffer`](#d0/d11/classBuffer)` data)` 
-
-create file, and write new content. Sync version of [fs.writeFile()](#d5/d8f/namespacefs_1a2b9fe79326ffd7bca6e432f1a667f306).
+创建二进制文件，并写入内容
 
 #### Parameters
-* `fname` assign file name 
+* `fname` 指定文件名 
 
-* `txt` the content you are going to write into file
+* `data` 指定要写入的二进制数据
+{{% /panel %}}
+{{% panel theme="default" header="writeFileSync" %}}
+#### **void** `writeFileSync(String fname,Buffer data)`
 
+创建二进制文件，并写入内容，是 writeFile 的同步版兼容接口
+
+#### Parameters
+* `fname` 指定文件名 
+
+* `data` 指定要写入的二进制数据
+{{% /panel %}}
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

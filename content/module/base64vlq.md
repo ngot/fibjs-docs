@@ -1,60 +1,69 @@
 +++
 draft = false
 title = "base64vlq"
-description = "module with encode and decode operations."
+description = "base64vlq 编码与解码模块 引用方式："
 [menu.main]
 parent = "modules"
 identifier = "base64vlq"
 +++
 
-[base64vlq](#de/d5c/namespacebase64vlq) module with encode and decode operations. to use:
+base64vlq 编码与解码模块 引用方式：
 
-```cpp
+```js
 var encoding = require('encoding');
 var base64vlq = encoding.base64vlq;
 ```
- or: 
-```cpp
+ 或者 
+```js
 var base64vlq = require('base64vlq');
 ```
 
-## Summary
+## Method Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static String `[`encode`](#de/d5c/namespacebase64vlq_1a82d92173f328ec3c9dd3ad0ec6fbcce6)`(Integer data)`            | Encode int data to string with [base64vlq](#de/d5c/namespacebase64vlq) format.
-`public static String `[`encode`](#de/d5c/namespacebase64vlq_1aa51fc819ce5fedc0775934c4cad7a46d)`(Array data)`            | Encode array data to string with [base64vlq](#de/d5c/namespacebase64vlq) format.
-`public static Array `[`decode`](#de/d5c/namespacebase64vlq_1a7806e9baeb01ce2567581fe5f7062663)`(String data)`            | Decode string to binary data with [base64vlq](#de/d5c/namespacebase64vlq) format.
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+String            | `encode(Integer data)`<p>以 base64vlq 方式编码数据</p>
+String            | `encode(Array data)`<p>以 base64vlq 方式编码数据</p>
+Array            | `decode(String data)`<p>以 base64vlq 方式解码字符串为二进制数据</p>
 
-## Members
+## Method Detail
 
-#### `public static String `[`encode`](#de/d5c/namespacebase64vlq_1a82d92173f328ec3c9dd3ad0ec6fbcce6)`(Integer data)` 
+{{% panel theme="default" header="encode" %}}
+#### **String** `encode(Integer data)`
 
-Encode int data to string with [base64vlq](#de/d5c/namespacebase64vlq) format.
-
-#### Parameters
-* `data` Int data to be encoded. 
-
-#### Returns
-The encoded result string.
-
-#### `public static String `[`encode`](#de/d5c/namespacebase64vlq_1aa51fc819ce5fedc0775934c4cad7a46d)`(Array data)` 
-
-Encode array data to string with [base64vlq](#de/d5c/namespacebase64vlq) format.
+以 base64vlq 方式编码数据
 
 #### Parameters
-* `data` Array data to be encoded. 
+* `data` 要编码的数据 
 
 #### Returns
-The encoded result string.
+返回编码的字符串
+{{% /panel %}}
+{{% panel theme="default" header="encode" %}}
+#### **String** `encode(Array data)`
 
-#### `public static Array `[`decode`](#de/d5c/namespacebase64vlq_1a7806e9baeb01ce2567581fe5f7062663)`(String data)` 
-
-Decode string to binary data with [base64vlq](#de/d5c/namespacebase64vlq) format.
+以 base64vlq 方式编码数据
 
 #### Parameters
-* `data` String data to be decoded. 
+* `data` 要编码的数据 
 
 #### Returns
-The decoded result binary data.
+返回编码的字符串
+{{% /panel %}}
+{{% panel theme="default" header="decode" %}}
+#### **Array** `decode(String data)`
 
+以 base64vlq 方式解码字符串为二进制数据
+
+#### Parameters
+* `data` 要解码的字符串 
+
+#### Returns
+返回解码的二进制数据
+{{% /panel %}}
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>

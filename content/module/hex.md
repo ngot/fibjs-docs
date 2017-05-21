@@ -1,49 +1,57 @@
 +++
 draft = false
 title = "hex"
-description = "Module with encode and decode operations between hex and string."
+description = "hex 编码与解码模块 引用方式："
 [menu.main]
 parent = "modules"
 identifier = "hex"
 +++
 
-module with encode and decode operations between hex and string. to use:
+hex 编码与解码模块 引用方式：
 
-```cpp
+```js
 var encoding = require('encoding');
 var hex = encoding.hex;
 ```
- or: 
-```cpp
+ 或者 
+```js
 var hex = require('hex');
 ```
 
-## Summary
+## Method Summary
 
- Members                        | Descriptions                                
---------------------------------|---------------------------------------------
-`public static String `[`encode`](#d3/da1/namespacehex_1a581b5701a55f8498bcc5d923490ea970)`(`[`Buffer`](#d0/d11/classBuffer)` data)`            | Encode data whith hex format.
-`public static `[`Buffer`](#d0/d11/classBuffer)` `[`decode`](#d3/da1/namespacehex_1a011682402d37d61858e68f191d64ba16)`(String data)`            | Decode string to binary data with hex format.
+Type                           | Method and Description
+-------------------------------|---------------------------------------------
+String            | `encode(Buffer data)`<p>以 hex 方式编码数据</p>
+Buffer            | `decode(String data)`<p>以 hex 方式解码字符串为二进制数据</p>
 
-## Members
+## Method Detail
 
-#### `public static String `[`encode`](#d3/da1/namespacehex_1a581b5701a55f8498bcc5d923490ea970)`(`[`Buffer`](#d0/d11/classBuffer)` data)` 
+{{% panel theme="default" header="encode" %}}
+#### **String** `encode(Buffer data)`
 
-Encode data whith hex format.
-
-#### Parameters
-* `data` Data to be encoded. 
-
-#### Returns
-Encoded result string.
-
-#### `public static `[`Buffer`](#d0/d11/classBuffer)` `[`decode`](#d3/da1/namespacehex_1a011682402d37d61858e68f191d64ba16)`(String data)` 
-
-Decode string to binary data with hex format.
+以 hex 方式编码数据
 
 #### Parameters
-* `data` String to be decode. 
+* `data` 要编码的数据 
 
 #### Returns
-Decoded binary data result.
+返回编码的字符串
+{{% /panel %}}
+{{% panel theme="default" header="decode" %}}
+#### **Buffer** `decode(String data)`
 
+以 hex 方式解码字符串为二进制数据
+
+#### Parameters
+* `data` 要解码的字符串 
+
+#### Returns
+返回解码的二进制数据
+{{% /panel %}}
+
+<style>
+  td {
+    vertical-align: top;
+  }
+</style>
